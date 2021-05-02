@@ -1,6 +1,6 @@
 {
   "name": "bc-minecraft-molang",
-  "version": "1.0.10",
+  "version": "1.0.0",
   "description": "The library designed to deal with minecraft bedrock molang",
   "main": "./lib/src/main.js",
   "types": "./lib/src/main.d.ts",
@@ -36,7 +36,6 @@
     "lib/**/*",
     "!lib/test"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@types/mocha": "^8.2.1",
     "@types/node": "^10.17.54",
