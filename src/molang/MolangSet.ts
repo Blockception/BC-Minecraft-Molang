@@ -1,6 +1,6 @@
 import { DefinedUsing } from "../Types/Defined Using/DefinedUsing";
 import { Using } from "../Types/Defined Using/include";
-import { Molang } from "./Molang";
+import { Sets } from "./Molang/include";
 
 /** */
 export interface MolangSet {
@@ -47,8 +47,8 @@ export namespace MolangSet {
   export function harvest(object: any): MolangSet {
     const out = create();
 
-    Molang.Sets.getUsing(object, out);
-    Molang.Sets.getDefined(object, out);
+    Sets.getUsing(object, out);
+    Sets.getDefined(object, out);
 
     return out;
   }
@@ -94,8 +94,8 @@ export namespace MolangFullSet {
   export function harvest(object: object | string): MolangFullSet {
     const out = create();
 
-    Molang.Sets.getUsingFull(object, out);
-    Molang.Sets.getDefined(object, out);
+    Sets.getUsingFull(object, out);
+    Sets.getDefined(object, out);
 
     return out;
   }
