@@ -1,6 +1,6 @@
 import { DefinedUsing } from "../Types/Defined Using/DefinedUsing";
 import { Using } from "../Types/Defined Using/include";
-import { Sets } from "./Molang/include";
+import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./Molang/include";
 
 /** */
 export interface MolangSet {
@@ -47,8 +47,14 @@ export namespace MolangSet {
   export function harvest(object: any): MolangSet {
     const out = create();
 
-    Sets.getUsing(object, out);
-    Sets.getDefined(object, out);
+    Queries.getUsing(object, out.queries.using);
+    Context.getUsing(object, out.contexts.using);
+
+    Variables.getUsing(object, out.variables.using);
+    Variables.getDefined(object, out.variables.defined);
+
+    Temps.getUsing(object, out.temps.using);
+    Temps.getDefined(object, out.temps.defined);
 
     return out;
   }
@@ -94,8 +100,18 @@ export namespace MolangFullSet {
   export function harvest(object: object | string): MolangFullSet {
     const out = create();
 
-    Sets.getUsingFull(object, out);
-    Sets.getDefined(object, out);
+    Queries.getUsing(object, out.queries.using);
+    Context.getUsing(object, out.contexts.using);
+
+    Variables.getUsing(object, out.variables.using);
+    Variables.getDefined(object, out.variables.defined);
+
+    Temps.getUsing(object, out.temps.using);
+    Temps.getDefined(object, out.temps.defined);
+
+    Textures.getUsing(object, out.textures.using);
+    Geometries.getUsing(object, out.textures.using);
+    Materials.getUsing(object, out.textures.using);
 
     return out;
   }
