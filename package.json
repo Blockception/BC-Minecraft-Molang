@@ -22,6 +22,8 @@
     "url": "git+https://github.com/Blockception/BC-Minecraft-Molang.git"
   },
   "keywords": [
+    "ts",
+    "library",
     "minecraft",
     "molang"
   ],
