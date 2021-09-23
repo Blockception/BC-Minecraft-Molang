@@ -32,8 +32,9 @@
   },
   "homepage": "https://github.com/Blockception/BC-Minecraft-Molang#readme",
   "files": [
-    "lib/**/*",
-    "!lib/test"
+    "lib/src/**/*.js",
+    "lib/src/**/*.js.map",
+    "lib/src/**/*.d.ts"
   ],
   "devDependencies": {
     "@types/chai": "^4.2.22",
