@@ -11,14 +11,23 @@ describe("molang", () => {
     testDefinedUsing(data1.materials, data2.materials, "materials");
     testDefinedUsing(data1.textures, data2.textures, "textures");
     testUsing(data1.queries, data2.queries, "queries");
+    testUsing(data1.contexts, data2.contexts, "contexts");
     testDefinedUsing(data1.variables, data2.variables, "variables");
+    testDefinedUsing(data1.temps, data2.temps, "temps");
+  });
+
+  it("MolangFullSet2", () => {
+    const data = MolangFullSet.harvest(VanillaPlayer.Data);
+
+    expect(data.variables.using).to.contain.members(VanillaPlayer.Variables.using, "using");
+    expect(data.variables.defined).to.contain.members(VanillaPlayer.Variables.defined, "defined");
   });
 
   it("MolangFullSet", () => {
-    const data = MolangFullSet.harvest(VanillaPlayer.Data);
+    const data = MolangSet.harvest(VanillaPlayer.Data);
 
-    expect(data.variables.using).to.contain.members(VanillaPlayer.Variables.using);
-    expect(data.variables.defined).to.contain.members(VanillaPlayer.Variables.defined);
+    expect(data.variables.using).to.contain.members(VanillaPlayer.Variables.using, "using");
+    expect(data.variables.defined).to.contain.members(VanillaPlayer.Variables.defined, "defined");
   });
 
   it("MolangSet", () => {
@@ -31,10 +40,10 @@ describe("molang", () => {
 });
 
 function testDefinedUsing(data1: DefinedUsing<string>, data2: DefinedUsing<string>, id: string) {
-  expect(data1.defined, "from string").to.have.members(data2.defined, "defined " + id);
-  expect(data1.using, "from string").to.have.members(data2.using, "using " + id);
+  expect(data1.defined, "from string").to.contain.members(data2.defined, "defined " + id);
+  expect(data1.using, "from string").to.contain.members(data2.using, "using " + id);
 }
 
 function testUsing(data1: Using<string>, data2: Using<string>, id: string) {
-  expect(data1.using, "from string").to.have.members(data2.using, id);
+  expect(data1.using, "from string").to.contain.members(data2.using, id);
 }
