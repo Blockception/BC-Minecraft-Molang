@@ -1,82 +1,138 @@
-/** */
-export namespace molang {
-  /**
-   *
-   * @param value
-   * @returns
-   */
-  export function is(value: any): value is string {
-    if (value) {
-      if (typeof value === "string") {
-        return true;
-      }
+import { RegularExpression } from "./RegExp";
+
+/**The namespace that governs molang data*/
+export namespace Molang {
+  /**The namespace that governs molang variables*/
+  export namespace Variables {
+    /**The pattern used to find the defintions of variables*/
+    export const getDefinedPatt: RegExp = /(?:^|;[ \t]*|"[ \t]*)\b(?:v|variable)\.([a-z0-9_]*)[ \t]*\=/gim;
+
+    /**The pattern used to find the variables*/
+    export const getUsedPatt: RegExp = /\b(?:v|variable)\.([a-z0-9_]+)\b(?![ \t]+=)/gim;
+
+    /**Spits through all the provided strings searching for all instances of defining variables.
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getDefined(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getDefinedPatt, receiver);
     }
 
-    return false;
+    /**Spits through all the provided strings searching for all instances of using variables
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
+    }
   }
 
-  /**
-   *
-   * @param data
-   * @returns
-   */
-  export function getVariablesUsed(data: string): string[] {
-    let matches = data.match(/([Vv]|[Vv]ariable)\.([a-zA-z0-9_]+)/gi);
+  /**The namespace that governs molang variables*/
+  export namespace Temps {
+    /**The pattern used to find the defintions of variables*/
+    export const getDefinedPatt: RegExp = /(?:^|;[ \t]*|"[ \t]*)\b(?:t|temp)\.([a-z0-9_]*)[ \t]*\=/gim;
 
-    let out: string[] = [];
+    /**The pattern used to find the variables*/
+    export const getUsedPatt: RegExp = /\b(?:t|temp)\.([a-z0-9_]+)\b(?![ \t]+=)/gim;
 
-    if (matches) {
-      for (let I = 0; I < matches.length; I++) {
-        const element = matches[I];
-
-        const index = element.indexOf(".");
-        if (index > -1) {
-          out.push(element.substring(index + 1, element.length));
-        }
-      }
+    /**Spits through all the provided strings searching for all instances of defining variables.
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getDefined(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getDefinedPatt, receiver);
     }
 
-    return out;
+    /**Spits through all the provided strings searching for all instances of using variables
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
+    }
   }
 
-  /**
-   *
-   * @param data
-   * @returns
-   */
-  export function getVariableDefined(data: string): string | undefined {
-    let match = data.match(/^[ \t]*([Vv]ariable|[Vv])\.([a-zA-Z0-9_]+)/gi);
+  /**The namespace that governs molang variables*/
+  export namespace Context {
+    /**The pattern used to find the defintions of variables*/
+    export const getDefinedPatt: RegExp = /(?:^|;[ \t]*|"[ \t]*)\b(?:c|context)\.([a-z0-9_]*)[ \t]*\=/gim;
 
-    if (match) {
-      if (match.length >= 2) {
-        return match[1];
-      }
+    /**The pattern used to find the variables*/
+    export const getUsedPatt: RegExp = /\b(?:c|context)\.([a-z0-9_]+)\b(?![ \t]+=)/gim;
+
+    /**Spits through all the provided strings searching for all instances of defining variables.
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getDefined(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getDefinedPatt, receiver);
     }
 
-    return undefined;
+    /**Spits through all the provided strings searching for all instances of using variables
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
+    }
   }
 
-  /**
-   *
-   * @param data
-   * @returns
-   */
-  export function getQueriesUsed(data: string): string[] {
-    let matches = data.match(/([Qq]uery|[Qq])\.([a-zA-Z0-9_]+)/gi);
+  /**The namespace that governs molang queries*/
+  export namespace Queries {
+    /**The pattern used to find the used queries*/
+    export const getUsedPatt: RegExp = /\b(?:q|query)\.([a-z0-9_]+)/gim;
 
-    let out: string[] = [];
+    /**Spits through all the provided strings searching for all instances of using queries
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
+    }
+  }
 
-    if (matches) {
-      for (let I = 0; I < matches.length; I++) {
-        const element = matches[I];
+  /**The namespace that governs molang materials*/
+  export namespace Materials {
+    /**The pattern used to find the used materials*/
+    export const getUsedPatt: RegExp = /\b(?:m|material)\.([a-z0-9_]+)/gim;
 
-        const index = element.indexOf(".");
-        if (index > -1) {
-          out.push(element.substring(index + 1, element.length));
-        }
-      }
+    /**Spits through all the provided strings searching for all instances of using materials
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
+    }
+  }
+
+  /**The namespace that governs molang geometries*/
+  export namespace Geometries {
+    /**The pattern used to find the used geometries*/
+    export const getUsedPatt: RegExp = /\b(?:geometry)\.([a-z0-9_\.]+)/gim;
+
+    /**Spits through all the provided strings searching for all instances of using geometries
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
+    }
+  }
+
+  /**The namespace that governs molang textures*/
+  export namespace Textures {
+    /**The pattern used to find the used textures*/
+    export const getUsedPatt: RegExp = /\b(?:texture)\.([a-z0-9_]+)/gim;
+
+    /**Spits through all the provided strings searching for all instances of using textures
+     * @param data The string(s)/container to look through
+     * @param receiver The receiving array*/
+    export function getUsing(data: any, receiver: string[]): void {
+      RegularExpression.harvest(data, getUsedPatt, receiver);
     }
 
-    return out;
+    /**The namespace that governs molang arrays*/
+    export namespace Arrays {
+      /**The pattern used to find the used arrays*/
+      export const getUsedPatt: RegExp = /\b(?:array)\.([a-z0-9_]+)/gim;
+
+      /**Spits through all the provided strings searching for all instances of using arrays
+       * @param data The string(s)/container to look through
+       * @param receiver The receiving array*/
+      export function getUsing(data: any, receiver: string[]): void {
+        RegularExpression.harvest(data, getUsedPatt, receiver);
+      }
+    }
   }
 }
