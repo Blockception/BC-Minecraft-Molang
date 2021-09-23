@@ -19,19 +19,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Blockception/BC-Vscode-Utilities.git"
+    "url": "git+https://github.com/Blockception/BC-Minecraft-Molang.git"
   },
   "keywords": [
-    "lexical",
-    "basic",
-    "vscode"
+    "minecraft",
+    "molang"
   ],
   "author": "Blockception Ltd",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/Blockception/BC-Vscode-Utilities/issues"
+    "url": "https://github.com/Blockception/BC-Minecraft-Molang/issues"
   },
-  "homepage": "https://github.com/Blockception/BC-Vscode-Utilities#readme",
+  "homepage": "https://github.com/Blockception/BC-Minecraft-Molang#readme",
   "files": [
     "lib/**/*",
     "!lib/test"

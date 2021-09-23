@@ -1,6 +1,6 @@
 import { VanillaPlayer } from "../Player.test";
 import { expect } from "chai";
-import { RegularExpression } from "../../src/Lib/Molang/RegExp";
+import { RegularExpression } from "../../src/Molang/RegExp";
 
 describe("Regularexpression", () => {
   const pattern = /(?:geometry)\.([a-z0-9_\.]+)/gim;
