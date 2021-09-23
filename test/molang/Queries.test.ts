@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Molang } from "../../src/main";
+import { Molang } from "../../src/Molang/include";
 import { VanillaPlayer } from "../Player.test";
 
 describe("molang", () => {
