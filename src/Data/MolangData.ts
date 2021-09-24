@@ -452,5 +452,9 @@ export namespace MolangData {
       { documentation: "A random value between 0 - 1 that gets sets at spawn of the particle", id: "particle_random_4" },
       { documentation: "The scale of the entity that is using the particle", id: "entity_scale" },
     ];
+    /** */
+    export const Contents: Data[] = [];
+    /** */
+    export const Temps: Data[] = [];
   }
 }

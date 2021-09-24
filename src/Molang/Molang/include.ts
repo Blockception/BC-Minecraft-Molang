@@ -3,6 +3,7 @@
 export * from "./Context";
 export * from "./Geometries";
 export * from "./Materials";
+export * from "./Math";
 export * from "./Queries";
 export * from "./Temps";
 export * from "./Textures";
