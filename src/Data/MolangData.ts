@@ -5,12 +5,6 @@ type Data = Types.Identifiable & Types.Documentated;
 /** */
 export namespace MolangData {
   /** */
-  export namespace Entities {
-    /** */
-    export const Variables: Data[] = [{ id: "attack_time" }];
-  }
-
-  /** */
   export namespace General {
     /** */
     export const Math: Data[] = [
@@ -402,22 +396,61 @@ export namespace MolangData {
   }
 
   /** */
+  export namespace Blocks {
+    /** */
+    export const Variables: Data[] = [];
+    /** */
+    export const Contents: Data[] = [];
+    /** */
+    export const Temps: Data[] = [];
+  }
+  /** */
+  export namespace FeaturesRules {
+    /** */
+    export const Variables: Data[] = [];
+    /** */
+    export const Contents: Data[] = [];
+    /** */
+    export const Temps: Data[] = [];
+  }
+
+  /** */
+  export namespace Entities {
+    /** */
+    export const Variables: Data[] = [{ id: "attack_time" }];
+    /** */
+    export const Contents: Data[] = [];
+    /** */
+    export const Temps: Data[] = [];
+  }
+
+  /** */
+  export namespace Items {
+    /** */
+    export const Variables: Data[] = [];
+    /** */
+    export const Contents: Data[] = [];
+    /** */
+    export const Temps: Data[] = [];
+  }
+
+  /** */
   export namespace Particle {
     /** */
     export const Variables: Data[] = [
-      { documentation: "", id: "emitter_lifetime" },
-      { documentation: "", id: "emitter_age" },
-      { documentation: "", id: "emitter_random_1" },
-      { documentation: "", id: "emitter_random_2" },
-      { documentation: "", id: "emitter_random_3" },
-      { documentation: "", id: "emitter_random_4" },
-      { documentation: "", id: "particle_lifetime" },
-      { documentation: "", id: "particle_age" },
-      { documentation: "", id: "particle_random_1" },
-      { documentation: "", id: "particle_random_2" },
-      { documentation: "", id: "particle_random_3" },
-      { documentation: "", id: "particle_random_4" },
-      { documentation: "", id: "entity_scale" },
+      { documentation: "The total lifetime of the emitter in seconds", id: "emitter_lifetime" },
+      { documentation: "The age of the emitter in seconds", id: "emitter_age" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the emitter", id: "emitter_random_1" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the emitter", id: "emitter_random_2" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the emitter", id: "emitter_random_3" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the emitter", id: "emitter_random_4" },
+      { documentation: "The total lifetime of the particle in seconds", id: "particle_lifetime" },
+      { documentation: "The age of the particle in seconds", id: "particle_age" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the particle", id: "particle_random_1" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the particle", id: "particle_random_2" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the particle", id: "particle_random_3" },
+      { documentation: "A random value between 0 - 1 that gets sets at spawn of the particle", id: "particle_random_4" },
+      { documentation: "The scale of the entity that is using the particle", id: "entity_scale" },
     ];
   }
 }
