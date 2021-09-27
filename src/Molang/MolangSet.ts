@@ -32,7 +32,7 @@ export namespace MolangSet {
    */
   export function create(): MolangSet {
     return {
-      queries: DefinedUsing.create<string>(),
+      queries: Using.create<string>(),
       variables: DefinedUsing.create<string>(),
       temps: DefinedUsing.create<string>(),
       contexts: Using.create<string>(),
@@ -70,7 +70,7 @@ export namespace MolangFullSet {
    */
   export function create(): MolangFullSet {
     return {
-      queries: DefinedUsing.create<string>(),
+      queries: Using.create<string>(),
       variables: DefinedUsing.create<string>(),
       temps: DefinedUsing.create<string>(),
       contexts: Using.create<string>(),
@@ -110,8 +110,8 @@ export namespace MolangFullSet {
     Temps.getDefined(object, out.temps.defined);
 
     Textures.getUsing(object, out.textures.using);
-    Geometries.getUsing(object, out.textures.using);
-    Materials.getUsing(object, out.textures.using);
+    Geometries.getUsing(object, out.geometries.using);
+    Materials.getUsing(object, out.materials.using);
 
     return out;
   }
