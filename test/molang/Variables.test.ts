@@ -28,6 +28,18 @@ describe("molang", () => {
       expect(receiver).to.contain.members(VanillaPlayer.Variables.defined);
     });
 
+    it("defined special",()=>{
+      const data = `"initialize": [
+        "variable.armor_stand.pose_index = 0;",
+        "variable.armor_stand.hurt_time = 0;"
+      ]`;
+
+      let receiver : string[] = [];
+      Molang.Variables.getDefined(data, receiver);
+
+      expect(receiver).to.contains.members(["armor_stand.pose_index", "armor_stand.hurt_time"])
+    })
+
     it("duplicate check", () => {
       let receiver: string[] = [];
 
