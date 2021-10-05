@@ -1,7 +1,7 @@
 import { Data } from './Data';
 
 /** */
-export namespace Particle {
+export namespace Particles {
 	/** */
 	export const Variables: Data[] = [
 		{ documentation: "The total lifetime of the emitter in seconds", id: "emitter_lifetime" },
