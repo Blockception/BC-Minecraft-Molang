@@ -19,7 +19,7 @@ export namespace Particle {
 		{ documentation: "The scale of the entity that is using the particle", id: "entity_scale" },
 	];
 	/** */
-	export const Contents: Data[] = [];
+	export const Contexts: Data[] = [];
 	/** */
 	export const Temps: Data[] = [];
 }

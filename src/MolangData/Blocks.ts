@@ -5,7 +5,7 @@ export namespace Blocks {
 	/** */
 	export const Variables: Data[] = [];
 	/** */
-	export const Contents: Data[] = [];
+	export const Contexts: Data[] = [];
 	/** */
 	export const Temps: Data[] = [];
 }
