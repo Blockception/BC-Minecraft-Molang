@@ -8,6 +8,7 @@ import { Particles } from "./Particles";
 import { RenderControllers } from "./RenderControllers";
 
 export * from "./Data";
+export * from "./General";
 export { Animations, AnimationsControllers, Blocks, Entities, FeaturesRules, Items, Particles, RenderControllers };
 
 /**Returns either an object with molang data or undefined
