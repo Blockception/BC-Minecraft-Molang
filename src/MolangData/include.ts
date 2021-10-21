@@ -13,7 +13,7 @@ export { Animations, AnimationsControllers, Blocks, Entities, FeaturesRules, Ite
 
 /**Returns either an object with molang data or undefined
  * @param id The identification of molang data to return
- * @returns */
+ * @returns A namespace carrying the data or undefined if nothing was found*/
 export function get(
   id: "animation" | "animation_controller" | "block" | "entity" | "feature" | "item" | "particle" | "render_controller"
 ): typeof Blocks | undefined {

@@ -1,11 +1,11 @@
-import { Data } from './Data';
+import { Data } from "./Data";
 
-/** */
+/**Molang data for blocks*/
 export namespace Blocks {
-	/** */
-	export const Variables: Data[] = [];
-	/** */
-	export const Contexts: Data[] = [];
-	/** */
-	export const Temps: Data[] = [];
+  /**The list of usable variables for this specific type*/
+  export const Variables: Data[] = [];
+  /**The list of specific contexts usable for this specific type*/
+  export const Contexts: Data[] = [];
+    /**The list of usable temp variables for this specific type*/
+  export const Temps: Data[] = [];
 }
