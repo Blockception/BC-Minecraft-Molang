@@ -98,7 +98,7 @@ export namespace General {
       id: "camera_distance_range_lerp",
     },
     {
-      documentation: "Returns the rotation of the camera. Requires one argument representing the rotation axis you would like (`0==x`, `1==y`)",
+      documentation: "Returns the rotation of the camera. Requires one argument representing the rotation axis you would like (`0 for x`, `1 for y`)",
       id: "camera_rotation",
     },
     { documentation: "Returns 1.0 if the entity can climb, else it returns 0.0", id: "can_climb" },
@@ -388,12 +388,12 @@ export namespace General {
     { documentation: "returns the players level if the actor is a player, otherwise returns 0", id: "player_level" },
     {
       documentation:
-        "Returns the absolute position of an actor. Takes one argument that represents the desired axis (0 == x-axis, 1 == y-axis, 2 == z-axis).",
+        "Returns the absolute position of an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
       id: "position",
     },
     {
       documentation:
-        "Returns the position delta for an actor. Takes one argument that represents the desired axis (0 == x-axis, 1 == y-axis, 2 == z-axis).",
+        "Returns the position delta for an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
       id: "position_delta",
     },
     { documentation: "Returns the previous squish value for the current entity, or 0.0 if this doesn't make sense", id: "previous_squish_value" },
@@ -401,7 +401,7 @@ export namespace General {
     { documentation: "Returns the roll counter of the entity", id: "roll_counter" },
     {
       documentation:
-        "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (`0==x`, `1==y`)",
+        "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (0 for x, 1 for y)",
       id: "rotation_to_camera",
     },
     { documentation: "returns the shaking angle of the entity if it makes sense, else it returns 0.0", id: "shake_angle" },
