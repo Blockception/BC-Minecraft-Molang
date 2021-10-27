@@ -1,8 +1,8 @@
 import { expect } from "chai";
-import { IsMolangType, MolangType } from "../../src/Molang/Functions";
+import { getEvent, IsMolangType, MolangType } from "../../src/Molang/Functions";
 
-describe("Molang", () => {
-  describe("IsMolang", () => {
+describe("Functions", () => {
+  describe("IsMolangType", () => {
     const shouldbe = [
       "variable.is_holding_right = 0.0;",
       "variable.is_blinking = 0.0;",
@@ -20,5 +20,11 @@ describe("Molang", () => {
         expect(IsMolangType(item)).to.not.equal(MolangType.unknown);
       })
     );
+  });
+
+  it("getEvent", () => {
+    const data = getEvent("@s to:anger");
+
+    expect(data).to.equal("to:anger");
   });
 });
