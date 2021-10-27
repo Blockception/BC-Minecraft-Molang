@@ -1,13 +1,13 @@
 import { expect } from "chai";
-import { Molang } from "../../src/Molang/include";
-import { VanillaPlayer } from "../Player.test";
+import { Types } from '../../../src/Molang/include';
+import { VanillaPlayer } from "../../Player.test";
 
 describe("molang", () => {
   describe("variables", () => {
     it("defined1", () => {
       let receiver: string[] = [];
 
-      Molang.Variables.getDefined("variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;", receiver);
+      Types.Variables.getDefined("variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;", receiver);
 
       expect(receiver).to.have.members(["foo1", "foo2", "foo3"]);
     });
@@ -15,7 +15,7 @@ describe("molang", () => {
     it("defined2", () => {
       let receiver: string[] = [];
 
-      Molang.Variables.getDefined(VanillaPlayer.DataOBject, receiver);
+      Types.Variables.getDefined(VanillaPlayer.DataOBject, receiver);
 
       expect(receiver).to.contain.members(VanillaPlayer.Variables.defined);
     });
@@ -23,7 +23,7 @@ describe("molang", () => {
     it("defined3", () => {
       let receiver: string[] = [];
 
-      Molang.Variables.getDefined(VanillaPlayer.Data, receiver);
+      Types.Variables.getDefined(VanillaPlayer.Data, receiver);
 
       expect(receiver).to.contain.members(VanillaPlayer.Variables.defined);
     });
@@ -35,7 +35,7 @@ describe("molang", () => {
       ]`;
 
       let receiver : string[] = [];
-      Molang.Variables.getDefined(data, receiver);
+      Types.Variables.getDefined(data, receiver);
 
       expect(receiver).to.contains.members(["armor_stand.pose_index", "armor_stand.hurt_time"])
     })
@@ -43,19 +43,19 @@ describe("molang", () => {
     it("duplicate check", () => {
       let receiver: string[] = [];
 
-      Molang.Variables.getDefined(["variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;", "variable.foo3 = 0;"], receiver);
+      Types.Variables.getDefined(["variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;", "variable.foo3 = 0;"], receiver);
 
       expect(receiver).to.have.members(["foo1", "foo2", "foo3"]);
     });
 
     it("defined not sticky?", () => {
-      expect(Molang.Variables.getDefinedPatt.sticky).to.equal(false);
+      expect(Types.Variables.getDefinedPatt.sticky).to.equal(false);
     });
 
     it("using1", () => {
       let receiver: string[] = [];
 
-      Molang.Variables.getUsing(VanillaPlayer.Data, receiver);
+      Types.Variables.getUsing(VanillaPlayer.Data, receiver);
 
       expect(receiver).to.contain.members(VanillaPlayer.Variables.using);
     });
@@ -63,7 +63,7 @@ describe("molang", () => {
     it("using2", () => {
       let receiver: string[] = [];
 
-      Molang.Variables.getUsing(VanillaPlayer.DataOBject, receiver);
+      Types.Variables.getUsing(VanillaPlayer.DataOBject, receiver);
 
       expect(receiver).to.contain.members(VanillaPlayer.Variables.using);
     });

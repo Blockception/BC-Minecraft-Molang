@@ -1,5 +1,5 @@
 /*	Auto generated	*/
 
-export * as Data from "./Data/include";
+export * as Types from "./Types/include";
 export * from "./MolangSet";
 export * from "./RegExp";

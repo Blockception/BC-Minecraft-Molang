@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import { MolangFullSet, MolangSet } from "../../src/Molang/include";
-import { DefinedUsing, Using } from "../../src/Types/Defined Using/include";
-import { VanillaPlayer } from "../Player.test";
+import { MolangFullSet, MolangSet } from "../../../src/Molang/include";
+import { DefinedUsing, Using } from "../../../src/Types/Defined Using/include";
+import { VanillaPlayer } from "../../Player.test";
 
 describe("molang", () => {
   it("MolangFullSet", () => {
