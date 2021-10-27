@@ -33,9 +33,9 @@ export namespace Syntax {
     return typeof data === "object";
   }
 
-  export function parse(molang: string): Syntax {}
+  //export function parse(molang: string): Syntax {}
 }
 
-function splitOperations(molang: string): string[] {
-  molang.search();
-}
+//function splitOperations(molang: string): string[] {
+//  molang.search();
+//}
