@@ -147,6 +147,17 @@ export namespace General {
       parameters: [{ id: "value" }],
     },
   ];
+
+  export function getMath(id: string): MolangFunction | undefined {
+    for (let I = 0; I < General.Math.length; I++) {
+      const elem = General.Math[I];
+
+      if (elem.id === id) return elem;
+    }
+
+    return undefined;
+  }
+
   /**The collection of queries*/
   export const Queries: MolangFunction[] = [
     {
@@ -1091,4 +1102,14 @@ export namespace General {
       id: "yaw_speed",
     },
   ];
+
+  export function getQuery(id: string): MolangFunction | undefined {
+    for (let I = 0; I < General.Math.length; I++) {
+      const elem = General.Math[I];
+
+      if (elem.id === id) return elem;
+    }
+
+    return undefined;
+  }
 }
