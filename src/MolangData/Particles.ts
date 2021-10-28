@@ -20,6 +20,6 @@ export namespace Particles {
   ];
   /**The list of specific contexts usable for this specific type*/
   export const Contexts: Data[] = [];
-    /**The list of usable temp variables for this specific type*/
+  /**The list of usable temp variables for this specific type*/
   export const Temps: Data[] = [];
 }
