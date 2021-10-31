@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Types } from '../../../src/Molang/include';
+import { Types } from "../../../src/Molang/include";
 import { VanillaPlayer } from "../../Player.test";
 
 describe("molang", () => {
@@ -28,17 +28,17 @@ describe("molang", () => {
       expect(receiver).to.contain.members(VanillaPlayer.Variables.defined);
     });
 
-    it("defined special",()=>{
+    it("defined special", () => {
       const data = `"initialize": [
         "variable.armor_stand.pose_index = 0;",
         "variable.armor_stand.hurt_time = 0;"
       ]`;
 
-      let receiver : string[] = [];
+      let receiver: string[] = [];
       Types.Variables.getDefined(data, receiver);
 
-      expect(receiver).to.contains.members(["armor_stand.pose_index", "armor_stand.hurt_time"])
-    })
+      expect(receiver).to.contains.members(["armor_stand.pose_index", "armor_stand.hurt_time"]);
+    });
 
     it("duplicate check", () => {
       let receiver: string[] = [];
@@ -66,6 +66,18 @@ describe("molang", () => {
       Types.Variables.getUsing(VanillaPlayer.DataOBject, receiver);
 
       expect(receiver).to.contain.members(VanillaPlayer.Variables.using);
+    });
+
+    it("using3", () => {
+      let receiver: string[] = [];
+      const data = `{
+        "default": "variable.armor_stand.pose_index == 0",
+        "none": "variable.armor_stand.pose_index == 1"
+      }`;
+
+      Types.Variables.getUsing(data, receiver);
+
+      expect(receiver).to.contain.members(["armor_stand.pose_index", "armor_stand.pose_index"]);
     });
   });
 });
