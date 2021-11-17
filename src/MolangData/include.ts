@@ -9,6 +9,7 @@ import { RenderControllers } from "./RenderControllers";
 
 export * from "./Data";
 export * from "./General";
+export * from "./MolangData";
 export { Animations, AnimationsControllers, Blocks, Entities, FeaturesRules, Items, Particles, RenderControllers };
 
 /**Returns either an object with molang data or undefined
