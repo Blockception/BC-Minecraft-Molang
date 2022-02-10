@@ -440,6 +440,10 @@ export namespace General {
       id: "get_root_locator_offset",
       documentation:
         "Gets specified axis of the specified locator offset of the root model",
+    },    
+    {
+      id: "ground_speed",
+      documentation: "Returns the ground speed of the entity in metres/second",      
     },
     {
       id: "has_any_family",
