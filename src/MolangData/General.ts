@@ -224,6 +224,18 @@ export namespace General {
       id: "armor_color_slot",
       documentation:
         "Takes the armor slot index as a parameter, and returns the color of the armor in the requested slot",
+      parameters: [
+        {
+          id: "slot",
+          documentation:
+            "The armor slot index, (0 is helmet, 1 is chestplace, 2 is leggings, 3 is boots)",
+        },
+        {
+          id: "channel",
+          documentation:
+            "The color channel to return, (0 is red, 1 is green, 2 is blue, 3 is alpha)",
+        },
+      ],
     },
     {
       id: "armor_material_slot",
@@ -283,12 +295,16 @@ export namespace General {
       id: "camera_distance_range_lerp",
       documentation:
         "Takes two distances (any order) and return a number from 0 to 1 based on the camera distance between the two ranges clamped to that range. For example, `query.camera_distance_range_lerp(10, 20)` will return 0 for any distance less than or equal to 10, 0.2 for a distance of 12, 0.5 for 15, and 1 for 20 or greater. If you pass in (20, 10), a distance of 20 will return 0.0",
+      parameters: [
+        { id: "A", documentation: "The first distance" },
+        { id: "B", documentation: "The second distance" },
+      ],
     },
     {
       id: "camera_rotation",
       documentation:
         "Returns the rotation of the camera. Requires one argument representing the rotation axis you would like (`0 for x`, `1 for y`)",
-        parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
+      parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
     },
     {
       id: "can_climb",
@@ -360,6 +376,7 @@ export namespace General {
       id: "debug_output",
       documentation:
         "debug log a value to the output debug window for builds that have one",
+      parameters: [{ id: "value", documentation: "The value to log" }],
     },
     {
       id: "delta_time",
@@ -440,10 +457,10 @@ export namespace General {
       id: "get_root_locator_offset",
       documentation:
         "Gets specified axis of the specified locator offset of the root model",
-    },    
+    },
     {
       id: "ground_speed",
-      documentation: "Returns the ground speed of the entity in metres/second",      
+      documentation: "Returns the ground speed of the entity in metres/second",
     },
     {
       id: "has_any_family",
@@ -1055,7 +1072,11 @@ export namespace General {
       documentation:
         "Takes an array of distances and returns the zero - based index of which range the actor is in based on distance from the camera.For example, 'query.lod_index(10, 20, 30)' will return 0, 1, or 2 based on whether the mob is less than 10, 20, or 30 units away from the camera, or it will return 3 if it is greater than 30.",
     },
-    { id: "log", documentation: "debug log a value to the content log" },
+    {
+      id: "log",
+      documentation: "debug log a value to the content log",
+      parameters: [{ id: "value", documentation: "The value to log" }],
+    },
     {
       id: "main_hand_item_max_duration",
       documentation:
@@ -1146,7 +1167,7 @@ export namespace General {
       id: "position",
       documentation:
         "Returns the absolute position of an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
-        parameters: [{ id: "axis", documentation: "0 for x, 1 for y, 2 for z" }],
+      parameters: [{ id: "axis", documentation: "0 for x, 1 for y, 2 for z" }],
     },
     {
       id: "previous_squish_value",
@@ -1165,7 +1186,7 @@ export namespace General {
       id: "rotation_to_camera",
       documentation:
         "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (0 for x, 1 for y)",
-        parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
+      parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
     },
     {
       id: "shake_angle",
