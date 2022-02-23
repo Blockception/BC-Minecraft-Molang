@@ -1312,6 +1312,32 @@ export namespace General {
         "Returns the wing flap speed of the entity, or 0.0 if this doesn't make sense",
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
+    //DEPRECATED
+    {
+      id: "cardinal_block_face_placed_on",
+      documentation: "DEPRECATED (please use query.block_face instead)",
+      deprecated: "query.block_face",
+    },
+    {
+      id: "get_equipped_item_name",
+      documentation: "DEPRECATED (Use query.is_item_name_any instead if possible so names can be changed later without breaking content.)",
+      deprecated: "query.is_item_name_any",
+    },
+    {
+      id: "get_name",
+      documentation: "DEPRECATED (Use query.is_name_any instead if possible so names can be changed later without breaking content.)",
+      deprecated: "query.is_name_any",
+    },
+    {
+      id: "overlay_alpha",
+      documentation: "DEPRECATED (Do not use - this function is deprecated and will be removed)",
+      deprecated: "",
+    },
+    {
+      id: "owner_identifier",
+      documentation: "DEPRECATED (Use query.is_owner_identifier_any instead if possible so names can be changed later without breaking content.) ",
+      deprecated: "query.is_owner_identifier_any",
+    },
   ];
 
   export function getQuery(id: string): MolangFunction | undefined {

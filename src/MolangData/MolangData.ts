@@ -8,6 +8,9 @@ export interface MolangFunction extends Types.Identifiable, Types.Documentated {
    *
    */
   parameters?: MolangParameter[];
+
+  /**If present, then the molang is deprecated and needs to be replaced*/
+  deprecated? : string;
 }
 
 /**
