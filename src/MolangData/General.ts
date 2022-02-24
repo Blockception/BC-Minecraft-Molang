@@ -1341,8 +1341,8 @@ export namespace General {
   ];
 
   export function getQuery(id: string): MolangFunction | undefined {
-    for (let I = 0; I < General.Math.length; I++) {
-      const elem = General.Math[I];
+    for (let I = 0; I < General.Queries.length; I++) {
+      const elem = General.Queries[I];
       if (elem.id === id) return elem;
     }
 
