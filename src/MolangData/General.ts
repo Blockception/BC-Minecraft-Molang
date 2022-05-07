@@ -79,7 +79,7 @@ export namespace General {
     {
       id: "lerprotate",
       documentation: "Lerp the shortest direction around a circle from start degrees to end degrees via 0_to_1",
-      parameters: [{ id: "start" }, { id: "end" }, { id: "0_to_1" }],
+      parameters: [{ id: "start" }, { id:  "end" }, { id: "0_to_1" }],
     },
     {
       id: "ln",
@@ -116,17 +116,17 @@ export namespace General {
       parameters: [{ id: "base" }, { id: "exponent" }],
     },
     {
-      id: "Random",
+      id: "random",
       documentation: "Random value between low and high inclusive",
       parameters: [{ id: "low" }, { id: "high" }],
     },
     {
-      id: "Random_integer",
+      id: "random_integer",
       documentation: "Random integer value between low and high inclusive",
       parameters: [{ id: "low" }, { id: "high" }],
     },
     {
-      id: "Round",
+      id: "round",
       documentation: "Round value to nearest integral number",
       parameters: [{ id: "value" }],
     },
@@ -1047,15 +1047,15 @@ export namespace General {
       documentation: "Returns the previous squish value for the current entity, or 0.0 if this doesn't make sense",
     },
     {
-      id: "Remaining_durability",
+      id: "remaining_durability",
       documentation: "Returns the how much durability an item has remaining",
     },
     {
-      id: "Roll_counter",
+      id: "roll_counter",
       documentation: "Returns the roll counter of the entity",
     },
     {
-      id: "Rotation_to_camera",
+      id: "rotation_to_camera",
       documentation: "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (0 for x, 1 for y)",
       parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
     },
