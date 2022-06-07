@@ -177,7 +177,7 @@ export namespace General {
     },
     {
       id: "anger_level",
-      documentation: "Returns the anger level of the actor [0,n). On errors or if the actor has no anger level, returns 0. Available on the Server only.",
+      documentation: "Returns the anger level of the actor [0,n]. On errors or if the actor has no anger level, returns 0. Available on the Server only.",
     },
     {
       id: "all",
@@ -483,6 +483,14 @@ export namespace General {
     {
       id: "health",
       documentation: "Returns the health of the entity, or 0.0 if it doesn't make sense to call on this entity.",
+    },
+    {
+      id: "heartbeat_interval",
+      documentation: "Returns the heartbeat interval of the actor in seconds. Returns 0 when the actor has no heartbeat.",
+    },
+    {
+      id: "heartbeat_phase",
+      documentation: "Returns the heartbeat phase of the actor. 0.0 if at start of current heartbeat, 1.0 if at the end. Returns 0 on errors or when the actor has no heartbeat. Available on the Client (Resource Packs) only.",
     },
     { id: "heightmap", documentation: "Queries Height Map" },
     {
@@ -861,6 +869,10 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is sniffing, else it returns 0.0",
     },
     {
+      id: "is_sonic_boom",
+      documentation: "Returns 1.0 if the entity is using sonic boom, else it returns 0.0",
+    },
+    {
       id: "is_sprinting",
       documentation: "Returns 1.0 if the entity is sprinting, else it returns 0.0",
     },
@@ -1104,6 +1116,18 @@ export namespace General {
       id: "structural_integrity",
       documentation: "Returns the structural integrity for the actor, otherwise returns 0",
     },
+    {
+      id: "surface_particle_color",
+      documentation: "Returns the particle color for the block located in the surface below the actor (scanned up to 10 blocks down). The struct contains '.r' '.g' '.b' and '.a' members, each 0.0 to 1.0. If no actor is specified or if no surface is found, each member value is set to 0.0. Available on the Client (Resource Packs) only.",
+    },
+    {
+      id: "surface_particle_texture_coordinate",
+      documentation: "Returns the texture coordinate for generating particles for the block located in the surface below the actor (scanned up to 10 blocks down) in a struct with 'u' and 'v' keys. If no actor is specified or if no surface is found, u and v will be 0.0. Available on the Client (Resource Packs) only.",
+    },
+    {
+      id: "surface_particle_texture_size",
+      documentation: "Returns the texture size for generating particles for the block located in the surface below the actor (scanned up to 10 blocks down). If no actor is specified or if no surface is found, each member value will be 0.0. Available on the Client (Resource Packs) only.",
+    },
     { id: "swell_amount", documentation: "Returns how swollen the entity is" },
     {
       id: "swelling_dir",
@@ -1132,6 +1156,10 @@ export namespace General {
     {
       id: "time_of_day",
       documentation: "Returns the time of day (midnight=0.0, sunrise=0.25, noon=0.5, sunset=0.75) of the dimension the entity is in.",
+    },
+    {
+      id: "time_since_last_vibration_detection",
+      documentation: "Returns the time in seconds since the last vibration detected by the actor. On errors or if no vibration has been detected yet, returns -1. Available on the Client (Resource Packs) only.",
     },
     {
       id: "time_stamp",
