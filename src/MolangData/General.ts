@@ -176,6 +176,10 @@ export namespace General {
       documentation: "Returns if the item or block has all of the tags specified",
     },
     {
+      id: "anger_level",
+      documentation: "Returns the anger level of the actor [0,n). On errors or if the actor has no anger level, returns 0. Available on the Server only.",
+    },
+    {
       id: "all",
       documentation:
         "Requires at least 3 arguments. Evaluates the first argument, then returns 1.0 if all of the following arguments evaluate to the same value as the first. Otherwise it returns 0.0.",
