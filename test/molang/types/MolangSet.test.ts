@@ -4,7 +4,7 @@ import { DefinedUsing, Using } from "../../../src/Types/Defined Using/include";
 import { VanillaPlayer } from "../../Player.test";
 
 describe("molang", () => {
-  it("MolangFullSet", () => {
+  describe("MolangFullSet", () => {
     const data1 = MolangFullSet.harvest(VanillaPlayer.Data);
     const data2 = MolangFullSet.harvest(VanillaPlayer.DataOBject);
 
@@ -15,6 +15,14 @@ describe("molang", () => {
     testUsing(data1.contexts, data2.contexts, "contexts");
     testDefinedUsing(data1.variables, data2.variables, "variables");
     testDefinedUsing(data1.temps, data2.temps, "temps");
+  });
+  
+  describe("MolangSet", () => {
+    const data1 = MolangSet.harvest(VanillaPlayer.Data);
+    const data2 = MolangSet.harvest(VanillaPlayer.DataOBject);
+
+    testUsing(data1.queries, data2.queries, "queries");
+    testDefinedUsing(data1.variables, data2.variables, "variables");
   });
 
   it("MolangFullSet2", () => {
@@ -31,20 +39,20 @@ describe("molang", () => {
     expect(data.variables.defined).to.contain.members(VanillaPlayer.Variables.defined, "defined");
   });
 
-  it("MolangSet", () => {
-    const data1 = MolangSet.harvest(VanillaPlayer.Data);
-    const data2 = MolangSet.harvest(VanillaPlayer.DataOBject);
-
-    testUsing(data1.queries, data2.queries, "queries");
-    testDefinedUsing(data1.variables, data2.variables, "variables");
-  });
 });
 
 function testDefinedUsing(data1: DefinedUsing<string>, data2: DefinedUsing<string>, id: string) {
-  expect(data1.defined, "from string").to.contain.members(data2.defined, "defined " + id);
-  expect(data1.using, "from string").to.contain.members(data2.using, "using " + id);
+  it("has defined members", ()=>{
+    expect(data1.defined, "from string").to.contain.members(data2.defined, "defined " + id);
+  })
+
+  it("has using members", ()=>{
+    expect(data1.using, "from string").to.contain.members(data2.using, "using " + id);
+  })
 }
 
 function testUsing(data1: Using<string>, data2: Using<string>, id: string) {
-  expect(data1.using, "from string").to.contain.members(data2.using, id);
+  it("has defined using",()=>{
+    expect(data1.using, "from string").to.contain.members(data2.using, id);
+  })
 }
