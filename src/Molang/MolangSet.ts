@@ -1,6 +1,6 @@
 import { DefinedUsing } from "../Types/Defined Using/DefinedUsing";
-import { Using } from "../Types/Defined Using/include";
-import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./Types/include";
+import { Using } from "../Types/Defined Using";
+import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./Types";
 
 /** */
 export interface MolangSet {

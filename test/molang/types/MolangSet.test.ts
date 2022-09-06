@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { MolangFullSet, MolangSet } from "../../../src/Molang/include";
-import { DefinedUsing, Using } from "../../../src/Types/Defined Using/include";
+import { MolangFullSet, MolangSet } from "../../../src/Molang";
+import { DefinedUsing, Using } from "../../../src/Types/Defined Using";
 import { VanillaPlayer } from "../../Player.test";
 
 describe("molang", () => {
