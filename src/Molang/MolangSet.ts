@@ -2,33 +2,36 @@ import { DefinedUsing } from "../Types/Defined Using/DefinedUsing";
 import { Using } from "../Types/Defined Using";
 import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./Types";
 
-/** */
+/** Can either be a MolangSet or a MolangSet[] */
+export type MolangSetOptional = MolangSet | MolangFullSet;
+
+/** The interface for the molang set */
 export interface MolangSet {
-  /** */
+  /** The set of contexts variables used*/
   contexts: Using<string>;
-  /** */
+  /** The set of queries used */
   queries: Using<string>;
-  /** */
+  /** The set of variables defined and used*/
   variables: DefinedUsing<string>;
-  /** */
+  /** The set of temps variables defined and used*/
   temps: DefinedUsing<string>;
 }
 
-/** */
+/** The interface for the molang with the full set of data */
 export interface MolangFullSet extends MolangSet {
-  /** */
-  materials: DefinedUsing<string>;
-  /** */
-  textures: DefinedUsing<string>;
-  /** */
+  /** The set of geometries used */
   geometries: DefinedUsing<string>;
+  /** The set of materials used */
+  materials: DefinedUsing<string>;
+  /** The set of textures used */
+  textures: DefinedUsing<string>;
 }
 
-/** */
+/** The namespace for the molang set */
 export namespace MolangSet {
   /**
-   *
-   * @returns
+   * Creates a new MolangSet
+   * @returns A new MolangSet
    */
   export function create(): MolangSet {
     return {
@@ -40,9 +43,9 @@ export namespace MolangSet {
   }
 
   /**
-   *
-   * @param object
-   * @returns
+   * Harvests molang data from the given object
+   * @param object The object to harvest from
+   * @returns The molang data
    */
   export function harvest(object: any): MolangSet {
     const out = create();
@@ -60,13 +63,11 @@ export namespace MolangSet {
   }
 }
 
-/**
- *
- */
+/** The namespace for the full molang set */
 export namespace MolangFullSet {
   /**
-   *
-   * @returns
+   * Creates a new MolangFullSet
+   * @returns A new MolangFullSet
    */
   export function create(): MolangFullSet {
     return {
@@ -80,11 +81,12 @@ export namespace MolangFullSet {
     };
   }
 
-  /**Add the necessary properties to the given data set to the full MolangFullSet
-   * @param data
+  /**
+   * Add the necessary properties to the given data set to the full MolangFullSet
+   * @param data The data to add to
    */
   export function upgrade(data: MolangSet): MolangFullSet {
-    const out = <MolangFullSet>data;
+    const out = data as MolangFullSet;
 
     if (!DefinedUsing.is<string>(out.geometries)) out.geometries = DefinedUsing.empty();
     if (!DefinedUsing.is<string>(out.materials)) out.materials = DefinedUsing.empty();
@@ -94,8 +96,8 @@ export namespace MolangFullSet {
   }
 
   /**
-   *
-   * @param object
+   * Harvests molang data from the given object
+   * @param object The object to harvest from
    */
   export function harvest(object: object | string): MolangFullSet {
     const out = create();
@@ -117,13 +119,17 @@ export namespace MolangFullSet {
   }
 
   /**
-   *
+   * Merges the given MolangFullSet into the given MolangFullSet
    * @param value
    */
-  export function isEither(value: MolangSet | MolangFullSet): value is MolangFullSet {
-    const temp = <MolangFullSet>value;
+  export function isEither(value: MolangSetOptional): value is MolangFullSet {
+    const temp = value as MolangFullSet;
 
-    if (typeof temp.geometries === "object" && typeof temp.materials === "object" && typeof temp.textures === "object") {
+    if (
+      typeof temp.geometries === "object" &&
+      typeof temp.materials === "object" &&
+      typeof temp.textures === "object"
+    ) {
       return true;
     }
 

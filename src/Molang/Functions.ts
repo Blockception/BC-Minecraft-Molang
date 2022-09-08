@@ -1,3 +1,4 @@
+
 export enum MolangType {
   command,
   event,
@@ -7,7 +8,8 @@ export enum MolangType {
 
 export const eventRegex = /^@s ([\w\:\_\-]+)/im;
 export const commandRegex = /^\/[a-z]+/im;
-export const molangRegexp = /\b((query|math|variable|texture|temp|geometry|material|array|context|c|q|v|t)\.[A-Za-z_0-9]+|->|this)\b/im;
+export const molangRegexp =
+  /\b((query|math|variable|texture|temp|geometry|material|array|context|c|q|v|t)\.[A-Za-z_0-9]+|->|this)\b/im;
 
 export function IsMolangType(data: string): MolangType {
   if (commandRegex.test(data)) return MolangType.command;
@@ -24,8 +26,9 @@ export function getEvent(data: string): string {
 }
 
 /**
- *
- * @param molang
+ * Checks if the given data is a valid molang expression
+ * @param molang The molang expression to check
+ * @returns True if the given molang expression is valid
  */
 export function isValidMolang(molang: string): boolean {
   let instr = false;
@@ -53,6 +56,13 @@ export function isValidMolang(molang: string): boolean {
   return level === 0 && instr === false;
 }
 
+/**
+ * Finds the specific molang expression in the given text
+ * @param molang The text to parse
+ * @param startindex The index to start searching from
+ * @param find The molang expression to find
+ * @returns The index of the molang expression
+ */
 export function find(molang: string, startindex: number, find: string): number {
   let instr = false;
   let level = 0;
