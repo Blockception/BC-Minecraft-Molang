@@ -1,4 +1,4 @@
-import { MolangFunction } from "./MolangData";
+import { MolangFunction } from "./MolangFunction";
 
 /**General molang data*/
 export namespace General {
@@ -51,7 +51,8 @@ export namespace General {
       parameters: [{ id: "num" }, { id: "low" }, { id: "high" }],
     },
     {
-      documentation: "Returns the sum of 'num' random integer numbers, each with a value from low to high`. Note: the generated random numbers are integers like normal dice.",
+      documentation:
+        "Returns the sum of 'num' random integer numbers, each with a value from low to high`. Note: the generated random numbers are integers like normal dice.",
       id: "die_roll_integer",
       parameters: [{ id: "num" }, { id: "low" }, { id: "high" }],
     },
@@ -79,7 +80,7 @@ export namespace General {
     {
       id: "lerprotate",
       documentation: "Lerp the shortest direction around a circle from start degrees to end degrees via 0_to_1",
-      parameters: [{ id: "start" }, { id:  "end" }, { id: "0_to_1" }],
+      parameters: [{ id: "start" }, { id: "end" }, { id: "0_to_1" }],
     },
     {
       id: "ln",
@@ -160,7 +161,8 @@ export namespace General {
   export const Queries: MolangFunction[] = [
     {
       id: "above_top_solid",
-      documentation: "Returns the height of the block immediately above the highest solid block at the input (x,z) position",
+      documentation:
+        "Returns the height of the block immediately above the highest solid block at the input (x,z) position",
     },
     {
       id: "actor_count",
@@ -177,7 +179,8 @@ export namespace General {
     },
     {
       id: "anger_level",
-      documentation: "Returns the anger level of the actor [0,n]. On errors or if the actor has no anger level, returns 0. Available on the Server only.",
+      documentation:
+        "Returns the anger level of the actor [0,n]. On errors or if the actor has no anger level, returns 0. Available on the Server only.",
     },
     {
       id: "all",
@@ -191,7 +194,8 @@ export namespace General {
     },
     {
       id: "anim_time",
-      documentation: "Returns the time in seconds since the current animation started, else 0.0 if not called within an animation",
+      documentation:
+        "Returns the time in seconds since the current animation started, else 0.0 if not called within an animation",
     },
     {
       id: "any_animation_finished",
@@ -218,7 +222,8 @@ export namespace General {
     },
     {
       id: "armor_color_slot",
-      documentation: "Takes the armor slot index as a parameter, and returns the color of the armor in the requested slot",
+      documentation:
+        "Takes the armor slot index as a parameter, and returns the color of the armor in the requested slot",
       parameters: [
         {
           id: "slot",
@@ -232,7 +237,8 @@ export namespace General {
     },
     {
       id: "armor_material_slot",
-      documentation: "Takes the armor slot index as a parameter, and returns the armor material type in the requested armor slot",
+      documentation:
+        "Takes the armor slot index as a parameter, and returns the armor material type in the requested armor slot",
     },
     {
       id: "armor_texture_slot",
@@ -266,15 +272,18 @@ export namespace General {
     },
     {
       id: "bone_aabb",
-      documentation: "Returns the axis aligned bounding box of a bone as a struct with members '.min', '.max', along with '.x', '.y', and '.z' values for each.",
+      documentation:
+        "Returns the axis aligned bounding box of a bone as a struct with members '.min', '.max', along with '.x', '.y', and '.z' values for each.",
     },
     {
       id: "bone_origin",
-      documentation: "Returns the initial (from the .geo) pivot of a bone as a struct with members '.x', '.y', and '.z'.",
+      documentation:
+        "Returns the initial (from the .geo) pivot of a bone as a struct with members '.x', '.y', and '.z'.",
     },
     {
       id: "bone_rotation",
-      documentation: "Returns the initial (from the .geo) rotation of a bone as a struct with members '.x', '.y', and '.z' in degrees.",
+      documentation:
+        "Returns the initial (from the .geo) rotation of a bone as a struct with members '.x', '.y', and '.z' in degrees.",
     },
     {
       id: "camera_distance_range_lerp",
@@ -287,7 +296,8 @@ export namespace General {
     },
     {
       id: "camera_rotation",
-      documentation: "Returns the rotation of the camera. Requires one argument representing the rotation axis you would like (`0 for x`, `1 for y`)",
+      documentation:
+        "Returns the rotation of the camera. Requires one argument representing the rotation axis you would like (`0 for x`, `1 for y`)",
       parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
     },
     {
@@ -316,19 +326,23 @@ export namespace General {
     },
     {
       id: "cape_flap_amount",
-      documentation: "Returns value between 0.0 and 1.0 with 0.0 meaning cape is fully down and 1.0 is cape is fully up",
+      documentation:
+        "Returns value between 0.0 and 1.0 with 0.0 meaning cape is fully down and 1.0 is cape is fully up",
     },
     {
       id: "cardinal_facing_2d",
-      documentation: "Returns the current facing of the player ignoring up/down part of the direction (North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
+      documentation:
+        "Returns the current facing of the player ignoring up/down part of the direction (North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
     },
     {
       id: "cardinal_facing",
-      documentation: "Returns the current facing of the player (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
+      documentation:
+        "Returns the current facing of the player (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
     },
     {
       id: "cardinal_player_facing",
-      documentation: "Returns the current facing of the player (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
+      documentation:
+        "Returns the current facing of the player (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
     },
     {
       id: "combine_entities",
@@ -337,7 +351,8 @@ export namespace General {
     },
     {
       id: "count",
-      documentation: "Counts the number of things passed to it (arrays are counted as the number of elements they contain; non-arrays count as 1).",
+      documentation:
+        "Counts the number of things passed to it (arrays are counted as the number of elements they contain; non-arrays count as 1).",
     },
     {
       id: "current_squish_value",
@@ -398,7 +413,8 @@ export namespace General {
     },
     {
       id: "facing_target_to_range_attack",
-      documentation: "Returns 1.0 if the entity is attacking from range (i.e. minecraft:behavior.ranged_attack), else it returns 0.0",
+      documentation:
+        "Returns 1.0 if the entity is attacking from range (i.e. minecraft:behavior.ranged_attack), else it returns 0.0",
     },
     {
       id: "frame_alpha",
@@ -434,7 +450,8 @@ export namespace General {
     },
     {
       id: "has_armor_slot",
-      documentation: "Takes the armor slot index as a parameter, and returns 1.0 if the entity has armor in the requested slot, else it returns 0.0",
+      documentation:
+        "Takes the armor slot index as a parameter, and returns 1.0 if the entity has armor in the requested slot, else it returns 0.0",
     },
     {
       id: "has_biome_tag",
@@ -474,11 +491,13 @@ export namespace General {
     },
     {
       id: "head_x_rotation",
-      documentation: "Takes one argument as a parameter. Returns the nth head x rotation of the entity if it makes sense, else it returns 0.0",
+      documentation:
+        "Takes one argument as a parameter. Returns the nth head x rotation of the entity if it makes sense, else it returns 0.0",
     },
     {
       id: "head_y_rotation",
-      documentation: "Takes one argument as a parameter. Returns the nth head y rotation of the entity if it makes sense, else it returns 0.0",
+      documentation:
+        "Takes one argument as a parameter. Returns the nth head y rotation of the entity if it makes sense, else it returns 0.0",
     },
     {
       id: "health",
@@ -486,11 +505,13 @@ export namespace General {
     },
     {
       id: "heartbeat_interval",
-      documentation: "Returns the heartbeat interval of the actor in seconds. Returns 0 when the actor has no heartbeat.",
+      documentation:
+        "Returns the heartbeat interval of the actor in seconds. Returns 0 when the actor has no heartbeat.",
     },
     {
       id: "heartbeat_phase",
-      documentation: "Returns the heartbeat phase of the actor. 0.0 if at start of current heartbeat, 1.0 if at the end. Returns 0 on errors or when the actor has no heartbeat. Available on the Client (Resource Packs) only.",
+      documentation:
+        "Returns the heartbeat phase of the actor. 0.0 if at start of current heartbeat, 1.0 if at the end. Returns 0 on errors or when the actor has no heartbeat. Available on the Client (Resource Packs) only.",
     },
     { id: "heightmap", documentation: "Queries Height Map" },
     {
@@ -519,7 +540,8 @@ export namespace General {
     },
     {
       id: "invulnerable_ticks",
-      documentation: "Returns the number of ticks of invulnerability the entity has left if it makes sense, else it returns 0.0",
+      documentation:
+        "Returns the number of ticks of invulnerability the entity has left if it makes sense, else it returns 0.0",
     },
     {
       id: "is_admiring",
@@ -663,7 +685,8 @@ export namespace General {
     },
     {
       id: "is_in_contact_with_water",
-      documentation: "Returns 1.0 if the entity is in contact with any water (water, rain, splash water bottle), else it returns 0.0",
+      documentation:
+        "Returns 1.0 if the entity is in contact with any water (water, rain, splash water bottle), else it returns 0.0",
     },
     {
       id: "is_in_love",
@@ -761,7 +784,8 @@ export namespace General {
     },
     {
       id: "is_on_screen",
-      documentation: "Returns 1.0 if this is called on an entity at a time when it is known if it is on screen, else it returns 0.0",
+      documentation:
+        "Returns 1.0 if this is called on an entity at a time when it is known if it is on screen, else it returns 0.0",
     },
     {
       id: "is_onfire",
@@ -914,7 +938,8 @@ export namespace General {
     },
     {
       id: "item_in_use_duration",
-      documentation: "Returns the amount of time an item has been in use in seconds up to the maximum duration, else 0.0 if it doesn't make sense",
+      documentation:
+        "Returns the amount of time an item has been in use in seconds up to the maximum duration, else 0.0 if it doesn't make sense",
     },
     {
       id: "item_is_charged",
@@ -952,7 +977,8 @@ export namespace General {
     },
     {
       id: "last_hit_by_player",
-      documentation: "Returns 1.0 if the entity was last hit by the player, else it returns 0.0. If called by the client always returns 0.0",
+      documentation:
+        "Returns 1.0 if the entity was last hit by the player, else it returns 0.0. If called by the client always returns 0.0",
     },
     {
       id: "lie_amount",
@@ -964,7 +990,8 @@ export namespace General {
     },
     {
       id: "life_time",
-      documentation: "Returns the time in seconds since the current animation started, else 0.0 if not called within an animation",
+      documentation:
+        "Returns the time in seconds since the current animation started, else 0.0 if not called within an animation",
     },
     {
       id: "lod_index",
@@ -978,7 +1005,8 @@ export namespace General {
     },
     {
       id: "main_hand_item_max_duration",
-      documentation: "Returns the use time maximum duration for the main hand item if it makes sense, else it returns 0.0",
+      documentation:
+        "Returns the use time maximum duration for the main hand item if it makes sense, else it returns 0.0",
     },
     {
       id: "main_hand_item_use_duration",
@@ -991,7 +1019,8 @@ export namespace General {
     },
     {
       id: "max_health",
-      documentation: "Returns the maximum health of the entity, or 0.0 if it doesn't make sense to call on this entity.",
+      documentation:
+        "Returns the maximum health of the entity, or 0.0 if it doesn't make sense to call on this entity.",
     },
     {
       id: "max_trade_tier",
@@ -1050,12 +1079,14 @@ export namespace General {
     },
     {
       id: "position_delta",
-      documentation: "Returns the position delta for an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
+      documentation:
+        "Returns the position delta for an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
       parameters: [{ id: "axis", documentation: "0 for x, 1 for y, 2 for z" }],
     },
     {
       id: "position",
-      documentation: "Returns the absolute position of an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
+      documentation:
+        "Returns the absolute position of an actor. Takes one argument that represents the desired axis (0 for x-axis, 1 for y-axis, 2 for z-axis).",
       parameters: [{ id: "axis", documentation: "0 for x, 1 for y, 2 for z" }],
     },
     {
@@ -1072,7 +1103,8 @@ export namespace General {
     },
     {
       id: "rotation_to_camera",
-      documentation: "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (0 for x, 1 for y)",
+      documentation:
+        "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (0 for x, 1 for y)",
       parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
     },
     {
@@ -1118,15 +1150,18 @@ export namespace General {
     },
     {
       id: "surface_particle_color",
-      documentation: "Returns the particle color for the block located in the surface below the actor (scanned up to 10 blocks down). The struct contains '.r' '.g' '.b' and '.a' members, each 0.0 to 1.0. If no actor is specified or if no surface is found, each member value is set to 0.0. Available on the Client (Resource Packs) only.",
+      documentation:
+        "Returns the particle color for the block located in the surface below the actor (scanned up to 10 blocks down). The struct contains '.r' '.g' '.b' and '.a' members, each 0.0 to 1.0. If no actor is specified or if no surface is found, each member value is set to 0.0. Available on the Client (Resource Packs) only.",
     },
     {
       id: "surface_particle_texture_coordinate",
-      documentation: "Returns the texture coordinate for generating particles for the block located in the surface below the actor (scanned up to 10 blocks down) in a struct with 'u' and 'v' keys. If no actor is specified or if no surface is found, u and v will be 0.0. Available on the Client (Resource Packs) only.",
+      documentation:
+        "Returns the texture coordinate for generating particles for the block located in the surface below the actor (scanned up to 10 blocks down) in a struct with 'u' and 'v' keys. If no actor is specified or if no surface is found, u and v will be 0.0. Available on the Client (Resource Packs) only.",
     },
     {
       id: "surface_particle_texture_size",
-      documentation: "Returns the texture size for generating particles for the block located in the surface below the actor (scanned up to 10 blocks down). If no actor is specified or if no surface is found, each member value will be 0.0. Available on the Client (Resource Packs) only.",
+      documentation:
+        "Returns the texture size for generating particles for the block located in the surface below the actor (scanned up to 10 blocks down). If no actor is specified or if no surface is found, each member value will be 0.0. Available on the Client (Resource Packs) only.",
     },
     { id: "swell_amount", documentation: "Returns how swollen the entity is" },
     {
@@ -1143,11 +1178,13 @@ export namespace General {
     },
     {
       id: "target_x_rotation",
-      documentation: "Returns the x rotation required to aim at the entity's current target if it has one, else it returns 0.0",
+      documentation:
+        "Returns the x rotation required to aim at the entity's current target if it has one, else it returns 0.0",
     },
     {
       id: "target_y_rotation",
-      documentation: "Returns the y rotation required to aim at the entity's current target if it has one, else it returns 0.0",
+      documentation:
+        "Returns the y rotation required to aim at the entity's current target if it has one, else it returns 0.0",
     },
     {
       id: "texture_frame_index",
@@ -1155,11 +1192,13 @@ export namespace General {
     },
     {
       id: "time_of_day",
-      documentation: "Returns the time of day (midnight=0.0, sunrise=0.25, noon=0.5, sunset=0.75) of the dimension the entity is in.",
+      documentation:
+        "Returns the time of day (midnight=0.0, sunrise=0.25, noon=0.5, sunset=0.75) of the dimension the entity is in.",
     },
     {
       id: "time_since_last_vibration_detection",
-      documentation: "Returns the time in seconds since the last vibration detected by the actor. On errors or if no vibration has been detected yet, returns -1. Available on the Client (Resource Packs) only.",
+      documentation:
+        "Returns the time in seconds since the last vibration detected by the actor. On errors or if no vibration has been detected yet, returns -1. Available on the Client (Resource Packs) only.",
     },
     {
       id: "time_stamp",
@@ -1207,12 +1246,14 @@ export namespace General {
     },
     {
       id: "get_equipped_item_name",
-      documentation: "DEPRECATED (Use query.is_item_name_any instead if possible so names can be changed later without breaking content.)",
+      documentation:
+        "DEPRECATED (Use query.is_item_name_any instead if possible so names can be changed later without breaking content.)",
       deprecated: "query.is_item_name_any",
     },
     {
       id: "get_name",
-      documentation: "DEPRECATED (Use query.is_name_any instead if possible so names can be changed later without breaking content.)",
+      documentation:
+        "DEPRECATED (Use query.is_name_any instead if possible so names can be changed later without breaking content.)",
       deprecated: "query.is_name_any",
     },
     {
@@ -1222,7 +1263,8 @@ export namespace General {
     },
     {
       id: "owner_identifier",
-      documentation: "DEPRECATED (Use query.is_owner_identifier_any instead if possible so names can be changed later without breaking content.) ",
+      documentation:
+        "DEPRECATED (Use query.is_owner_identifier_any instead if possible so names can be changed later without breaking content.) ",
       deprecated: "query.is_owner_identifier_any",
     },
   ];
@@ -1236,4 +1278,3 @@ export namespace General {
     return undefined;
   }
 }
-
