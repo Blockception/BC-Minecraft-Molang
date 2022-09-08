@@ -6,7 +6,7 @@
       "script": "build",
       "isBackground": false,
       "group": "build",
-      "label": "npm build 'bc-minecraft-molang'",
+      "label": "npm compile 'bc-minecraft-molang'",
       "presentation": { "reveal": "always", "panel": "dedicated" },
       "problemMatcher": ["$tsc"]
     },

@@ -1,62 +1,44 @@
-import { Types } from "bc-minecraft-bedrock-types";
+import { Data } from "./Data";
 
-/**
- *
- */
-export interface MolangFunction extends Types.Identifiable, Types.Documentated {
-  /**
-   *
-   */
-  parameters?: MolangParameter[];
+import { Animations as MAnimations } from "./Animations";
+import { AnimationsControllers as MAnimationsControllers } from "./AnimationsControllers";
+import { Blocks as MBlocks } from "./Blocks";
+import { Entities as MEntities } from "./Entities";
+import { FeaturesRules as MFeaturesRules } from "./FeaturesRules";
+import { General as MGeneral } from "./General";
+import { Items as MItems } from "./Items";
+import { Particles as MParticles } from "./Particles";
+import { RenderControllers as MRenderControllers } from "./RenderControllers";
 
-  /**If present, then the molang is deprecated and needs to be replaced*/
-  deprecated? : string;
+export interface MolangDataSet {
+  Variables: Data[];
+  Contexts: Data[];
+  Temps: Data[];
 }
 
-/**
- *
- */
-export namespace MolangFunction {
-  /**
-   *
-   * @param value
-   * @returns
-   */
-  export function is(value: any): value is MolangFunction {
-    if (typeof value === "object") {
-      if (typeof value.id === "string") return true;
-    }
+export namespace MolangData {
+  export const Animations = MAnimations;
+  export const AnimationsControllers = MAnimationsControllers;
+  export const Blocks = MBlocks;
+  export const Entities = MEntities;
+  export const FeaturesRules = MFeaturesRules;
+  export const General = MGeneral;
+  export const Items = MItems;
+  export const Particles = MParticles;
+  export const RenderControllers = MRenderControllers;
 
-    return false;
+  export function get(type: MolangDataSetKey): MolangDataSet {
+    return MolangData[type] as MolangDataSet;
   }
 }
 
-/**
- *
- */
-export interface MolangParameter extends Types.Identifiable, Types.Documentated {
-  /** */
-  range?: { min: number; max: number };
-  /**
-   *
-   */
-  type?: "boolean" | "float" | "string";
-}
-
-/**
- *
- */
-export namespace MolangParameter {
-  /**
-   *
-   * @param value
-   * @returns
-   */
-  export function is(value: any): value is MolangParameter {
-    if (typeof value === "object") {
-      if (typeof value.id === "string") return true;
-    }
-
-    return false;
-  }
-}
+export type MolangDataSetKey =
+  | "Animations"
+  | "AnimationsControllers"
+  | "Blocks"
+  | "Entities"
+  | "FeaturesRules"
+  | "General"
+  | "Items"
+  | "Particles"
+  | "RenderControllers";
