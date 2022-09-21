@@ -16,7 +16,7 @@ describe("Functions", () => {
     ];
 
     shouldbe.forEach((item) =>
-      it(item, () => {
+      it(`Should return type: ${item}`, () => {
         expect(IsMolangType(item)).to.not.equal(MolangType.unknown);
       })
     );

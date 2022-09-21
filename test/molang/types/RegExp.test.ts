@@ -2,34 +2,36 @@ import { VanillaPlayer } from "../../Player.test";
 import { expect } from "chai";
 import { RegularExpression } from "../../../src/Molang/RegExp";
 
-describe("Regularexpression", () => {
+describe("Regular expression", () => {
   const pattern = /(?:geometry)\.([a-z0-9_\.]+)/gim;
 
-  it("harvestString", () => {
-    let out: string[] = [];
-    RegularExpression.harvestString("geometry.default", pattern, out);
+  describe("Harvest", () => {
+    it("String", () => {
+      let out: string[] = [];
+      RegularExpression.harvestString("geometry.default", pattern, out);
 
-    expect(out).to.have.members(["default"]);
-  });
+      expect(out).to.have.members(["default"]);
+    });
 
-  it("harvestArray", () => {
-    let out: string[] = [];
-    RegularExpression.harvestArray(["geometry.default", "geometry.example"], pattern, out);
+    it("Array", () => {
+      let out: string[] = [];
+      RegularExpression.harvestArray(["geometry.default", "geometry.example"], pattern, out);
 
-    expect(out).to.have.members(["default", "example"]);
-  });
+      expect(out).to.have.members(["default", "example"]);
+    });
 
-  it("harvestObject", () => {
-    let out: string[] = [];
-    RegularExpression.harvestObject({ id: "geometry.default", example: { test: "geometry.example" } }, pattern, out);
+    it("Object", () => {
+      let out: string[] = [];
+      RegularExpression.harvestObject({ id: "geometry.default", example: { test: "geometry.example" } }, pattern, out);
 
-    expect(out).to.have.members(["default", "example"]);
-  });
+      expect(out).to.have.members(["default", "example"]);
+    });
 
-  it("harvestObject Player", () => {
-    let out: string[] = [];
-    RegularExpression.harvestObject(VanillaPlayer.DataOBject, pattern, out);
+    it("Object Player", () => {
+      let out: string[] = [];
+      RegularExpression.harvestObject(VanillaPlayer.DataOBject, pattern, out);
 
-    expect(out).to.have.members(["humanoid.custom", "cape"]);
+      expect(out).to.have.members(["humanoid.custom", "cape"]);
+    });
   });
 });

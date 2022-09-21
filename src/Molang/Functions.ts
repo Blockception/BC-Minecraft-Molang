@@ -1,8 +1,12 @@
-
+/** The type of molang */
 export enum MolangType {
+  /** A command */
   command,
+  /** An event */
   event,
+  /** regular molang */
   molang,
+  /** unknown */
   unknown,
 }
 
@@ -11,6 +15,11 @@ export const commandRegex = /^\/[a-z]+/im;
 export const molangRegexp =
   /\b((query|math|variable|texture|temp|geometry|material|array|context|c|q|v|t)\.[A-Za-z_0-9]+|->|this)\b/im;
 
+/**
+ * Checks if the string is a molang type
+ * @param data The string to check
+ * @returns The type of molang
+ */
 export function IsMolangType(data: string): MolangType {
   if (commandRegex.test(data)) return MolangType.command;
   if (eventRegex.test(data)) return MolangType.event;
@@ -19,8 +28,10 @@ export function IsMolangType(data: string): MolangType {
   return MolangType.unknown;
 }
 
-/**Already assumes that the given data is of type MolangType.event
- * @param data The text to parse*/
+/**
+ * Already assumes that the given data is of type MolangType.event
+ * @param data The text to parse
+ */
 export function getEvent(data: string): string {
   return data.slice(3).trim();
 }
@@ -59,17 +70,17 @@ export function isValidMolang(molang: string): boolean {
 /**
  * Finds the specific molang expression in the given text
  * @param molang The text to parse
- * @param startindex The index to start searching from
+ * @param startIndex The index to start searching from
  * @param find The molang expression to find
  * @returns The index of the molang expression
  */
-export function find(molang: string, startindex: number, find: string): number {
+export function find(molang: string, startIndex: number, find: string): number {
   let instr = false;
   let level = 0;
   let length = find.length;
   let max = molang.length - length;
 
-  for (let I = startindex; I < max; I++) {
+  for (let I = startIndex; I < max; I++) {
     if (level === 0 && instr === false) {
       if (molang.slice(I, I + length) === find) {
         return I;

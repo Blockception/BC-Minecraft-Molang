@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { Types } from '../../../src/Molang/';
 import { VanillaPlayer } from "../../Player.test";
 
-describe("molang", () => {
+describe("Molang", () => {
   describe("math", () => {
     it("using", () => {
       let receiver: string[] = [];

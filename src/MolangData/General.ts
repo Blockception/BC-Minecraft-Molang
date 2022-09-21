@@ -148,6 +148,11 @@ export namespace General {
     },
   ];
 
+  /**
+   * Gets the math functions for the given id
+   * @param id The id to get the queries for
+   * @returns The queries for the given id
+   */
   export function getMath(id: string): MolangFunction | undefined {
     for (let I = 0; I < General.Math.length; I++) {
       const elem = General.Math[I];
@@ -1269,6 +1274,11 @@ export namespace General {
     },
   ];
 
+  /**
+   * Gets the queries for the given id
+   * @param id The id to get the queries for
+   * @returns The queries for the given id
+   */
   export function getQuery(id: string): MolangFunction | undefined {
     for (let I = 0; I < General.Queries.length; I++) {
       const elem = General.Queries[I];

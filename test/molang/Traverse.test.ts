@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { MolangType } from "../../src/Molang/Functions";
-import { Traverse } from "../../src/Molang/Traverese";
+import { Traverse } from "../../src/Molang/Traverse";
 import { VanillaPlayer } from "../Player.test";
 
 describe("Traverse", () => {
