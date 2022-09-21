@@ -3,7 +3,7 @@ import { MolangFullSet, MolangSet } from "../../../src/Molang";
 import { DefinedUsing, Using } from "../../../src/Types/Defined Using";
 import { VanillaPlayer } from "../../Player.test";
 
-describe("molang", () => {
+describe("Molang", () => {
   describe("MolangFullSet", () => {
     const data1 = MolangFullSet.harvest(VanillaPlayer.Data);
     const data2 = MolangFullSet.harvest(VanillaPlayer.DataOBject);

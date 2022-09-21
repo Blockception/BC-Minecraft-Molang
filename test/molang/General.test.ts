@@ -6,7 +6,7 @@ describe("General", () => {
     const queries = ["unhappy_counter", "time_of_day", "swelling_dir"];
 
     queries.forEach((item) =>
-      it(item, () => {
+      it(`getQuery should return ${item}`, () => {
         expect(General.getQuery(item)).to.not.be.undefined;
       })
     );

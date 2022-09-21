@@ -4,4 +4,4 @@ export * from "./Functions";
 export * from "./MolangSet";
 export * from "./RegExp";
 export * from "./Syntax";
-export * from "./Traverese";
+export * from "./Traverse";

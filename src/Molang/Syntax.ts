@@ -1,8 +1,14 @@
+/**
+ *
+ */
 export interface SyntaxCall {
   operation: string;
   parameters: Syntax[];
 }
 
+/**
+ *
+ */
 export namespace SyntaxCall {
   /**
    *
@@ -20,8 +26,14 @@ export namespace SyntaxCall {
   }
 }
 
+/**
+ *
+ */
 export type Syntax = string | SyntaxCall;
 
+/**
+ *
+ */
 export namespace Syntax {
   /** */
   export function isString(data: Syntax): data is string {
