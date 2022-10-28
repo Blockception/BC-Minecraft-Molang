@@ -192,7 +192,7 @@ export namespace General {
       documentation:
         "Requires at least 3 arguments. Evaluates the first argument, then returns 1.0 if all of the following arguments evaluate to the same value as the first. Otherwise it returns 0.0.",
       parameters: [
-        { id: "evualate", documentation: "The value to evualate" },
+        { id: "evaluate", documentation: "The value to evaluate" },
         { id: "first", documentation: "The first value to compare" },
         { id: "second", documentation: "The first value to compare" },
       ],
@@ -216,7 +216,7 @@ export namespace General {
       documentation:
         "Requires at least 3 arguments. Evaluates the first argument, then returns 1.0 if any of the following arguments evaluate to the same value as the first. Otherwise it returns 0.0.",
       parameters: [
-        { id: "evualate", documentation: "The value to evualate" },
+        { id: "evaluate", documentation: "The value to evaluate" },
         { id: "first", documentation: "The first value to compare" },
         { id: "second", documentation: "The first value to compare" },
       ],
@@ -532,7 +532,7 @@ export namespace General {
       documentation:
         "Requires 3 numerical arguments: some value, a minimum, and a maximum. If the first argument is between the minimum and maximum (inclusive), returns 1.0. Otherwise returns 0.0.",
       parameters: [
-        { id: "evualate", documentation: "The value to evualate" },
+        { id: "evaluate", documentation: "The value to evaluate" },
         {
           id: "minimum",
           documentation: "The first value to compare, inclusive",
