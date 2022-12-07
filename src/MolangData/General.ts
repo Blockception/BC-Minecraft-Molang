@@ -458,6 +458,10 @@ export namespace General {
       documentation: "Returns the ground speed of the entity in metres/second",
     },
     {
+      id: "had_component_group",
+      documentation: "Usable only in behavior packs when determining the default value for an entity's Property. Requires one string argument. If the entity is being loaded from data that was last saved with a component_group with the specified name, returns 1.0, otherwise returns 0.0. The purpose of this query is to allow entity definitions to change and still be able to load the correct state of entities.",
+    },
+    {
       id: "has_dash_cooldown",
       documentation: "Returns 1.0 if the entity has cooldown on its dash, else it returns 0.0.",
     },
