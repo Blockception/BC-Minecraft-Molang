@@ -176,7 +176,7 @@ export namespace General {
     {
       id: "all_animations_finished",
       documentation:
-        "Only valid in an animation controller. Returns 1.0 if all animations in the current animation controller state have played through at least once, else it returns 0.0",
+        "Only valid in an animation controller. Returns 1.0 if all animations in the current animation controller state have played through at least once, else it returns 0.0.",
     },
     {
       id: "all_tags",
@@ -205,7 +205,7 @@ export namespace General {
     {
       id: "any_animation_finished",
       documentation:
-        "Only valid in an animation controller. Returns 1.0 if any animation in the current animation controller state has played through at least once, else it returns 0.0",
+        "Only valid in an animation controller. Returns 1.0 if any animation in the current animation controller state has played through at least once, else it returns 0.0.",
     },
     {
       id: "any_tag",
@@ -223,7 +223,7 @@ export namespace General {
     },
     {
       id: "approx_eq",
-      documentation: "Returns 1.0 if all of the arguments are within 0.000000 of each other, else 0.0",
+      documentation: "Returns 1.0 if all of the arguments are within 0.000000 of each other, else 0.0.",
     },
     {
       id: "armor_color_slot",
@@ -265,15 +265,15 @@ export namespace General {
     },
     {
       id: "blocking",
-      documentation: "Returns 1.0 if the entity is blocking, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is blocking, else it returns 0.0.",
     },
     {
       id: "body_x_rotation",
-      documentation: "Returns the body pitch rotation if called on an actor, else it returns 0.0",
+      documentation: "Returns the body pitch rotation if called on an actor, else it returns 0.0.",
     },
     {
       id: "body_y_rotation",
-      documentation: "Returns the body yaw rotation if called on an actor, else it returns 0.0",
+      documentation: "Returns the body yaw rotation if called on an actor, else it returns 0.0.",
     },
     {
       id: "bone_aabb",
@@ -293,7 +293,7 @@ export namespace General {
     {
       id: "camera_distance_range_lerp",
       documentation:
-        "Takes two distances (any order) and return a number from 0 to 1 based on the camera distance between the two ranges clamped to that range. For example, `query.camera_distance_range_lerp(10, 20)` will return 0 for any distance less than or equal to 10, 0.2 for a distance of 12, 0.5 for 15, and 1 for 20 or greater. If you pass in (20, 10), a distance of 20 will return 0.0",
+        "Takes two distances (any order) and return a number from 0 to 1 based on the camera distance between the two ranges clamped to that range. For example, `query.camera_distance_range_lerp(10, 20)` will return 0 for any distance less than or equal to 10, 0.2 for a distance of 12, 0.5 for 15, and 1 for 20 or greater. If you pass in (20, 10), a distance of 20 will return 0.0.",
       parameters: [
         { id: "A", documentation: "The first distance" },
         { id: "B", documentation: "The second distance" },
@@ -307,27 +307,31 @@ export namespace General {
     },
     {
       id: "can_climb",
-      documentation: "Returns 1.0 if the entity can climb, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity can climb, else it returns 0.0.",
     },
     {
       id: "can_damage_nearby_mobs",
-      documentation: "Returns 1.0 if the entity can damage nearby mobs, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity can damage nearby mobs, else it returns 0.0.",
+    },
+    {
+      id: "can_dash",
+      documentation: "Returns 1.0 if the entity can dash, else it returns 0.0.",
     },
     {
       id: "can_fly",
-      documentation: "Returns 1.0 if the entity can fly, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity can fly, else it returns 0.0.",
     },
     {
       id: "can_power_jump",
-      documentation: "Returns 1.0 if the entity can power jump, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity can power jump, else it returns 0.0.",
     },
     {
       id: "can_swim",
-      documentation: "Returns 1.0 if the entity can swim, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity can swim, else it returns 0.0.",
     },
     {
       id: "can_walk",
-      documentation: "Returns 1.0 if the entity can walk, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity can walk, else it returns 0.0.",
     },
     {
       id: "cape_flap_amount",
@@ -362,6 +366,10 @@ export namespace General {
     {
       id: "current_squish_value",
       documentation: "Returns the squish value for the current entity, or 0.0 if this doesn't make sense",
+    },
+    {
+      id: "dash_cooldown_progress",
+      documentation: "Returns dash cooldown progress if the entity can dash, else it returns 0.0.",
     },
     { id: "day", documentation: "Returns the day of the current level." },
     {
@@ -410,16 +418,16 @@ export namespace General {
     },
     {
       id: "eye_target_x_rotation",
-      documentation: "Returns the X eye rotation of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the X eye rotation of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "eye_target_y_rotation",
-      documentation: "Returns the Y eye rotation of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the Y eye rotation of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "facing_target_to_range_attack",
       documentation:
-        "Returns 1.0 if the entity is attacking from range (i.e. minecraft:behavior.ranged_attack), else it returns 0.0",
+        "Returns 1.0 if the entity is attacking from range (i.e. minecraft:behavior.ranged_attack), else it returns 0.0.",
     },
     {
       id: "frame_alpha",
@@ -450,13 +458,17 @@ export namespace General {
       documentation: "Returns the ground speed of the entity in metres/second",
     },
     {
+      id: "has_dash_cooldown",
+      documentation: "Returns 1.0 if the entity has cooldown on its dash, else it returns 0.0.",
+    },
+    {
       id: "has_any_family",
       documentation: "Returns 1 if the entity has any of the specified families, else 0.",
     },
     {
       id: "has_armor_slot",
       documentation:
-        "Takes the armor slot index as a parameter, and returns 1.0 if the entity has armor in the requested slot, else it returns 0.0",
+        "Takes the armor slot index as a parameter, and returns 1.0 if the entity has armor in the requested slot, else it returns 0.0.",
     },
     {
       id: "has_biome_tag",
@@ -468,15 +480,19 @@ export namespace General {
     },
     {
       id: "has_cape",
-      documentation: "Returns 1.0 if the player has a cape, else it returns 0.0",
+      documentation: "Returns 1.0 if the player has a cape, else it returns 0.0.",
     },
     {
       id: "has_collision",
-      documentation: "Returns 1.0 if the entity has collisions enabled, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity has collisions enabled, else it returns 0.0.",
     },
     {
       id: "has_gravity",
-      documentation: "Returns 1.0 if the entity is affected by gravity, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is affected by gravity, else it returns 0.0.",
+    },
+    {
+      id: "has_property",
+      documentation: "Takes one argument: the name of the property on the Actor. Returns 1.0 if a property with the given name exists, 0 otherwise.",
     },
     {
       id: "has_owner",
@@ -484,25 +500,25 @@ export namespace General {
     },
     {
       id: "has_rider",
-      documentation: "Returns 1.0 if the entity has a rider, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity has a rider, else it returns 0.0.",
     },
     {
       id: "has_target",
-      documentation: "Returns 1.0 if the entity has a target, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity has a target, else it returns 0.0.",
     },
     {
       id: "head_roll_angle",
-      documentation: "Returns the roll angle of the head of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the roll angle of the head of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "head_x_rotation",
       documentation:
-        "Takes one argument as a parameter. Returns the nth head x rotation of the entity if it makes sense, else it returns 0.0",
+        "Takes one argument as a parameter. Returns the nth head x rotation of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "head_y_rotation",
       documentation:
-        "Takes one argument as a parameter. Returns the nth head y rotation of the entity if it makes sense, else it returns 0.0",
+        "Takes one argument as a parameter. Returns the nth head y rotation of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "health",
@@ -521,11 +537,11 @@ export namespace General {
     { id: "heightmap", documentation: "Queries Height Map" },
     {
       id: "hurt_direction",
-      documentation: "Returns the hurt direction for the actor, otherwise returns 0",
+      documentation: "Returns the hurt direction for the actor, otherwise returns 0.",
     },
     {
       id: "hurt_time",
-      documentation: "Returns the hurt time for the actor, otherwise returns 0",
+      documentation: "Returns the hurt time for the actor, otherwise returns 0.",
     },
     {
       id: "in_range",
@@ -546,11 +562,11 @@ export namespace General {
     {
       id: "invulnerable_ticks",
       documentation:
-        "Returns the number of ticks of invulnerability the entity has left if it makes sense, else it returns 0.0",
+        "Returns the number of ticks of invulnerability the entity has left if it makes sense, else it returns 0.0.",
     },
     {
       id: "is_admiring",
-      documentation: "Returns 1.0 if the entity is admiring, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is admiring, else it returns 0.0.",
     },
     {
       id: "is_alive",
@@ -558,119 +574,119 @@ export namespace General {
     },
     {
       id: "is_angry",
-      documentation: "Returns 1.0 if the entity is angry, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is angry, else it returns 0.0.",
     },
     {
       id: "is_attached_to_entity",
-      documentation: "Returns 1.0 if the actor is attached to an entity, else it will return 0.0",
+      documentation: "Returns 1.0 if the actor is attached to an entity, else it will return 0.0.",
     },
     {
       id: "is_avoiding_block",
-      documentation: "Returns 1.0 if the entity is fleeing from a block, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is fleeing from a block, else it returns 0.0.",
     },
     {
       id: "is_avoiding_mobs",
-      documentation: "Returns 1.0 if the entity is fleeing from mobs, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is fleeing from mobs, else it returns 0.0.",
     },
     {
       id: "is_baby",
-      documentation: "Returns 1.0 if the entity is a baby, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is a baby, else it returns 0.0.",
     },
     {
       id: "is_breathing",
-      documentation: "Returns 1.0 if the entity is breathing, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is breathing, else it returns 0.0.",
     },
     {
       id: "is_bribed",
-      documentation: "Returns 1.0 if the entity has been bribed, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity has been bribed, else it returns 0.0.",
     },
     {
       id: "is_carrying_block",
-      documentation: "Returns 1.0 if the entity is carrying a block, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is carrying a block, else it returns 0.0.",
     },
     {
       id: "is_casting",
-      documentation: "Returns 1.0 if the entity is casting, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is casting, else it returns 0.0.",
     },
     {
       id: "is_celebrating_special",
-      documentation: "Returns 1.0 if the entity is doing a special celebration, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is doing a special celebration, else it returns 0.0.",
     },
     {
       id: "is_celebrating",
-      documentation: "Returns 1.0 if the entity is celebrating, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is celebrating, else it returns 0.0.",
     },
     {
       id: "is_charged",
-      documentation: "Returns 1.0 if the entity is charged, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is charged, else it returns 0.0.",
     },
     {
       id: "is_charging",
-      documentation: "Returns 1.0 if the entity is charging, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is charging, else it returns 0.0.",
     },
     {
       id: "is_chested",
-      documentation: "Returns 1.0 if the entity has chests attached to it, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity has chests attached to it, else it returns 0.0.",
     },
     {
       id: "is_critical",
-      documentation: "Returns 1.0 if the entity is critical, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is critical, else it returns 0.0.",
     },
     {
       id: "is_croaking",
-      documentation: "Returns 1.0 if the entity is croaking, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is croaking, else it returns 0.0.",
     },
     {
       id: "is_dancing",
-      documentation: "Returns 1.0 if the entity is dancing, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is dancing, else it returns 0.0.",
     },
     {
       id: "is_delayed_attacking",
-      documentation: "Returns 1.0 if the entity is attacking using the delayed attack, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is attacking using the delayed attack, else it returns 0.0.",
     },
     {
       id: "is_digging",
-      documentation: "Returns 1.0 if the entity is digging, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is digging, else it returns 0.0.",
     },
     {
       id: "is_eating_mob",
-      documentation: "Returns 1.0 if the entity is eating a mob, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is eating a mob, else it returns 0.0.",
     },
     {
       id: "is_eating",
-      documentation: "Returns 1.0 if the entity is eating, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is eating, else it returns 0.0.",
     },
     {
       id: "is_elder",
-      documentation: "Returns 1.0 if the entity is an elder version of it, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is an elder version of it, else it returns 0.0.",
     },
     {
       id: "is_emoting",
-      documentation: "Returns 1.0 if the entity is emoting, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is emoting, else it returns 0.0.",
     },
     {
       id: "is_emerging",
-      documentation: "Returns 1.0 if the entity is emerging, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is emerging, else it returns 0.0.",
     },
     {
       id: "is_enchanted",
-      documentation: "Returns 1.0 if the entity is enchanted, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is enchanted, else it returns 0.0.",
     },
     {
       id: "is_fire_immune",
-      documentation: "Returns 1.0 if the entity is immune to fire, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is immune to fire, else it returns 0.0.",
     },
     {
       id: "is_first_person",
-      documentation: "Returns 1.0 if the entity is being rendered in first person mode, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is being rendered in first person mode, else it returns 0.0.",
     },
     {
       id: "is_ghost",
-      documentation: "Returns 1.0 if an entity is a ghost, else it returns 0.0",
+      documentation: "Returns 1.0 if an entity is a ghost, else it returns 0.0.",
     },
     {
       id: "is_gliding",
-      documentation: "Returns 1.0 if the entity is gliding, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is gliding, else it returns 0.0.",
     },
     {
       id: "is_grazing",
@@ -678,44 +694,44 @@ export namespace General {
     },
     {
       id: "is_idling",
-      documentation: "Returns 1.0 if the entity is idling, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is idling, else it returns 0.0.",
     },
     {
       id: "is_ignited",
-      documentation: "Returns 1.0 if the entity is ignited, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is ignited, else it returns 0.0.",
     },
     {
       id: "is_illager_captain",
-      documentation: "Returns 1.0 if the entity is an illager captain, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is an illager captain, else it returns 0.0.",
     },
     {
       id: "is_in_contact_with_water",
       documentation:
-        "Returns 1.0 if the entity is in contact with any water (water, rain, splash water bottle), else it returns 0.0",
+        "Returns 1.0 if the entity is in contact with any water (water, rain, splash water bottle), else it returns 0.0.",
     },
     {
       id: "is_in_love",
-      documentation: "Returns 1.0 if the entity is in love, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is in love, else it returns 0.0.",
     },
     {
       id: "is_in_ui",
-      documentation: "Returns 1.0 if the entity is rendered as part of the UI, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is rendered as part of the UI, else it returns 0.0.",
     },
     {
       id: "is_in_water_or_rain",
-      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
     },
     {
       id: "is_in_water",
-      documentation: "Returns 1.0 if the entity is in water, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is in water, else it returns 0.0.",
     },
     {
       id: "is_interested",
-      documentation: "Returns 1.0 if the entity is interested, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is interested, else it returns 0.0.",
     },
     {
       id: "is_invisible",
-      documentation: "Returns 1.0 if the entity is invisible, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is invisible, else it returns 0.0.",
     },
     {
       id: "is_item_equipped",
@@ -740,35 +756,35 @@ export namespace General {
     },
     {
       id: "is_jumping",
-      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
     },
     {
       id: "is_jump_goal_jumping",
-      documentation: "Returns 1.0 if the entity is doing a jump goal jump, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is doing a jump goal jump, else it returns 0.0.",
     },
     {
       id: "is_laying_down",
-      documentation: "Returns 1.0 if the entity is laying down, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is laying down, else it returns 0.0.",
     },
     {
       id: "is_laying_egg",
-      documentation: "Returns 1.0 if the entity is laying an egg, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is laying an egg, else it returns 0.0.",
     },
     {
       id: "is_leashed",
-      documentation: "Returns 1.0 if the entity is leashed to something, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is leashed to something, else it returns 0.0.",
     },
     {
       id: "is_levitating",
-      documentation: "Returns 1.0 if the entity is levitating, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is levitating, else it returns 0.0.",
     },
     {
       id: "is_lingering",
-      documentation: "Returns 1.0 if the entity is lingering, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is lingering, else it returns 0.0.",
     },
     {
       id: "is_moving",
-      documentation: "Returns 1.0 if the entity is moving, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is moving, else it returns 0.0.",
     },
     {
       id: "is_name_any",
@@ -781,24 +797,24 @@ export namespace General {
     },
     {
       id: "is_on_fire",
-      documentation: "Returns 1.0 if the entity is on fire, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is on fire, else it returns 0.0.",
     },
     {
       id: "is_on_ground",
-      documentation: "Returns 1.0 if the entity is on the ground, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is on the ground, else it returns 0.0.",
     },
     {
       id: "is_on_screen",
       documentation:
-        "Returns 1.0 if this is called on an entity at a time when it is known if it is on screen, else it returns 0.0",
+        "Returns 1.0 if this is called on an entity at a time when it is known if it is on screen, else it returns 0.0.",
     },
     {
       id: "is_onfire",
-      documentation: "Returns 1.0 if the entity is on fire, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is on fire, else it returns 0.0.",
     },
     {
       id: "is_orphaned",
-      documentation: "Returns 1.0 if the entity is orphaned, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is orphaned, else it returns 0.0.",
     },
     {
       id: "is_owner_identifier_any",
@@ -811,135 +827,139 @@ export namespace General {
     },
     {
       id: "is_persona_or_premium_skin",
-      documentation: "Returns 1.0 if the player has a persona or permium skin, else it returns 0.0",
+      documentation: "Returns 1.0 if the player has a persona or permium skin, else it returns 0.0.",
     },
     {
       id: "is_playing_dead",
-      documentation: "Returns 1.0 if the entity is playing dead, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is playing dead, else it returns 0.0.",
     },
     {
       id: "is_powered",
-      documentation: "Returns 1.0 if the entity is powered, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is powered, else it returns 0.0.",
     },
     {
       id: "is_pregnant",
-      documentation: "Returns 1.0 if the entity is pregnant, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is pregnant, else it returns 0.0.",
     },
     {
       id: "is_ram_attacking",
-      documentation: "Returns 1.0 if the entity is using a ram attack, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is using a ram attack, else it returns 0.0.",
     },
     {
       id: "is_resting",
-      documentation: "Returns 1.0 if the entity is resting, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is resting, else it returns 0.0.",
     },
     {
       id: "is_riding",
-      documentation: "Returns 1.0 if the entity is riding, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is riding, else it returns 0.0.",
     },
     {
       id: "is_roaring",
-      documentation: "Returns 1.0 if the entity is currently roaring, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is currently roaring, else it returns 0.0.",
     },
     {
       id: "is_rolling",
-      documentation: "Returns 1.0 if the entity is rolling, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is rolling, else it returns 0.0.",
     },
     {
       id: "is_saddled",
-      documentation: "Returns 1.0 if the entity has a saddle, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity has a saddle, else it returns 0.0.",
     },
     {
       id: "is_scared",
-      documentation: "Returns 1.0 if the entity is scared, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is scared, else it returns 0.0.",
     },
     {
       id: "is_selected_item",
-      documentation: "Returns true if the player has selected an item in the inventory, else it returns 0.0",
+      documentation: "Returns true if the player has selected an item in the inventory, else it returns 0.0.",
     },
     {
       id: "is_shaking_wetness",
-      documentation: "Returns 1.0 if the entity is shaking water off, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is shaking water off, else it returns 0.0.",
     },
     {
       id: "is_shaking",
-      documentation: "Returns 1.0 if the entity is casting, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is casting, else it returns 0.0.",
     },
     {
       id: "is_sheared",
-      documentation: "Returns 1.0 if the entity is able to be sheared and is sheared, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is able to be sheared and is sheared, else it returns 0.0.",
     },
     {
       id: "is_shield_powered",
-      documentation: "Returns 1.0f if the entity has an active powered shield if it makes sense, else it returns 0.0",
+      documentation: "Returns 1.0f if the entity has an active powered shield if it makes sense, else it returns 0.0.",
     },
     {
       id: "is_silent",
-      documentation: "Returns 1.0 if the entity is silent, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is silent, else it returns 0.0.",
     },
     {
       id: "is_sitting",
-      documentation: "Returns 1.0 if the entity is sitting, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is sitting, else it returns 0.0.",
     },
     {
       id: "is_sleeping",
-      documentation: "Returns 1.0 if the entity is sleeping, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is sleeping, else it returns 0.0.",
+    },
+    {
+      id: "is_spectator",
+      documentation: "Returns 1.0 if the entity is spectator, else it returns 0.0.",
     },
     {
       id: "is_sneaking",
-      documentation: "Returns 1.0 if the entity is sneaking, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is sneaking, else it returns 0.0.",
     },
     {
       id: "is_sneezing",
-      documentation: "Returns 1.0 if the entity is sneezing, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is sneezing, else it returns 0.0.",
     },
     {
       id: "is_sniffing",
-      documentation: "Returns 1.0 if the entity is sniffing, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is sniffing, else it returns 0.0.",
     },
     {
       id: "is_sonic_boom",
-      documentation: "Returns 1.0 if the entity is using sonic boom, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is using sonic boom, else it returns 0.0.",
     },
     {
       id: "is_sprinting",
-      documentation: "Returns 1.0 if the entity is sprinting, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is sprinting, else it returns 0.0.",
     },
     {
       id: "is_stackable",
-      documentation: "Returns 1.0 if the entity is stackable, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is stackable, else it returns 0.0.",
     },
     {
       id: "is_stalking",
-      documentation: "Returns 1.0 if the entity is stalking, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is stalking, else it returns 0.0.",
     },
     {
       id: "is_standing",
-      documentation: "Returns 1.0 if the entity is standing, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is standing, else it returns 0.0.",
     },
     {
       id: "is_stunned",
-      documentation: "Returns 1.0 if the entity is currently stunned, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is currently stunned, else it returns 0.0.",
     },
     {
       id: "is_swimming",
-      documentation: "Returns 1.0 if the entity is swimming, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is swimming, else it returns 0.0.",
     },
     {
       id: "is_tamed",
-      documentation: "Returns 1.0 if the entity is tamed, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is tamed, else it returns 0.0.",
     },
     {
       id: "is_transforming",
-      documentation: "Returns 1.0 if the entity is transforming, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is transforming, else it returns 0.0.",
     },
     {
       id: "is_using_item",
-      documentation: "Returns 1.0 if the entity is using an item, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is using an item, else it returns 0.0.",
     },
     {
       id: "is_wall_climbing",
-      documentation: "Returns 1.0 if the entity is climbing a wall, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is climbing a wall, else it returns 0.0.",
     },
     {
       id: "item_in_use_duration",
@@ -983,7 +1003,7 @@ export namespace General {
     {
       id: "last_hit_by_player",
       documentation:
-        "Returns 1.0 if the entity was last hit by the player, else it returns 0.0. If called by the client always returns 0.0",
+        "Returns 1.0 if the entity was last hit by the player, else it returns 0.0. If called by the client always returns 0.0.",
     },
     {
       id: "lie_amount",
@@ -1011,7 +1031,7 @@ export namespace General {
     {
       id: "main_hand_item_max_duration",
       documentation:
-        "Returns the use time maximum duration for the main hand item if it makes sense, else it returns 0.0",
+        "Returns the use time maximum duration for the main hand item if it makes sense, else it returns 0.0.",
     },
     {
       id: "main_hand_item_use_duration",
@@ -1029,7 +1049,7 @@ export namespace General {
     },
     {
       id: "max_trade_tier",
-      documentation: "Returns the maximum trade tier of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the maximum trade tier of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "maximum_frame_time",
@@ -1072,15 +1092,15 @@ export namespace General {
     { id: "noise", documentation: "Queries Perlin Noise Map" },
     {
       id: "on_fire_time",
-      documentation: "Returns the time that the entity is on fire, else it returns 0.0",
+      documentation: "Returns the time that the entity is on fire, else it returns 0.0.",
     },
     {
       id: "out_of_control",
-      documentation: "Returns 1.0 if the entity is out of control, else it returns 0.0",
+      documentation: "Returns 1.0 if the entity is out of control, else it returns 0.0.",
     },
     {
       id: "player_level",
-      documentation: "Returns the players level if the actor is a player, otherwise returns 0",
+      documentation: "Returns the players level if the actor is a player, otherwise returns 0.",
     },
     {
       id: "position_delta",
@@ -1099,6 +1119,10 @@ export namespace General {
       documentation: "Returns the previous squish value for the current entity, or 0.0 if this doesn't make sense",
     },
     {
+      id: "property",
+      documentation: "Takes one argument: the name of the property on the entity. Returns the value of that property if it exists, else 0.0 if not.",
+    },
+    {
       id: "remaining_durability",
       documentation: "Returns the how much durability an item has remaining",
     },
@@ -1114,7 +1138,7 @@ export namespace General {
     },
     {
       id: "shake_angle",
-      documentation: "Returns the shaking angle of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the shaking angle of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "shake_time",
@@ -1126,7 +1150,7 @@ export namespace General {
     },
     {
       id: "show_bottom",
-      documentation: "Returns 1.0 if we render the entity's bottom, else it returns 0.0",
+      documentation: "Returns 1.0 if we render the entity's bottom, else it returns 0.0.",
     },
     {
       id: "sit_amount",
@@ -1143,7 +1167,7 @@ export namespace General {
     },
     {
       id: "spellcolor",
-      documentation: "Returns the entity spell colour if it makes sense, else it returns 0.0",
+      documentation: "Returns the entity spell colour if it makes sense, else it returns 0.0.",
     },
     {
       id: "standing_scale",
@@ -1151,7 +1175,7 @@ export namespace General {
     },
     {
       id: "structural_integrity",
-      documentation: "Returns the structural integrity for the actor, otherwise returns 0",
+      documentation: "Returns the structural integrity for the actor, otherwise returns 0.",
     },
     {
       id: "surface_particle_color",
@@ -1171,7 +1195,7 @@ export namespace General {
     { id: "swell_amount", documentation: "Returns how swollen the entity is" },
     {
       id: "swelling_dir",
-      documentation: "Returns the swelling direction of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the swelling direction of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "swim_amount",
@@ -1179,17 +1203,17 @@ export namespace General {
     },
     {
       id: "tail_angle",
-      documentation: "Returns the angle of the tail of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the angle of the tail of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "target_x_rotation",
       documentation:
-        "Returns the x rotation required to aim at the entity's current target if it has one, else it returns 0.0",
+        "Returns the x rotation required to aim at the entity's current target if it has one, else it returns 0.0.",
     },
     {
       id: "target_y_rotation",
       documentation:
-        "Returns the y rotation required to aim at the entity's current target if it has one, else it returns 0.0",
+        "Returns the y rotation required to aim at the entity's current target if it has one, else it returns 0.0.",
     },
     {
       id: "texture_frame_index",
@@ -1219,7 +1243,7 @@ export namespace General {
     },
     {
       id: "trade_tier",
-      documentation: "Returns the trade tier of the entity if it makes sense, else it returns 0.0",
+      documentation: "Returns the trade tier of the entity if it makes sense, else it returns 0.0.",
     },
     {
       id: "unhappy_counter",
