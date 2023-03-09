@@ -787,6 +787,10 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is lingering, else it returns 0.0.",
     },
     {
+      id: "is_local_player",
+      documentation: "Takes no arguments. Returns 1.0 if the entity is the local player for the current game window, else it returns 0.0. In splitscreen returns 0.0 for the other local players for other views. Always returns 0.0 if used in a behavior pack.",
+    },
+    {
       id: "is_moving",
       documentation: "Returns 1.0 if the entity is moving, else it returns 0.0.",
     },
