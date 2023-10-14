@@ -44,10 +44,5 @@ export namespace Syntax {
   export function isSyntaxCall(data: Syntax): data is SyntaxCall {
     return typeof data === "object";
   }
-
-  //export function parse(molang: string): Syntax {}
 }
 
-//function splitOperations(molang: string): string[] {
-//  molang.search();
-//}

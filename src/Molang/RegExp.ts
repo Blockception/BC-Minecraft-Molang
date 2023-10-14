@@ -1,10 +1,10 @@
-/** */
+/** A namespace that contains regular expressions for Molang */
 export namespace RegularExpression {
   /**
-   *
-   * @param data
-   * @param regexp
-   * @param receiver
+   * Matches a Molang variable
+   * @param data The data to match
+   * @param regexp The regular expression to use
+   * @param receiver  The array to receive the matches
    */
   export function harvest(data: any, regexp: RegExp, receiver: string[]): void {
     if (typeof data === "string") data = [data];
@@ -17,10 +17,10 @@ export namespace RegularExpression {
   }
 
   /**
-   *
-   * @param data
-   * @param regexp
-   * @param receiver
+   * Harvests the data from the array
+   * @param data The data to match
+   * @param regexp The regular expression to use
+   * @param receiver The array to receive the matches
    */
   export function harvestArray(data: string[] | any[], regexp: RegExp, receiver: string[]): void {
     for (let I = 0; I < data.length; I++) {
@@ -39,10 +39,10 @@ export namespace RegularExpression {
   }
 
   /**
-   *
-   * @param data
-   * @param regexp
-   * @param receiver
+   * Harvests the data from the object
+   * @param data The data to match
+   * @param regexp The regular expression to use
+   * @param receiver The array to receive the matches
    */
   export function harvestObject(data: any, regexp: RegExp, receiver: string[]): void {
     const keys = Object.getOwnPropertyNames(data);
@@ -63,10 +63,10 @@ export namespace RegularExpression {
   }
 
   /**
-   *
-   * @param data
-   * @param regexp
-   * @param receiver
+   * Harvests the data from the string
+   * @param data The data to match
+   * @param regexp The regular expression to use
+   * @param receiver The array to receive the matches
    */
   export function harvestString(data: string, regexp: RegExp, receiver: string[]): void {
     let matches = regexp.exec(data);
