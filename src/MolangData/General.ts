@@ -262,6 +262,11 @@ export namespace General {
     {
       id: "block_property",
       documentation: "Returns the value of the associated Blocks Block State",
+      deprecated: "No longer available in pack min_engine_version 1.20.40."
+    },
+    {
+      id: "block_state",
+      documentation: "Returns the value of the associated block's Block State."
     },
     {
       id: "blocking",
@@ -370,6 +375,7 @@ export namespace General {
     {
       id: "dash_cooldown_progress",
       documentation: "Returns dash cooldown progress if the entity can dash, else it returns 0.0.",
+      deprecated: "Deprecated after 1.20.3. Please see camel.entity.json script.pre_animation for example of how to now process dash cooldown"
     },
     { id: "day", documentation: "Returns the day of the current level." },
     {
@@ -476,11 +482,16 @@ export namespace General {
     },
     {
       id: "has_biome_tag",
-      documentation: "Returns whether or not a Block Placement Target has a specific biome tag",
+      documentation: "Returns whether or not a Block Placement Target has a specific biome tag.",
     },
     {
       id: "has_block_property",
-      documentation: "Returns 1.0 if the associated block has the given block property or 0.0 if not",
+      documentation: "Returns 1.0 if the associated block has the given block property or 0.0 if not.",
+      deprecated: "No longer available in pack min_engine_version 1.20.40."
+    },
+    {
+      id: "has_block_state",
+      documentation: "Returns 1.0 if the associated block has the given block state or 0.0 if not."
     },
     {
       id: "has_cape",
@@ -633,6 +644,10 @@ export namespace General {
       documentation: "Returns 1.0 if the entity has chests attached to it, else it returns 0.0.",
     },
     {
+      id: "is_crawling",
+      documentation: "Returns 1.0 if the entity is crawling, else it returns 0.0.",
+    },
+    {
       id: "is_critical",
       documentation: "Returns 1.0 if the entity is critical, else it returns 0.0.",
     },
@@ -675,6 +690,10 @@ export namespace General {
     {
       id: "is_enchanted",
       documentation: "Returns 1.0 if the entity is enchanted, else it returns 0.0.",
+    },
+    {
+      id: "is_feeling_happy",
+      documentation: "Returns 1.0 if the entity is feeling happy, else it returns 0.0.",
     },
     {
       id: "is_fire_immune",
@@ -728,6 +747,10 @@ export namespace General {
     {
       id: "is_in_water",
       documentation: "Returns 1.0 if the entity is in water, else it returns 0.0.",
+    },
+    {
+      id: "is_in_lava",
+      documentation: "Returns 1.0 if the entity is in lava, else it returns 0.0.",
     },
     {
       id: "is_interested",
@@ -862,6 +885,10 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is riding, else it returns 0.0.",
     },
     {
+      id: "is_rising",
+      documentation: "Returns 1.0 if the entity is rising, else it returns 0.0.",
+    },
+    {
       id: "is_roaring",
       documentation: "Returns 1.0 if the entity is currently roaring, else it returns 0.0.",
     },
@@ -876,6 +903,10 @@ export namespace General {
     {
       id: "is_scared",
       documentation: "Returns 1.0 if the entity is scared, else it returns 0.0.",
+    },
+    {
+      id: "query.is_scenting",
+      documentation: "Returns 1.0 if the entity is scenting, else it returns 0.0.",
     },
     {
       id: "is_selected_item",
@@ -1242,6 +1273,18 @@ export namespace General {
       documentation: "Returns the current time stamp of the level",
     },
     {
+      id: "timer_flag_1",
+      documentation: "Returns 1.0 if behavior.timer_flag_1 is running, else it returns 0.0.",
+    },
+    {
+      id: "timer_flag_2",
+      documentation: "Returns 1.0 if behavior.timer_flag_2 is running, else it returns 0.0.",
+    },
+    {
+      id: "timer_flag_3",
+      documentation: "Returns 1.0 if behavior.timer_flag_3 is running, else it returns 0.0.",
+    },
+    {
       id: "total_emitter_count",
       documentation: "Returns the total number of active emitters in the world",
     },
@@ -1264,7 +1307,7 @@ export namespace General {
     },
     {
       id: "walk_distance",
-      documentation: "Returns the walk distance of the entity.",
+      documentation: "Returns the total distance traveled by an entity while on the ground and not sneaking.",
     },
     {
       id: "wing_flap_position",
