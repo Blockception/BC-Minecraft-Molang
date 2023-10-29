@@ -166,8 +166,17 @@ export namespace General {
   export const Queries: MolangFunction[] = [
     {
       id: "above_top_solid",
-      documentation:
-        "Returns the height of the block immediately above the highest solid block at the input (x,z) position",
+      documentation: "Returns the height of the block immediately above the highest solid block at the input (x,z) position",
+      parameters: [
+        {
+          id: "x",
+          documentation: "The x position of the block",
+        },
+        {
+          id: "z",
+          documentation: "The z position of the block",
+        },
+      ]
     },
     {
       id: "actor_count",
@@ -266,7 +275,13 @@ export namespace General {
     },
     {
       id: "block_state",
-      documentation: "Returns the value of the associated block's Block State."
+      documentation: "Returns the value of the associated block's Block State.",
+      parameters: [
+        {
+          id: "property",
+          documentation: "The name of the property to query. examples: `query.block_state('foo' == false)`",
+        }
+      ]
     },
     {
       id: "blocking",
