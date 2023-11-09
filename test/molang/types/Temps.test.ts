@@ -37,7 +37,7 @@ describe("Molang", () => {
     });
 
     it("defined not sticky?", () => {
-      expect(Types.Temps.getDefinedPatt.sticky).to.equal(false);
+      expect(Types.Temps.getDefinedPattern.sticky).to.equal(false);
     });
 
     it("using1", () => {

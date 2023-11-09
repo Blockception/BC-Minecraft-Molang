@@ -2,7 +2,7 @@ import { RegularExpression } from "../RegExp";
 
 /**The namespace that governs molang variables*/
 export namespace Variables {
-  /**The pattern used to find the defintions of variables*/
+  /**The pattern used to find the definitions of variables*/
   export const getDefinedPatt: RegExp = /(?:^|;[ \t]*|"[ \t]*)\b(?:v|variable)\.([a-z0-9_\.]*)[ \t]*\=/gim;
 
   /**The pattern used to find the variables*/
