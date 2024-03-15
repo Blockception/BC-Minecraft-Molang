@@ -4,10 +4,6 @@ import { Types } from "bc-minecraft-bedrock-types";
  *
  */
 export interface MolangFunction extends Types.Identifiable, Types.Documentated {
-
-  id : string;
-
-  documentation: string;
   /**
    *
    */
