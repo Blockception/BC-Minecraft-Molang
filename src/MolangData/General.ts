@@ -183,6 +183,16 @@ export namespace General {
       documentation: "Returns the number of actors rendered in the last frame",
     },
     {
+      id: "all",
+      documentation:
+        "Requires at least 3 arguments. Evaluates the first argument, then returns 1.0 if all of the following arguments evaluate to the same value as the first. Otherwise it returns 0.0.",
+      parameters: [
+        { id: "evaluate", documentation: "The value to evaluate" },
+        { id: "first", documentation: "The first value to compare" },
+        { id: "second", documentation: "The first value to compare" },
+      ],
+    },
+    {
       id: "all_animations_finished",
       documentation:
         "Only valid in an animation controller. Returns 1.0 if all animations in the current animation controller state have played through at least once, else it returns 0.0.",
@@ -197,28 +207,9 @@ export namespace General {
         "Returns the anger level of the actor [0,n]. On errors or if the actor has no anger level, returns 0. Available on the Server only.",
     },
     {
-      id: "all",
-      documentation:
-        "Requires at least 3 arguments. Evaluates the first argument, then returns 1.0 if all of the following arguments evaluate to the same value as the first. Otherwise it returns 0.0.",
-      parameters: [
-        { id: "evaluate", documentation: "The value to evaluate" },
-        { id: "first", documentation: "The first value to compare" },
-        { id: "second", documentation: "The first value to compare" },
-      ],
-    },
-    {
       id: "anim_time",
       documentation:
         "Returns the time in seconds since the current animation started, else 0.0 if not called within an animation",
-    },
-    {
-      id: "any_animation_finished",
-      documentation:
-        "Only valid in an animation controller. Returns 1.0 if any animation in the current animation controller state has played through at least once, else it returns 0.0.",
-    },
-    {
-      id: "any_tag",
-      documentation: "Returns if the item or block has any of the tags specified",
     },
     {
       id: "any",
@@ -229,6 +220,15 @@ export namespace General {
         { id: "first", documentation: "The first value to compare" },
         { id: "second", documentation: "The first value to compare" },
       ],
+    },
+    {
+      id: "any_animation_finished",
+      documentation:
+        "Only valid in an animation controller. Returns 1.0 if any animation in the current animation controller state has played through at least once, else it returns 0.0.",
+    },
+    {
+      id: "any_tag",
+      documentation: "Returns if the item or block has any of the tags specified",
     },
     {
       id: "approx_eq",
@@ -269,6 +269,94 @@ export namespace General {
         "Returns the block face for this (only valid for certain triggers such as placing blocks, or interacting with block) (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
     },
     {
+      id: "block_has_all_tags",
+      documentation: "Takes a world-origin-relative position and one or more tag names, and returns either 0 or 1 based on if the block at that position has all of the tags provided.",
+      parameters: [
+        {
+          id: "x",
+          documentation: "World-origin-relative position on the x axis",
+        },
+        {
+          id: "y",
+          documentation: "World-origin-relative position on the y axis",
+        },
+        {
+          id: "z",
+          documentation: "World-origin-relative position on the z axis",
+        },
+        {
+          id: "tag",
+          documentation: "The first tag",
+        }
+      ],
+    },
+    {
+      id: "block_has_any_tags",
+      documentation: "Takes a world-origin-relative position and one or more tag names, and returns either 0 or 1 based on if the block at that position has any of the tags provided.",
+      parameters: [
+        {
+          id: "x",
+          documentation: "World-origin-relative position on the x axis",
+        },
+        {
+          id: "y",
+          documentation: "World-origin-relative position on the y axis",
+        },
+        {
+          id: "z",
+          documentation: "World-origin-relative position on the z axis",
+        },
+        {
+          id: "tag",
+          documentation: "The first tag",
+        }
+      ],
+    },
+    {
+      id: "block_neighbor_has_all_tags",
+      documentation: "Takes a block-relative position and one or more tag names, and returns either 0 or 1 based on if the block at that position has all of the tags provided.",
+      parameters: [
+        {
+          id: "x",
+          documentation: "block-relative position on the x axis",
+        },
+        {
+          id: "y",
+          documentation: "block-relative position on the y axis",
+        },
+        {
+          id: "z",
+          documentation: "block-relative position on the z axis",
+        },
+        {
+          id: "tag",
+          documentation: "The first tag",
+        }
+      ],
+    },
+    {
+      id: "block_neighbor_has_any_tags",
+      documentation: "Takes a block-relative position and one or more tag names, and returns either 0 or 1 based on if the block at that position has any of the tags provided.",
+      parameters: [
+        {
+          id: "x",
+          documentation: "block-relative position on the x axis",
+        },
+        {
+          id: "y",
+          documentation: "block-relative position on the y axis",
+        },
+        {
+          id: "z",
+          documentation: "block-relative position on the z axis",
+        },
+        {
+          id: "tag",
+          documentation: "The first tag",
+        }
+      ],
+    },
+    {
       id: "block_property",
       documentation: "Returns the value of the associated Blocks Block State",
       deprecated: "No longer available in pack min_engine_version 1.20.40."
@@ -299,6 +387,26 @@ export namespace General {
       id: "bone_aabb",
       documentation:
         "Returns the axis aligned bounding box of a bone as a struct with members '.min', '.max', along with '.x', '.y', and '.z' values for each.",
+    },
+    {
+      id: "bone_orientation_matrix",
+      documentation: "Takes the name of the bone as an argument. Returns the bone orientation (as a matrix) of the desired bone provided it exists in the queryable geometry of the mob, else this returns the identity matrix and throws a content error.",
+      parameters: [
+        {
+          id: "bone",
+          documentation: "Bone name"
+        }
+      ]
+    },
+    {
+      id: "bone_orientation_trs",
+      documentation: "TRS stands for Translate/Rotate/Scale. Takes the name of the bone as an argument. Returns the bone orientation matrix decomposed into the component translation/rotation/scale parts of the desired bone provided it exists in the queryable geometry of the mob, else this returns the identity matrix and throws a content error. The returned value is returned as a variable of type 'struct' with members '.t', '.r', and '.s', each with members '.x', '.y', and '.z'",
+      parameters: [
+        {
+          id: "bone",
+          documentation: "Bone name"
+        }
+      ]
     },
     {
       id: "bone_origin",
@@ -359,14 +467,14 @@ export namespace General {
         "Returns value between 0.0 and 1.0 with 0.0 meaning cape is fully down and 1.0 is cape is fully up",
     },
     {
-      id: "cardinal_facing_2d",
-      documentation:
-        "Returns the current facing of the player ignoring up/down part of the direction (North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
-    },
-    {
       id: "cardinal_facing",
       documentation:
         "Returns the current facing of the player (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
+    },
+    {
+      id: "cardinal_facing_2d",
+      documentation:
+        "Returns the current facing of the player ignoring up/down part of the direction (North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
     },
     {
       id: "cardinal_player_facing",
@@ -377,6 +485,14 @@ export namespace General {
       id: "combine_entities",
       documentation:
         "Combines any valid entity references from all arguments into a single array. Note that order is not preserved, and duplicates and invalid values are removed.",
+    },
+    {
+      id: "cooldown_time",
+      documentation: "Returns the total cooldown time in seconds for the item held or worn by the specified equipment slot name (and if required second numerical slot id), otherwise returns 0. Uses the same name and id that the replaceitem command takes when querying entities."
+    },
+    {
+      id: "cooldown_time_remaining",
+      documentation: "Returns the cooldown time remaining in seconds for specified cooldown type or the item held or worn by the specified equipment slot name (and if required second numerical slot id), otherwise returns 0. Uses the same name and id that the replaceitem command takes when querying entities. Returns highest cooldown if no parameters are supplied."
     },
     {
       id: "count",
@@ -483,10 +599,6 @@ export namespace General {
       documentation: "Usable only in behavior packs when determining the default value for an entity's Property. Requires one string argument. If the entity is being loaded from data that was last saved with a component_group with the specified name, returns 1.0, otherwise returns 0.0. The purpose of this query is to allow entity definitions to change and still be able to load the correct state of entities.",
     },
     {
-      id: "has_dash_cooldown",
-      documentation: "Returns 1.0 if the entity has cooldown on its dash, else it returns 0.0.",
-    },
-    {
       id: "has_any_family",
       documentation: "Returns 1 if the entity has any of the specified families, else 0.",
     },
@@ -517,16 +629,24 @@ export namespace General {
       documentation: "Returns 1.0 if the entity has collisions enabled, else it returns 0.0.",
     },
     {
+      id: "has_dash_cooldown",
+      documentation: "Returns 1.0 if the entity has cooldown on its dash, else it returns 0.0.",
+    },
+    {
       id: "has_gravity",
       documentation: "Returns 1.0 if the entity is affected by gravity, else it returns 0.0.",
     },
     {
-      id: "has_property",
-      documentation: "Takes one argument: the name of the property on the Actor. Returns 1.0 if a property with the given name exists, 0 otherwise.",
-    },
-    {
       id: "has_owner",
       documentation: "Returns true if the entity has an owner ID else it returns false",
+    },
+    {
+      id: "has_player_rider",
+      documentation: "Returns 1 if the entity has a player riding it in any seat, else it returns 0.",
+    },
+    {
+      id: "has_property",
+      documentation: "Takes one argument: the name of the property on the Actor. Returns 1.0 if a property with the given name exists, 0 otherwise.",
     },
     {
       id: "has_rider",
@@ -607,6 +727,10 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is angry, else it returns 0.0.",
     },
     {
+      id: "is_attached",
+      documentation: "Returns 1.0 if the entity is attached to another entity (such as being held or worn), else it will return 0.0. Available only with resource packs." 
+    },
+    {
       id: "is_attached_to_entity",
       documentation: "Returns 1.0 if the actor is attached to an entity, else it will return 0.0.",
     },
@@ -639,12 +763,12 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is casting, else it returns 0.0.",
     },
     {
-      id: "is_celebrating_special",
-      documentation: "Returns 1.0 if the entity is doing a special celebration, else it returns 0.0.",
-    },
-    {
       id: "is_celebrating",
       documentation: "Returns 1.0 if the entity is celebrating, else it returns 0.0.",
+    },
+    {
+      id: "is_celebrating_special",
+      documentation: "Returns 1.0 if the entity is doing a special celebration, else it returns 0.0.",
     },
     {
       id: "is_charged",
@@ -657,6 +781,10 @@ export namespace General {
     {
       id: "is_chested",
       documentation: "Returns 1.0 if the entity has chests attached to it, else it returns 0.0.",
+    },
+    {
+      id: "is_cooldown_type",
+      documentation: "Returns 1.0 if the specified held or worn item has the specified cooldown type name, otherwise returns 0.0. First argument is the cooldown name to check for, second argument is the equipment slot name, and if required third argument is the numerical slot id. For second and third arguments, uses the same name and id that the replaceitem command takes when querying entities."
     },
     {
       id: "is_crawling",
@@ -683,24 +811,24 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is digging, else it returns 0.0.",
     },
     {
-      id: "is_eating_mob",
-      documentation: "Returns 1.0 if the entity is eating a mob, else it returns 0.0.",
-    },
-    {
       id: "is_eating",
       documentation: "Returns 1.0 if the entity is eating, else it returns 0.0.",
+    },
+    {
+      id: "is_eating_mob",
+      documentation: "Returns 1.0 if the entity is eating a mob, else it returns 0.0.",
     },
     {
       id: "is_elder",
       documentation: "Returns 1.0 if the entity is an elder version of it, else it returns 0.0.",
     },
     {
-      id: "is_emoting",
-      documentation: "Returns 1.0 if the entity is emoting, else it returns 0.0.",
-    },
-    {
       id: "is_emerging",
       documentation: "Returns 1.0 if the entity is emerging, else it returns 0.0.",
+    },
+    {
+      id: "is_emoting",
+      documentation: "Returns 1.0 if the entity is emoting, else it returns 0.0.",
     },
     {
       id: "is_enchanted",
@@ -748,6 +876,10 @@ export namespace General {
         "Returns 1.0 if the entity is in contact with any water (water, rain, splash water bottle), else it returns 0.0.",
     },
     {
+      id: "is_in_lava",
+      documentation: "Returns 1.0 if the entity is in lava, else it returns 0.0."
+    },
+    {
       id: "is_in_love",
       documentation: "Returns 1.0 if the entity is in love, else it returns 0.0.",
     },
@@ -756,16 +888,12 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is rendered as part of the UI, else it returns 0.0.",
     },
     {
-      id: "is_in_water_or_rain",
-      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
-    },
-    {
       id: "is_in_water",
       documentation: "Returns 1.0 if the entity is in water, else it returns 0.0.",
     },
     {
-      id: "is_in_lava",
-      documentation: "Returns 1.0 if the entity is in lava, else it returns 0.0.",
+      id: "is_in_water_or_rain",
+      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
     },
     {
       id: "is_interested",
@@ -796,13 +924,14 @@ export namespace General {
         { id: "item", documentation: "" },
       ],
     },
-    {
-      id: "is_jumping",
-      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
-    },
+    
     {
       id: "is_jump_goal_jumping",
       documentation: "Returns 1.0 if the entity is doing a jump goal jump, else it returns 0.0.",
+    },
+    {
+      id: "is_jumping",
+      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
     },
     {
       id: "is_laying_down",
@@ -920,7 +1049,7 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is scared, else it returns 0.0.",
     },
     {
-      id: "query.is_scenting",
+      id: "is_scenting",
       documentation: "Returns 1.0 if the entity is scenting, else it returns 0.0.",
     },
     {
@@ -928,12 +1057,12 @@ export namespace General {
       documentation: "Returns true if the player has selected an item in the inventory, else it returns 0.0.",
     },
     {
-      id: "is_shaking_wetness",
-      documentation: "Returns 1.0 if the entity is shaking water off, else it returns 0.0.",
-    },
-    {
       id: "is_shaking",
       documentation: "Returns 1.0 if the entity is casting, else it returns 0.0.",
+    },
+    {
+      id: "is_shaking_wetness",
+      documentation: "Returns 1.0 if the entity is shaking water off, else it returns 0.0.",
     },
     {
       id: "is_sheared",
@@ -956,10 +1085,6 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is sleeping, else it returns 0.0.",
     },
     {
-      id: "is_spectator",
-      documentation: "Returns 1.0 if the entity is spectator, else it returns 0.0.",
-    },
-    {
       id: "is_sneaking",
       documentation: "Returns 1.0 if the entity is sneaking, else it returns 0.0.",
     },
@@ -974,6 +1099,10 @@ export namespace General {
     {
       id: "is_sonic_boom",
       documentation: "Returns 1.0 if the entity is using sonic boom, else it returns 0.0.",
+    },
+    {
+      id: "is_spectator",
+      documentation: "Returns 1.0 if the entity is spectator, else it returns 0.0.",
     },
     {
       id: "is_sprinting",
@@ -1177,6 +1306,46 @@ export namespace General {
       documentation: "Takes one argument: the name of the property on the entity. Returns the value of that property if it exists, else 0.0 if not.",
     },
     {
+      id: "relative_block_has_all_tags",
+      documentation: "Takes an entity-relative position and one or more tag names, and returns either 0 or 1 based on if the block at that position has all of the tags provided."
+    },
+    {
+      id: "relative_block_has_any_tag",
+      documentation: "Takes an entity-relative position and one or more tag names, and returns either 0 or 1 based on if the block at that position has any of the tags provided."
+    },
+    {
+      id: "ride_body_x_rotation",
+      documentation: "Returns the body pitch world-rotation of the ride an entity, else it returns 0.0."
+    },
+    {
+      id: "ride_body_y_rotation",
+      documentation: "Returns the body yaw world-rotation of the ride an entity, else it returns 0.0."
+    },
+    {
+      id: "ride_head_x_rotation",
+      documentation: "Returns the hea x world-rotation of the ride an entity, else it returns 0.0."
+    },
+    {
+      id: "ride_head_y_rotation",
+      documentation: "Takes one optional argument as a parameter. Returns the head y world-rotation of the ride of an entity, else it returns 0.0. First parameter only for horses, zombie horses, skeleton horses, donkeys and mules that clamps rotation in degrees."
+    },
+    {
+      id: "rider_body_x_rotation",
+      documentation: "Returns the body pitch world-rotation of a valid rider at the provided index if called on an entity, else it returns 0.0."
+    },
+    {
+      id: "rider_body_y_rotation",
+      documentation: "Returns the body yaw world-rotation of a valid rider at the provided index if called on an entity, else it returns 0.0."
+    },
+    {
+      id: "rider_head_x_rotation",
+      documentation: "Takes one argument as a parameter. Returns the head x world-rotation of the rider entity at the provided index, else it returns 0.0."
+    },
+    {
+      id: "rider_head_y_rotation",
+      documentation: "Takes one or two arguments as parameters. Returns the head y world-rotation of the rider entity at the provided index, else it returns 0.0. Horses, zombie horses, skeleton horses, donkeys and mules require a second parameter that clamps rotation in degrees."
+    },
+    {
       id: "remaining_durability",
       documentation: "Returns the how much durability an item has remaining",
     },
@@ -1189,6 +1358,10 @@ export namespace General {
       documentation:
         "Returns the rotation required to aim at the camera. Requires one argument representing the rotation axis you would like (0 for x, 1 for y)",
       parameters: [{ id: "axis", documentation: "0 for x, 1 for y" }],
+    },
+    {
+      id: "scoreboard",
+      documentation: "Takes one argument - the name of the scoreboard entry for this entity. Returns the specified scoreboard value for this entity. Available only with behavior packs."
     },
     {
       id: "shake_angle",
