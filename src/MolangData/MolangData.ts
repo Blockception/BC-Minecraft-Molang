@@ -2,6 +2,7 @@ import { Data } from "./Data";
 
 import { Animations as MAnimations } from "./Animations";
 import { AnimationsControllers as MAnimationsControllers } from "./AnimationsControllers";
+import { Attachables as MAttachables } from "./Attachables";
 import { Blocks as MBlocks } from "./Blocks";
 import { Entities as MEntities } from "./Entities";
 import { FeaturesRules as MFeaturesRules } from "./FeaturesRules";
@@ -28,6 +29,8 @@ export namespace MolangData {
   export const Animations = MAnimations;
   /**Molang data for animations controllers*/
   export const AnimationsControllers = MAnimationsControllers;
+  /**Molang data for attachables*/
+  export const Attachables = MAttachables;
   /**Molang data for blocks*/
   export const Blocks = MBlocks;
   /**Molang data for entities*/
@@ -55,6 +58,7 @@ export namespace MolangData {
 export type MolangDataSetKey =
   | "Animations"
   | "AnimationsControllers"
+  | "Attachables"
   | "Blocks"
   | "Entities"
   | "FeaturesRules"
