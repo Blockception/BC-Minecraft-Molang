@@ -2,6 +2,7 @@
 
 export * from "./Animations";
 export * from "./AnimationsControllers";
+export * from "./Attachables";
 export * from "./Blocks";
 export * from "./Data";
 export * from "./Entities";
