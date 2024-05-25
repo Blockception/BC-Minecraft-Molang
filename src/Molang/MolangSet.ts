@@ -142,10 +142,16 @@ export namespace MolangFullSet {
 
       for (let I = 0; I < keys.length; I++) {
         const key = keys[I];
-        const value = script.variables[key];
-
-        if (typeof key === "string" && typeof value === "string") {
-          addTo.variables.defined.push(key);
+        if (typeof key !== "string") {
+          continue;
+        }
+        const index = key.indexOf(".");
+        if (index < 0) {
+          continue;
+        }
+        const id = key.substring(index + 1);
+        if (id && id.length > 0) {
+          addTo.variables.defined.push(id);
         }
       }
     }
