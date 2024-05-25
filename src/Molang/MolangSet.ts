@@ -135,4 +135,19 @@ export namespace MolangFullSet {
 
     return false;
   }
+
+  export function fromScript(script: { variables?: Record<string, string> }, addTo: MolangSet): void {
+    if (script.variables) {
+      const keys = Object.getOwnPropertyNames(script.variables);
+
+      for (let I = 0; I < keys.length; I++) {
+        const key = keys[I];
+        const value = script.variables[key];
+
+        if (typeof key === "string" && typeof value === "string") {
+          addTo.variables.defined.push(key);
+        }
+      }
+    }
+  }
 }
