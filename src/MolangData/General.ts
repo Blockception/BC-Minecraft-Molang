@@ -637,6 +637,10 @@ export namespace General {
       documentation: "Returns 1.0 if the entity is affected by gravity, else it returns 0.0.",
     },
     {
+      id: "has_head_gear",
+      documentation: "Returns boolean whether an Actor has an item in their head armor slot or not, or false if no actor in current context",
+    },
+    {
       id: "has_owner",
       documentation: "Returns true if the entity has an owner ID else it returns false",
     },
@@ -931,7 +935,7 @@ export namespace General {
     },
     {
       id: "is_jumping",
-      documentation: "Returns 1.0 if the entity is in water or rain, else it returns 0.0.",
+      documentation: "Returns 1.0 if the entity is jumping, else it returns 0.0.",
     },
     {
       id: "is_laying_down",
@@ -1506,6 +1510,8 @@ export namespace General {
       documentation: "Returns the wing flap speed of the entity, or 0.0 if this doesn't make sense",
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
+    // Experimental
+    { id: "state_time", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Only valid in an animation controller. Returns the time in seconds in the current animation controller state." },
     //DEPRECATED
     {
       id: "cardinal_block_face_placed_on",
