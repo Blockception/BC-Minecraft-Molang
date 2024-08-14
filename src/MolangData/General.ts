@@ -1404,6 +1404,10 @@ export namespace General {
       id: "standing_scale",
       documentation: "Returns the scale of how standing up the entity is",
     },
+    { 
+      id: "state_time", 
+      documentation: "Only valid in an animation controller. Returns the time in seconds in the current animation controller state." 
+    },
     {
       id: "structural_integrity",
       documentation: "Returns the structural integrity for the actor, otherwise returns 0.",
@@ -1511,7 +1515,6 @@ export namespace General {
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
     // Experimental
-    { id: "state_time", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Only valid in an animation controller. Returns the time in seconds in the current animation controller state." },
     //DEPRECATED
     {
       id: "cardinal_block_face_placed_on",
