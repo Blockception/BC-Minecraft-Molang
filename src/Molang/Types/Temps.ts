@@ -3,7 +3,7 @@ import { RegularExpression } from "../RegExp";
 /**The namespace that governs molang temp variables*/
 export namespace Temps {
   /**The pattern used to find the definitions of temp variables*/
-  export const getDefinedPattern: RegExp = /(?:^|;[ \t]*|"[ \t]*)\b(?:t|temp)\.([a-z0-9_]*)[ \t]*\=/gim;
+  export const getDefinedPattern: RegExp = /(?:^|;[ \t]*|"[ \t]*)\b(?:t|temp)\.([a-z0-9_]*)[ \t]*=/gim;
 
   /**The pattern used to find the temp variables*/
   export const getUsedPattern: RegExp = /\b(?:t|temp)\.([a-z0-9_]+)\b(?![ \t]+=)/gim;

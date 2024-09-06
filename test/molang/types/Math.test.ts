@@ -1,23 +1,18 @@
-import { expect } from "chai";
-import { Types } from '../../../src/Molang/';
-import { VanillaPlayer } from "../../Player.test";
+import { Types } from "../../../src/Molang";
+import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Molang", () => {
   describe("math", () => {
     it("using", () => {
-      let receiver: string[] = [];
-
+      const receiver: string[] = [];
       Types.Math.getUsing(VanillaPlayer.Data, receiver);
-
-      expect(receiver).to.contain.members(["sin", "sqrt", "cos", "clamp", "pow"]);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("using obj", () => {
-      let receiver: string[] = [];
-
+      const receiver: string[] = [];
       Types.Math.getUsing(VanillaPlayer.DataOBject, receiver);
-
-      expect(receiver).to.contain.members(["sin", "sqrt", "cos", "clamp", "pow"]);
+      expect(receiver).toMatchSnapshot();
     });
   });
 });

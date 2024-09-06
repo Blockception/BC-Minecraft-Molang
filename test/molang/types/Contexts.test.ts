@@ -1,23 +1,18 @@
-import { expect } from "chai";
-import { Types } from '../../../src/Molang/';
-import { VanillaPlayer } from "../../Player.test";
+import { Types } from "../../../src/Molang";
+import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Molang", () => {
   describe("Contexts", () => {
     it("Using", () => {
-      let receiver: string[] = [];
-
+      const receiver: string[] = [];
       Types.Context.getUsing(VanillaPlayer.Data, receiver);
-
-      expect(receiver).to.contain.members(["world_x"]);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("Using obj", () => {
-      let receiver: string[] = [];
-
+      const receiver: string[] = [];
       Types.Context.getUsing(VanillaPlayer.DataOBject, receiver);
-
-      expect(receiver).to.contain.members(["world_x"]);
+      expect(receiver).toMatchSnapshot();
     });
   });
 });

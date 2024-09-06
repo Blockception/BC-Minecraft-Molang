@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 /** The type of molang */
 export enum MolangType {
   /** A command */
@@ -10,7 +11,7 @@ export enum MolangType {
   unknown,
 }
 
-const eventRegex = /^@s ([\w\:\_\-]+)/im;
+const eventRegex = /^@s ([\w:_-]+)/im;
 const commandRegex = /^\/[a-z]+/im;
 const molangRegexp =
   /\b((query|math|variable|texture|temp|geometry|material|array|context|c|q|v|t)\.[A-Za-z_0-9]+|->|this)\b/im;
@@ -77,8 +78,8 @@ export function isValidMolang(molang: string): boolean {
 export function find(molang: string, startIndex: number, find: string): number {
   let instr = false;
   let level = 0;
-  let length = find.length;
-  let max = molang.length - length;
+  const length = find.length;
+  const max = molang.length - length;
 
   for (let I = startIndex; I < max; I++) {
     if (level === 0 && instr === false) {
