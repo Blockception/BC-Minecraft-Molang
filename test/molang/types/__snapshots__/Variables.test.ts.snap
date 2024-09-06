@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molang variables defined special 1`] = `
+[
+  "armor_stand.pose_index",
+  "armor_stand.hurt_time",
+]
+`;
+
+exports[`Molang variables defined1 1`] = `
+[
+  "foo1",
+  "foo2",
+  "foo3",
+]
+`;
+
+exports[`Molang variables defined2 1`] = `
+[
+  "is_holding_right",
+  "is_blinking",
+  "last_blink_time",
+  "hand_bob",
+  "helmet_layer_visible",
+  "leg_layer_visible",
+  "boot_layer_visible",
+  "chest_layer_visible",
+  "attack_body_rot_y",
+  "tcos0",
+  "first_person_rotation_factor",
+  "map_angle",
+  "item_use_normalized",
+]
+`;
+
+exports[`Molang variables defined3 1`] = `
+[
+  "is_holding_right",
+  "is_blinking",
+  "last_blink_time",
+  "hand_bob",
+  "helmet_layer_visible",
+  "leg_layer_visible",
+  "boot_layer_visible",
+  "chest_layer_visible",
+  "attack_body_rot_y",
+  "tcos0",
+  "first_person_rotation_factor",
+  "map_angle",
+  "item_use_normalized",
+]
+`;
+
+exports[`Molang variables duplicate check 1`] = `
+[
+  "foo1",
+  "foo2",
+  "foo3",
+]
+`;
+
+exports[`Molang variables using1 1`] = `
+[
+  "is_holding_right",
+  "is_blinking",
+  "last_blink_time",
+  "hand_bob",
+  "helmet_layer_visible",
+  "leg_layer_visible",
+  "boot_layer_visible",
+  "chest_layer_visible",
+  "attack_body_rot_y",
+  "attack_time",
+  "tcos0",
+  "gliding_speed_value",
+  "first_person_rotation_factor",
+  "map_angle",
+  "player_x_rotation",
+  "item_use_normalized",
+  "is_first_person",
+  "map_face_icon",
+]
+`;
+
+exports[`Molang variables using2 1`] = `
+[
+  "is_holding_right",
+  "is_blinking",
+  "last_blink_time",
+  "hand_bob",
+  "helmet_layer_visible",
+  "leg_layer_visible",
+  "boot_layer_visible",
+  "chest_layer_visible",
+  "attack_body_rot_y",
+  "attack_time",
+  "tcos0",
+  "gliding_speed_value",
+  "first_person_rotation_factor",
+  "map_angle",
+  "player_x_rotation",
+  "item_use_normalized",
+  "is_first_person",
+  "map_face_icon",
+]
+`;
+
+exports[`Molang variables using3 1`] = `
+[
+  "armor_stand.pose_index",
+]
+`;

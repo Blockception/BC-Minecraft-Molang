@@ -1,5 +1,4 @@
-import { expect } from "chai";
-import { General } from "../../src/MolangData/General";
+import { General } from '../../src/main';
 
 describe("General", () => {
   describe("getQueries", () => {
@@ -7,7 +6,7 @@ describe("General", () => {
 
     queries.forEach((item) =>
       it(`getQuery should return ${item}`, () => {
-        expect(General.getQuery(item)).to.not.be.undefined;
+        expect(General.getQuery(item)).toBeDefined();
       })
     );
   });
@@ -17,7 +16,7 @@ describe("General", () => {
 
     math.forEach((item) =>
       it(item, () => {
-        expect(General.getMath(item)).to.not.be.undefined;
+        expect(General.getMath(item)).toBeDefined();
       })
     );
   });

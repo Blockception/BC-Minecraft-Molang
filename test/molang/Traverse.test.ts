@@ -1,18 +1,16 @@
-import { expect } from "chai";
-import { MolangType } from "../../src/Molang/Functions";
-import { Traverse } from "../../src/Molang/Traverse";
-import { VanillaPlayer } from "../Player.test";
+import { MolangType, Traverse } from "../../src/Molang";
+import { VanillaPlayer } from '../vanilla-player';
 
 describe("Traverse", () => {
   it("rp", () => {
     const obj = VanillaPlayer.DataOBject;
     let count = 0;
 
-    Traverse(obj, (molang, type, path) => {
+    Traverse(obj, () => {
       count++;
     });
 
-    expect(count).to.be.greaterThan(20);
+    expect(count).toBeGreaterThan(20);
   });
 
   it("anim", () => {
@@ -31,7 +29,7 @@ describe("Traverse", () => {
     let events = 0;
     let molang = 0;
 
-    Traverse(obj, (value, type, path) => {
+    Traverse(obj, (value, type,) => {
       switch (type) {
         case MolangType.command:
           commands++;
@@ -47,8 +45,8 @@ describe("Traverse", () => {
       }
     });
 
-    expect(commands).to.equal(2);
-    expect(events).to.equal(1);
-    expect(molang).to.equal(1);
+    expect(commands).toEqual(2);
+    expect(events).toEqual(1);
+    expect(molang).toEqual(1);
   });
 });

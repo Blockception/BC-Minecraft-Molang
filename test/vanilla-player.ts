@@ -1,5 +1,4 @@
-import { expect } from "chai";
-import { DefinedUsing } from "../src/main";
+import { DefinedUsing } from '../src/main';
 
 export namespace VanillaPlayer {
   export const Goes: string[] = ["cape", "humanoid.custom"];
@@ -141,10 +140,10 @@ describe("data test", () => {
   it("object", () => {
     const obj = VanillaPlayer.DataOBject;
 
-    expect(obj).to.not.be.undefined;
+    expect(obj).toBeDefined();
 
-    expect(obj.format_version).to.not.be.undefined;
-    expect(obj["minecraft:client_entity"].description).to.not.be.undefined;
-    expect(obj["minecraft:client_entity"].description.identifier).to.not.be.undefined;
+    expect(obj.format_version).toBeDefined();
+    expect(obj["minecraft:client_entity"].description).toBeDefined();
+    expect(obj["minecraft:client_entity"].description.identifier).toBeDefined();
   });
 });

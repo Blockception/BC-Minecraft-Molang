@@ -1,59 +1,58 @@
-import { expect } from "chai";
-import { Types } from '../../../src/Molang/';
-import { VanillaPlayer } from "../../Player.test";
+import { Types } from '../../../src/Molang';
+import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Molang", () => {
   describe("temps", () => {
     it("defined1", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Temps.getDefined("temp.foo1 = 0; temp.foo2 = 0; t.foo3 = 0;", receiver);
 
-      expect(receiver).to.have.members(["foo1", "foo2", "foo3"]);
+      expect(receiver).toEqual(expect.arrayContaining(["foo1", "foo2", "foo3"]));
     });
 
     it("defined2", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Temps.getDefined(VanillaPlayer.DataOBject, receiver);
 
-      expect(receiver).to.contain.members([]);
+      expect(receiver).toEqual(expect.arrayContaining([]));
     });
 
     it("defined3", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Temps.getDefined(VanillaPlayer.Data, receiver);
 
-      expect(receiver).to.contain.members(VanillaPlayer.Temps.defined);
+      expect(receiver).toEqual(expect.arrayContaining(VanillaPlayer.Temps.defined));
     });
 
     it("duplicate check", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Temps.getDefined(["temp.foo1 = 0; temp.foo2 = 0; t.foo3 = 0;", "temp.foo3 = 0;"], receiver);
 
-      expect(receiver).to.have.members(["foo1", "foo2", "foo3"]);
+      expect(receiver).toEqual(expect.arrayContaining(["foo1", "foo2", "foo3"]));
     });
 
     it("defined not sticky?", () => {
-      expect(Types.Temps.getDefinedPattern.sticky).to.equal(false);
+      expect(Types.Temps.getDefinedPattern.sticky).toBeFalsy();
     });
 
     it("using1", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Temps.getUsing(VanillaPlayer.Data, receiver);
 
-      expect(receiver).to.contain.members(VanillaPlayer.Temps.using);
+      expect(receiver).toEqual(expect.arrayContaining(VanillaPlayer.Temps.using));
     });
 
     it("using2", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Temps.getUsing(VanillaPlayer.DataOBject, receiver);
 
-      expect(receiver).to.contain.members(VanillaPlayer.Temps.using);
+      expect(receiver).toEqual(expect.arrayContaining(VanillaPlayer.Temps.using));
     });
   });
 });

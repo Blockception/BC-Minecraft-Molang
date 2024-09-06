@@ -1,31 +1,27 @@
-import { expect } from "chai";
 import { Types } from "../../../src/Molang";
-import { VanillaPlayer } from "../../Player.test";
+import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Molang", () => {
   describe("variables", () => {
     it("defined1", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Variables.getDefined("variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;", receiver);
-
-      expect(receiver).to.have.members(["foo1", "foo2", "foo3"]);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("defined2", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Variables.getDefined(VanillaPlayer.DataOBject, receiver);
-
-      expect(receiver).to.contain.members(VanillaPlayer.Variables.defined);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("defined3", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Variables.getDefined(VanillaPlayer.Data, receiver);
-
-      expect(receiver).to.contain.members(VanillaPlayer.Variables.defined);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("defined special", () => {
@@ -34,50 +30,43 @@ describe("Molang", () => {
         "variable.armor_stand.hurt_time = 0;"
       ]`;
 
-      let receiver: string[] = [];
+      const receiver: string[] = [];
       Types.Variables.getDefined(data, receiver);
-
-      expect(receiver).to.contains.members(["armor_stand.pose_index", "armor_stand.hurt_time"]);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("duplicate check", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
 
       Types.Variables.getDefined(["variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;", "variable.foo3 = 0;"], receiver);
-
-      expect(receiver).to.have.members(["foo1", "foo2", "foo3"]);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("defined not sticky?", () => {
-      expect(Types.Variables.getDefinedPatt.sticky).to.equal(false);
+      expect(Types.Variables.getDefinedPatt.sticky).toBeFalsy();
     });
 
     it("using1", () => {
-      let receiver: string[] = [];
-
+      const receiver: string[] = [];
       Types.Variables.getUsing(VanillaPlayer.Data, receiver);
-
-      expect(receiver).to.contain.members(VanillaPlayer.Variables.using);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("using2", () => {
-      let receiver: string[] = [];
-
+      const receiver: string[] = [];
       Types.Variables.getUsing(VanillaPlayer.DataOBject, receiver);
-
-      expect(receiver).to.contain.members(VanillaPlayer.Variables.using);
+      expect(receiver).toMatchSnapshot();
     });
 
     it("using3", () => {
-      let receiver: string[] = [];
+      const receiver: string[] = [];
       const data = `{
         "default": "variable.armor_stand.pose_index == 0",
         "none": "variable.armor_stand.pose_index == 1"
       }`;
 
       Types.Variables.getUsing(data, receiver);
-
-      expect(receiver).to.contain.members(["armor_stand.pose_index", "armor_stand.pose_index"]);
+      expect(receiver).toMatchSnapshot();
     });
   });
 });

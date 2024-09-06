@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molang math using 1`] = `
+[
+  "sin",
+  "sqrt",
+  "cos",
+  "clamp",
+  "pow",
+]
+`;
+
+exports[`Molang math using obj 1`] = `
+[
+  "sin",
+  "sqrt",
+  "cos",
+  "clamp",
+  "pow",
+]
+`;

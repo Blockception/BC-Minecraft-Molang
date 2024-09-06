@@ -1,5 +1,4 @@
-import { expect } from "chai";
-import { getEvent, IsMolangType, MolangType } from "../../src/Molang/Functions";
+import { getEvent, IsMolangType, MolangType } from '../../src/Molang';
 
 describe("Functions", () => {
   describe("IsMolangType", () => {
@@ -17,7 +16,7 @@ describe("Functions", () => {
 
     shouldbe.forEach((item) =>
       it(`Should return type: ${item}`, () => {
-        expect(IsMolangType(item)).to.not.equal(MolangType.unknown);
+        expect(IsMolangType(item)).not.toEqual(MolangType.unknown);
       })
     );
   });
@@ -25,6 +24,6 @@ describe("Functions", () => {
   it("getEvent", () => {
     const data = getEvent("@s to:anger");
 
-    expect(data).to.equal("to:anger");
+    expect(data).toEqual("to:anger");
   });
 });
