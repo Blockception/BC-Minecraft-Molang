@@ -1515,6 +1515,9 @@ export namespace General {
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
     // Experimental
+    { id: "client_max_render_distance", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns the max render distance in chunks of the current client. Available on the Client (Resource Packs) only." },
+    { id: "client_memory_tier", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns a number representing the client RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the Client (Resource Packs) only." },
+    { id: "server_memory_tier", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns a number representing the server RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the server side (Behavior Packs) only." },
     //DEPRECATED
     {
       id: "cardinal_block_face_placed_on",
