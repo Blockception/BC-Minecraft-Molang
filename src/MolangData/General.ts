@@ -481,6 +481,14 @@ export namespace General {
       documentation:
         "Returns the current facing of the player (Down=0.0, Up=1.0, North=2.0, South=3.0, West=4.0, East=5.0, Undefined=6.0).",
     },
+    { 
+      id: "client_max_render_distance", 
+      documentation: "Returns the max render distance in chunks of the current client. Available on the Client (Resource Packs) only." 
+    },
+    { 
+      id: "client_memory_tier",
+      documentation: "Returns a number representing the client RAM memory tier, 0 = 'SuperLow', 1 = 'Low', 2 = 'Mid', 3 = 'High', or 4 = 'SuperHigh'. Available on the Client (Resource Packs) only." 
+    },
     {
       id: "combine_entities",
       documentation:
@@ -1367,6 +1375,10 @@ export namespace General {
       id: "scoreboard",
       documentation: "Takes one argument - the name of the scoreboard entry for this entity. Returns the specified scoreboard value for this entity. Available only with behavior packs."
     },
+    { 
+      id: "server_memory_tier",
+      documentation: "Returns a number representing the server RAM memory tier, 0 = 'SuperLow', 1 = 'Low', 2 = 'Mid', 3 = 'High', or 4 = 'SuperHigh'. Available on the server side (Behavior Packs) only." 
+    },
     {
       id: "shake_angle",
       documentation: "Returns the shaking angle of the entity if it makes sense, else it returns 0.0.",
@@ -1515,9 +1527,14 @@ export namespace General {
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
     // Experimental
-    { id: "client_max_render_distance", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns the max render distance in chunks of the current client. Available on the Client (Resource Packs) only." },
-    { id: "client_memory_tier", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns a number representing the client RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the Client (Resource Packs) only." },
-    { id: "server_memory_tier", documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns a number representing the server RAM memory tier, 0 = 'Undetermined', 1 = 'SuperLow', 2 = 'Low', 3 = 'Mid', 4 = 'High', or 5 = 'SuperHigh'. Available on the server side (Behavior Packs) only." },
+    {
+      id: "last_input_mode_is_any",
+      documentation: "	(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Takes one or more arguments ('keyboard_and_mouse', 'touch', 'gamepad', or 'motion_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only.",
+    },
+    {
+      id: "touch_only_affects_hotbar",
+      documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.",
+    },
     //DEPRECATED
     {
       id: "cardinal_block_face_placed_on",
