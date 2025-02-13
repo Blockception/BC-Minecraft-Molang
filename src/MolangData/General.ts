@@ -1201,6 +1201,10 @@ export namespace General {
         "Returns 1.0 if the entity was last hit by the player, else it returns 0.0. If called by the client always returns 0.0.",
     },
     {
+      id: "last_input_mode_is_any",
+      documentation: "Takes one or more arguments ('keyboard_and_mouse', 'touch', 'gamepad', or 'motion_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only.",
+    },
+    {
       id: "lie_amount",
       documentation: "Returns the lie down amount for the entity",
     },
@@ -1501,6 +1505,10 @@ export namespace General {
       documentation: "Returns the total number of active particles in the world",
     },
     {
+      id: "touch_only_affects_hotbar",
+      documentation: "Returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.",
+    },
+    {
       id: "trade_tier",
       documentation: "Returns the trade tier of the entity if it makes sense, else it returns 0.0.",
     },
@@ -1527,14 +1535,6 @@ export namespace General {
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
     // Experimental
-    {
-      id: "last_input_mode_is_any",
-      documentation: "	(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Takes one or more arguments ('keyboard_and_mouse', 'touch', 'gamepad', or 'motion_controller'). If the last input used is any of the specified string values, returns 1.0. Otherwise returns 0.0. Available on the Client (Resource Packs) only.",
-    },
-    {
-      id: "touch_only_affects_hotbar",
-      documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Returns 1.0 if the touch input only affects the touchbar, otherwise returns 0.0. Available on the Client (Resource Packs) only.",
-    },
     //DEPRECATED
     {
       id: "cardinal_block_face_placed_on",
