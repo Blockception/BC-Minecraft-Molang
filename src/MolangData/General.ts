@@ -598,6 +598,10 @@ export namespace General {
       id: "get_root_locator_offset",
       documentation: "Gets specified axis of the specified locator offset of the root model",
     },
+    { 
+      id: "graphics_mode_is_any", 
+      documentation: "Takes in one or more arguments ('simple', 'fancy', 'deferred', 'raytraced'). If the graphics mode of the client matches any of the arguments, return 1.0. Available on the Client (Resource Packs) only." 
+    },
     {
       id: "ground_speed",
       documentation: "Returns the ground speed of the entity in metres/second",
@@ -1535,10 +1539,6 @@ export namespace General {
     },
     { id: "yaw_speed", documentation: "Returns the entity's yaw speed" },
     // Experimental
-    { 
-      id: "graphics_mode_is_any", 
-      documentation: "(EXPERIMENTAL. Enable 'Upcoming Creator Features' to use.) Takes in one or more arguments ('simple', 'fancy', 'deferred', 'raytraced'). If the graphics mode of the client matches any of the arguments, return 1.0. Available on the Client (Resource Packs) only." 
-    },
     //DEPRECATED
     {
       id: "cardinal_block_face_placed_on",
