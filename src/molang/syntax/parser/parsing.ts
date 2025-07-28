@@ -7,5 +7,10 @@ export function parse(line: OffsetWord) {
 
   identify(tokens);
 
+  // TODO: Simplifications,
+  // - such as collectors of strings
+  // - correcting decimal numbers
+  // - trimming emty whitespace
+
   return tokens;
 }

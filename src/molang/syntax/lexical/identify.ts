@@ -1,8 +1,6 @@
 import { LexicalNode, ParseError, Token } from "./lexical";
 
 export function identify(tokens: LexicalNode[]) {
-  let unknownleft = 0;
-
   for (let i = 0; i < tokens.length; i++) {
     const n = tokens[i];
     if (n.type !== Token.unknown) continue;
@@ -46,13 +44,17 @@ export function identify(tokens: LexicalNode[]) {
 
           continue;
         }
+
+      // String literal?
+      case '"':
+      case "'":
+        const prev = tokens[i - 1];
+        if (prev?.text !== "\\") {
+          continue;
+        }
+        n.type = Token.constant;
     }
-
-    unknownleft++;
   }
-
-  // Nothing left? earlier exit
-  if (unknownleft === 0) return;
 }
 
 function simpleIdentify(text: string): Token {

@@ -49,6 +49,7 @@ export enum Token {
   keyword,
   operator,
   punction,
+  end,
 }
 
 export interface LexicalNode {
@@ -119,10 +120,16 @@ class Parser {
   parse() {
     // Moves along the text, until we can find things that we can split, then we identify and move further
     while (this.text.length > 0) {
+      if (isNumberOrLetter(this.text.charCodeAt(this.index))) {
+        this.index++;
+        continue;
+      }
+
       this.parseAt();
     }
   }
 
+  // Does one round of parsing
   private parseAt() {
     let c = this.text.slice(this.index, this.index + 2);
     switch (c) {
@@ -165,7 +172,10 @@ class Parser {
       case "+":
       case "<":
       case ">":
+      case ":":
         return this.isolateCurrent(1, Token.operator);
+      case ";":
+      case ",":
       case ".":
         return this.isolateCurrent(1, Token.punction);
       case "'":
@@ -182,4 +192,12 @@ class Parser {
 
     this.moveIndex(1);
   }
+}
+
+function isNumberOrLetter(code: number): boolean {
+  return (
+    (code >= "a".charCodeAt(0) && code <= "z".charCodeAt(0)) ||
+    (code >= "A".charCodeAt(0) && code <= "Z".charCodeAt(0)) ||
+    (code >= "0".charCodeAt(0) && code <= "9".charCodeAt(0))
+  );
 }
