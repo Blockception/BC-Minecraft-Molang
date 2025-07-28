@@ -1,3 +1,3 @@
-export * from "./MolangData";
-export * as Molang from "./Molang";
-export * from "./Types/Defined Using";
+export * from "./data";
+export * as Molang from "./molang";
+export * from "./types/defined";
