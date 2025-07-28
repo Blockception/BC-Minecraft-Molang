@@ -1,4 +1,5 @@
 import { LexicalNode, ParseError, Token } from "./lexical";
+import { isLetter, isNumber } from "./util";
 
 export function identify(tokens: LexicalNode[]) {
   for (let i = 0; i < tokens.length; i++) {
@@ -54,6 +55,20 @@ export function identify(tokens: LexicalNode[]) {
         }
         n.type = Token.constant;
     }
+
+    // Constants?
+    let numbers = true;
+    let letters = true;
+    for (let i = 0; i < n.text.length; i++) {
+      const c = n.text.charCodeAt(i);
+      numbers = numbers && isNumber(c);
+      letters = letters && isLetter(c);
+
+      if (!letters && !numbers) break;
+    }
+
+    if (numbers && !letters) n.type = Token.number;
+    if (letters && !numbers) n.type = Token.text;
   }
 }
 

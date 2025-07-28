@@ -8,6 +8,7 @@ export function parse(line: OffsetWord) {
   identify(tokens);
 
   // TODO: Simplifications,
+  // - Concant Escape characters?
   // - such as collectors of strings
   // - correcting decimal numbers
   // - trimming emty whitespace

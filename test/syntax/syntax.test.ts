@@ -40,6 +40,12 @@ describe("molang - syntax", () => {
     test.each(syntaxes)('%#. %s', (s) => {
       const n = parse(OffsetWord.create(s, 0));
       expect(n).toMatchSnapshot();
+
+      // Manual validation
+      // Nothing should be left with with space
+      n.forEach(item => {
+        expect(item.text).toEqual(item.text.trim().length);
+      })
     });
   });
 });

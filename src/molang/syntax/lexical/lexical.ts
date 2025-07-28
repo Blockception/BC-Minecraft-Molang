@@ -1,4 +1,5 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
+import { isNumberOrLetter } from './util';
 
 export class ParseError extends Error {
   offset: number;
@@ -49,6 +50,8 @@ export enum Token {
   keyword,
   operator,
   punction,
+  number,
+  text,
   end,
 }
 
@@ -192,12 +195,4 @@ class Parser {
 
     this.moveIndex(1);
   }
-}
-
-function isNumberOrLetter(code: number): boolean {
-  return (
-    (code >= "a".charCodeAt(0) && code <= "z".charCodeAt(0)) ||
-    (code >= "A".charCodeAt(0) && code <= "Z".charCodeAt(0)) ||
-    (code >= "0".charCodeAt(0) && code <= "9".charCodeAt(0))
-  );
 }
