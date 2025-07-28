@@ -44,7 +44,7 @@ describe("molang - syntax", () => {
       // Manual validation
       // Nothing should be left with with space
       n.forEach(item => {
-        expect(item.text).toEqual(item.text.trim().length);
+        expect(item.text).toEqual(item.text.trim());
       })
     });
   });
