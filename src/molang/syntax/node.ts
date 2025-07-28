@@ -36,3 +36,16 @@ export interface ConstantNode {
   type: Node.constant | Node.identifier;
   base: LexicalNode;
 }
+
+export function toString(node: Syntax): string {
+  switch (node.type) {
+    case Node.identifier:
+    case Node.constant:
+    case Node.unknown:
+      return node.base.text;
+    case Node.operation:
+      return `${node.operation.text}(${node.parameters.map(toString).join(",")})`;
+    case Node.access:
+      return `${toString(node.base)}${node.accessor.text}${toString(node.property)}`
+  }
+}

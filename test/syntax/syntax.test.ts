@@ -1,5 +1,6 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
 import { parseMolang } from "../../src/molang/syntax/parse";
+import { toString } from '../../src/molang/syntax/node';
 
 const syntaxes = [
   // Transitions checks
@@ -39,7 +40,7 @@ describe("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {
     test.each(syntaxes)("%#. %s", (s) => {
       const n = parseMolang(OffsetWord.create(s, 0));
-      expect(n).toMatchSnapshot();
+      expect(toString(n.nodes)).toMatchSnapshot();
     });
   });
 });
