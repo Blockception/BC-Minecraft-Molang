@@ -47,10 +47,23 @@ export function identify(tokens: LexicalNode[]) {
         }
     }
 
+    // Check for <keyword>.<identifier> or <keyword>-><identifier>
+    const prev = tokens[i - 1];
+    if (prev) {
+      if (prev.type === Token.access) {
+        n.type = Token.identifier;
+        continue;
+      }
+      if ((prev.type === Token.keyword || prev.type === Token.identifier) && (n.text === '.' || n.text === '->')) {
+        n.type = Token.access;
+        continue;
+      }
+    }
+
     // Constants?
     let numbers = true;
     let letters = true;
-    const text = n.text.trim()
+    const text = n.text.trim();
     for (let i = 0; i < text.length; i++) {
       const c = text.charCodeAt(i);
       numbers = numbers && isNumber(c);
@@ -61,6 +74,17 @@ export function identify(tokens: LexicalNode[]) {
 
     if (numbers && !letters) n.type = Token.number;
     if (letters && !numbers) n.type = Token.text;
+
+    // Last chance
+    switch (n.text) {
+      case ";":
+        n.type = Token.end;
+        break;
+      case ".":
+      case ",":
+        n.type = Token.punction;
+        break;
+    }
   }
 }
 
@@ -89,6 +113,8 @@ function simpleIdentify(text: string): Token {
     case "==":
     case "!=":
       return Token.operator;
+    case "->":
+      return Token.access;
   }
 
   return Token.unknown;

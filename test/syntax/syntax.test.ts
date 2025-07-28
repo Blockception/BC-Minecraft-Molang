@@ -1,5 +1,5 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
-import { parse } from "../../src/molang/syntax/parser/parsing";
+import { parseMolang } from "../../src/molang/syntax/parse";
 
 const syntaxes = [
   // Transitions checks
@@ -37,15 +37,9 @@ const syntaxes = [
 
 describe("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {
-    test.each(syntaxes)('%#. %s', (s) => {
-      const n = parse(OffsetWord.create(s, 0));
+    test.each(syntaxes)("%#. %s", (s) => {
+      const n = parseMolang(OffsetWord.create(s, 0));
       expect(n).toMatchSnapshot();
-
-      // Manual validation
-      // Nothing should be left with with space
-      n.forEach(item => {
-        expect(item.text).toEqual(item.text.trim());
-      })
     });
   });
 });

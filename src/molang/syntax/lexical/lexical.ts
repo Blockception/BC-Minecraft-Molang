@@ -178,9 +178,10 @@ class Parser {
       case ":":
         return this.isolateCurrent(1, Token.operator);
       case ";":
+        return this.isolateCurrent(1, Token.end);
       case ",":
       case ".":
-        return this.isolateCurrent(1, Token.punction);
+        return this.isolateCurrent(1, Token.unknown);
       case "'":
       case '"':
       case "(":
