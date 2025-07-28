@@ -1,4 +1,4 @@
-import { MolangFunction } from "./MolangFunction";
+import { MolangFunction } from "./molang-function";
 
 /**General molang data*/
 export namespace General {

@@ -1,4 +1,4 @@
-import { RegularExpression } from "../RegExp";
+import { RegularExpression } from "../regexp";
 
 /**The namespace that governs molang geometries*/
 export namespace Geometries {

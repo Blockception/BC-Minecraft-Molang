@@ -1,4 +1,4 @@
-import { IsMolangType, MolangType } from "./Functions";
+import { IsMolangType, MolangType } from "./functions";
 
 /**
  * Traverses the object and returns all the molang strings

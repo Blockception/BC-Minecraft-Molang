@@ -1,6 +1,6 @@
-import { DefinedUsing } from "../types/defined/DefinedUsing";
+import { DefinedUsing } from "../types/defined/defined-using";
 import { Using } from "../types/defined";
-import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./Types";
+import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./types";
 
 /** Can either be a MolangSet or a MolangSet[] */
 export type MolangSetOptional = MolangSet | MolangFullSet;

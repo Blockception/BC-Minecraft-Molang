@@ -1,4 +1,4 @@
-import { Data } from "./Data";
+import { Data } from "./data";
 
 /**Molang data for animations controllers*/
 export namespace Attachables {

@@ -1,15 +1,14 @@
-import { Data } from "./Data";
-
-import { Animations as MAnimations } from "./Animations";
-import { AnimationsControllers as MAnimationsControllers } from "./AnimationsControllers";
-import { Attachables as MAttachables } from "./Attachables";
-import { Blocks as MBlocks } from "./Blocks";
-import { Entities as MEntities } from "./Entities";
-import { FeaturesRules as MFeaturesRules } from "./FeaturesRules";
-import { General as MGeneral } from "./General";
-import { Items as MItems } from "./Items";
-import { Particles as MParticles } from "./Particles";
-import { RenderControllers as MRenderControllers } from "./RenderControllers";
+import { Animations as MAnimations } from "./animations";
+import { AnimationsControllers as MAnimationsControllers } from "./animations-controllers";
+import { Attachables as MAttachables } from "./attachables";
+import { Blocks as MBlocks } from "./blocks";
+import { Data } from "./data";
+import { Entities as MEntities } from "./entities";
+import { FeaturesRules as MFeaturesRules } from "./features-rules";
+import { General as MGeneral } from "./general";
+import { Items as MItems } from "./items";
+import { Particles as MParticles } from "./particles";
+import { RenderControllers as MRenderControllers } from "./render-controllers";
 
 /**Molang data for all types*/
 export interface MolangDataSet {

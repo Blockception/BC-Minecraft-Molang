@@ -1,4 +1,4 @@
-import { Data } from "./Data";
+import { Data } from "./data";
 
 /**Molang data for entities*/
 export namespace Entities {
