@@ -45,22 +45,14 @@ export function identify(tokens: LexicalNode[]) {
 
           continue;
         }
-
-      // String literal?
-      case '"':
-      case "'":
-        const prev = tokens[i - 1];
-        if (prev?.text !== "\\") {
-          continue;
-        }
-        n.type = Token.constant;
     }
 
     // Constants?
     let numbers = true;
     let letters = true;
-    for (let i = 0; i < n.text.length; i++) {
-      const c = n.text.charCodeAt(i);
+    const text = n.text.trim()
+    for (let i = 0; i < text.length; i++) {
+      const c = text.charCodeAt(i);
       numbers = numbers && isNumber(c);
       letters = letters && isLetter(c);
 

@@ -182,6 +182,7 @@ class Parser {
       case ".":
         return this.isolateCurrent(1, Token.punction);
       case "'":
+      case '"':
       case "(":
       case ")":
       case "[":

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 0. variable.agent.anim_state == 2 1`] = `
 [
@@ -24,7 +24,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "anim_state ",
+    "text": "anim_state",
     "type": 0,
   },
   {
@@ -33,9 +33,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 28,
-    "text": " 2",
-    "type": 0,
+    "offset": 29,
+    "text": "2",
+    "type": 8,
   },
 ]
 `;
@@ -64,7 +64,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "anim_state ",
+    "text": "anim_state",
     "type": 0,
   },
   {
@@ -73,9 +73,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 27,
-    "text": " 2",
-    "type": 0,
+    "offset": 28,
+    "text": "2",
+    "type": 8,
   },
 ]
 `;
@@ -104,7 +104,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "anim_state ",
+    "text": "anim_state",
     "type": 0,
   },
   {
@@ -113,9 +113,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 27,
-    "text": " 2",
-    "type": 0,
+    "offset": 28,
+    "text": "2",
+    "type": 8,
   },
 ]
 `;
@@ -144,7 +144,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "anim_state ",
+    "text": "anim_state",
     "type": 0,
   },
   {
@@ -153,9 +153,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 28,
-    "text": " 2",
-    "type": 0,
+    "offset": 29,
+    "text": "2",
+    "type": 8,
   },
 ]
 `;
@@ -184,7 +184,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "anim_state ",
+    "text": "anim_state",
     "type": 0,
   },
   {
@@ -193,9 +193,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 28,
-    "text": " 2",
-    "type": 0,
+    "offset": 29,
+    "text": "2",
+    "type": 8,
   },
 ]
 `;
@@ -224,7 +224,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "anim_state ",
+    "text": "anim_state",
     "type": 0,
   },
   {
@@ -233,20 +233,15 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 28,
-    "text": " 2",
-    "type": 0,
+    "offset": 29,
+    "text": "2",
+    "type": 8,
   },
 ]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 6. !variable.swaying && query.all_animations_finished 1`] = `
 [
-  {
-    "offset": 0,
-    "text": "",
-    "type": 0,
-  },
   {
     "offset": 0,
     "text": "!",
@@ -264,7 +259,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 10,
-    "text": "swaying ",
+    "text": "swaying",
     "type": 4,
   },
   {
@@ -273,9 +268,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 20,
-    "text": " query",
-    "type": 0,
+    "offset": 21,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 26,
@@ -294,18 +289,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "offset": 0,
-    "text": "1",
+    "text": "1.5",
     "type": 8,
-  },
-  {
-    "offset": 1,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 2,
-    "text": "5 ",
-    "type": 0,
   },
   {
     "offset": 4,
@@ -313,9 +298,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 5,
-    "text": " math",
-    "type": 0,
+    "offset": 6,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 10,
@@ -334,17 +319,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 15,
-    "text": "1",
-    "type": 8,
-  },
-  {
-    "offset": 16,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 17,
-    "text": "5",
+    "text": "1.5",
     "type": 8,
   },
   {
@@ -353,19 +328,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 19,
-    "text": " 1",
-    "type": 0,
-  },
-  {
-    "offset": 21,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 22,
-    "text": "0 ",
-    "type": 0,
+    "offset": 20,
+    "text": "1.0",
+    "type": 8,
   },
   {
     "offset": 24,
@@ -373,19 +338,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 25,
-    "text": " 015",
-    "type": 0,
-  },
-  {
-    "offset": 29,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 30,
-    "text": "0 ",
-    "type": 0,
+    "offset": 26,
+    "text": "015.0",
+    "type": 8,
   },
   {
     "offset": 32,
@@ -393,9 +348,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 33,
-    "text": " query",
-    "type": 0,
+    "offset": 34,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 39,
@@ -413,19 +368,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 0,
   },
   {
-    "offset": 60,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 61,
     "text": "*",
     "type": 6,
   },
   {
-    "offset": 62,
-    "text": " query",
-    "type": 0,
+    "offset": 63,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 68,
@@ -549,27 +499,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 53,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 53,
     "text": ",",
     "type": 7,
   },
   {
-    "offset": 54,
-    "text": " 2",
-    "type": 0,
-  },
-  {
-    "offset": 56,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 57,
-    "text": "0",
+    "offset": 55,
+    "text": "2.0",
     "type": 8,
   },
   {
@@ -578,19 +513,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 0,
   },
   {
-    "offset": 59,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 60,
     "text": "+",
     "type": 6,
   },
   {
-    "offset": 61,
-    "text": " math",
-    "type": 0,
+    "offset": 62,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 66,
@@ -639,27 +569,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 94,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 94,
     "text": ",",
     "type": 7,
   },
   {
-    "offset": 95,
-    "text": " 2",
-    "type": 0,
-  },
-  {
-    "offset": 97,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 98,
-    "text": "0",
+    "offset": 96,
+    "text": "2.0",
     "type": 8,
   },
   {
@@ -669,17 +584,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 100,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 100,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 101,
-    "text": "",
     "type": 0,
   },
   {
@@ -688,18 +593,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 102,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 104,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 105,
-    "text": "0",
+    "offset": 103,
+    "text": "0.0",
     "type": 8,
   },
   {
@@ -708,18 +603,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 107,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 109,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 110,
-    "text": "1",
+    "offset": 108,
+    "text": "0.1",
     "type": 8,
   },
   {
@@ -734,18 +619,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "offset": 0,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 0,
     "text": "-",
     "type": 6,
   },
   {
     "offset": 1,
-    "text": "175 ",
-    "type": 0,
+    "text": "175",
+    "type": 8,
   },
   {
     "offset": 5,
@@ -753,9 +633,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 6,
-    "text": " math",
-    "type": 0,
+    "offset": 7,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 11,
@@ -784,7 +664,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 25,
-    "text": "attack_time ",
+    "text": "attack_time",
     "type": 4,
   },
   {
@@ -793,9 +673,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 38,
-    "text": " 180",
-    "type": 0,
+    "offset": 39,
+    "text": "180",
+    "type": 8,
   },
   {
     "offset": 42,
@@ -819,7 +699,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "is_enchanted ",
+    "text": "is_enchanted",
     "type": 4,
   },
   {
@@ -828,9 +708,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 23,
-    "text": " Material",
-    "type": 0,
+    "offset": 24,
+    "text": "Material",
+    "type": 9,
   },
   {
     "offset": 32,
@@ -839,8 +719,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 33,
-    "text": "enchanted ",
-    "type": 0,
+    "text": "enchanted",
+    "type": 9,
   },
   {
     "offset": 43,
@@ -848,9 +728,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 44,
-    "text": " Material",
-    "type": 0,
+    "offset": 45,
+    "text": "Material",
+    "type": 9,
   },
   {
     "offset": 53,
@@ -879,7 +759,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "has_trim ",
+    "text": "has_trim",
     "type": 4,
   },
   {
@@ -888,9 +768,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 19,
-    "text": " variable",
-    "type": 0,
+    "offset": 20,
+    "text": "variable",
+    "type": 9,
   },
   {
     "offset": 28,
@@ -899,7 +779,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 29,
-    "text": "trim_path ",
+    "text": "trim_path",
     "type": 0,
   },
   {
@@ -908,9 +788,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 40,
-    "text": " Texture",
-    "type": 0,
+    "offset": 41,
+    "text": "Texture",
+    "type": 9,
   },
   {
     "offset": 48,
@@ -927,11 +807,6 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 12. !variable.has_trim 1`] = `
 [
-  {
-    "offset": 0,
-    "text": "",
-    "type": 0,
-  },
   {
     "offset": 0,
     "text": "!",
@@ -999,47 +874,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 27,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 27,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 28,
-    "text": "minecraft",
+    "text": "'minecraft:has_nectar'",
     "type": 9,
-  },
-  {
-    "offset": 37,
-    "text": ":",
-    "type": 6,
-  },
-  {
-    "offset": 38,
-    "text": "has_nectar",
-    "type": 0,
-  },
-  {
-    "offset": 48,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 49,
-    "text": "",
-    "type": 0,
   },
   {
     "offset": 49,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 50,
-    "text": " ",
     "type": 0,
   },
   {
@@ -1048,9 +888,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 52,
-    "text": " query",
-    "type": 0,
+    "offset": 53,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 58,
@@ -1059,7 +899,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 59,
-    "text": "is_angry ",
+    "text": "is_angry",
     "type": 0,
   },
   {
@@ -1068,9 +908,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 69,
-    "text": " 2",
-    "type": 0,
+    "offset": 70,
+    "text": "2",
+    "type": 8,
   },
   {
     "offset": 71,
@@ -1094,7 +934,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "x_head_rotation ",
+    "text": "x_head_rotation",
     "type": 4,
   },
   {
@@ -1103,9 +943,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 26,
-    "text": " math",
-    "type": 0,
+    "offset": 27,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 31,
@@ -1143,28 +983,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 62,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 63,
     "text": "-",
     "type": 6,
   },
   {
     "offset": 64,
-    "text": "32",
-    "type": 8,
-  },
-  {
-    "offset": 66,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 67,
-    "text": "5",
+    "text": "32.5",
     "type": 8,
   },
   {
@@ -1173,28 +998,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 69,
-    "text": " 32",
-    "type": 0,
-  },
-  {
-    "offset": 72,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 73,
-    "text": "5",
+    "offset": 70,
+    "text": "32.5",
     "type": 8,
   },
   {
     "offset": 74,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 75,
-    "text": "",
     "type": 0,
   },
   {
@@ -1219,7 +1029,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "y_head_rotation ",
+    "text": "y_head_rotation",
     "type": 4,
   },
   {
@@ -1228,9 +1038,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 26,
-    "text": " math",
-    "type": 0,
+    "offset": 27,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 31,
@@ -1268,28 +1078,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 62,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 63,
     "text": "-",
     "type": 6,
   },
   {
     "offset": 64,
-    "text": "22",
-    "type": 8,
-  },
-  {
-    "offset": 66,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 67,
-    "text": "5",
+    "text": "22.5",
     "type": 8,
   },
   {
@@ -1298,18 +1093,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 69,
-    "text": " 25",
-    "type": 0,
+    "offset": 70,
+    "text": "25",
+    "type": 8,
   },
   {
     "offset": 72,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 73,
-    "text": "",
     "type": 0,
   },
   {
@@ -1334,7 +1124,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "is_rolled_up ",
+    "text": "is_rolled_up",
     "type": 4,
   },
   {
@@ -1343,9 +1133,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 23,
-    "text": " query",
-    "type": 0,
+    "offset": 24,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 29,
@@ -1364,47 +1154,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 39,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 39,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 40,
-    "text": "minecraft",
+    "text": "'minecraft:armadillo_state'",
     "type": 9,
-  },
-  {
-    "offset": 49,
-    "text": ":",
-    "type": 6,
-  },
-  {
-    "offset": 50,
-    "text": "armadillo_state",
-    "type": 0,
-  },
-  {
-    "offset": 65,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 66,
-    "text": "",
-    "type": 0,
   },
   {
     "offset": 66,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 67,
-    "text": " ",
     "type": 0,
   },
   {
@@ -1413,29 +1168,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 70,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 71,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 72,
-    "text": "unrolled",
+    "text": "'unrolled'",
     "type": 9,
-  },
-  {
-    "offset": 80,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 81,
-    "text": "",
-    "type": 0,
   },
   {
     "offset": 81,
@@ -1459,7 +1194,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "rolled_up_time ",
+    "text": "rolled_up_time",
     "type": 4,
   },
   {
@@ -1468,9 +1203,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 25,
-    "text": " variable",
-    "type": 0,
+    "offset": 26,
+    "text": "variable",
+    "type": 9,
   },
   {
     "offset": 34,
@@ -1479,7 +1214,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 35,
-    "text": "is_rolled_up ",
+    "text": "is_rolled_up",
     "type": 0,
   },
   {
@@ -1488,18 +1223,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 49,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 50,
     "text": "(",
-    "type": 0,
-  },
-  {
-    "offset": 51,
-    "text": "",
     "type": 0,
   },
   {
@@ -1519,7 +1244,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 61,
-    "text": "rolled_up_time ",
+    "text": "rolled_up_time",
     "type": 4,
   },
   {
@@ -1528,18 +1253,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 78,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 80,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 81,
-    "text": "0",
+    "offset": 79,
+    "text": "0.0",
     "type": 8,
   },
   {
@@ -1548,19 +1263,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 0,
   },
   {
-    "offset": 83,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 84,
     "text": "+",
     "type": 6,
   },
   {
-    "offset": 85,
-    "text": " query",
-    "type": 0,
+    "offset": 86,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 91,
@@ -1578,28 +1288,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 0,
   },
   {
-    "offset": 103,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 104,
     "text": ":",
     "type": 6,
   },
   {
-    "offset": 105,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 107,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 108,
-    "text": "0",
+    "offset": 106,
+    "text": "0.0",
     "type": 8,
   },
   {
@@ -1624,7 +1319,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "is_peeking ",
+    "text": "is_peeking",
     "type": 4,
   },
   {
@@ -1633,9 +1328,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 21,
-    "text": " query",
-    "type": 0,
+    "offset": 22,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 27,
@@ -1654,47 +1349,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 37,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 37,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 38,
-    "text": "minecraft",
+    "text": "'minecraft:armadillo_state'",
     "type": 9,
-  },
-  {
-    "offset": 47,
-    "text": ":",
-    "type": 6,
-  },
-  {
-    "offset": 48,
-    "text": "armadillo_state",
-    "type": 0,
-  },
-  {
-    "offset": 63,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 64,
-    "text": "",
-    "type": 0,
   },
   {
     "offset": 64,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 65,
-    "text": " ",
     "type": 0,
   },
   {
@@ -1703,29 +1363,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 68,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 69,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 70,
-    "text": "rolled_up_peeking",
-    "type": 0,
-  },
-  {
-    "offset": 87,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 88,
-    "text": "",
-    "type": 0,
+    "text": "'rolled_up_peeking'",
+    "type": 9,
   },
   {
     "offset": 88,
@@ -1749,7 +1389,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "is_unrolling ",
+    "text": "is_unrolling",
     "type": 4,
   },
   {
@@ -1758,9 +1398,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 23,
-    "text": " query",
-    "type": 0,
+    "offset": 24,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 29,
@@ -1779,47 +1419,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 39,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 39,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 40,
-    "text": "minecraft",
+    "text": "'minecraft:armadillo_state'",
     "type": 9,
-  },
-  {
-    "offset": 49,
-    "text": ":",
-    "type": 6,
-  },
-  {
-    "offset": 50,
-    "text": "armadillo_state",
-    "type": 0,
-  },
-  {
-    "offset": 65,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 66,
-    "text": "",
-    "type": 0,
   },
   {
     "offset": 66,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 67,
-    "text": " ",
     "type": 0,
   },
   {
@@ -1828,29 +1433,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 70,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 71,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 72,
-    "text": "rolled_up_unrolling",
-    "type": 0,
-  },
-  {
-    "offset": 91,
-    "text": "'",
-    "type": 0,
-  },
-  {
-    "offset": 92,
-    "text": "",
-    "type": 0,
+    "text": "'rolled_up_unrolling'",
+    "type": 9,
   },
   {
     "offset": 92,
@@ -1874,7 +1459,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "unrolling_time ",
+    "text": "unrolling_time",
     "type": 4,
   },
   {
@@ -1883,9 +1468,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 25,
-    "text": " variable",
-    "type": 0,
+    "offset": 26,
+    "text": "variable",
+    "type": 9,
   },
   {
     "offset": 34,
@@ -1894,7 +1479,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 35,
-    "text": "is_unrolling ",
+    "text": "is_unrolling",
     "type": 0,
   },
   {
@@ -1903,18 +1488,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 49,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 50,
     "text": "(",
-    "type": 0,
-  },
-  {
-    "offset": 51,
-    "text": "",
     "type": 0,
   },
   {
@@ -1934,7 +1509,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 61,
-    "text": "unrolling_time ",
+    "text": "unrolling_time",
     "type": 4,
   },
   {
@@ -1943,18 +1518,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 78,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 80,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 81,
-    "text": "0",
+    "offset": 79,
+    "text": "0.0",
     "type": 8,
   },
   {
@@ -1963,19 +1528,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 0,
   },
   {
-    "offset": 83,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 84,
     "text": "+",
     "type": 6,
   },
   {
-    "offset": 85,
-    "text": " query",
-    "type": 0,
+    "offset": 86,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 91,
@@ -1993,28 +1553,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 0,
   },
   {
-    "offset": 103,
-    "text": " ",
-    "type": 0,
-  },
-  {
     "offset": 104,
     "text": ":",
     "type": 6,
   },
   {
-    "offset": 105,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 107,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 108,
-    "text": "0",
+    "offset": 106,
+    "text": "0.0",
     "type": 8,
   },
   {
@@ -2039,7 +1584,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "use_rolled_up_model ",
+    "text": "use_rolled_up_model",
     "type": 4,
   },
   {
@@ -2048,9 +1593,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 30,
-    "text": " variable",
-    "type": 0,
+    "offset": 31,
+    "text": "variable",
+    "type": 9,
   },
   {
     "offset": 39,
@@ -2059,7 +1604,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 40,
-    "text": "rolled_up_time ",
+    "text": "rolled_up_time",
     "type": 0,
   },
   {
@@ -2068,29 +1613,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 57,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 59,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 60,
-    "text": "2083 ",
-    "type": 0,
+    "offset": 58,
+    "text": "0.2083",
+    "type": 8,
   },
   {
     "offset": 65,
     "text": "&&",
     "type": 6,
-  },
-  {
-    "offset": 67,
-    "text": " ",
-    "type": 0,
   },
   {
     "offset": 68,
@@ -2109,7 +1639,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 78,
-    "text": "unrolling_time ",
+    "text": "unrolling_time",
     "type": 4,
   },
   {
@@ -2118,19 +1648,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 95,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 97,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 98,
-    "text": "0 ",
-    "type": 0,
+    "offset": 96,
+    "text": "0.0",
+    "type": 8,
   },
   {
     "offset": 100,
@@ -2138,9 +1658,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 102,
-    "text": " variable",
-    "type": 0,
+    "offset": 103,
+    "text": "variable",
+    "type": 9,
   },
   {
     "offset": 111,
@@ -2149,7 +1669,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 112,
-    "text": "unrolling_time ",
+    "text": "unrolling_time",
     "type": 0,
   },
   {
@@ -2158,28 +1678,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 129,
-    "text": " 1",
-    "type": 0,
-  },
-  {
-    "offset": 131,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 132,
-    "text": "25 ",
-    "type": 0,
+    "offset": 130,
+    "text": "1.25",
+    "type": 8,
   },
   {
     "offset": 135,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 136,
-    "text": "",
     "type": 0,
   },
   {
@@ -2204,7 +1709,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "walking ",
+    "text": "walking",
     "type": 4,
   },
   {
@@ -2213,9 +1718,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 18,
-    "text": " query",
-    "type": 0,
+    "offset": 19,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 24,
@@ -2224,7 +1729,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 25,
-    "text": "modified_move_speed ",
+    "text": "modified_move_speed",
     "type": 0,
   },
   {
@@ -2233,29 +1738,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 46,
-    "text": " 0",
-    "type": 0,
-  },
-  {
-    "offset": 48,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 49,
-    "text": "01 ",
-    "type": 0,
+    "offset": 47,
+    "text": "0.01",
+    "type": 8,
   },
   {
     "offset": 52,
     "text": "&&",
     "type": 6,
-  },
-  {
-    "offset": 54,
-    "text": " ",
-    "type": 0,
   },
   {
     "offset": 55,
@@ -2299,7 +1789,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 9,
-    "text": "walk_anim_time_update ",
+    "text": "walk_anim_time_update",
     "type": 4,
   },
   {
@@ -2308,9 +1798,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 2,
   },
   {
-    "offset": 32,
-    "text": " query",
-    "type": 0,
+    "offset": 33,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 38,
@@ -2319,7 +1809,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 39,
-    "text": "anim_time ",
+    "text": "anim_time",
     "type": 0,
   },
   {
@@ -2328,9 +1818,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 50,
-    "text": " math",
-    "type": 0,
+    "offset": 51,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 55,
@@ -2349,17 +1839,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 60,
-    "text": "3",
-    "type": 8,
-  },
-  {
-    "offset": 61,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 62,
-    "text": "0",
+    "text": "3.0",
     "type": 8,
   },
   {
@@ -2368,9 +1848,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 64,
-    "text": " math",
-    "type": 0,
+    "offset": 65,
+    "text": "math",
+    "type": 9,
   },
   {
     "offset": 69,
@@ -2389,17 +1869,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 75,
-    "text": "2",
-    "type": 8,
-  },
-  {
-    "offset": 76,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 77,
-    "text": "0",
+    "text": "2.0",
     "type": 8,
   },
   {
@@ -2408,18 +1878,8 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 79,
-    "text": " 5",
-    "type": 0,
-  },
-  {
-    "offset": 81,
-    "text": ".",
-    "type": 7,
-  },
-  {
-    "offset": 82,
-    "text": "0",
+    "offset": 80,
+    "text": "5.0",
     "type": 8,
   },
   {
@@ -2428,9 +1888,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 7,
   },
   {
-    "offset": 84,
-    "text": " query",
-    "type": 0,
+    "offset": 85,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 90,
@@ -2449,17 +1909,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "offset": 111,
-    "text": "",
-    "type": 0,
-  },
-  {
-    "offset": 111,
     "text": ")",
-    "type": 0,
-  },
-  {
-    "offset": 112,
-    "text": " ",
     "type": 0,
   },
   {
@@ -2468,9 +1918,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "type": 6,
   },
   {
-    "offset": 114,
-    "text": " query",
-    "type": 0,
+    "offset": 115,
+    "text": "query",
+    "type": 9,
   },
   {
     "offset": 120,
