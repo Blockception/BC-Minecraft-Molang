@@ -1,4 +1,4 @@
-import { MolangFullSet, MolangSet } from "../../../src/Molang";
+import { MolangFullSet, MolangSet } from "../../../src/molang";
 import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Molang", () => {

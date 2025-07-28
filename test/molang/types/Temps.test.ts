@@ -1,4 +1,4 @@
-import { Types } from '../../../src/Molang';
+import { Types } from '../../../src/molang';
 import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Molang", () => {

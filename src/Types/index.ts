@@ -1,2 +1,2 @@
 /*	Auto generated	*/
-export * as Defined_Using from "./Defined Using/index";
+export * as Defined_Using from "./defined/index";

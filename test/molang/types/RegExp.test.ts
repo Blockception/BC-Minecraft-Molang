@@ -1,4 +1,4 @@
-import { RegularExpression } from "../../../src/Molang";
+import { RegularExpression } from "../../../src/molang";
 import { VanillaPlayer } from "../../vanilla-player";
 
 describe("Regular expression", () => {

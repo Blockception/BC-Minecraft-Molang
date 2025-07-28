@@ -1,4 +1,4 @@
-import { getEvent, IsMolangType, MolangType } from '../../src/Molang';
+import { getEvent, IsMolangType, MolangType } from '../../src/molang';
 
 describe("Functions", () => {
   describe("IsMolangType", () => {

@@ -1,5 +1,5 @@
-import { DefinedUsing } from "../Types/Defined Using/DefinedUsing";
-import { Using } from "../Types/Defined Using";
+import { DefinedUsing } from "../types/defined/DefinedUsing";
+import { Using } from "../types/defined";
 import { Context, Queries, Temps, Variables, Geometries, Textures, Materials } from "./Types";
 
 /** Can either be a MolangSet or a MolangSet[] */

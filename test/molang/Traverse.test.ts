@@ -1,4 +1,4 @@
-import { MolangType, Traverse } from "../../src/Molang";
+import { MolangType, Traverse } from "../../src/molang";
 import { VanillaPlayer } from '../vanilla-player';
 
 describe("Traverse", () => {
