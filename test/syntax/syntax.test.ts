@@ -1,6 +1,5 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
 import { parseMolang } from "../../src/molang/syntax/parse";
-import { toString } from '../../src/molang/syntax/node';
 
 const syntaxes = [
   // Transitions checks
@@ -34,13 +33,14 @@ const syntaxes = [
   "variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 );",
   "variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up;",
   "variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;",
+  "variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25);",
 ];
 
-describe("molang - syntax", () => {
+describe.only("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {
     test.each(syntaxes)("%#. %s", (s) => {
       const n = parseMolang(OffsetWord.create(s, 0));
-      expect(toString(n.nodes)).toMatchSnapshot();
+      expect(n).toMatchSnapshot();
     });
   });
 });

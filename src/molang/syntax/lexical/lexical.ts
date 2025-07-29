@@ -1,18 +1,14 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
-import { isNumberOrLetter } from './util';
+import { isNumberOrLetter } from "./util";
 
 export class ParseError extends Error {
-  offset: number;
-  index: number;
-  base: Partial<Error>;
+  cursor: number;
 
-  constructor(message: string, base: Partial<Error>, index: number, offset: number) {
-    super(message);
-    this.base = base;
+  constructor(cursor: number, message?: string, stack?: string | undefined) {
+    super(message ?? "parsing error occured");
     this.name = "molang-parse-error";
-    this.stack = base.stack;
-    this.index = index;
-    this.offset = offset;
+    this.stack = stack;
+    this.cursor = cursor;
   }
 }
 
@@ -22,7 +18,7 @@ export function parseLexical(line: OffsetWord | string): LexicalNode[] {
     try {
       parser.parse();
     } catch (err: any) {
-      throw new ParseError(err.message ?? "parsing error occured", err, parser.index, 0);
+      throw new ParseError(parser.offset + parser.index, err.message ?? "parsing error occured", err.stack);
     }
 
     return parser.result;
@@ -35,7 +31,7 @@ export function parseLexical(line: OffsetWord | string): LexicalNode[] {
     // Process offset
     parser.moveOffset(line.offset);
   } catch (err: any) {
-    throw new ParseError(err.message ?? "parsing error occured", err, parser.index, 0);
+    throw new ParseError(parser.offset + parser.index, err.message ?? "parsing error occured", err.stack);
   }
 
   return parser.result;
@@ -49,6 +45,7 @@ export enum Token {
   identifier,
   keyword,
   operator,
+  compare,
   punction,
   number,
   text,
@@ -57,6 +54,12 @@ export enum Token {
 
 export interface LexicalNode {
   text: string;
+  offset: number;
+  type: Token;
+}
+
+export interface LexicalNodeWith<T extends string> {
+  text: T;
   offset: number;
   type: Token;
 }
@@ -143,14 +146,13 @@ class Parser {
         return;
 
       case "==":
+      case "<=":
+      case ">=":
+      case "!=":
+        return this.isolateCurrent(2, Token.compare);
       case "!":
       case "||":
       case "&&":
-      case "<":
-      case "<=":
-      case ">=":
-      case ">":
-      case "!=":
       case "??":
         return this.isolateCurrent(2, Token.operator);
       case "->":
@@ -169,14 +171,15 @@ class Parser {
       // Basic math operators
       case "-":
       case "!":
-      case "?":
       case "*":
       case "/":
       case "+":
-      case "<":
-      case ">":
       case ":":
         return this.isolateCurrent(1, Token.operator);
+      case "?":
+      case "<":
+      case ">":
+        return this.isolateCurrent(1, Token.compare);
       case ";":
         return this.isolateCurrent(1, Token.end);
       case ",":

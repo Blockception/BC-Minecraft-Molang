@@ -1,4 +1,4 @@
-import { LexicalNode, ParseError, Token } from "../lexical/lexical";
+import { LexicalNode, ParseError, Token } from "./lexical";
 
 export function simplifyString(tokens: LexicalNode[]) {
   let index = 0;
@@ -14,7 +14,7 @@ export function simplifyString(tokens: LexicalNode[]) {
         n.type = Token.text;
         tokens.splice(index + 1, endIndex + 1);
       } else {
-        throw new ParseError("couldn't find the end of the string", {}, n.offset, 0);
+        throw new ParseError(n.offset, "couldn't find the end of the string");
       }
     }
 

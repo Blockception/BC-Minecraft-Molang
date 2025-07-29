@@ -1,6 +1,6 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
-import { parseLexical } from "../lexical/lexical";
-import { identify } from "../lexical/identify";
+import { parseLexical } from "./lexical";
+import { identify } from "./identify";
 import { simplifyString } from "./strings";
 import { simplifyNumbers } from "./numbers";
 

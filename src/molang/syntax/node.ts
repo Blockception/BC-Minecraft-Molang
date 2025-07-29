@@ -1,6 +1,6 @@
-import { LexicalNode } from "./lexical/lexical";
+import { LexicalNode, LexicalNodeWith } from "./lexical/lexical";
 
-export type Syntax = AccessOperationNode | OperationNode | UnknownNode | ConstantNode;
+export type Syntax = AccessOperationNode | OperationNode | UnknownNode | ConstantNode | FunctionCallNode;
 
 export enum Node {
   unknown,
@@ -8,6 +8,7 @@ export enum Node {
   operation,
   constant,
   identifier,
+  function,
 }
 
 export interface Expression {
@@ -27,6 +28,12 @@ export interface OperationNode {
   parameters: Syntax[];
 }
 
+export interface CompareNode {
+  a: Syntax;
+  b: Syntax;
+  operator: LexicalNodeWith<">" | "<" | "==" | "!=" | ">=" | "<=">;
+}
+
 export interface UnknownNode {
   type: Node.unknown;
   base: LexicalNode;
@@ -37,15 +44,23 @@ export interface ConstantNode {
   base: LexicalNode;
 }
 
-export function toString(node: Syntax): string {
+export interface FunctionCallNode {
+  type: Node.function;
+  identifier: Syntax;
+  parameters: Syntax[];
+}
+
+export function convertToString(node: Syntax): string {
   switch (node.type) {
     case Node.identifier:
     case Node.constant:
     case Node.unknown:
       return node.base.text;
     case Node.operation:
-      return `${node.operation.text}(${node.parameters.map(toString).join(",")})`;
+      return `${node.operation.text}(${node.parameters.map(convertToString).join(",")})`;
     case Node.access:
-      return `${toString(node.base)}${node.accessor.text}${toString(node.property)}`
+      return `${convertToString(node.base)}${node.accessor.text}${convertToString(node.property)}`;
+    case Node.function:
+      return `${convertToString(node.identifier)}(${node.parameters.map(convertToString).join(", ")})`;
   }
 }

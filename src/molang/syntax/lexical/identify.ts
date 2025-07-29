@@ -29,7 +29,7 @@ export function identify(tokens: LexicalNode[]) {
         const next = tokens[i + 1];
         // Next node need to be defined and either . or -> operator
         if (!textOneOf(next, ".", "->")) {
-          throw new ParseError("expected a . or -> after " + n.text, {}, n.offset, 0);
+          throw new ParseError(n.offset, "expected a . or -> after " + n.text);
         } else {
           next.type = Token.access;
           i++;
@@ -37,7 +37,7 @@ export function identify(tokens: LexicalNode[]) {
           // node after that is an identifier
           const thrid = tokens[i + 1];
           if (!typeOneOf(thrid, Token.unknown, Token.identifier)) {
-            throw new ParseError(`unexpected ${Token[n.type]}`, {}, n.offset, 0);
+            throw new ParseError(n.offset, `unexpected ${Token[n.type]}`);
           } else {
             thrid.type = Token.identifier;
             i++;
@@ -54,7 +54,7 @@ export function identify(tokens: LexicalNode[]) {
         n.type = Token.identifier;
         continue;
       }
-      if ((prev.type === Token.keyword || prev.type === Token.identifier) && (n.text === '.' || n.text === '->')) {
+      if ((prev.type === Token.keyword || prev.type === Token.identifier) && (n.text === "." || n.text === "->")) {
         n.type = Token.access;
         continue;
       }

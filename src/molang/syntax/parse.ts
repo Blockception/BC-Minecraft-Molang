@@ -1,8 +1,9 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
-import { parse } from "./parser/parsing";
-import { buildTree } from "./treebuilder";
+import { toBlocks } from "./lexical/blocks";
+import { parse } from "./lexical/parsing";
 
 export function parseMolang(line: OffsetWord) {
   const tokens = parse(line);
-  return buildTree(tokens);
+  const blocks = toBlocks(tokens);
+  return blocks;
 }
