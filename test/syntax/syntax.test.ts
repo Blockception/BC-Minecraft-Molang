@@ -1,4 +1,6 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
+import { CodeBlock } from "../../src/molang/syntax/lexical/blocks";
+import { LexicalNode, Token } from "../../src/molang/syntax/lexical/lexical";
 import { parseMolang } from "../../src/molang/syntax/parse";
 
 const syntaxes = [
@@ -40,7 +42,26 @@ describe.only("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {
     test.each(syntaxes)("%#. %s", (s) => {
       const n = parseMolang(OffsetWord.create(s, 0));
-      expect(n).toMatchSnapshot();
+      n.map(simplify).forEach((item) => {
+        expect(item).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe("brackets are hard", () => {
+    test.each(syntaxes.filter((item) => item.includes("(")))("%#. %s", (s) => {
+      const n = parseMolang(OffsetWord.create(s, 0));
+      n.map(simplify).forEach((item) => {
+        expect(item).toMatchSnapshot();
+      });
     });
   });
 });
+
+function simplify(item: CodeBlock | LexicalNode): any {
+  if (CodeBlock.isCodeBlock(item)) {
+    return [`surround: ${item.surround}`, ...item.nodes.map(simplify)];
+  }
+
+  return `${item.text} [${Token[item.type]}]`;
+}

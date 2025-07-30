@@ -99,6 +99,8 @@ function simpleIdentify(text: string): Token {
       return Token.keyword;
 
     // Operators
+    case "=":
+      return Token.assignment;
     case "*":
     case "/":
     case "+":
@@ -106,13 +108,14 @@ function simpleIdentify(text: string): Token {
     case "!":
     case "||":
     case "&&":
+      return Token.operator;
     case "<":
     case "<=":
     case ">=":
     case ">":
     case "==":
     case "!=":
-      return Token.operator;
+      return Token.compare;
     case "->":
       return Token.access;
   }

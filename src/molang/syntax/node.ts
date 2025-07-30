@@ -9,6 +9,7 @@ export enum Node {
   constant,
   identifier,
   function,
+  compare,
 }
 
 export interface Expression {
@@ -29,6 +30,7 @@ export interface OperationNode {
 }
 
 export interface CompareNode {
+  type: Node.compare
   a: Syntax;
   b: Syntax;
   operator: LexicalNodeWith<">" | "<" | "==" | "!=" | ">=" | "<=">;
