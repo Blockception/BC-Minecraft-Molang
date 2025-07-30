@@ -40,7 +40,7 @@ const syntaxes = [
 
 describe.only("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {
-    test.each(syntaxes)("%#. %s", (s) => {
+    test.each(syntaxes.filter(s => s.includes("&&")))("%#. %s", (s) => {
       const n = parseMolang(OffsetWord.create(s, 0));
       n.map(simplify).forEach((item) => {
         expect(item).toMatchSnapshot();

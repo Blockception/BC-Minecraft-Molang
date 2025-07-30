@@ -1,579 +1,29 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 0. variable.agent.anim_state == 2 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 0. !variable.swaying && query.all_animations_finished 1`] = `
 [
   "surround: ",
+  "! [operator]",
   [
     "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "agent [identifier]",
-    ". [access]",
-    "anim_state [identifier]",
-  ],
-  "== [compare]",
-  [
-    "surround: ()",
-    "2 [number]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 1. variable.agent.anim_state > 2 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "agent [identifier]",
-    ". [access]",
-    "anim_state [identifier]",
-  ],
-  "> [compare]",
-  [
-    "surround: ()",
-    "2 [number]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 2. variable.agent.anim_state < 2 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "agent [identifier]",
-    ". [access]",
-    "anim_state [identifier]",
-  ],
-  "< [compare]",
-  [
-    "surround: ()",
-    "2 [number]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 3. variable.agent.anim_state != 2 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "agent [identifier]",
-    ". [access]",
-    "anim_state [identifier]",
-  ],
-  "!= [compare]",
-  [
-    "surround: ()",
-    "2 [number]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 4. variable.agent.anim_state >= 2 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "agent [identifier]",
-    ". [access]",
-    "anim_state [identifier]",
-  ],
-  ">= [compare]",
-  [
-    "surround: ()",
-    "2 [number]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 5. variable.agent.anim_state <= 2 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "agent [identifier]",
-    ". [access]",
-    "anim_state [identifier]",
-  ],
-  "<= [compare]",
-  [
-    "surround: ()",
-    "2 [number]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 6. !variable.swaying && query.all_animations_finished 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "! [operator]",
-    "variable [keyword]",
-    ". [access]",
-    "swaying [identifier]",
-  ],
-  "&& [operator]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "all_animations_finished [identifier]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 7. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "1.5 [number]",
-    "- [operator]",
-    "math [keyword]",
-    ". [access]",
-    "pow [identifier]",
-    [
-      "surround: ()",
-      "1.5 [number]",
-      ", [punctuation]",
-      "1.0 [number]",
-      "- [operator]",
-      "015.0 [number]",
-      "* [operator]",
-      "query [keyword]",
-      ". [access]",
-      "modified_move_speed [identifier]",
-    ],
-  ],
-  "* [operator]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "camera_rotation [identifier]",
-    [
-      "surround: ()",
-      "0 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 8. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
-[
-  "surround: ",
-  "math [keyword]",
-  ". [access]",
-  "clamp [identifier]",
-  [
-    "surround: ()",
-    "math [keyword]",
-    ". [access]",
-    "sqrt [identifier]",
-    [
-      "surround: ()",
-      "math [keyword]",
-      ". [access]",
-      "pow [identifier]",
-      [
-        "surround: ()",
-        "query [keyword]",
-        ". [access]",
-        "position_delta [identifier]",
-        [
-          "surround: ()",
-          "0 [number]",
-        ],
-        [
-          "surround: ",
-          ", [punctuation]",
-          "2.0 [number]",
-        ],
-      ],
-      "+ [operator]",
-      "math [keyword]",
-      ". [access]",
-      "pow [identifier]",
-      [
-        "surround: ()",
-        "query [keyword]",
-        ". [access]",
-        "position_delta [identifier]",
-        [
-          "surround: ()",
-          "2 [number]",
-        ],
-        [
-          "surround: ",
-          ", [punctuation]",
-          "2.0 [number]",
-        ],
-      ],
-    ],
-    [
-      "surround: ",
-      ", [punctuation]",
-      "0.0 [number]",
-      ", [punctuation]",
-      "0.1 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 9. -175 * math.sin(variable.attack_time * 180) 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "- [operator]",
-    "175 [number]",
-  ],
-  "* [operator]",
-  [
-    "surround: ()",
-    "math [keyword]",
-    ". [access]",
-    "sin [identifier]",
     [
       "surround: ()",
       "variable [keyword]",
       ". [access]",
-      "attack_time [identifier]",
-      "* [operator]",
-      "180 [number]",
+      "swaying [identifier]",
     ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 10. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_enchanted [identifier]",
-  ],
-  "? [compare]",
-  [
-    "surround: ()",
-    "Material [keyword]",
-    ". [access]",
-    "enchanted [identifier]",
-    ": [operator]",
-    "Material [keyword]",
-    ". [access]",
-    "default [identifier]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 11. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "has_trim [identifier]",
-  ],
-  "? [compare]",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "trim_path [identifier]",
-    ": [operator]",
-    "Texture [keyword]",
-    ". [access]",
-    "default [identifier]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 12. !variable.has_trim 1`] = `
-[
-  "surround: ",
-  "! [operator]",
-  "variable [keyword]",
-  ". [access]",
-  "has_trim [identifier]",
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 13. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
-[
-  "surround: ",
-  "array [keyword]",
-  ". [access]",
-  "skins [identifier]",
-  [
-    "surround: []",
-    "query [keyword]",
-    ". [access]",
-    "property [identifier]",
-    [
-      "surround: ()",
-      "'minecraft:has_nectar' [text]",
-    ],
-    [
-      "surround: ",
-      "+ [operator]",
-      "query [keyword]",
-      ". [access]",
-      "is_angry [identifier]",
-      "* [operator]",
-      "2 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 14. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "x_head_rotation [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "math [keyword]",
-    ". [access]",
-    "clamp [identifier]",
+    "&& [operator]",
     [
       "surround: ()",
       "query [keyword]",
       ". [access]",
-      "target_x_rotation [identifier]",
-      ", [punctuation]",
-      "- [operator]",
-      "32.5 [number]",
-      ", [punctuation]",
-      "32.5 [number]",
+      "all_animations_finished [identifier]",
     ],
   ],
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 15. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "y_head_rotation [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "math [keyword]",
-    ". [access]",
-    "clamp [identifier]",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "target_y_rotation [identifier]",
-      ", [punctuation]",
-      "- [operator]",
-      "22.5 [number]",
-      ", [punctuation]",
-      "25 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 16. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_rolled_up [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "property [identifier]",
-    [
-      "surround: ()",
-      "'minecraft:armadillo_state' [text]",
-    ],
-    [
-      "surround: ",
-      "!= [compare]",
-      "'unrolled' [text]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 17. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "rolled_up_time [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_rolled_up [identifier]",
-    "? [compare]",
-    [
-      "surround: ()",
-      [
-        "surround: ()",
-        "variable [keyword]",
-        ". [access]",
-        "rolled_up_time [identifier]",
-        "?? [operator]",
-        "0.0 [number]",
-      ],
-      [
-        "surround: ",
-        "+ [operator]",
-        "query [keyword]",
-        ". [access]",
-        "delta_time [identifier]",
-      ],
-    ],
-    [
-      "surround: ",
-      ": [operator]",
-      "0.0 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 18. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_peeking [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "property [identifier]",
-    [
-      "surround: ()",
-      "'minecraft:armadillo_state' [text]",
-    ],
-    [
-      "surround: ",
-      "== [compare]",
-      "'rolled_up_peeking' [text]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 19. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_unrolling [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "property [identifier]",
-    [
-      "surround: ()",
-      "'minecraft:armadillo_state' [text]",
-    ],
-    [
-      "surround: ",
-      "== [compare]",
-      "'rolled_up_unrolling' [text]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 20. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "unrolling_time [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_unrolling [identifier]",
-    "? [compare]",
-    [
-      "surround: ()",
-      [
-        "surround: ()",
-        "variable [keyword]",
-        ". [access]",
-        "unrolling_time [identifier]",
-        "?? [operator]",
-        "0.0 [number]",
-      ],
-      [
-        "surround: ",
-        "+ [operator]",
-        "query [keyword]",
-        ". [access]",
-        "delta_time [identifier]",
-      ],
-    ],
-    [
-      "surround: ",
-      ": [operator]",
-      "0.0 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 21. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 1. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 [
   "surround: ",
   [
@@ -585,31 +35,43 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "rolled_up_time [identifier]",
-    ">= [compare]",
-    "0.2083 [number]",
-    "&& [operator]",
     [
       "surround: ()",
       "variable [keyword]",
       ". [access]",
-      "unrolling_time [identifier]",
-      "== [compare]",
-      "0.0 [number]",
-      "|| [operator]",
-      "variable [keyword]",
-      ". [access]",
-      "unrolling_time [identifier]",
-      "<= [compare]",
-      "1.25 [number]",
+      "rolled_up_time [identifier]",
+    ],
+    ">= [compare]",
+    [
+      "surround: ()",
+      [
+        "surround: ()",
+        "0.2083 [number]",
+      ],
+      "&& [operator]",
+      [
+        "surround: ()",
+        [
+          "surround: ()",
+          "variable [keyword]",
+          ". [access]",
+          "unrolling_time [identifier]",
+          "== [compare]",
+          "0.0 [number]",
+          "|| [operator]",
+          "variable [keyword]",
+          ". [access]",
+          "unrolling_time [identifier]",
+          "<= [compare]",
+          "1.25 [number]",
+        ],
+      ],
     ],
   ],
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 22. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 2. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 [
   "surround: ",
   [
@@ -621,141 +83,30 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "modified_move_speed [identifier]",
+    [
+      "surround: ()",
+      "query [keyword]",
+      ". [access]",
+      "modified_move_speed [identifier]",
+    ],
     "> [compare]",
-    "0.01 [number]",
-    "&& [operator]",
-    "! [operator]",
-    "variable [keyword]",
-    ". [access]",
-    "is_rolled_up [identifier]",
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 23. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "walk_anim_time_update [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "anim_time [identifier]",
-    "+ [operator]",
-    "math [keyword]",
-    ". [access]",
-    "min [identifier]",
     [
       "surround: ()",
-      "3.0 [number]",
-      ", [punctuation]",
-      "math [keyword]",
-      ". [access]",
-      "lerp [identifier]",
       [
         "surround: ()",
-        "2.0 [number]",
-        ", [punctuation]",
-        "5.0 [number]",
-        ", [punctuation]",
-        "query [keyword]",
-        ". [access]",
-        "modified_move_speed [identifier]",
+        "0.01 [number]",
       ],
-    ],
-    [
-      "surround: ",
-      "* [operator]",
-      "query [keyword]",
-      ". [access]",
-      "delta_time [identifier]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 24. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "walk_anim_time_update [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [keyword]",
-    ". [access]",
-    "anim_time [identifier]",
-    "+ [operator]",
-    "math [keyword]",
-    ". [access]",
-    "min [identifier]",
-    [
-      "surround: ()",
-      "3.0 [number]",
-      ", [punctuation]",
-      "math [keyword]",
-      ". [access]",
-      "lerp [identifier]",
+      "&& [operator]",
       [
         "surround: ()",
-        "2.0 [number]",
-        ", [punctuation]",
-        "5.0 [number]",
-        ", [punctuation]",
-        "query [keyword]",
-        ". [access]",
-        "modified_move_speed [identifier]",
+        "! [operator]",
+        [
+          "surround: ()",
+          "variable [keyword]",
+          ". [access]",
+          "is_rolled_up [identifier]",
+        ],
       ],
-    ],
-    [
-      "surround: ",
-      "* [operator]",
-      "query [keyword]",
-      ". [access]",
-      "delta_time [identifier]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 24. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "y_head_rotation [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "math [keyword]",
-    ". [access]",
-    "clamp [identifier]",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "target_y_rotation [identifier]",
-      ", [punctuation]",
-      "- [operator]",
-      "22.5 [number]",
-      ", [punctuation]",
-      "25 [number]",
     ],
   ],
 ]

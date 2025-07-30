@@ -28,12 +28,19 @@ export function blocksToMermaid(code: CodeBlock): string {
     const ids = [];
     let graph = "";
 
+    if (data.length === 1) {
+      const n = data[0];
+      if (typeof n === "string") {
+        return [`    T${id}["${n.length === 1 ? "\\" + n : n}"]\n`, id];
+      }
+    }
+
     for (let i = 0; i < data.length; i++) {
       const n = data[i];
       if (typeof n === "string") {
         const nid = getId();
         ids.push(nid);
-        graph += `    T${nid}["${n}"]\n`;
+        graph += `    T${nid}["${n.length === 1 ? "\\" + n : n}"]\n`;
       } else {
         const [g, nid] = codeBlockToString(n);
         graph += "\n" + g;

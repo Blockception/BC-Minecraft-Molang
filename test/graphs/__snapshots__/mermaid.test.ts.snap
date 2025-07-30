@@ -4,145 +4,134 @@ exports[`meriad block graphs should be able generate a mermaid flowchart of lexi
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
-    direction LR
-    T2["variable.agent.anim_state"]
-    end
-    T3["=="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["2"]
-    end
+    T1["variable.agent.anim_state"]
+    T2["=="]
+    T3["\\2"]
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 1. variable.agent.anim_state > 2 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
-    direction LR
-    T2["variable.agent.anim_state"]
-    end
-    T3[">"]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["2"]
-    end
+    T1["variable.agent.anim_state"]
+    T2["\\>"]
+    T3["\\2"]
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 2. variable.agent.anim_state < 2 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
-    direction LR
-    T2["variable.agent.anim_state"]
-    end
-    T3["<"]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["2"]
-    end
+    T1["variable.agent.anim_state"]
+    T2["\\<"]
+    T3["\\2"]
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 3. variable.agent.anim_state != 2 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
-    direction LR
-    T2["variable.agent.anim_state"]
-    end
-    T3["!="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["2"]
-    end
+    T1["variable.agent.anim_state"]
+    T2["!="]
+    T3["\\2"]
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 4. variable.agent.anim_state >= 2 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
-    direction LR
-    T2["variable.agent.anim_state"]
-    end
-    T3[">="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["2"]
-    end
+    T1["variable.agent.anim_state"]
+    T2[">="]
+    T3["\\2"]
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 5. variable.agent.anim_state <= 2 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
-    direction LR
-    T2["variable.agent.anim_state"]
-    end
-    T3["<="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["2"]
-    end
+    T1["variable.agent.anim_state"]
+    T2["<="]
+    T3["\\2"]
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 6. !variable.swaying && query.all_animations_finished 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    T1["!variable.swaying&&query.all_animations_finished"]
+    T1["\\!"]
+    subgraph T2["block of ()"]
+    direction LR
+    T3["variable.swaying"]
+    T4["&&"]
+    T5["query.all_animations_finished"]
+    end
     end
 
-"
+    T3 --> T4
+    T4 --> T5
+    T1 --> T2"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 7. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    T1["1.5-math.pow"]
-    subgraph T2["block of ()"]
+    T1["1.5"]
+    T2["\\-"]
+    subgraph T3["block of ()"]
     direction LR
-    T3["1.5,1.0-015.0*query.modified_move_speed"]
+    subgraph T4["block of ()"]
+    direction LR
+    T5["math.pow"]
+    subgraph T6["block of ()"]
+    direction LR
+    T7["1.5"]
+    T8["1.0-015.0*query.modified_move_speed"]
     end
-    T4["*query.camera_rotation"]
-    subgraph T5["block of ()"]
+    end
+    T9["\\*"]
+    subgraph T10["block of ()"]
     direction LR
-    T6["0"]
+    T11["query.camera_rotation"]
+    subgraph T12["block of ()"]
+    direction LR
+    T13["\\0"]
+    end
+    end
     end
     end
 
+    T7 --> T8
+    T5 --> T6
+    T11 --> T12
+    T4 --> T9
+    T9 --> T10
     T1 --> T2
-    T2 --> T4
-    T4 --> T5"
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 8. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
@@ -152,52 +141,55 @@ exports[`meriad block graphs should be able generate a mermaid flowchart of lexi
     T1["math.clamp"]
     subgraph T2["block of ()"]
     direction LR
-    T3["math.sqrt"]
-    subgraph T4["block of ()"]
+    subgraph T3["block of "]
     direction LR
-    T5["math.pow"]
-    subgraph T6["block of ()"]
+    T4["math.sqrt"]
+    subgraph T5["block of ()"]
     direction LR
-    T7["query.position_delta"]
+    subgraph T6["block of "]
+    direction LR
+    T7["math.pow"]
     subgraph T8["block of ()"]
     direction LR
-    T9["0"]
-    end
-    subgraph T10["block of "]
+    subgraph T9["block of "]
     direction LR
-    T11[",2.0"]
-    end
-    end
-    T12["+math.pow"]
-    subgraph T13["block of ()"]
+    T10["query.position_delta"]
+    subgraph T11["block of ()"]
     direction LR
-    T14["query.position_delta"]
+    T12["\\0"]
+    end
+    T13[",2.0"]
+    end
+    end
+    T14["+math.pow"]
     subgraph T15["block of ()"]
     direction LR
-    T16["2"]
-    end
-    subgraph T17["block of "]
+    subgraph T16["block of "]
     direction LR
-    T18[",2.0"]
-    end
-    end
-    end
-    subgraph T19["block of "]
+    T17["query.position_delta"]
+    subgraph T18["block of ()"]
     direction LR
-    T20[",0.0,0.1"]
+    T19["\\2"]
+    end
+    T20[",2.0"]
+    end
+    end
+    end
+    end
+    T21[",0.0,0.1"]
     end
     end
     end
 
+    T10 --> T11
+    T11 --> T13
+    T17 --> T18
+    T18 --> T20
     T7 --> T8
-    T8 --> T10
+    T8 --> T14
     T14 --> T15
-    T15 --> T17
-    T5 --> T6
-    T6 --> T12
-    T12 --> T13
-    T3 --> T4
-    T4 --> T19
+    T4 --> T5
+    T5 --> T21
     T1 --> T2"
 `;
 
@@ -205,13 +197,25 @@ exports[`meriad block graphs should be able generate a mermaid flowchart of lexi
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    T1["-175*math.sin"]
+    T1["\\-"]
     subgraph T2["block of ()"]
     direction LR
-    T3["variable.attack_time*180"]
+    T3["175"]
+    T4["\\*"]
+    subgraph T5["block of ()"]
+    direction LR
+    T6["math.sin"]
+    subgraph T7["block of ()"]
+    direction LR
+    T8["variable.attack_time*180"]
+    end
+    end
     end
     end
 
+    T6 --> T7
+    T3 --> T4
+    T4 --> T5
     T1 --> T2"
 `;
 
@@ -219,48 +223,51 @@ exports[`meriad block graphs should be able generate a mermaid flowchart of lexi
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.is_enchanted"]
+    T2["\\?"]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.is_enchanted"]
-    end
-    T3["?"]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["Material.enchanted:Material.default"]
+    T4["Material.enchanted"]
+    T5["\\:"]
+    T6["Material.default"]
     end
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T4 --> T5
+    T5 --> T6
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 11. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.has_trim"]
+    T2["\\?"]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.has_trim"]
-    end
-    T3["?"]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["variable.trim_path:Texture.default"]
+    T4["variable.trim_path"]
+    T5["\\:"]
+    T6["Texture.default"]
     end
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T4 --> T5
+    T5 --> T6
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 12. !variable.has_trim 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    T1["!variable.has_trim"]
+    T1["\\!"]
+    T2["variable.has_trim"]
     end
 
-"
+    T1 --> T2"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 13. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
@@ -270,20 +277,20 @@ exports[`meriad block graphs should be able generate a mermaid flowchart of lexi
     T1["array.skins"]
     subgraph T2["block of []"]
     direction LR
-    T3["query.property"]
-    subgraph T4["block of ()"]
+    subgraph T3["block of "]
     direction LR
-    T5["'minecraft:has_nectar'"]
+    T4["query.property"]
+    subgraph T5["block of ()"]
+    direction LR
+    T6["'minecraft:has_nectar'"]
     end
-    subgraph T6["block of "]
-    direction LR
     T7["+query.is_angry*2"]
     end
     end
     end
 
-    T3 --> T4
-    T4 --> T6
+    T4 --> T5
+    T5 --> T7
     T1 --> T2"
 `;
 
@@ -291,342 +298,352 @@ exports[`meriad block graphs should be able generate a mermaid flowchart of lexi
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.x_head_rotation"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.x_head_rotation"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
+    T4["math.clamp"]
+    subgraph T5["block of ()"]
     direction LR
-    T5["math.clamp"]
-    subgraph T6["block of ()"]
-    direction LR
-    T7["query.target_x_rotation,-32.5,32.5"]
+    T6["query.target_x_rotation"]
+    T7["-32.5"]
+    T8["32.5"]
     end
     end
     end
 
-    T5 --> T6
-    T1 --> T3
-    T3 --> T4"
+    T6 --> T7
+    T7 --> T8
+    T4 --> T5
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 15. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.y_head_rotation"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.y_head_rotation"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
+    T4["math.clamp"]
+    subgraph T5["block of ()"]
     direction LR
-    T5["math.clamp"]
-    subgraph T6["block of ()"]
-    direction LR
-    T7["query.target_y_rotation,-22.5,25"]
+    T6["query.target_y_rotation"]
+    T7["-22.5"]
+    T8["25"]
     end
     end
     end
 
-    T5 --> T6
-    T1 --> T3
-    T3 --> T4"
+    T6 --> T7
+    T7 --> T8
+    T4 --> T5
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 16. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.is_rolled_up"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.is_rolled_up"]
+    T4["query.property"]
+    subgraph T5["block of ()"]
+    direction LR
+    T6["'minecraft:armadillo_state'"]
     end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["query.property"]
-    subgraph T6["block of ()"]
-    direction LR
-    T7["'minecraft:armadillo_state'"]
-    end
-    subgraph T8["block of "]
-    direction LR
-    T9["!='unrolled'"]
-    end
+    T7["!='unrolled'"]
     end
     end
 
-    T5 --> T6
-    T6 --> T8
-    T1 --> T3
-    T3 --> T4"
+    T4 --> T5
+    T5 --> T7
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 17. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.rolled_up_time"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.rolled_up_time"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["variable.is_rolled_up?"]
+    T4["variable.is_rolled_up"]
+    T5["\\?"]
     subgraph T6["block of ()"]
     direction LR
     subgraph T7["block of ()"]
     direction LR
     T8["variable.rolled_up_time??0.0"]
+    T9["+query.delta_time"]
     end
-    subgraph T9["block of "]
-    direction LR
-    T10["+query.delta_time"]
-    end
-    end
-    subgraph T11["block of "]
-    direction LR
-    T12[":0.0"]
+    T10[":0.0"]
     end
     end
     end
 
-    T7 --> T9
+    T8 --> T9
+    T7 --> T10
+    T4 --> T5
     T5 --> T6
-    T6 --> T11
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 18. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.is_peeking"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.is_peeking"]
+    T4["query.property"]
+    subgraph T5["block of ()"]
+    direction LR
+    T6["'minecraft:armadillo_state'"]
     end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["query.property"]
-    subgraph T6["block of ()"]
-    direction LR
-    T7["'minecraft:armadillo_state'"]
-    end
-    subgraph T8["block of "]
-    direction LR
-    T9["=='rolled_up_peeking'"]
-    end
+    T7["=='rolled_up_peeking'"]
     end
     end
 
-    T5 --> T6
-    T6 --> T8
-    T1 --> T3
-    T3 --> T4"
+    T4 --> T5
+    T5 --> T7
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 19. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.is_unrolling"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.is_unrolling"]
+    T4["query.property"]
+    subgraph T5["block of ()"]
+    direction LR
+    T6["'minecraft:armadillo_state'"]
     end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["query.property"]
-    subgraph T6["block of ()"]
-    direction LR
-    T7["'minecraft:armadillo_state'"]
-    end
-    subgraph T8["block of "]
-    direction LR
-    T9["=='rolled_up_unrolling'"]
-    end
+    T7["=='rolled_up_unrolling'"]
     end
     end
 
-    T5 --> T6
-    T6 --> T8
-    T1 --> T3
-    T3 --> T4"
+    T4 --> T5
+    T5 --> T7
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 20. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.unrolling_time"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.unrolling_time"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["variable.is_unrolling?"]
+    T4["variable.is_unrolling"]
+    T5["\\?"]
     subgraph T6["block of ()"]
     direction LR
     subgraph T7["block of ()"]
     direction LR
     T8["variable.unrolling_time??0.0"]
+    T9["+query.delta_time"]
     end
-    subgraph T9["block of "]
-    direction LR
-    T10["+query.delta_time"]
-    end
-    end
-    subgraph T11["block of "]
-    direction LR
-    T12[":0.0"]
+    T10[":0.0"]
     end
     end
     end
 
-    T7 --> T9
+    T8 --> T9
+    T7 --> T10
+    T4 --> T5
     T5 --> T6
-    T6 --> T11
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 21. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.use_rolled_up_model"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.use_rolled_up_model"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["variable.rolled_up_time>=0.2083&&"]
+    T4["variable.rolled_up_time"]
+    T5[">="]
     subgraph T6["block of ()"]
     direction LR
-    T7["variable.unrolling_time==0.0||variable.unrolling_time<=1.25"]
+    T7["0.2083"]
+    T8["&&"]
+    subgraph T9["block of ()"]
+    direction LR
+    T10["variable.unrolling_time==0.0||variable.unrolling_time<=1.25"]
+    end
     end
     end
     end
 
+    T7 --> T8
+    T8 --> T9
+    T4 --> T5
     T5 --> T6
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 22. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.walking"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.walking"]
+    T4["query.modified_move_speed"]
+    T5["\\>"]
+    subgraph T6["block of ()"]
+    direction LR
+    T7["0.01"]
+    T8["&&"]
+    subgraph T9["block of ()"]
+    direction LR
+    T10["\\!"]
+    T11["variable.is_rolled_up"]
     end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["query.modified_move_speed>0.01&&!variable.is_rolled_up"]
+    end
     end
     end
 
-    T1 --> T3
-    T3 --> T4"
+    T10 --> T11
+    T7 --> T8
+    T8 --> T9
+    T4 --> T5
+    T5 --> T6
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 23. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.walk_anim_time_update"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.walk_anim_time_update"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["query.anim_time+math.min"]
+    T4["query.anim_time"]
+    T5["\\+"]
     subgraph T6["block of ()"]
     direction LR
-    T7["3.0,math.lerp"]
+    T7["math.min"]
     subgraph T8["block of ()"]
     direction LR
-    T9["2.0,5.0,query.modified_move_speed"]
-    end
-    end
+    T9["3.0"]
     subgraph T10["block of "]
     direction LR
-    T11["*query.delta_time"]
+    T11["math.lerp"]
+    subgraph T12["block of ()"]
+    direction LR
+    T13["2.0"]
+    T14["5.0"]
+    T15["query.modified_move_speed"]
+    end
+    end
+    end
+    T16["*query.delta_time"]
     end
     end
     end
 
+    T13 --> T14
+    T14 --> T15
+    T11 --> T12
+    T9 --> T10
     T7 --> T8
+    T8 --> T16
+    T4 --> T5
     T5 --> T6
-    T6 --> T10
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 24. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.walk_anim_time_update"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.walk_anim_time_update"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
-    direction LR
-    T5["query.anim_time+math.min"]
+    T4["query.anim_time"]
+    T5["\\+"]
     subgraph T6["block of ()"]
     direction LR
-    T7["3.0,math.lerp"]
+    T7["math.min"]
     subgraph T8["block of ()"]
     direction LR
-    T9["2.0,5.0,query.modified_move_speed"]
-    end
-    end
+    T9["3.0"]
     subgraph T10["block of "]
     direction LR
-    T11["*query.delta_time"]
+    T11["math.lerp"]
+    subgraph T12["block of ()"]
+    direction LR
+    T13["2.0"]
+    T14["5.0"]
+    T15["query.modified_move_speed"]
+    end
+    end
+    end
+    T16["*query.delta_time"]
     end
     end
     end
 
+    T13 --> T14
+    T14 --> T15
+    T11 --> T12
+    T9 --> T10
     T7 --> T8
+    T8 --> T16
+    T4 --> T5
     T5 --> T6
-    T6 --> T10
-    T1 --> T3
-    T3 --> T4"
+    T1 --> T2
+    T2 --> T3"
 `;
 
 exports[`meriad block graphs should be able generate a mermaid flowchart of lexical blocks 24. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2`] = `
 "flowchart LR
     subgraph T0["block of "]
     direction LR
-    subgraph T1["block of ()"]
+    T1["variable.y_head_rotation"]
+    T2["\\="]
+    subgraph T3["block of ()"]
     direction LR
-    T2["variable.y_head_rotation"]
-    end
-    T3["="]
-    subgraph T4["block of ()"]
+    T4["math.clamp"]
+    subgraph T5["block of ()"]
     direction LR
-    T5["math.clamp"]
-    subgraph T6["block of ()"]
-    direction LR
-    T7["query.target_y_rotation,-22.5,25"]
+    T6["query.target_y_rotation"]
+    T7["-22.5"]
+    T8["25"]
     end
     end
     end
 
-    T5 --> T6
-    T1 --> T3
-    T3 --> T4"
+    T6 --> T7
+    T7 --> T8
+    T4 --> T5
+    T1 --> T2
+    T2 --> T3"
 `;
