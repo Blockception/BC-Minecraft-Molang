@@ -23,6 +23,12 @@ function statementToBlocks(statement: LexicalNode[]): CodeBlock {
   // Assignment check?
   splitIfOne(blocks, (item) => item.type === Token.assignment && item.text === "=");
   splitIfOne(blocks, (item) => item.type === Token.compare);
+
+  // Operators
+  splitOnFirst(blocks, (item) => item.type === Token.operator && item.text === "&&");
+  splitOnFirst(blocks, (item) => item.type === Token.operator && item.text === "||");
+  splitOnFirst(blocks, (item) => item.type === Token.operator && item.text === "*");
+  splitOnFirst(blocks, (item) => item.type === Token.operator && item.text === "+");
   return blocks;
 }
 
@@ -83,7 +89,7 @@ function convertBrackets(nodes: LexicalNode[], surround: CodeBlock["surround"] =
     }
     result.nodes.push(convertBrackets(inner, surround));
 
-    lastStart = endIndex; // Move start to the end of all the brackets we found
+    lastStart = endIndex +1; // Move start to the end of all the brackets we found
     start = endIndex;
   }
 
@@ -135,6 +141,43 @@ function splitIfOne(block: CodeBlock, predicate: (item: LexicalNode) => boolean)
   }
 
   if (count !== 1 || first < 0) return;
+  const a = block.nodes.slice(0, first);
+  const b = block.nodes.slice(first + 1);
+  const splitter = block.nodes[first];
+  const items: (LexicalNode | CodeBlock)[] = [
+    {
+      surround: "()",
+      nodes: a,
+    },
+    splitter,
+    {
+      surround: "()",
+      nodes: b,
+    },
+  ];
+
+  // Filter out CodeBlock that are empty
+  block.nodes = items.filter((b) => {
+    if (CodeBlock.isCodeBlock(b) && b.nodes.length === 0) {
+      return false;
+    }
+
+    return true;
+  });
+}
+
+function splitOnFirst(block: CodeBlock, predicate: (item: LexicalNode) => boolean) {
+  let first = -1;
+
+  for (let i = 0; i < block.nodes.length; i++) {
+    const n = block.nodes[i];
+    if (!CodeBlock.isCodeBlock(n) && predicate(n)) {
+      first = i;
+      break;
+    }
+  }
+
+  if (first < 0) return;
   const a = block.nodes.slice(0, first);
   const b = block.nodes.slice(first + 1);
   const splitter = block.nodes[first];

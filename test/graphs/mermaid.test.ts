@@ -1,7 +1,7 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
-import { CodeBlock } from "../../src/molang/syntax/lexical/blocks";
-import { LexicalNode, Token } from "../../src/molang/syntax/lexical/lexical";
-import { parseMolang } from "../../src/molang/syntax/parse";
+import { toBlocks } from "../../src/molang/syntax/lexical/blocks";
+import { parse } from "../../src/molang/syntax/lexical/parsing";
+import { blocksToMermaid } from "../../src/graphs/mermaid";
 
 const syntaxes = [
   // Transitions checks
@@ -38,21 +38,15 @@ const syntaxes = [
   "variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25);",
 ];
 
-describe.only("molang - syntax", () => {
-  describe("should be able to parse and match the syntax tree generated", () => {
+describe("meriad block graphs", () => {
+  describe("should be able generate a mermaid flowchart of lexical blocks", () => {
     test.each(syntaxes)("%#. %s", (s) => {
-      const n = parseMolang(OffsetWord.create(s, 0));
-      n.map(simplify).forEach((item) => {
-        expect(item).toMatchSnapshot();
+      const tokens = parse(OffsetWord.create(s, 0));
+      const blocks = toBlocks(tokens);
+
+      blocks.forEach((item) => {
+        expect(blocksToMermaid(item)).toMatchSnapshot();
       });
     });
   });
 });
-
-function simplify(item: CodeBlock | LexicalNode): any {
-  if (CodeBlock.isCodeBlock(item)) {
-    return [`surround: ${item.surround}`, ...item.nodes.map(simplify)];
-  }
-
-  return `${item.text} [${Token[item.type]}]`;
-}

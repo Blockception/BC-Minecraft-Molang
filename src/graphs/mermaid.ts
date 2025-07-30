@@ -22,7 +22,7 @@ export function blocksToMermaid(code: CodeBlock): string {
   const links: string[] = [];
   const [graph] = codeBlockToString(code);
 
-  function codeBlockToString(block: CodeBlock) {
+  function codeBlockToString(block: CodeBlock): [string, number] {
     const data = concatStringOnly(block.nodes.map((item) => (CodeBlock.isCodeBlock(item) ? item : item.text)));
     const id = getId();
     const ids = [];
@@ -36,7 +36,7 @@ export function blocksToMermaid(code: CodeBlock): string {
         graph += `    T${nid}["${n}"]\n`;
       } else {
         const [g, nid] = codeBlockToString(n);
-        graph += '\n' + g;
+        graph += "\n" + g;
         ids.push(nid);
       }
     }
@@ -49,12 +49,12 @@ export function blocksToMermaid(code: CodeBlock): string {
     const blockStr = `    subgraph T${id}["block of ${block.surround}"]
     direction LR
 ${graph}
-    end`;
+    end\n`;
 
     return [blockStr, id];
   }
 
-  return `flowchart LR\n${graph}\n${links.map((item) => `    ${item}`).join("\n")}`;
+  return `flowchart LR\n${graph.replace(/\n\n/gim, "\n")}\n${links.map((item) => `    ${item}`).join("\n")}`;
 }
 
 // Concatenate adjacent string items, but not if there's a CodeBlock between them

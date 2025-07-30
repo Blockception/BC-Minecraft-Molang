@@ -10,7 +10,7 @@ export function identify(tokens: LexicalNode[]) {
     if (n.type !== Token.unknown) continue;
 
     // Advanced identify
-    switch (n.text) {
+    switch (n.text.toLowerCase().trim()) {
       // Keywords that we know and that we can expect from the next
       case "context":
       case "geometry":
@@ -82,7 +82,7 @@ export function identify(tokens: LexicalNode[]) {
         break;
       case ".":
       case ",":
-        n.type = Token.punction;
+        n.type = Token.punctuation;
         break;
     }
   }

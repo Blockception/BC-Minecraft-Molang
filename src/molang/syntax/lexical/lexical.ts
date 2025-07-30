@@ -46,7 +46,7 @@ export enum Token {
   keyword,
   operator,
   compare,
-  punction,
+  punctuation,
   number,
   text,
   end,

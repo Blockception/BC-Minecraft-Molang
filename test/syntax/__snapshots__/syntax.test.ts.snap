@@ -1,597 +1,5 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`molang - syntax brackets are hard 0. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
-[
-  "surround: ",
-  "1.5 [number]",
-  "- [operator]",
-  "math [text]",
-  ". [punction]",
-  "pow [text]",
-  [
-    "surround: ()",
-    "1.5 [number]",
-    ", [punction]",
-    "1.0 [number]",
-    "- [operator]",
-    "015.0 [number]",
-    "* [operator]",
-    "query [text]",
-    ". [punction]",
-    "modified_move_speed [unknown]",
-  ],
-  ") [unknown]",
-  "* [operator]",
-  "query [text]",
-  ". [punction]",
-  "camera_rotation [unknown]",
-  [
-    "surround: ()",
-    "0 [number]",
-  ],
-  [
-    "surround: ",
-    ") [unknown]",
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 1. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
-[
-  "surround: ",
-  "math [keyword]",
-  ". [access]",
-  "clamp [identifier]",
-  [
-    "surround: ()",
-    "math [keyword]",
-    ". [access]",
-    "sqrt [identifier]",
-    [
-      "surround: ()",
-      "math [keyword]",
-      ". [access]",
-      "pow [identifier]",
-      [
-        "surround: ()",
-        "query [keyword]",
-        ". [access]",
-        "position_delta [identifier]",
-        [
-          "surround: ()",
-          "0 [number]",
-        ],
-        [
-          "surround: ",
-          ") [unknown]",
-          ", [punction]",
-          "2.0 [number]",
-        ],
-      ],
-      ") [unknown]",
-      "+ [operator]",
-      "math [text]",
-      ". [punction]",
-      "pow [text]",
-      [
-        "surround: ()",
-        "query [keyword]",
-        ". [access]",
-        "position_delta [identifier]",
-        [
-          "surround: ()",
-          "2 [number]",
-        ],
-        [
-          "surround: ",
-          ") [unknown]",
-          ", [punction]",
-          "2.0 [number]",
-        ],
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
-      ],
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      ", [punction]",
-      "0.0 [number]",
-      ", [punction]",
-      "0.1 [number]",
-    ],
-  ],
-  [
-    "surround: ",
-    ") [unknown]",
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 2. -175 * math.sin(variable.attack_time * 180) 1`] = `
-[
-  "surround: ",
-  "- [operator]",
-  "175 [number]",
-  "* [operator]",
-  "math [text]",
-  ". [punction]",
-  "sin [text]",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "attack_time [identifier]",
-    "* [operator]",
-    "180 [number]",
-  ],
-  [
-    "surround: ",
-    ") [unknown]",
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 3. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
-[
-  "surround: ",
-  "array [keyword]",
-  ". [access]",
-  "skins [identifier]",
-  [
-    "surround: []",
-    "query [keyword]",
-    ". [access]",
-    "property [identifier]",
-    [
-      "surround: ()",
-      "'minecraft:has_nectar' [text]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      "+ [operator]",
-      "query [text]",
-      ". [punction]",
-      "is_angry [unknown]",
-      "* [operator]",
-      "2 [number]",
-    ],
-  ],
-  [
-    "surround: ",
-    "] [unknown]",
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 4. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "x_head_rotation [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "math [text]",
-    ". [punction]",
-    "clamp [text]",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "target_x_rotation [identifier]",
-      ", [punction]",
-      "- [operator]",
-      "32.5 [number]",
-      ", [punction]",
-      "32.5 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 5. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "y_head_rotation [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "math [text]",
-    ". [punction]",
-    "clamp [text]",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "target_y_rotation [identifier]",
-      ", [punction]",
-      "- [operator]",
-      "22.5 [number]",
-      ", [punction]",
-      "25 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 6. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_rolled_up [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "property [text]",
-    [
-      "surround: ()",
-      "'minecraft:armadillo_state' [text]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      "!= [compare]",
-      "'unrolled' [text]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 7. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "rolled_up_time [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "is_rolled_up [unknown]",
-    "? [compare]",
-    [
-      "surround: ()",
-      [
-        "surround: ()",
-        "variable [keyword]",
-        ". [access]",
-        "rolled_up_time [identifier]",
-        "?? [operator]",
-        "0.0 [number]",
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
-        "+ [operator]",
-        "query [text]",
-        ". [punction]",
-        "delta_time [unknown]",
-      ],
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      ": [operator]",
-      "0.0 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 8. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_peeking [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "property [text]",
-    [
-      "surround: ()",
-      "'minecraft:armadillo_state' [text]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      "== [compare]",
-      "'rolled_up_peeking' [text]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 9. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "is_unrolling [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "property [text]",
-    [
-      "surround: ()",
-      "'minecraft:armadillo_state' [text]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      "== [compare]",
-      "'rolled_up_unrolling' [text]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 10. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "unrolling_time [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "is_unrolling [unknown]",
-    "? [compare]",
-    [
-      "surround: ()",
-      [
-        "surround: ()",
-        "variable [keyword]",
-        ". [access]",
-        "unrolling_time [identifier]",
-        "?? [operator]",
-        "0.0 [number]",
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
-        "+ [operator]",
-        "query [text]",
-        ". [punction]",
-        "delta_time [unknown]",
-      ],
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      ": [operator]",
-      "0.0 [number]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 11. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "use_rolled_up_model [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "rolled_up_time [unknown]",
-    ">= [compare]",
-    "0.2083 [number]",
-    "&& [operator]",
-    [
-      "surround: ()",
-      "variable [keyword]",
-      ". [access]",
-      "unrolling_time [identifier]",
-      "== [compare]",
-      "0.0 [number]",
-      "|| [operator]",
-      "variable [text]",
-      ". [punction]",
-      "unrolling_time [unknown]",
-      "<= [compare]",
-      "1.25 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 12. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "walk_anim_time_update [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "anim_time [unknown]",
-    "+ [operator]",
-    "math [text]",
-    ". [punction]",
-    "min [text]",
-    [
-      "surround: ()",
-      "3.0 [number]",
-      ", [punction]",
-      "math [text]",
-      ". [punction]",
-      "lerp [text]",
-      [
-        "surround: ()",
-        "2.0 [number]",
-        ", [punction]",
-        "5.0 [number]",
-        ", [punction]",
-        "query [text]",
-        ". [punction]",
-        "modified_move_speed [unknown]",
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
-      ],
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      "* [operator]",
-      "query [text]",
-      ". [punction]",
-      "delta_time [unknown]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 13. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "walk_anim_time_update [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "anim_time [unknown]",
-    "+ [operator]",
-    "math [text]",
-    ". [punction]",
-    "min [text]",
-    [
-      "surround: ()",
-      "3.0 [number]",
-      ", [punction]",
-      "math [text]",
-      ". [punction]",
-      "lerp [text]",
-      [
-        "surround: ()",
-        "2.0 [number]",
-        ", [punction]",
-        "5.0 [number]",
-        ", [punction]",
-        "query [text]",
-        ". [punction]",
-        "modified_move_speed [unknown]",
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
-      ],
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-      "* [operator]",
-      "query [text]",
-      ". [punction]",
-      "delta_time [unknown]",
-    ],
-  ],
-]
-`;
-
-exports[`molang - syntax brackets are hard 13. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2`] = `
-[
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "y_head_rotation [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    "math [text]",
-    ". [punction]",
-    "clamp [text]",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "target_y_rotation [identifier]",
-      ", [punction]",
-      "- [operator]",
-      "22.5 [number]",
-      ", [punction]",
-      "25 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
-    ],
-  ],
-]
-`;
-
 exports[`molang - syntax should be able to parse and match the syntax tree generated 0. variable.agent.anim_state == 2 1`] = `
 [
   "surround: ",
@@ -709,49 +117,56 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 6. !variable.swaying && query.all_animations_finished 1`] = `
 [
   "surround: ",
-  "! [operator]",
-  "variable [keyword]",
-  ". [access]",
-  "swaying [identifier]",
+  [
+    "surround: ()",
+    "! [operator]",
+    "variable [keyword]",
+    ". [access]",
+    "swaying [identifier]",
+  ],
   "&& [operator]",
-  "query [text]",
-  ". [punction]",
-  "all_animations_finished [unknown]",
+  [
+    "surround: ()",
+    "query [keyword]",
+    ". [access]",
+    "all_animations_finished [identifier]",
+  ],
 ]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 7. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
 [
   "surround: ",
-  "1.5 [number]",
-  "- [operator]",
-  "math [text]",
-  ". [punction]",
-  "pow [text]",
   [
     "surround: ()",
     "1.5 [number]",
-    ", [punction]",
-    "1.0 [number]",
     "- [operator]",
-    "015.0 [number]",
-    "* [operator]",
-    "query [text]",
-    ". [punction]",
-    "modified_move_speed [unknown]",
+    "math [keyword]",
+    ". [access]",
+    "pow [identifier]",
+    [
+      "surround: ()",
+      "1.5 [number]",
+      ", [punctuation]",
+      "1.0 [number]",
+      "- [operator]",
+      "015.0 [number]",
+      "* [operator]",
+      "query [keyword]",
+      ". [access]",
+      "modified_move_speed [identifier]",
+    ],
   ],
-  ") [unknown]",
   "* [operator]",
-  "query [text]",
-  ". [punction]",
-  "camera_rotation [unknown]",
   [
     "surround: ()",
-    "0 [number]",
-  ],
-  [
-    "surround: ",
-    ") [unknown]",
+    "query [keyword]",
+    ". [access]",
+    "camera_rotation [identifier]",
+    [
+      "surround: ()",
+      "0 [number]",
+    ],
   ],
 ]
 `;
@@ -783,16 +198,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         [
           "surround: ",
-          ") [unknown]",
-          ", [punction]",
+          ", [punctuation]",
           "2.0 [number]",
         ],
       ],
-      ") [unknown]",
       "+ [operator]",
-      "math [text]",
-      ". [punction]",
-      "pow [text]",
+      "math [keyword]",
+      ". [access]",
+      "pow [identifier]",
       [
         "surround: ()",
         "query [keyword]",
@@ -804,28 +217,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         [
           "surround: ",
-          ") [unknown]",
-          ", [punction]",
+          ", [punctuation]",
           "2.0 [number]",
         ],
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
       ],
     ],
     [
       "surround: ",
-      ") [unknown]",
-      ", [punction]",
+      ", [punctuation]",
       "0.0 [number]",
-      ", [punction]",
+      ", [punctuation]",
       "0.1 [number]",
     ],
-  ],
-  [
-    "surround: ",
-    ") [unknown]",
   ],
 ]
 `;
@@ -833,23 +236,25 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 9. -175 * math.sin(variable.attack_time * 180) 1`] = `
 [
   "surround: ",
-  "- [operator]",
-  "175 [number]",
-  "* [operator]",
-  "math [text]",
-  ". [punction]",
-  "sin [text]",
   [
     "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "attack_time [identifier]",
-    "* [operator]",
-    "180 [number]",
+    "- [operator]",
+    "175 [number]",
   ],
+  "* [operator]",
   [
-    "surround: ",
-    ") [unknown]",
+    "surround: ()",
+    "math [keyword]",
+    ". [access]",
+    "sin [identifier]",
+    [
+      "surround: ()",
+      "variable [keyword]",
+      ". [access]",
+      "attack_time [identifier]",
+      "* [operator]",
+      "180 [number]",
+    ],
   ],
 ]
 `;
@@ -866,13 +271,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "? [compare]",
   [
     "surround: ()",
-    "Material [text]",
-    ". [punction]",
-    "enchanted [text]",
+    "Material [keyword]",
+    ". [access]",
+    "enchanted [identifier]",
     ": [operator]",
-    "Material [text]",
-    ". [punction]",
-    "default [text]",
+    "Material [keyword]",
+    ". [access]",
+    "default [identifier]",
   ],
 ]
 `;
@@ -889,13 +294,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "? [compare]",
   [
     "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "trim_path [unknown]",
+    "variable [keyword]",
+    ". [access]",
+    "trim_path [identifier]",
     ": [operator]",
-    "Texture [text]",
-    ". [punction]",
-    "default [text]",
+    "Texture [keyword]",
+    ". [access]",
+    "default [identifier]",
   ],
 ]
 `;
@@ -927,18 +332,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     ],
     [
       "surround: ",
-      ") [unknown]",
       "+ [operator]",
-      "query [text]",
-      ". [punction]",
-      "is_angry [unknown]",
+      "query [keyword]",
+      ". [access]",
+      "is_angry [identifier]",
       "* [operator]",
       "2 [number]",
     ],
-  ],
-  [
-    "surround: ",
-    "] [unknown]",
   ],
 ]
 `;
@@ -955,23 +355,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "math [text]",
-    ". [punction]",
-    "clamp [text]",
+    "math [keyword]",
+    ". [access]",
+    "clamp [identifier]",
     [
       "surround: ()",
       "query [keyword]",
       ". [access]",
       "target_x_rotation [identifier]",
-      ", [punction]",
+      ", [punctuation]",
       "- [operator]",
       "32.5 [number]",
-      ", [punction]",
+      ", [punctuation]",
       "32.5 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
     ],
   ],
 ]
@@ -989,23 +385,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "math [text]",
-    ". [punction]",
-    "clamp [text]",
+    "math [keyword]",
+    ". [access]",
+    "clamp [identifier]",
     [
       "surround: ()",
       "query [keyword]",
       ". [access]",
       "target_y_rotation [identifier]",
-      ", [punction]",
+      ", [punctuation]",
       "- [operator]",
       "22.5 [number]",
-      ", [punction]",
+      ", [punctuation]",
       "25 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
     ],
   ],
 ]
@@ -1023,16 +415,15 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "property [text]",
+    "query [keyword]",
+    ". [access]",
+    "property [identifier]",
     [
       "surround: ()",
       "'minecraft:armadillo_state' [text]",
     ],
     [
       "surround: ",
-      ") [unknown]",
       "!= [compare]",
       "'unrolled' [text]",
     ],
@@ -1052,9 +443,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "is_rolled_up [unknown]",
+    "variable [keyword]",
+    ". [access]",
+    "is_rolled_up [identifier]",
     "? [compare]",
     [
       "surround: ()",
@@ -1068,16 +459,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       [
         "surround: ",
-        ") [unknown]",
         "+ [operator]",
-        "query [text]",
-        ". [punction]",
-        "delta_time [unknown]",
+        "query [keyword]",
+        ". [access]",
+        "delta_time [identifier]",
       ],
     ],
     [
       "surround: ",
-      ") [unknown]",
       ": [operator]",
       "0.0 [number]",
     ],
@@ -1097,16 +486,15 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "property [text]",
+    "query [keyword]",
+    ". [access]",
+    "property [identifier]",
     [
       "surround: ()",
       "'minecraft:armadillo_state' [text]",
     ],
     [
       "surround: ",
-      ") [unknown]",
       "== [compare]",
       "'rolled_up_peeking' [text]",
     ],
@@ -1126,16 +514,15 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "property [text]",
+    "query [keyword]",
+    ". [access]",
+    "property [identifier]",
     [
       "surround: ()",
       "'minecraft:armadillo_state' [text]",
     ],
     [
       "surround: ",
-      ") [unknown]",
       "== [compare]",
       "'rolled_up_unrolling' [text]",
     ],
@@ -1155,9 +542,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "is_unrolling [unknown]",
+    "variable [keyword]",
+    ". [access]",
+    "is_unrolling [identifier]",
     "? [compare]",
     [
       "surround: ()",
@@ -1171,16 +558,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       [
         "surround: ",
-        ") [unknown]",
         "+ [operator]",
-        "query [text]",
-        ". [punction]",
-        "delta_time [unknown]",
+        "query [keyword]",
+        ". [access]",
+        "delta_time [identifier]",
       ],
     ],
     [
       "surround: ",
-      ") [unknown]",
       ": [operator]",
       "0.0 [number]",
     ],
@@ -1200,9 +585,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "variable [text]",
-    ". [punction]",
-    "rolled_up_time [unknown]",
+    "variable [keyword]",
+    ". [access]",
+    "rolled_up_time [identifier]",
     ">= [compare]",
     "0.2083 [number]",
     "&& [operator]",
@@ -1214,15 +599,11 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       "== [compare]",
       "0.0 [number]",
       "|| [operator]",
-      "variable [text]",
-      ". [punction]",
-      "unrolling_time [unknown]",
+      "variable [keyword]",
+      ". [access]",
+      "unrolling_time [identifier]",
       "<= [compare]",
       "1.25 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
     ],
   ],
 ]
@@ -1240,9 +621,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "modified_move_speed [unknown]",
+    "query [keyword]",
+    ". [access]",
+    "modified_move_speed [identifier]",
     "> [compare]",
     "0.01 [number]",
     "&& [operator]",
@@ -1266,42 +647,37 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "anim_time [unknown]",
+    "query [keyword]",
+    ". [access]",
+    "anim_time [identifier]",
     "+ [operator]",
-    "math [text]",
-    ". [punction]",
-    "min [text]",
+    "math [keyword]",
+    ". [access]",
+    "min [identifier]",
     [
       "surround: ()",
       "3.0 [number]",
-      ", [punction]",
-      "math [text]",
-      ". [punction]",
-      "lerp [text]",
+      ", [punctuation]",
+      "math [keyword]",
+      ". [access]",
+      "lerp [identifier]",
       [
         "surround: ()",
         "2.0 [number]",
-        ", [punction]",
+        ", [punctuation]",
         "5.0 [number]",
-        ", [punction]",
-        "query [text]",
-        ". [punction]",
-        "modified_move_speed [unknown]",
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
+        ", [punctuation]",
+        "query [keyword]",
+        ". [access]",
+        "modified_move_speed [identifier]",
       ],
     ],
     [
       "surround: ",
-      ") [unknown]",
       "* [operator]",
-      "query [text]",
-      ". [punction]",
-      "delta_time [unknown]",
+      "query [keyword]",
+      ". [access]",
+      "delta_time [identifier]",
     ],
   ],
 ]
@@ -1319,42 +695,37 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "query [text]",
-    ". [punction]",
-    "anim_time [unknown]",
+    "query [keyword]",
+    ". [access]",
+    "anim_time [identifier]",
     "+ [operator]",
-    "math [text]",
-    ". [punction]",
-    "min [text]",
+    "math [keyword]",
+    ". [access]",
+    "min [identifier]",
     [
       "surround: ()",
       "3.0 [number]",
-      ", [punction]",
-      "math [text]",
-      ". [punction]",
-      "lerp [text]",
+      ", [punctuation]",
+      "math [keyword]",
+      ". [access]",
+      "lerp [identifier]",
       [
         "surround: ()",
         "2.0 [number]",
-        ", [punction]",
+        ", [punctuation]",
         "5.0 [number]",
-        ", [punction]",
-        "query [text]",
-        ". [punction]",
-        "modified_move_speed [unknown]",
-      ],
-      [
-        "surround: ",
-        ") [unknown]",
+        ", [punctuation]",
+        "query [keyword]",
+        ". [access]",
+        "modified_move_speed [identifier]",
       ],
     ],
     [
       "surround: ",
-      ") [unknown]",
       "* [operator]",
-      "query [text]",
-      ". [punction]",
-      "delta_time [unknown]",
+      "query [keyword]",
+      ". [access]",
+      "delta_time [identifier]",
     ],
   ],
 ]
@@ -1372,23 +743,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "= [assignment]",
   [
     "surround: ()",
-    "math [text]",
-    ". [punction]",
-    "clamp [text]",
+    "math [keyword]",
+    ". [access]",
+    "clamp [identifier]",
     [
       "surround: ()",
       "query [keyword]",
       ". [access]",
       "target_y_rotation [identifier]",
-      ", [punction]",
+      ", [punctuation]",
       "- [operator]",
       "22.5 [number]",
-      ", [punction]",
+      ", [punctuation]",
       "25 [number]",
-    ],
-    [
-      "surround: ",
-      ") [unknown]",
     ],
   ],
 ]
