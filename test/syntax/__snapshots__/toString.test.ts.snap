@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 0. !variable.swaying && query.all_animations_finished 1`] = `"((variable.variable.swaying&&query.query.all_animations_finished))"`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 2. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `"variable.variable.walking=(query.query.modified_move_speed>0.01&&(variable.variable.is_rolled_up))"`;

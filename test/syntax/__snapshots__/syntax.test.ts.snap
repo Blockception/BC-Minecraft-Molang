@@ -2,24 +2,106 @@
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 0. !variable.swaying && query.all_animations_finished 1`] = `
 [
-  "surround: ",
-  "! [operator]",
-  [
-    "surround: ()",
-    [
-      "surround: ()",
-      "variable [keyword]",
-      ". [access]",
-      "swaying [identifier]",
+  {
+    "operation": {
+      "offset": 0,
+      "text": "!",
+      "type": 6,
+    },
+    "parameters": [
+      {
+        "operation": {
+          "offset": 18,
+          "text": "&&",
+          "type": 6,
+        },
+        "parameters": [
+          {
+            "accessor": {
+              "offset": 9,
+              "text": ".",
+              "type": 1,
+            },
+            "base": {
+              "base": {
+                "offset": 1,
+                "text": "variable",
+                "type": 5,
+              },
+              "type": 0,
+            },
+            "property": {
+              "accessor": {
+                "offset": 9,
+                "text": ".",
+                "type": 1,
+              },
+              "base": {
+                "base": {
+                  "offset": 1,
+                  "text": "variable",
+                  "type": 5,
+                },
+                "type": 0,
+              },
+              "property": {
+                "base": {
+                  "offset": 10,
+                  "text": "swaying",
+                  "type": 4,
+                },
+                "type": 0,
+              },
+              "type": 1,
+            },
+            "type": 1,
+          },
+          {
+            "accessor": {
+              "offset": 26,
+              "text": ".",
+              "type": 1,
+            },
+            "base": {
+              "base": {
+                "offset": 21,
+                "text": "query",
+                "type": 5,
+              },
+              "type": 0,
+            },
+            "property": {
+              "accessor": {
+                "offset": 26,
+                "text": ".",
+                "type": 1,
+              },
+              "base": {
+                "base": {
+                  "offset": 21,
+                  "text": "query",
+                  "type": 5,
+                },
+                "type": 0,
+              },
+              "property": {
+                "base": {
+                  "offset": 27,
+                  "text": "all_animations_finished",
+                  "type": 4,
+                },
+                "type": 0,
+              },
+              "type": 1,
+            },
+            "type": 1,
+          },
+        ],
+        "type": 6,
+      },
     ],
-    "&& [operator]",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "all_animations_finished [identifier]",
-    ],
-  ],
+    "type": 6,
+  },
 ]
 `;
 
@@ -73,41 +155,164 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 2. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 [
-  "surround: ",
-  [
-    "surround: ()",
-    "variable [keyword]",
-    ". [access]",
-    "walking [identifier]",
-  ],
-  "= [assignment]",
-  [
-    "surround: ()",
-    [
-      "surround: ()",
-      "query [keyword]",
-      ". [access]",
-      "modified_move_speed [identifier]",
-    ],
-    "> [compare]",
-    [
-      "surround: ()",
-      [
-        "surround: ()",
-        "0.01 [number]",
+  {
+    "receiver": {
+      "accessor": {
+        "offset": 8,
+        "text": ".",
+        "type": 1,
+      },
+      "base": {
+        "base": {
+          "offset": 0,
+          "text": "variable",
+          "type": 5,
+        },
+        "type": 0,
+      },
+      "property": {
+        "accessor": {
+          "offset": 8,
+          "text": ".",
+          "type": 1,
+        },
+        "base": {
+          "base": {
+            "offset": 0,
+            "text": "variable",
+            "type": 5,
+          },
+          "type": 0,
+        },
+        "property": {
+          "base": {
+            "offset": 9,
+            "text": "walking",
+            "type": 4,
+          },
+          "type": 0,
+        },
+        "type": 1,
+      },
+      "type": 1,
+    },
+    "type": 2,
+    "value": {
+      "operation": {
+        "offset": 52,
+        "text": "&&",
+        "type": 6,
+      },
+      "parameters": [
+        {
+          "a": {
+            "accessor": {
+              "offset": 24,
+              "text": ".",
+              "type": 1,
+            },
+            "base": {
+              "base": {
+                "offset": 19,
+                "text": "query",
+                "type": 5,
+              },
+              "type": 0,
+            },
+            "property": {
+              "accessor": {
+                "offset": 24,
+                "text": ".",
+                "type": 1,
+              },
+              "base": {
+                "base": {
+                  "offset": 19,
+                  "text": "query",
+                  "type": 5,
+                },
+                "type": 0,
+              },
+              "property": {
+                "base": {
+                  "offset": 25,
+                  "text": "modified_move_speed",
+                  "type": 4,
+                },
+                "type": 0,
+              },
+              "type": 1,
+            },
+            "type": 1,
+          },
+          "b": {
+            "base": {
+              "offset": 47,
+              "text": "0.01",
+              "type": 9,
+            },
+            "type": 3,
+          },
+          "operator": {
+            "offset": 45,
+            "text": ">",
+            "type": 7,
+          },
+          "type": 7,
+        },
+        {
+          "operation": {
+            "offset": 55,
+            "text": "!",
+            "type": 6,
+          },
+          "parameters": [
+            {
+              "accessor": {
+                "offset": 64,
+                "text": ".",
+                "type": 1,
+              },
+              "base": {
+                "base": {
+                  "offset": 56,
+                  "text": "variable",
+                  "type": 5,
+                },
+                "type": 0,
+              },
+              "property": {
+                "accessor": {
+                  "offset": 64,
+                  "text": ".",
+                  "type": 1,
+                },
+                "base": {
+                  "base": {
+                    "offset": 56,
+                    "text": "variable",
+                    "type": 5,
+                  },
+                  "type": 0,
+                },
+                "property": {
+                  "base": {
+                    "offset": 65,
+                    "text": "is_rolled_up",
+                    "type": 4,
+                  },
+                  "type": 0,
+                },
+                "type": 1,
+              },
+              "type": 1,
+            },
+          ],
+          "type": 6,
+        },
       ],
-      "&& [operator]",
-      [
-        "surround: ()",
-        "! [operator]",
-        [
-          "surround: ()",
-          "variable [keyword]",
-          ". [access]",
-          "is_rolled_up [identifier]",
-        ],
-      ],
-    ],
-  ],
+      "type": 6,
+    },
+  },
 ]
 `;

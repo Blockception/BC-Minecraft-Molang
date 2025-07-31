@@ -26,10 +26,12 @@ function statementToBlocks(statement: (LexicalNode | CodeBlock)[], surround?: Co
 
   // Assignment check?
   splitIfOne(blocks, (item) => item.type === Token.assignment && item.text === "=");
-  splitIfOne(blocks, (item) => item.type === Token.compare);
 
   // Operators
   splitOnFirst(blocks, (item) => item.type === Token.operator);
+
+  // Compares
+  splitIfOne(blocks, (item) => item.type === Token.compare);
 
   return blocks;
 }
