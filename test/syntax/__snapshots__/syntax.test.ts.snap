@@ -1,67 +1,95 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 0. variable.agent.anim_state == 2 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "agent.anim_state",
+    "position": 0,
+    "scope": "variable",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 1. variable.agent.anim_state > 2 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "agent.anim_state",
+    "position": 0,
+    "scope": "variable",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 2. variable.agent.anim_state < 2 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "agent.anim_state",
+    "position": 0,
+    "scope": "variable",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 3. variable.agent.anim_state != 2 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "agent.anim_state",
+    "position": 0,
+    "scope": "variable",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 4. variable.agent.anim_state >= 2 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "agent.anim_state",
+    "position": 0,
+    "scope": "variable",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 5. variable.agent.anim_state <= 2 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "agent.anim_state",
+    "position": 0,
+    "scope": "variable",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 6. !variable.swaying && query.all_animations_finished 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "operand": {
+      "name": "swaying",
+      "position": 1,
+      "scope": "variable",
+      "type": 7,
+    },
+    "operator": "!",
+    "position": 1,
+    "type": 6,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 7. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "position": 0,
+    "type": 1,
+    "value": 1.5,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 8. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
@@ -113,11 +141,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 14. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "name": "skins",
+    "position": 0,
+    "scope": "array",
+    "type": 7,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 15. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
@@ -137,11 +168,31 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 17. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "left": {
+      "name": "is_rolled_up",
+      "position": 0,
+      "scope": "variable",
+      "type": 7,
+    },
+    "position": 0,
+    "right": {
+      "arguments": [
+        {
+          "position": 39,
+          "type": 5,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "name": "property",
+      "namespace": "query",
+      "position": 24,
+      "type": 4,
+    },
+    "type": 1,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 18. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
@@ -153,19 +204,59 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 19. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "left": {
+      "name": "is_peeking",
+      "position": 0,
+      "scope": "variable",
+      "type": 7,
+    },
+    "position": 0,
+    "right": {
+      "arguments": [
+        {
+          "position": 37,
+          "type": 5,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "name": "property",
+      "namespace": "query",
+      "position": 22,
+      "type": 4,
+    },
+    "type": 1,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 20. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "left": {
+      "name": "is_unrolling",
+      "position": 0,
+      "scope": "variable",
+      "type": 7,
+    },
+    "position": 0,
+    "right": {
+      "arguments": [
+        {
+          "position": 39,
+          "type": 5,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "name": "property",
+      "namespace": "query",
+      "position": 24,
+      "type": 4,
+    },
+    "type": 1,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 21. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
@@ -177,11 +268,24 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 22. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
-{
-  "position": 0,
-  "statements": [],
-  "type": 4,
-}
+[
+  {
+    "left": {
+      "name": "use_rolled_up_model",
+      "position": 0,
+      "scope": "variable",
+      "type": 7,
+    },
+    "position": 0,
+    "right": {
+      "name": "rolled_up_time",
+      "position": 31,
+      "scope": "variable",
+      "type": 7,
+    },
+    "type": 1,
+  },
+]
 `;
 
 exports[`molang - syntax should be able to parse and match the syntax tree generated 23. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
