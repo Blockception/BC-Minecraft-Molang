@@ -22,7 +22,6 @@ export enum NodeType {
 
 /** Base node type for all syntax tree nodes */
 export interface SyntaxNode {
-  type: NodeType;
   position: number; // Absolute offset in the source text
 }
 
