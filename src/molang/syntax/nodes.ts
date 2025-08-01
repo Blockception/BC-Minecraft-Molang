@@ -1,3 +1,9 @@
+/** Variable scope types in Molang */
+export type VariableScope = "temp" | "variable" | "context" | "array";
+
+/** Function namespace types in Molang */
+export type FunctionNamespace = "math" | "query";
+
 /** Types of syntax nodes */
 export enum NodeType {
   ArrayAccess,
