@@ -12,6 +12,7 @@ export const valid_syntaxes = [
   "1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0)",
   "math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1)",
   "-175 * math.sin(variable.attack_time * 180)",
+  "-5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0",
 
   // Render controller
   "variable.is_enchanted ? Material.enchanted : Material.default",
