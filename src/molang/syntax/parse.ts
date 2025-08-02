@@ -90,6 +90,7 @@ function parseTokens(tokens: Token[]) {
       i = cdata.startIndex;
       n = cdata.node;
     }
+    builder.add(n);
 
     // Check for parenthese, brackets and braces
     if (
@@ -137,9 +138,7 @@ function parseTokens(tokens: Token[]) {
   return builder.result;
 }
 
-function processOperators(builder: SyntaxBuilder) {
-  
-}
+function processOperators(builder: SyntaxBuilder) {}
 
 /** Filter () {} [] from start or finish if they match */
 function trimBraces(tokens: Token[]): Token[] {
