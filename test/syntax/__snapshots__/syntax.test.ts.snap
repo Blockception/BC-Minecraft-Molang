@@ -449,3 +449,13 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
 ]
 `;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 44. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+[
+  {
+    "position": 0,
+    "statements": [],
+    "type": 9,
+  },
+]
+`;

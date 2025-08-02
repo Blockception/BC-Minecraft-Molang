@@ -716,3 +716,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "  EOF",
 ]
 `;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 44. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+[
+  "variable.state NamespacedIdentifier",
+  "= Assignment",
+  "variable.is_rolled_up NamespacedIdentifier",
+  "? QuestionMark",
+  "variable.rolled_up_time NamespacedIdentifier",
+  ">= Operator",
+  "0.2083 Number",
+  "? QuestionMark",
+  "1 Number",
+  ": Colon",
+  "2 Number",
+  ": Colon",
+  "3 Number",
+  "; Semicolon",
+  "  EOF",
+]
+`;
