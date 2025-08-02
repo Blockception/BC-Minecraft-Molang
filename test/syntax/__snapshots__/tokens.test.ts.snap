@@ -206,7 +206,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "- Operator",
   "5.0 Number",
   "* Operator",
-  "Math.cos NamespacedIdentifier",
+  "math.cos NamespacedIdentifier",
   "( OpenParen",
   "297.9380535 Number",
   "* Operator",
@@ -222,9 +222,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   "variable.is_enchanted NamespacedIdentifier",
   "? QuestionMark",
-  "Material.enchanted NamespacedIdentifier",
+  "material.enchanted NamespacedIdentifier",
   ": Colon",
-  "Material.default NamespacedIdentifier",
+  "material.default NamespacedIdentifier",
   "  EOF",
 ]
 `;
@@ -235,7 +235,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "? QuestionMark",
   "variable.trim_path NamespacedIdentifier",
   ": Colon",
-  "Texture.default NamespacedIdentifier",
+  "texture.default NamespacedIdentifier",
   "  EOF",
 ]
 `;

@@ -119,9 +119,9 @@ export function tokenize(input: string): Token[] {
 
       // If it contains a dot, it's a namespaced identifier
       if (value.includes(".")) {
-        tokens.push({ type: TokenType.NamespacedIdentifier, value, position: start });
+        tokens.push({ type: TokenType.NamespacedIdentifier, value: value.toLowerCase(), position: start });
       } else {
-        tokens.push({ type: TokenType.Identifier, value, position: start });
+        tokens.push({ type: TokenType.Identifier, value: value.toLowerCase(), position: start });
       }
       continue;
     }

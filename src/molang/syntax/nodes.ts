@@ -1,3 +1,5 @@
+import { Token } from "./tokens";
+
 /** Variable scope types in Molang */
 export type VariableScope = "temp" | "variable" | "context" | "array";
 
@@ -11,7 +13,8 @@ export enum NodeType {
   BinaryOperation,
   Conditional,
   FunctionCall,
-  Literal = 1,
+  Literal,
+  Marker,
   NullishCoalescing,
   ResourceReference,
   StatementSequence,
@@ -192,6 +195,17 @@ export namespace StatementSequenceNode {
   export const is = isfn<StatementSequenceNode>(NodeType.StatementSequence);
 }
 
+/** Represents a sequence of statements */
+export interface MarkerNode extends SyntaxNode {
+  type: NodeType.Marker;
+  token: Token;
+}
+
+export namespace MarkerNode {
+  export const create = createfn<MarkerNode>(NodeType.Marker);
+  export const is = isfn<MarkerNode>(NodeType.Marker);
+}
+
 /** Union type for all possible expression nodes */
 export type ExpressionNode =
   | ArrayAccessNode
@@ -201,9 +215,10 @@ export type ExpressionNode =
   | ConditionalNode
   | FunctionCallNode
   | LiteralNode
+  | MarkerNode
   | NullishCoalescingNode
   | ResourceReferenceNode
+  | StatementSequenceNode
   | StringLiteralNode
   | UnaryOperationNode
-  | VariableNode
-  | StatementSequenceNode;
+  | VariableNode;

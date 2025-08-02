@@ -1,11 +1,14 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
 import { Token, TokenType, tokenize } from "./tokens";
 import {
+  ArrayAccessNode,
   AssignmentNode,
   BinaryOperationNode,
+  ConditionalExpressionNode,
   ExpressionNode,
   FunctionCallNode,
   LiteralNode,
+  MarkerNode,
   NodeType,
   ResourceReferenceNode,
   StatementSequenceNode,
@@ -35,7 +38,10 @@ export function parseMolang(line: OffsetWord): ExpressionNode[] {
   const statements = splitTokens(tokens, (item) => item.type === TokenType.Semicolon).filter((t) => t.length > 0);
 
   // Parse each statement
-  return statements.map(parseTokens);
+  return statements
+    .map(trimEnding)
+    .filter((item) => item.length > 0 && item[0].type !== TokenType.EOF)
+    .map(parseTokens);
 }
 
 class SyntaxBuilder {
@@ -55,6 +61,14 @@ class SyntaxBuilder {
   }
   remove<T extends ExpressionNode>(node: T) {
     this.result.statements = this.result.statements.filter((item) => item !== node);
+  }
+  replace<T extends ExpressionNode, U extends ExpressionNode>(original: T, newnode: U): U {
+    this.result.statements.forEach((item, index, nodes) => {
+      if (item === original) {
+        nodes[index] = newnode;
+      }
+    });
+    return newnode;
   }
 }
 
@@ -90,25 +104,40 @@ function parseTokens(tokens: Token[]) {
           if (bracketArgs.length > 1) {
             throw MolangSyntaxError.fromToken(t, "unexpected amount of parameters for array access");
           }
-          if (!Token.oneOfType(code[0], TokenType.OpenBrace)) {
+          if (!Token.oneOfType(code[0], TokenType.OpenBracket)) {
             throw MolangSyntaxError.fromToken(t, "unexpected function call after resource access");
           }
+          builder.replace(
+            n,
+            ArrayAccessNode.create({
+              position: n.position,
+              array: n,
+              index: bracketArgs[0],
+            })
+          );
           break;
       }
     }
   }
 
+  //
+  processOperators(builder);
+
   return builder.result;
 }
 
+function processOperators(builder: SyntaxBuilder) {}
+
 /** Filter () {} [] from start or finish if they match */
 function trimBraces(tokens: Token[]): Token[] {
+  if (tokens.length <= 1) return tokens;
   while (
     (tokens[0].type === TokenType.OpenBrace && tokens[tokens.length - 1].type === TokenType.CloseBrace) ||
     (tokens[0].type === TokenType.OpenBracket && tokens[tokens.length - 1].type === TokenType.CloseBracket) ||
     (tokens[0].type === TokenType.OpenParen && tokens[tokens.length - 1].type === TokenType.CloseParen)
   ) {
     tokens = tokens.slice(1, tokens.length - 1);
+    if (tokens.length === 0) return tokens;
   }
 
   return tokens;
@@ -118,6 +147,7 @@ function trimEnding(tokens: Token[]): Token[] {
   // Filter off
   while (tokens[tokens.length - 1].type === TokenType.EOF || tokens[tokens.length - 1].type === TokenType.Semicolon) {
     tokens = tokens.slice(0, tokens.length - 1);
+    if (tokens.length === 0) return tokens;
   }
   return tokens;
 }
@@ -186,6 +216,18 @@ function convertToken(token: Token) {
         position: token.position,
         left: {} as ExpressionNode,
         right: {} as ExpressionNode,
+      });
+    case TokenType.QuestionMark:
+      return ConditionalExpressionNode.create({
+        position: token.position,
+        condition: {} as ExpressionNode,
+        falseExpression: {} as ExpressionNode,
+        trueExpression: {} as ExpressionNode,
+      });
+    case TokenType.Colon:
+      return MarkerNode.create({
+        position: token.position,
+        token: token,
       });
   }
 
