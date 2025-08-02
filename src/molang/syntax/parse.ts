@@ -10,6 +10,7 @@ import {
   LiteralNode,
   MarkerNode,
   NodeType,
+  NullishCoalescingNode,
   ResourceReferenceNode,
   StatementSequenceNode,
   StringLiteralNode,
@@ -56,7 +57,7 @@ class SyntaxBuilder {
   }
 
   add<T extends ExpressionNode>(node: T): T {
-    this.result.statements.push(node);
+    if (node) this.result.statements.push(node);
     return node;
   }
   remove<T extends ExpressionNode>(node: T) {
@@ -75,16 +76,26 @@ class SyntaxBuilder {
 function parseTokens(tokens: Token[]) {
   tokens = trimBraces(tokens);
   tokens = trimEnding(tokens);
-
-  if (tokens.length === 1) return convertToken(tokens[0]);
+  if (tokens.length === 1) return convertToken(tokens[0]) ?? costlyConvertToken(tokens, 0).node;
 
   const builder = new SyntaxBuilder(tokens[0].position ?? 0);
   for (let i = 0; i < tokens.length; i++) {
     const t = tokens[i];
-    const n = builder.add(convertToken(t));
+    const c = convertToken(t);
+    let n: ExpressionNode;
+    if (c) {
+      n = c;
+    } else {
+      const cdata = costlyConvertToken(tokens, i);
+      i = cdata.startIndex;
+      n = cdata.node;
+    }
 
     // Check for parenthese, brackets and braces
-    if (Token.oneOfType(tokens[i + 1], TokenType.OpenBrace, TokenType.OpenBracket, TokenType.OpenParen)) {
+    if (
+      (Token.oneOfType(t, TokenType.NamespacedIdentifier),
+      Token.oneOfType(tokens[i + 1], TokenType.OpenBrace, TokenType.OpenBracket, TokenType.OpenParen))
+    ) {
       const code = getMatchingTokenSlice(tokens, i + 1);
       const inner = trimBraces(code);
       const params = splitTokens(inner, (item) => item.type === TokenType.Comma);
@@ -152,6 +163,11 @@ function trimEnding(tokens: Token[]): Token[] {
   return tokens;
 }
 
+/**
+ * Cheap converserions from tokens to nodes
+ * @param token
+ * @returns
+ */
 function convertToken(token: Token) {
   switch (token.type) {
     case TokenType.NamespacedIdentifier:
@@ -229,11 +245,39 @@ function convertToken(token: Token) {
         position: token.position,
         token: token,
       });
+    case TokenType.NullishCoalescing:
+      return NullishCoalescingNode.create({
+        position: token.position,
+        left: {} as ExpressionNode,
+        right: {} as ExpressionNode,
+      });
+  }
+
+  return undefined;
+}
+
+/**
+ * The more costly conversions, and the last restort, will throw an error if doesn't know what to do
+ * @param tokens
+ * @param startIndex
+ */
+function costlyConvertToken(tokens: Token[], startIndex: number): { node: ExpressionNode; startIndex: number } {
+  const current = tokens[startIndex];
+
+  switch (current.type) {
+    case TokenType.OpenBrace:
+    case TokenType.OpenBracket:
+    case TokenType.OpenParen:
+      const code = getMatchingTokenSlice(tokens, startIndex);
+      return {
+        node: parseTokens(code),
+        startIndex: startIndex + code.length,
+      };
   }
 
   throw MolangSyntaxError.fromToken(
-    token,
-    `don't know how to process this token: ${token.value} ${TokenType[token.type]}`
+    current,
+    `don't know how to process this token: ${current.value} ${TokenType[current.type]}`
   );
 }
 

@@ -4,29 +4,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "==",
-        "position": 26,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 29,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -36,29 +14,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": ">",
-        "position": 26,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 28,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -68,29 +24,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "<",
-        "position": 26,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 28,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -100,29 +34,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "!=",
-        "position": 26,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 29,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -132,29 +44,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": ">=",
-        "position": 26,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 29,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -164,29 +54,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "<=",
-        "position": 26,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 29,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -196,38 +64,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "operand": {},
-        "operator": "!",
-        "position": 0,
-        "type": 11,
-      },
-      {
-        "names": [
-          "swaying",
-        ],
-        "position": 1,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "&&",
-        "position": 18,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "all_animations_finished",
-        ],
-        "namespace": "query",
-        "position": 21,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -237,29 +74,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "==",
-        "position": 19,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 22,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -269,29 +84,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": ">",
-        "position": 19,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 21,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -301,29 +94,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "<",
-        "position": 19,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 21,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -333,29 +104,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "!=",
-        "position": 19,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 22,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -365,29 +114,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": ">=",
-        "position": 19,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 22,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -397,29 +124,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "agent",
-          "anim_state",
-        ],
-        "position": 0,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "<=",
-        "position": 19,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 22,
-        "type": 5,
-        "value": "2",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -429,38 +134,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "operand": {},
-        "operator": "!",
-        "position": 0,
-        "type": 11,
-      },
-      {
-        "names": [
-          "swaying",
-        ],
-        "position": 1,
-        "scope": "v",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": "&&",
-        "position": 11,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "all_animations_finished",
-        ],
-        "namespace": "q",
-        "position": 14,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -470,96 +144,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "position": 0,
-        "type": 5,
-        "value": "1.5",
-      },
-      {
-        "left": {},
-        "operator": "-",
-        "position": 4,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 15,
-            "type": 5,
-            "value": "1.5",
-          },
-          {
-            "position": 20,
-            "statements": [
-              {
-                "position": 20,
-                "type": 5,
-                "value": "1.0",
-              },
-              {
-                "left": {},
-                "operator": "-",
-                "position": 24,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 26,
-                "type": 5,
-                "value": "015.0",
-              },
-              {
-                "left": {},
-                "operator": "*",
-                "position": 32,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "arguments": [],
-                "names": [
-                  "modified_move_speed",
-                ],
-                "namespace": "query",
-                "position": 34,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "pow",
-        ],
-        "namespace": "math",
-        "position": 6,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 61,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 85,
-            "type": 5,
-            "value": "0",
-          },
-        ],
-        "names": [
-          "camera_rotation",
-        ],
-        "namespace": "query",
-        "position": 63,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -569,129 +154,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "arguments": [
-          {
-            "position": 11,
-            "statements": [
-              {
-                "arguments": [
-                  {
-                    "position": 21,
-                    "statements": [
-                      {
-                        "arguments": [
-                          {
-                            "position": 30,
-                            "statements": [
-                              {
-                                "arguments": [
-                                  {
-                                    "position": 51,
-                                    "type": 5,
-                                    "value": "0",
-                                  },
-                                ],
-                                "names": [
-                                  "position_delta",
-                                ],
-                                "namespace": "query",
-                                "position": 30,
-                                "type": 4,
-                              },
-                            ],
-                            "type": 9,
-                          },
-                          {
-                            "position": 55,
-                            "type": 5,
-                            "value": "2.0",
-                          },
-                        ],
-                        "names": [
-                          "pow",
-                        ],
-                        "namespace": "math",
-                        "position": 21,
-                        "type": 4,
-                      },
-                      {
-                        "left": {},
-                        "operator": "+",
-                        "position": 60,
-                        "right": {},
-                        "type": 2,
-                      },
-                      {
-                        "arguments": [
-                          {
-                            "position": 71,
-                            "statements": [
-                              {
-                                "arguments": [
-                                  {
-                                    "position": 92,
-                                    "type": 5,
-                                    "value": "2",
-                                  },
-                                ],
-                                "names": [
-                                  "position_delta",
-                                ],
-                                "namespace": "query",
-                                "position": 71,
-                                "type": 4,
-                              },
-                            ],
-                            "type": 9,
-                          },
-                          {
-                            "position": 96,
-                            "type": 5,
-                            "value": "2.0",
-                          },
-                        ],
-                        "names": [
-                          "pow",
-                        ],
-                        "namespace": "math",
-                        "position": 62,
-                        "type": 4,
-                      },
-                    ],
-                    "type": 9,
-                  },
-                ],
-                "names": [
-                  "sqrt",
-                ],
-                "namespace": "math",
-                "position": 11,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 103,
-            "type": 5,
-            "value": "0.0",
-          },
-          {
-            "position": 108,
-            "type": 5,
-            "value": "0.1",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 0,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -701,63 +164,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "left": {},
-        "operator": "-",
-        "position": 0,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 1,
-        "type": 5,
-        "value": "175",
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 5,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 16,
-            "statements": [
-              {
-                "names": [
-                  "attack_time",
-                ],
-                "position": 16,
-                "scope": "variable",
-                "type": 12,
-              },
-              {
-                "left": {},
-                "operator": "*",
-                "position": 37,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 39,
-                "type": 5,
-                "value": "180",
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "sin",
-        ],
-        "namespace": "math",
-        "position": 7,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -767,76 +174,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "left": {},
-        "operator": "-",
-        "position": 0,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 1,
-        "type": 5,
-        "value": "5.0",
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 5,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 16,
-            "statements": [
-              {
-                "position": 16,
-                "type": 5,
-                "value": "297.9380535",
-              },
-              {
-                "left": {},
-                "operator": "*",
-                "position": 28,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "arguments": [],
-                "names": [
-                  "anim_time",
-                ],
-                "namespace": "query",
-                "position": 30,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "cos",
-        ],
-        "namespace": "math",
-        "position": 7,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "-",
-        "position": 47,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 49,
-        "type": 5,
-        "value": "5.0",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -846,48 +184,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_enchanted",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "condition": {},
-        "falseExpression": {},
-        "position": 22,
-        "trueExpression": {},
-        "type": 3,
-      },
-      {
-        "names": [
-          "enchanted",
-        ],
-        "namespace": "material",
-        "position": 24,
-        "type": 8,
-      },
-      {
-        "position": 43,
-        "token": {
-          "position": 43,
-          "type": 6,
-          "value": ":",
-        },
-        "type": 6,
-      },
-      {
-        "names": [
-          "default",
-        ],
-        "namespace": "material",
-        "position": 45,
-        "type": 8,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -897,48 +194,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "has_trim",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "condition": {},
-        "falseExpression": {},
-        "position": 18,
-        "trueExpression": {},
-        "type": 3,
-      },
-      {
-        "names": [
-          "trim_path",
-        ],
-        "position": 20,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "position": 39,
-        "token": {
-          "position": 39,
-          "type": 6,
-          "value": ":",
-        },
-        "type": 6,
-      },
-      {
-        "names": [
-          "default",
-        ],
-        "namespace": "texture",
-        "position": 41,
-        "type": 8,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -948,22 +204,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "operand": {},
-        "operator": "!",
-        "position": 0,
-        "type": 11,
-      },
-      {
-        "names": [
-          "has_trim",
-        ],
-        "position": 1,
-        "scope": "variable",
-        "type": 12,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -973,69 +214,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "array": {
-          "names": [
-            "skins",
-          ],
-          "position": 0,
-          "scope": "array",
-          "type": 12,
-        },
-        "index": {
-          "position": 12,
-          "statements": [
-            {
-              "arguments": [
-                {
-                  "position": 27,
-                  "type": 10,
-                  "value": "minecraft:has_nectar",
-                },
-              ],
-              "names": [
-                "property",
-              ],
-              "namespace": "query",
-              "position": 12,
-              "type": 4,
-            },
-            {
-              "left": {},
-              "operator": "+",
-              "position": 51,
-              "right": {},
-              "type": 2,
-            },
-            {
-              "arguments": [],
-              "names": [
-                "is_angry",
-              ],
-              "namespace": "query",
-              "position": 53,
-              "type": 4,
-            },
-            {
-              "left": {},
-              "operator": "*",
-              "position": 68,
-              "right": {},
-              "type": 2,
-            },
-            {
-              "position": 70,
-              "type": 5,
-              "value": "2",
-            },
-          ],
-          "type": 9,
-        },
-        "position": 0,
-        "type": 0,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1045,64 +224,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "x_head_rotation",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 25,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "arguments": [],
-            "names": [
-              "target_x_rotation",
-            ],
-            "namespace": "query",
-            "position": 38,
-            "type": 4,
-          },
-          {
-            "position": 63,
-            "statements": [
-              {
-                "left": {},
-                "operator": "-",
-                "position": 63,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 64,
-                "type": 5,
-                "value": "32.5",
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 70,
-            "type": 5,
-            "value": "32.5",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 27,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1112,64 +234,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "y_head_rotation",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 25,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "arguments": [],
-            "names": [
-              "target_y_rotation",
-            ],
-            "namespace": "query",
-            "position": 38,
-            "type": 4,
-          },
-          {
-            "position": 63,
-            "statements": [
-              {
-                "left": {},
-                "operator": "-",
-                "position": 63,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 64,
-                "type": 5,
-                "value": "22.5",
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 70,
-            "type": 5,
-            "value": "25",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 27,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1179,49 +244,17 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_rolled_up",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 22,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "position": 39,
-            "type": 10,
-            "value": "minecraft:armadillo_state",
-          },
-        ],
-        "names": [
-          "property",
-        ],
-        "namespace": "query",
-        "position": 24,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "!=",
-        "position": 68,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 71,
-        "type": 10,
-        "value": "unrolled",
-      },
-    ],
+    "statements": [],
+    "type": 9,
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 25. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+[
+  {
+    "position": 0,
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1231,49 +264,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_peeking",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 20,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "position": 37,
-            "type": 10,
-            "value": "minecraft:armadillo_state",
-          },
-        ],
-        "names": [
-          "property",
-        ],
-        "namespace": "query",
-        "position": 22,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "==",
-        "position": 66,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 69,
-        "type": 10,
-        "value": "rolled_up_peeking",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1283,49 +274,17 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_unrolling",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 22,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "position": 39,
-            "type": 10,
-            "value": "minecraft:armadillo_state",
-          },
-        ],
-        "names": [
-          "property",
-        ],
-        "namespace": "query",
-        "position": 24,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "==",
-        "position": 68,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 71,
-        "type": 10,
-        "value": "rolled_up_unrolling",
-      },
-    ],
+    "statements": [],
+    "type": 9,
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 28. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+[
+  {
+    "position": 0,
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1335,49 +294,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "use_rolled_up_model",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 29,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "names": [
-          "rolled_up_time",
-        ],
-        "position": 31,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": ">=",
-        "position": 55,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 58,
-        "type": 5,
-        "value": "0.2083",
-      },
-      {
-        "left": {},
-        "operator": "&&",
-        "position": 65,
-        "right": {},
-        "type": 2,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1387,64 +304,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "walking",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 17,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "modified_move_speed",
-        ],
-        "namespace": "query",
-        "position": 19,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": ">",
-        "position": 45,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 47,
-        "type": 5,
-        "value": "0.01",
-      },
-      {
-        "left": {},
-        "operator": "&&",
-        "position": 52,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "operand": {},
-        "operator": "!",
-        "position": 55,
-        "type": 11,
-      },
-      {
-        "names": [
-          "is_rolled_up",
-        ],
-        "position": 56,
-        "scope": "variable",
-        "type": 12,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1454,104 +314,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "walk_anim_time_update",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 31,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "anim_time",
-        ],
-        "namespace": "query",
-        "position": 33,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "+",
-        "position": 49,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 60,
-            "type": 5,
-            "value": "3.0",
-          },
-          {
-            "position": 65,
-            "statements": [
-              {
-                "arguments": [
-                  {
-                    "position": 75,
-                    "type": 5,
-                    "value": "2.0",
-                  },
-                  {
-                    "position": 80,
-                    "type": 5,
-                    "value": "5.0",
-                  },
-                  {
-                    "arguments": [],
-                    "names": [
-                      "modified_move_speed",
-                    ],
-                    "namespace": "query",
-                    "position": 85,
-                    "type": 4,
-                  },
-                ],
-                "names": [
-                  "lerp",
-                ],
-                "namespace": "math",
-                "position": 65,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "min",
-        ],
-        "namespace": "math",
-        "position": 51,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 113,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "delta_time",
-        ],
-        "namespace": "query",
-        "position": 115,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1561,166 +324,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "walk_anim_time_update",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 31,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "anim_time",
-        ],
-        "namespace": "query",
-        "position": 33,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "+",
-        "position": 49,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 60,
-            "type": 5,
-            "value": "3.0",
-          },
-          {
-            "position": 65,
-            "statements": [
-              {
-                "arguments": [
-                  {
-                    "position": 75,
-                    "type": 5,
-                    "value": "2.0",
-                  },
-                  {
-                    "position": 80,
-                    "type": 5,
-                    "value": "5.0",
-                  },
-                  {
-                    "arguments": [],
-                    "names": [
-                      "modified_move_speed",
-                    ],
-                    "namespace": "query",
-                    "position": 85,
-                    "type": 4,
-                  },
-                ],
-                "names": [
-                  "lerp",
-                ],
-                "namespace": "math",
-                "position": 65,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "min",
-        ],
-        "namespace": "math",
-        "position": 51,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 113,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "delta_time",
-        ],
-        "namespace": "query",
-        "position": 115,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
   {
     "position": 132,
-    "statements": [
-      {
-        "names": [
-          "y_head_rotation",
-        ],
-        "position": 132,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 157,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "arguments": [],
-            "names": [
-              "target_y_rotation",
-            ],
-            "namespace": "query",
-            "position": 170,
-            "type": 4,
-          },
-          {
-            "position": 195,
-            "statements": [
-              {
-                "left": {},
-                "operator": "-",
-                "position": 195,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 196,
-                "type": 5,
-                "value": "22.5",
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 202,
-            "type": 5,
-            "value": "25",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 159,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1730,64 +339,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "x_head_rotation",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 25,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "arguments": [],
-            "names": [
-              "target_x_rotation",
-            ],
-            "namespace": "query",
-            "position": 38,
-            "type": 4,
-          },
-          {
-            "position": 63,
-            "statements": [
-              {
-                "left": {},
-                "operator": "-",
-                "position": 63,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 64,
-                "type": 5,
-                "value": "32.5",
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 70,
-            "type": 5,
-            "value": "32.5",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 27,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1797,64 +349,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "y_head_rotation",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 25,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "arguments": [],
-            "names": [
-              "target_y_rotation",
-            ],
-            "namespace": "query",
-            "position": 38,
-            "type": 4,
-          },
-          {
-            "position": 63,
-            "statements": [
-              {
-                "left": {},
-                "operator": "-",
-                "position": 63,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 64,
-                "type": 5,
-                "value": "22.5",
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 70,
-            "type": 5,
-            "value": "25",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 27,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1864,49 +359,17 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_rolled_up",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 22,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "position": 35,
-            "type": 10,
-            "value": "minecraft:armadillo_state",
-          },
-        ],
-        "names": [
-          "property",
-        ],
-        "namespace": "q",
-        "position": 24,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "!=",
-        "position": 64,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 67,
-        "type": 10,
-        "value": "unrolled",
-      },
-    ],
+    "statements": [],
+    "type": 9,
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 36. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+[
+  {
+    "position": 0,
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1916,49 +379,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_peeking",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 20,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "position": 33,
-            "type": 10,
-            "value": "minecraft:armadillo_state",
-          },
-        ],
-        "names": [
-          "property",
-        ],
-        "namespace": "q",
-        "position": 22,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "==",
-        "position": 62,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 65,
-        "type": 10,
-        "value": "rolled_up_peeking",
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -1968,49 +389,17 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "is_unrolling",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 22,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "position": 35,
-            "type": 10,
-            "value": "minecraft:armadillo_state",
-          },
-        ],
-        "names": [
-          "property",
-        ],
-        "namespace": "q",
-        "position": 24,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "==",
-        "position": 64,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 67,
-        "type": 10,
-        "value": "rolled_up_unrolling",
-      },
-    ],
+    "statements": [],
+    "type": 9,
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 39. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+[
+  {
+    "position": 0,
+    "statements": [],
     "type": 9,
   },
 ]
@@ -2020,49 +409,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "use_rolled_up_model",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 29,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "names": [
-          "rolled_up_time",
-        ],
-        "position": 31,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "operator": ">=",
-        "position": 55,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 58,
-        "type": 5,
-        "value": "0.2083",
-      },
-      {
-        "left": {},
-        "operator": "&&",
-        "position": 65,
-        "right": {},
-        "type": 2,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -2072,64 +419,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "walking",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 17,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "modified_move_speed",
-        ],
-        "namespace": "q",
-        "position": 19,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": ">",
-        "position": 41,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "position": 43,
-        "type": 5,
-        "value": "0.01",
-      },
-      {
-        "left": {},
-        "operator": "&&",
-        "position": 48,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "operand": {},
-        "operator": "!",
-        "position": 51,
-        "type": 11,
-      },
-      {
-        "names": [
-          "is_rolled_up",
-        ],
-        "position": 52,
-        "scope": "variable",
-        "type": 12,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -2139,104 +429,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "walk_anim_time_update",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 31,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "anim_time",
-        ],
-        "namespace": "q",
-        "position": 33,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "+",
-        "position": 45,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 56,
-            "type": 5,
-            "value": "3.0",
-          },
-          {
-            "position": 61,
-            "statements": [
-              {
-                "arguments": [
-                  {
-                    "position": 71,
-                    "type": 5,
-                    "value": "2.0",
-                  },
-                  {
-                    "position": 76,
-                    "type": 5,
-                    "value": "5.0",
-                  },
-                  {
-                    "arguments": [],
-                    "names": [
-                      "modified_move_speed",
-                    ],
-                    "namespace": "q",
-                    "position": 81,
-                    "type": 4,
-                  },
-                ],
-                "names": [
-                  "lerp",
-                ],
-                "namespace": "math",
-                "position": 61,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "min",
-        ],
-        "namespace": "math",
-        "position": 47,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 105,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "delta_time",
-        ],
-        "namespace": "q",
-        "position": 107,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
@@ -2246,166 +439,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 [
   {
     "position": 0,
-    "statements": [
-      {
-        "names": [
-          "walk_anim_time_update",
-        ],
-        "position": 0,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 31,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "anim_time",
-        ],
-        "namespace": "q",
-        "position": 33,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "+",
-        "position": 45,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [
-          {
-            "position": 56,
-            "type": 5,
-            "value": "3.0",
-          },
-          {
-            "position": 61,
-            "statements": [
-              {
-                "arguments": [
-                  {
-                    "position": 71,
-                    "type": 5,
-                    "value": "2.0",
-                  },
-                  {
-                    "position": 76,
-                    "type": 5,
-                    "value": "5.0",
-                  },
-                  {
-                    "arguments": [],
-                    "names": [
-                      "modified_move_speed",
-                    ],
-                    "namespace": "q",
-                    "position": 81,
-                    "type": 4,
-                  },
-                ],
-                "names": [
-                  "lerp",
-                ],
-                "namespace": "math",
-                "position": 61,
-                "type": 4,
-              },
-            ],
-            "type": 9,
-          },
-        ],
-        "names": [
-          "min",
-        ],
-        "namespace": "math",
-        "position": 47,
-        "type": 4,
-      },
-      {
-        "left": {},
-        "operator": "*",
-        "position": 105,
-        "right": {},
-        "type": 2,
-      },
-      {
-        "arguments": [],
-        "names": [
-          "delta_time",
-        ],
-        "namespace": "q",
-        "position": 107,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
   {
     "position": 120,
-    "statements": [
-      {
-        "names": [
-          "y_head_rotation",
-        ],
-        "position": 120,
-        "scope": "variable",
-        "type": 12,
-      },
-      {
-        "left": {},
-        "position": 145,
-        "right": {},
-        "type": 1,
-      },
-      {
-        "arguments": [
-          {
-            "arguments": [],
-            "names": [
-              "target_y_rotation",
-            ],
-            "namespace": "q",
-            "position": 158,
-            "type": 4,
-          },
-          {
-            "position": 179,
-            "statements": [
-              {
-                "left": {},
-                "operator": "-",
-                "position": 179,
-                "right": {},
-                "type": 2,
-              },
-              {
-                "position": 180,
-                "type": 5,
-                "value": "22.5",
-              },
-            ],
-            "type": 9,
-          },
-          {
-            "position": 186,
-            "type": 5,
-            "value": "25",
-          },
-        ],
-        "names": [
-          "clamp",
-        ],
-        "namespace": "math",
-        "position": 147,
-        "type": 4,
-      },
-    ],
+    "statements": [],
     "type": 9,
   },
 ]
