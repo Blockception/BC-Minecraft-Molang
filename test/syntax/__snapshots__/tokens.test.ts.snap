@@ -64,7 +64,71 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 7. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 7. v.agent.anim_state == 2 1`] = `
+[
+  "v.agent.anim_state NamespacedIdentifier",
+  "== Operator",
+  "2 Number",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 8. v.agent.anim_state > 2 1`] = `
+[
+  "v.agent.anim_state NamespacedIdentifier",
+  "> Operator",
+  "2 Number",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 9. v.agent.anim_state < 2 1`] = `
+[
+  "v.agent.anim_state NamespacedIdentifier",
+  "< Operator",
+  "2 Number",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 10. v.agent.anim_state != 2 1`] = `
+[
+  "v.agent.anim_state NamespacedIdentifier",
+  "!= Operator",
+  "2 Number",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 11. v.agent.anim_state >= 2 1`] = `
+[
+  "v.agent.anim_state NamespacedIdentifier",
+  ">= Operator",
+  "2 Number",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 12. v.agent.anim_state <= 2 1`] = `
+[
+  "v.agent.anim_state NamespacedIdentifier",
+  "<= Operator",
+  "2 Number",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 13. !v.swaying && q.all_animations_finished 1`] = `
+[
+  "! UnaryOperator",
+  "v.swaying NamespacedIdentifier",
+  "&& Operator",
+  "q.all_animations_finished NamespacedIdentifier",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 14. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
 [
   "1.5 Number",
   "- Operator",
@@ -87,7 +151,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 8. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 15. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
 [
   "math.clamp NamespacedIdentifier",
   "( OpenParen",
@@ -122,7 +186,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 9. -175 * math.sin(variable.attack_time * 180) 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 16. -175 * math.sin(variable.attack_time * 180) 1`] = `
 [
   "- Operator",
   "175 Number",
@@ -137,7 +201,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 10. -5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 17. -5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0 1`] = `
 [
   "- Operator",
   "5.0 Number",
@@ -154,7 +218,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 11. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 18. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
 [
   "variable.is_enchanted NamespacedIdentifier",
   "? QuestionMark",
@@ -165,7 +229,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 12. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 19. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
 [
   "variable.has_trim NamespacedIdentifier",
   "? QuestionMark",
@@ -176,7 +240,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 13. !variable.has_trim 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 20. !variable.has_trim 1`] = `
 [
   "! UnaryOperator",
   "variable.has_trim NamespacedIdentifier",
@@ -184,7 +248,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 14. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 21. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
 [
   "array.skins NamespacedIdentifier",
   "[ OpenBracket",
@@ -201,7 +265,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 15. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 22. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
 [
   "variable.x_head_rotation NamespacedIdentifier",
   "= Assignment",
@@ -219,7 +283,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 16. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 23. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   "variable.y_head_rotation NamespacedIdentifier",
   "= Assignment",
@@ -237,7 +301,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 17. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 24. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 [
   "variable.is_rolled_up NamespacedIdentifier",
   "= Assignment",
@@ -252,7 +316,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 18. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 25. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 [
   "variable.rolled_up_time NamespacedIdentifier",
   "= Assignment",
@@ -274,7 +338,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 19. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 26. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 [
   "variable.is_peeking NamespacedIdentifier",
   "= Assignment",
@@ -289,7 +353,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 20. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 27. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 [
   "variable.is_unrolling NamespacedIdentifier",
   "= Assignment",
@@ -304,7 +368,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 21. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 28. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 [
   "variable.unrolling_time NamespacedIdentifier",
   "= Assignment",
@@ -326,7 +390,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 22. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 29. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 [
   "variable.use_rolled_up_model NamespacedIdentifier",
   "= Assignment",
@@ -348,7 +412,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 23. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 30. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 [
   "variable.walking NamespacedIdentifier",
   "= Assignment",
@@ -363,7 +427,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 24. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 31. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
 [
   "variable.walk_anim_time_update NamespacedIdentifier",
   "= Assignment",
@@ -389,7 +453,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 25. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 32. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   "variable.walk_anim_time_update NamespacedIdentifier",
   "= Assignment",
@@ -416,6 +480,232 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "math.clamp NamespacedIdentifier",
   "( OpenParen",
   "query.target_y_rotation NamespacedIdentifier",
+  ", Comma",
+  "- Operator",
+  "22.5 Number",
+  ", Comma",
+  "25 Number",
+  ") CloseParen",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 33. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
+[
+  "variable.x_head_rotation NamespacedIdentifier",
+  "= Assignment",
+  "math.clamp NamespacedIdentifier",
+  "( OpenParen",
+  "query.target_x_rotation NamespacedIdentifier",
+  ", Comma",
+  "- Operator",
+  "32.5 Number",
+  ", Comma",
+  "32.5 Number",
+  ") CloseParen",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 34. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+[
+  "variable.y_head_rotation NamespacedIdentifier",
+  "= Assignment",
+  "math.clamp NamespacedIdentifier",
+  "( OpenParen",
+  "query.target_y_rotation NamespacedIdentifier",
+  ", Comma",
+  "- Operator",
+  "22.5 Number",
+  ", Comma",
+  "25 Number",
+  ") CloseParen",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 35. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+[
+  "variable.is_rolled_up NamespacedIdentifier",
+  "= Assignment",
+  "q.property NamespacedIdentifier",
+  "( OpenParen",
+  "minecraft:armadillo_state StringLiteral",
+  ") CloseParen",
+  "!= Operator",
+  "unrolled StringLiteral",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 36. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+[
+  "variable.rolled_up_time NamespacedIdentifier",
+  "= Assignment",
+  "variable.is_rolled_up NamespacedIdentifier",
+  "? QuestionMark",
+  "( OpenParen",
+  "( OpenParen",
+  "variable.rolled_up_time NamespacedIdentifier",
+  "?? NullishCoalescing",
+  "0.0 Number",
+  ") CloseParen",
+  "+ Operator",
+  "q.delta_time NamespacedIdentifier",
+  ") CloseParen",
+  ": Colon",
+  "0.0 Number",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 37. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+[
+  "variable.is_peeking NamespacedIdentifier",
+  "= Assignment",
+  "q.property NamespacedIdentifier",
+  "( OpenParen",
+  "minecraft:armadillo_state StringLiteral",
+  ") CloseParen",
+  "== Operator",
+  "rolled_up_peeking StringLiteral",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 38. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+[
+  "variable.is_unrolling NamespacedIdentifier",
+  "= Assignment",
+  "q.property NamespacedIdentifier",
+  "( OpenParen",
+  "minecraft:armadillo_state StringLiteral",
+  ") CloseParen",
+  "== Operator",
+  "rolled_up_unrolling StringLiteral",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 39. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+[
+  "variable.unrolling_time NamespacedIdentifier",
+  "= Assignment",
+  "variable.is_unrolling NamespacedIdentifier",
+  "? QuestionMark",
+  "( OpenParen",
+  "( OpenParen",
+  "variable.unrolling_time NamespacedIdentifier",
+  "?? NullishCoalescing",
+  "0.0 Number",
+  ") CloseParen",
+  "+ Operator",
+  "q.delta_time NamespacedIdentifier",
+  ") CloseParen",
+  ": Colon",
+  "0.0 Number",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 40. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+[
+  "variable.use_rolled_up_model NamespacedIdentifier",
+  "= Assignment",
+  "variable.rolled_up_time NamespacedIdentifier",
+  ">= Operator",
+  "0.2083 Number",
+  "&& Operator",
+  "( OpenParen",
+  "variable.unrolling_time NamespacedIdentifier",
+  "== Operator",
+  "0.0 Number",
+  "|| Operator",
+  "variable.unrolling_time NamespacedIdentifier",
+  "<= Operator",
+  "1.25 Number",
+  ") CloseParen",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 41. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+[
+  "variable.walking NamespacedIdentifier",
+  "= Assignment",
+  "q.modified_move_speed NamespacedIdentifier",
+  "> Operator",
+  "0.01 Number",
+  "&& Operator",
+  "! UnaryOperator",
+  "variable.is_rolled_up NamespacedIdentifier",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 42. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time; 1`] = `
+[
+  "variable.walk_anim_time_update NamespacedIdentifier",
+  "= Assignment",
+  "q.anim_time NamespacedIdentifier",
+  "+ Operator",
+  "math.min NamespacedIdentifier",
+  "( OpenParen",
+  "3.0 Number",
+  ", Comma",
+  "math.lerp NamespacedIdentifier",
+  "( OpenParen",
+  "2.0 Number",
+  ", Comma",
+  "5.0 Number",
+  ", Comma",
+  "q.modified_move_speed NamespacedIdentifier",
+  ") CloseParen",
+  ") CloseParen",
+  "* Operator",
+  "q.delta_time NamespacedIdentifier",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 43. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 1`] = `
+[
+  "variable.walk_anim_time_update NamespacedIdentifier",
+  "= Assignment",
+  "q.anim_time NamespacedIdentifier",
+  "+ Operator",
+  "math.min NamespacedIdentifier",
+  "( OpenParen",
+  "3.0 Number",
+  ", Comma",
+  "math.lerp NamespacedIdentifier",
+  "( OpenParen",
+  "2.0 Number",
+  ", Comma",
+  "5.0 Number",
+  ", Comma",
+  "q.modified_move_speed NamespacedIdentifier",
+  ") CloseParen",
+  ") CloseParen",
+  "* Operator",
+  "q.delta_time NamespacedIdentifier",
+  "; Semicolon",
+  "variable.y_head_rotation NamespacedIdentifier",
+  "= Assignment",
+  "math.clamp NamespacedIdentifier",
+  "( OpenParen",
+  "q.target_y_rotation NamespacedIdentifier",
   ", Comma",
   "- Operator",
   "22.5 Number",

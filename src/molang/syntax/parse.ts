@@ -1,6 +1,18 @@
 import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
-import { ExpressionNode, FunctionNamespace, NodeType, StatementSequenceNode, VariableScope } from "./nodes";
 import { Token, TokenType, tokenize } from "./tokens";
+import {
+  AssignmentNode,
+  BinaryOperationNode,
+  ExpressionNode,
+  FunctionCallNode,
+  LiteralNode,
+  NodeType,
+  ResourceReferenceNode,
+  StatementSequenceNode,
+  StringLiteralNode,
+  UnaryOperationNode,
+  VariableNode,
+} from "./nodes";
 
 /** Represents a syntax error in the Molang code */
 export class MolangSyntaxError extends Error {
@@ -8,274 +20,287 @@ export class MolangSyntaxError extends Error {
     super(message);
     this.name = "MolangSyntaxError";
   }
+
+  static fromToken(token: Token, message: string) {
+    return new MolangSyntaxError(message, token.position, token.value);
+  }
+  static fromTokens(tokens: Token[], message: string) {
+    return new MolangSyntaxError(message, tokens[0].position, tokens.map((i) => i.value).join(""));
+  }
 }
 
-/** Operator precedence and associativity configuration */
-interface OperatorInfo {
-  precedence: number;
-  rightAssociative?: boolean;
-  unary?: boolean;
+/** Main function to parse Molang code into a syntax tree */
+export function parseMolang(line: OffsetWord): ExpressionNode[] {
+  const tokens = tokenize(line.text);
+  const statements = splitTokens(tokens, (item) => item.type === TokenType.Semicolon).filter((t) => t.length > 0);
+
+  // Parse each statement
+  return statements.map(parseTokens);
 }
 
-const OPERATORS: Record<string, OperatorInfo> = {
-  // Assignment (lowest precedence)
-  "=": { precedence: 1, rightAssociative: true },
+class SyntaxBuilder {
+  result: StatementSequenceNode;
 
-  // Conditional (ternary)
-  "?": { precedence: 2, rightAssociative: true },
-  ":": { precedence: 2, rightAssociative: true },
+  constructor(position: number) {
+    this.result = {
+      type: NodeType.StatementSequence,
+      statements: [],
+      position: position,
+    };
+  }
 
-  // Logical OR
-  "||": { precedence: 3 },
+  add<T extends ExpressionNode>(node: T): T {
+    this.result.statements.push(node);
+    return node;
+  }
+  remove<T extends ExpressionNode>(node: T) {
+    this.result.statements = this.result.statements.filter((item) => item !== node);
+  }
+}
 
-  // Logical AND
-  "&&": { precedence: 4 },
+function parseTokens(tokens: Token[]) {
+  tokens = trimBraces(tokens);
+  tokens = trimEnding(tokens);
 
-  // Equality
-  "==": { precedence: 5 },
-  "!=": { precedence: 5 },
+  if (tokens.length === 1) return convertToken(tokens[0]);
 
-  // Comparison
-  "<": { precedence: 6 },
-  ">": { precedence: 6 },
-  "<=": { precedence: 6 },
-  ">=": { precedence: 6 },
+  const builder = new SyntaxBuilder(tokens[0].position ?? 0);
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i];
+    const n = builder.add(convertToken(t));
 
-  // Addition/Subtraction
-  "+": { precedence: 7 },
-  "-": { precedence: 7 },
+    // Check for parenthese, brackets and braces
+    if (Token.oneOfType(tokens[i + 1], TokenType.OpenBrace, TokenType.OpenBracket, TokenType.OpenParen)) {
+      const code = getMatchingTokenSlice(tokens, i + 1);
+      const inner = trimBraces(code);
+      const params = splitTokens(inner, (item) => item.type === TokenType.Comma);
+      const bracketArgs = params.map(parseTokens);
+      i += code.length; // move index to end
 
-  // Multiplication/Division (highest precedence for binary ops)
-  "*": { precedence: 8 },
-  "/": { precedence: 8 },
+      switch (n.type) {
+        case NodeType.FunctionCall:
+          n.arguments = bracketArgs;
+          break;
+        case NodeType.ResourceReference:
+          if (bracketArgs.length > 0) {
+            throw MolangSyntaxError.fromToken(t, "unexpected function call after resource access");
+          }
+          break;
+        case NodeType.Variable:
+          if (bracketArgs.length > 1) {
+            throw MolangSyntaxError.fromToken(t, "unexpected amount of parameters for array access");
+          }
+          if (!Token.oneOfType(code[0], TokenType.OpenBrace)) {
+            throw MolangSyntaxError.fromToken(t, "unexpected function call after resource access");
+          }
+          break;
+      }
+    }
+  }
 
-  // Unary operators
-  "!": { precedence: 9, unary: true },
-  "-u": { precedence: 9, unary: true }, // Unary minus (distinguished from binary)
-};
+  return builder.result;
+}
 
-/** Split a token stream into separate statements based on semicolons */
-function splitTokensIntoStatements(tokens: Token[]): Token[][] {
-  const statements: Token[][] = [];
+/** Filter () {} [] from start or finish if they match */
+function trimBraces(tokens: Token[]): Token[] {
+  while (
+    (tokens[0].type === TokenType.OpenBrace && tokens[tokens.length - 1].type === TokenType.CloseBrace) ||
+    (tokens[0].type === TokenType.OpenBracket && tokens[tokens.length - 1].type === TokenType.CloseBracket) ||
+    (tokens[0].type === TokenType.OpenParen && tokens[tokens.length - 1].type === TokenType.CloseParen)
+  ) {
+    tokens = tokens.slice(1, tokens.length - 1);
+  }
+
+  return tokens;
+}
+
+function trimEnding(tokens: Token[]): Token[] {
+  // Filter off
+  while (tokens[tokens.length - 1].type === TokenType.EOF || tokens[tokens.length - 1].type === TokenType.Semicolon) {
+    tokens = tokens.slice(0, tokens.length - 1);
+  }
+  return tokens;
+}
+
+function convertToken(token: Token) {
+  switch (token.type) {
+    case TokenType.NamespacedIdentifier:
+      const parts = token.value.split(".");
+
+      switch (parts[0]) {
+        case "q":
+        case "math":
+        case "query":
+          return FunctionCallNode.create({
+            names: parts.slice(1) as [string],
+            namespace: parts[0],
+            arguments: [],
+            position: token.position,
+          });
+        case "texture":
+        case "material":
+        case "geometry":
+          return ResourceReferenceNode.create({
+            position: token.position,
+            namespace: parts[0],
+            names: parts.slice(1) as [string],
+          });
+        case "temp":
+        case "v":
+        case "variable":
+        case "context":
+        case "array":
+          return VariableNode.create({
+            names: parts.slice(1) as [string],
+            position: token.position,
+            scope: parts[0],
+          });
+      }
+      break;
+
+    case TokenType.Number:
+      return LiteralNode.create({
+        position: token.position,
+        value: token.value,
+      });
+    case TokenType.StringLiteral:
+      return StringLiteralNode.create({
+        position: token.position,
+        value: token.value,
+      });
+    case TokenType.Operator:
+      return BinaryOperationNode.create({
+        operator: token.value,
+        position: token.position,
+        left: {} as ExpressionNode,
+        right: {} as ExpressionNode,
+      });
+    case TokenType.UnaryOperator:
+      return UnaryOperationNode.create({
+        operator: token.value,
+        position: token.position,
+        operand: {} as ExpressionNode,
+      });
+    case TokenType.Assignment:
+      return AssignmentNode.create({
+        position: token.position,
+        left: {} as ExpressionNode,
+        right: {} as ExpressionNode,
+      });
+  }
+
+  throw MolangSyntaxError.fromToken(
+    token,
+    `don't know how to process this token: ${token.value} ${TokenType[token.type]}`
+  );
+}
+
+function splitTokens(tokens: Token[], predicate: (item: Token) => boolean): Array<Array<Token>> {
+  const result: Array<Array<Token>> = [];
   let startIndex = 0;
 
-  // Find all semicolons and split on their positions
+  let bracketIndex = 0;
+  let parentIndex = 0;
+  let braceIndex = 0;
+
+  //loop
   for (let i = 0; i < tokens.length; i++) {
-    if (tokens[i].type === TokenType.Semicolon) {
-      // Only add if there are tokens between the splits
-      if (i > startIndex) {
-        statements.push(tokens.slice(startIndex, i));
-      }
+    const t = tokens[i];
+    switch (t.type) {
+      case TokenType.OpenBrace:
+        braceIndex++;
+        break;
+      case TokenType.OpenParen:
+        parentIndex++;
+        break;
+      case TokenType.OpenBracket:
+        bracketIndex++;
+        break;
+      case TokenType.CloseBrace:
+        braceIndex--;
+        break;
+      case TokenType.CloseParen:
+        parentIndex--;
+        break;
+      case TokenType.CloseBracket:
+        bracketIndex--;
+        break;
+    }
+
+    if (bracketIndex > 0 || parentIndex > 0 || braceIndex > 0) continue;
+    if (predicate(t)) {
+      const left = tokens.slice(startIndex, i);
+      result.push(left);
       startIndex = i + 1;
     }
   }
 
-  // Add the remaining tokens if they exist (and aren't EOF)
-  const remaining = tokens.slice(startIndex);
-  if (remaining.length > 0 && remaining[remaining.length - 1].type === TokenType.EOF) {
-    remaining.pop(); // Remove EOF token
-  }
-  if (remaining.length > 0) {
-    statements.push(remaining);
+  // Validate
+  if (bracketIndex > 0) throw MolangSyntaxError.fromTokens(tokens, "couldn't find the closing {");
+  if (parentIndex > 0) throw MolangSyntaxError.fromTokens(tokens, "couldn't find the closing (");
+  if (braceIndex > 0) throw MolangSyntaxError.fromTokens(tokens, "couldn't find the closing [");
+
+  if (startIndex < tokens.length) {
+    const left = tokens.slice(startIndex);
+    result.push(left);
   }
 
-  return statements;
+  return result;
 }
 
-/** Main function to parse Molang code into a syntax tree */
-export function parseMolang(line: OffsetWord): StatementSequenceNode[] {
-  const tokens = tokenize(line.text);
-  const statements = splitTokensIntoStatements(tokens);
-
-  // Parse each statement
-  return statements.map((statementTokens) => {
-    const parser = new MolangParser(statementTokens, line.offset);
-    return parser.parse();
-  });
-}
-
-/** Parser class to convert tokens into a syntax tree using iterative parsing */
-class MolangParser {
-  private currentTokenIndex = 0;
-
-  constructor(private tokens: Token[], private baseOffset: number) {}
-
-  parse(): StatementSequenceNode {
-    const result: StatementSequenceNode = {
-      type: NodeType.StatementSequence,
-      statements: [],
-    };
-
-    while (!this.isAtEnd()) {
-      
-    }
-
-    return result;
+function getMatchingTokenSlice(tokens: Token[], startIndex: number): Token[] {
+  if (startIndex >= tokens.length) {
+    throw new Error("Start index is out of bounds");
   }
 
-  /** Parse primary expressions and unary operators */
-  private parsePrimary(): ExpressionNode {
-    // Handle unary operators
-    const token = this.peek();
+  const startToken = tokens[startIndex];
+  let targetType: TokenType;
+  let counterType: TokenType;
 
-    if (token.type === TokenType.UnaryOperator || (token.type === TokenType.Operator && token.value === "-")) {
-      const operator = token.value === "-" ? "-u" : token.value; // Distinguish unary minus
-      const opInfo = OPERATORS[operator];
+  // Determine what we're looking for based on the starting token
+  switch (startToken.type) {
+    case TokenType.OpenBrace:
+      targetType = TokenType.CloseBrace;
+      counterType = TokenType.OpenBrace;
+      break;
+    case TokenType.OpenParen:
+      targetType = TokenType.CloseParen;
+      counterType = TokenType.OpenParen;
+      break;
+    case TokenType.OpenBracket:
+      targetType = TokenType.CloseBracket;
+      counterType = TokenType.OpenBracket;
+      break;
+    default:
+      throw new Error(`Token at index ${startIndex} is not an opening bracket, brace, or parenthesis`);
+  }
 
-      if (opInfo?.unary) {
-        this.advance(); // consume operator
-        const operand = this.parseExpression(opInfo.precedence);
+  let level = 1; // We start with level 1 since we found the opening token
+  let endIndex = -1;
 
-        return {
-          type: NodeType.UnaryOperation,
-          operator: token.value, // Use original operator value
-          operand,
-          position: this.makePosition(token.position),
-        };
+  // Search for the matching closing token
+  for (let i = startIndex + 1; i < tokens.length; i++) {
+    const token = tokens[i];
+
+    if (token.type === counterType) {
+      level++;
+    } else if (token.type === targetType) {
+      level--;
+      if (level === 0) {
+        endIndex = i;
+        break;
       }
     }
-
-    // Handle literals and identifiers
-    if (this.match(TokenType.Number)) {
-      return {
-        type: NodeType.Literal,
-        value: parseFloat(this.previous().value),
-        position: this.makePosition(this.previous().position),
-      };
-    }
-
-    if (this.match(TokenType.StringLiteral)) {
-      return {
-        type: NodeType.StringLiteral,
-        value: this.previous().value,
-        position: this.makePosition(this.previous().position),
-      };
-    }
-
-    if (this.match(TokenType.NamespacedIdentifier)) {
-      const fullId = this.previous().value;
-      const [scope, ...parts] = fullId.split(".");
-      const name = parts.join(".");
-      const position = this.makePosition(this.previous().position);
-
-      // Check if it's a function call
-      if (this.check(TokenType.OpenParen)) {
-        return this.parseFunction(scope, name, position);
-      }
-
-      // It's a variable reference
-      if (!this.isValidVariableScope(scope)) {
-        throw this.error(`Invalid variable scope: ${scope}`);
-      }
-
-      return {
-        type: NodeType.Variable,
-        scope: scope as VariableScope,
-        name,
-        position,
-      };
-    }
-
-    if (this.match(TokenType.OpenParen)) {
-      const expr = this.parseExpression();
-      this.consume(TokenType.CloseParen, "Expected ')' after expression");
-      return expr;
-    }
-
-    throw this.error("Expected expression");
   }
 
-  private isValidVariableScope(scope: string): scope is VariableScope {
-    switch (scope) {
-      case "temp":
-      case "variable":
-      case "context":
-      case "array":
-        return true;
-      default:
-        return false;
-    }
+  // Validate that we found the matching closing token
+  if (endIndex === -1) {
+    const tokenName =
+      startToken.type === TokenType.OpenBrace ? "{" : startToken.type === TokenType.OpenParen ? "(" : "[";
+    const closingName = targetType === TokenType.CloseBrace ? "}" : targetType === TokenType.CloseParen ? ")" : "]";
+    throw new Error(`Couldn't find the matching closing ${closingName} for ${tokenName} at index ${startIndex}`);
   }
 
-  private isValidFunctionNamespace(namespace: string): namespace is FunctionNamespace {
-    switch (namespace) {
-      case "math":
-      case "query":
-        return true;
-      default:
-        return false;
-    }
-  }
-
-  private parseFunction(namespace: string, name: string, position: number): ExpressionNode {
-    this.consume(TokenType.OpenParen, "Expected '(' after function name");
-
-    const args: ExpressionNode[] = [];
-    if (!this.check(TokenType.CloseParen)) {
-      // Parse arguments iteratively
-      args.push(this.parseExpression());
-
-      while (this.match(TokenType.Comma)) {
-        args.push(this.parseExpression());
-      }
-    }
-
-    this.consume(TokenType.CloseParen, "Expected ')' after arguments");
-
-    if (!this.isValidFunctionNamespace(namespace)) {
-      throw this.error(`Invalid function namespace: ${namespace}`);
-    }
-
-    return {
-      type: NodeType.FunctionCall,
-      namespace: namespace as FunctionNamespace,
-      name,
-      arguments: args,
-      position,
-    };
-  }
-
-  private makePosition(offset: number): number {
-    return this.baseOffset + offset;
-  }
-
-  private error(message: string): MolangSyntaxError {
-    const pos = this.makePosition(this.peek().position);
-    return new MolangSyntaxError(message, pos, this.tokens[this.currentTokenIndex]?.value || "");
-  }
-
-  private isAtEnd(): boolean {
-    return this.peek().type === TokenType.EOF;
-  }
-
-  private peek(): Token {
-    return this.tokens[this.currentTokenIndex];
-  }
-
-  private previous(): Token {
-    return this.tokens[this.currentTokenIndex - 1];
-  }
-
-  private advance(): Token {
-    if (!this.isAtEnd()) this.currentTokenIndex++;
-    return this.previous();
-  }
-
-  private consume(type: TokenType, message: string): Token {
-    if (this.check(type)) return this.advance();
-    throw this.error(message);
-  }
-
-  private match(type: TokenType): boolean {
-    if (this.check(type)) {
-      this.advance();
-      return true;
-    }
-    return false;
-  }
-
-  private check(type: TokenType): boolean {
-    if (this.isAtEnd()) return false;
-    return this.peek().type === type;
-  }
+  // Return the slice including both opening and closing tokens
+  return tokens.slice(startIndex, endIndex + 1);
 }

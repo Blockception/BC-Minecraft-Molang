@@ -5,7 +5,16 @@ export interface Token {
   position: number;
 }
 
+export namespace Token {
+  export function oneOfType(t: Pick<Token, "type"> | undefined, ...params: TokenType[]): boolean {
+    if (t === undefined) return false;
+
+    return params.includes(t.type);
+  }
+}
+
 export enum TokenType {
+  ArrayAccess,
   Arrow,
   Assignment,
   CloseBrace,
@@ -15,6 +24,7 @@ export enum TokenType {
   Comma,
   Dot,
   Identifier,
+  NamespacedIdentifier,
   NullishCoalescing,
   Number,
   OpenBrace,
@@ -26,9 +36,6 @@ export enum TokenType {
   StringLiteral,
   UnaryOperator,
   EOF,
-  // Special token types for handling array access and namespace identifiers
-  ArrayAccess,
-  NamespacedIdentifier,
 }
 
 function isDigit(ch: string): boolean {
