@@ -17,5 +17,8 @@
 
   "[markdown]": {
     "editor.wordWrap": "off"
+  },
+  "jest.runMode": {
+    "type": "on-demand"
   }
 }
