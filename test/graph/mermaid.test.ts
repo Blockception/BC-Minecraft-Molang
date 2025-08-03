@@ -11,7 +11,7 @@ describe("molang - mermaid - graphs", () => {
       n.forEach((item) => {
         expect(
           generateMermaidDiagram(item, {
-            direction: "LR",
+            direction: "TD",
             showPosition: true,
           })
         ).toMatchSnapshot();

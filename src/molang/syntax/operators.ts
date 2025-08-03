@@ -20,11 +20,11 @@ export function processOperators(builder: SyntaxBuilder) {
   ifOperator(builder, "||");
   ifOperator(builder, "&&");
 
-  ifOperator(builder, "+");
-  ifOperator(builder, "-");
   ifOperator(builder, "*");
   ifOperator(builder, "/");
   ifOperator(builder, "%");
+  ifOperator(builder, "+");
+  ifOperator(builder, "-");
 
   if (builder.hasOperator("?")) processTernaryOperators(builder); // <cond> ? <true> : <false>
 

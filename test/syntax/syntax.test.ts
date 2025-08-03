@@ -43,6 +43,7 @@ function cleanupNodes(node: ExpressionNode) {
   // Convert type to string for each identificatio
   (node as any).type = NodeType[node.type];
 }
+
 function validateNode(node: ExpressionNode): void {
   expect(node).toBeDefined();
   expect(node).toHaveProperty("type")

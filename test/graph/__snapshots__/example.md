@@ -1,7 +1,9 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+# Snapshot
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 0. variable.agent.anim_state == 2 1`] = `
-"---
+## 0. variable.agent.anim_state == 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -12,11 +14,14 @@ flowchart TD
     node2["2@29"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 1. variable.agent.anim_state > 2 1`] = `
-"---
+```
+
+## 1. variable.agent.anim_state > 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -27,11 +32,13 @@ flowchart TD
     node2["2@28"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 2. variable.agent.anim_state < 2 1`] = `
-"---
+## 2. variable.agent.anim_state < 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -42,11 +49,13 @@ flowchart TD
     node2["2@28"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 3. variable.agent.anim_state != 2 1`] = `
-"---
+## 3. variable.agent.anim_state != 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -57,11 +66,13 @@ flowchart TD
     node2["2@29"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 4. variable.agent.anim_state >= 2 1`] = `
-"---
+## 4. variable.agent.anim_state >= 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -72,11 +83,13 @@ flowchart TD
     node2["2@29"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 5. variable.agent.anim_state <= 2 1`] = `
-"---
+## 5. variable.agent.anim_state <= 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -87,11 +100,13 @@ flowchart TD
     node2["2@29"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 6. !variable.swaying && query.all_animations_finished 1`] = `
-"---
+## 6. !variable.swaying && query.all_animations_finished 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -104,11 +119,13 @@ flowchart TD
     start-->node0
     node1 -->|operand| node2
     node0 -->|left| node1
-    node0 -->|right| node3"
-`;
+    node0 -->|right| node3
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 7. v.agent.anim_state == 2 1`] = `
-"---
+## 7. v.agent.anim_state == 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -119,11 +136,13 @@ flowchart TD
     node2["2@22"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 8. v.agent.anim_state > 2 1`] = `
-"---
+## 8. v.agent.anim_state > 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -134,11 +153,13 @@ flowchart TD
     node2["2@21"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 9. v.agent.anim_state < 2 1`] = `
-"---
+## 9. v.agent.anim_state < 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -149,11 +170,13 @@ flowchart TD
     node2["2@21"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 10. v.agent.anim_state != 2 1`] = `
-"---
+## 10. v.agent.anim_state != 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -164,11 +187,13 @@ flowchart TD
     node2["2@22"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 11. v.agent.anim_state >= 2 1`] = `
-"---
+## 11. v.agent.anim_state >= 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -179,11 +204,13 @@ flowchart TD
     node2["2@22"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 12. v.agent.anim_state <= 2 1`] = `
-"---
+## 12. v.agent.anim_state <= 2 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -194,11 +221,13 @@ flowchart TD
     node2["2@22"]
     start-->node0
     node0 -->|left| node1
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 13. !v.swaying && q.all_animations_finished 1`] = `
-"---
+## 13. !v.swaying && q.all_animations_finished 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -211,11 +240,13 @@ flowchart TD
     start-->node0
     node1 -->|operand| node2
     node0 -->|left| node1
-    node0 -->|right| node3"
-`;
+    node0 -->|right| node3
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 14. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
-"---
+## 14. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -244,11 +275,13 @@ flowchart TD
     node2 -->|left| node3
     node10 -->|arg0| node11
     node2 -->|right| node10
-    node0 -->|right| node2"
-`;
+    node0 -->|right| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 15. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1`] = `
-"---
+## 15. math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -279,11 +312,13 @@ flowchart TD
     node1 -->|arg0| node2
     node0 -->|arg0| node1
     node0 -->|arg1| node11
-    node0 -->|arg2| node12"
-`;
+    node0 -->|arg2| node12
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 16. -175 * math.sin(variable.attack_time * 180) 1`] = `
-"---
+## 16. -175 * math.sin(variable.attack_time * 180) 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -302,11 +337,13 @@ flowchart TD
     node4 -->|left| node5
     node4 -->|right| node6
     node3 -->|arg0| node4
-    node0 -->|right| node3"
-`;
+    node0 -->|right| node3
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 17. math.sin(variable.attack_time * 180) * -175 1`] = `
-"---
+## 17. math.sin(variable.attack_time * 180) * -175 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -325,11 +362,13 @@ flowchart TD
     node1 -->|arg0| node2
     node0 -->|left| node1
     node5 -->|operand| node6
-    node0 -->|right| node5"
-`;
+    node0 -->|right| node5
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 18. -5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0 1`] = `
-"---
+## 18. -5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -352,11 +391,13 @@ flowchart TD
     node4 -->|arg0| node5
     node1 -->|right| node4
     node0 -->|left| node1
-    node0 -->|right| node8"
-`;
+    node0 -->|right| node8
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 19. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
-"---
+## 19. variable.is_enchanted ? Material.enchanted : Material.default 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -369,11 +410,13 @@ flowchart TD
     start-->node0
     node0 -->|condition| node1
     node0 -->|true| node2
-    node0 -->|false| node3"
-`;
+    node0 -->|false| node3
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 20. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
-"---
+## 20. variable.has_trim ? variable.trim_path : Texture.default 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -386,11 +429,13 @@ flowchart TD
     start-->node0
     node0 -->|condition| node1
     node0 -->|true| node2
-    node0 -->|false| node3"
-`;
+    node0 -->|false| node3
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 21. !variable.has_trim 1`] = `
-"---
+## 21. !variable.has_trim 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -399,11 +444,13 @@ flowchart TD
     node0{"!@0"}
     node1[["variable.has_trim@1"]]
     start-->node0
-    node0 -->|operand| node1"
-`;
+    node0 -->|operand| node1
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 22. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
-"---
+## 22. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -424,11 +471,13 @@ flowchart TD
     node5 -->|left| node6
     node5 -->|right| node7
     node2 -->|right| node5
-    node0 -->|index| node2"
-`;
+    node0 -->|index| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 23. variable.x_head_rotation = query.target_x_rotation * 32.5; 1`] = `
-"---
+## 23. variable.x_head_rotation = query.target_x_rotation * 32.5; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -443,11 +492,13 @@ flowchart TD
     node0 -->|target| node1
     node2 -->|left| node3
     node2 -->|right| node4
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 24. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
-"---
+## 24. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -466,11 +517,13 @@ flowchart TD
     node4 -->|operand| node5
     node2 -->|arg1| node4
     node2 -->|arg2| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 25. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-"---
+## 25. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -489,11 +542,13 @@ flowchart TD
     node4 -->|operand| node5
     node2 -->|arg1| node4
     node2 -->|arg2| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 26. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
-"---
+## 26. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -510,11 +565,13 @@ flowchart TD
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 27. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
-"---
+## 27. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -537,11 +594,13 @@ flowchart TD
     node6 -->|left| node7
     node6 -->|right| node8
     node2 -->|right| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 28. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 || variable.unrolling_time >= 5 ); 1`] = `
-"---
+## 28. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 || variable.unrolling_time >= 5 ); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -572,11 +631,13 @@ flowchart TD
     node10 -->|left| node11
     node10 -->|right| node12
     node2 -->|right| node10
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 29. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
-"---
+## 29. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -601,11 +662,13 @@ flowchart TD
     node4 -->|right| node8
     node2 -->|true| node4
     node2 -->|false| node9
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 30. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
-"---
+## 30. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -622,11 +685,13 @@ flowchart TD
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 31. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
-"---
+## 31. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -643,11 +708,13 @@ flowchart TD
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 32. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
-"---
+## 32. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -672,11 +739,13 @@ flowchart TD
     node4 -->|right| node8
     node2 -->|true| node4
     node2 -->|false| node9
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 33. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
-"---
+## 33. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -707,11 +776,13 @@ flowchart TD
     node10 -->|right| node12
     node6 -->|right| node10
     node2 -->|right| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 34. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
-"---
+## 34. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -732,11 +803,13 @@ flowchart TD
     node2 -->|left| node3
     node6 -->|operand| node7
     node2 -->|right| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 35. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
-"---
+## 35. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -765,11 +838,13 @@ flowchart TD
     node4 -->|left| node5
     node4 -->|right| node11
     node2 -->|right| node4
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 36. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-"---
+## 36. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -798,11 +873,13 @@ flowchart TD
     node4 -->|left| node5
     node4 -->|right| node11
     node2 -->|right| node4
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 36. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2`] = `
-"---
+## 36. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -821,11 +898,13 @@ flowchart TD
     node4 -->|operand| node5
     node2 -->|arg1| node4
     node2 -->|arg2| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 37. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
-"---
+## 37. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -844,11 +923,13 @@ flowchart TD
     node4 -->|operand| node5
     node2 -->|arg1| node4
     node2 -->|arg2| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 38. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-"---
+## 38. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -867,11 +948,13 @@ flowchart TD
     node4 -->|operand| node5
     node2 -->|arg1| node4
     node2 -->|arg2| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 39. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
-"---
+## 39. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -888,11 +971,13 @@ flowchart TD
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 40. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
-"---
+## 40. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -917,11 +1002,13 @@ flowchart TD
     node4 -->|right| node8
     node2 -->|true| node4
     node2 -->|false| node9
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 41. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
-"---
+## 41. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -938,11 +1025,13 @@ flowchart TD
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 42. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
-"---
+## 42. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -959,11 +1048,13 @@ flowchart TD
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 43. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
-"---
+## 43. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -988,11 +1079,13 @@ flowchart TD
     node4 -->|right| node8
     node2 -->|true| node4
     node2 -->|false| node9
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 44. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
-"---
+## 44. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1013,11 +1106,13 @@ flowchart TD
     node2 -->|left| node3
     node6 -->|operand| node7
     node2 -->|right| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 45. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time; 1`] = `
-"---
+## 45. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1046,11 +1141,13 @@ flowchart TD
     node4 -->|left| node5
     node4 -->|right| node11
     node2 -->|right| node4
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 46. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 1`] = `
-"---
+## 46. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1079,11 +1176,13 @@ flowchart TD
     node4 -->|left| node5
     node4 -->|right| node11
     node2 -->|right| node4
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 46. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 2`] = `
-"---
+## 46. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 2
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1102,11 +1201,13 @@ flowchart TD
     node4 -->|operand| node5
     node2 -->|arg1| node4
     node2 -->|arg2| node6
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 47. variable.state = variable.is_rolled_up ? 1 : 0; 1`] = `
-"---
+## 47. variable.state = variable.is_rolled_up ? 1 : 0; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1123,11 +1224,13 @@ flowchart TD
     node2 -->|condition| node3
     node2 -->|true| node4
     node2 -->|false| node5
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 48. variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo; 1`] = `
-"---
+## 48. variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1160,11 +1263,13 @@ flowchart TD
     node9 -->|left| node10
     node9 -->|right| node13
     node2 -->|false| node9
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 49. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
-"---
+## 49. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1
+
+```mermaid
+---
 config:
     theme: redux
 ---
@@ -1191,5 +1296,5 @@ flowchart TD
     node4 -->|false| node9
     node2 -->|true| node4
     node2 -->|false| node10
-    node0 -->|value| node2"
-`;
+    node0 -->|value| node2
+```

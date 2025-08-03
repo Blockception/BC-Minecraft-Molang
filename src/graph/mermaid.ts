@@ -11,11 +11,13 @@ interface MermaidOptions {
 class MermaidDiagramBuilder {
   private nodeCounter = 0;
   private nodeMap = new Map<ExpressionNode, string>();
-  private edges: string[] = [];
-  private nodes: string[] = [];
+  private edges: string[];
+  private nodes: string[];
   private options: Required<MermaidOptions>;
 
   constructor(options: MermaidOptions = {}) {
+    this.nodes = ['start@{ shape: sm-circ, label: "Small start" }'];
+    this.edges = ["start-->node0"];
     this.options = {
       direction: options.direction ?? "TD",
       showPosition: options.showPosition ?? false,
@@ -31,7 +33,11 @@ class MermaidDiagramBuilder {
     this.reset();
     this.processNode(rootNode, 0);
 
-    const header = `flowchart ${this.options.direction}`;
+    const header = `---
+config:
+    theme: redux
+---
+flowchart ${this.options.direction}`;
     const nodeDefinitions = this.nodes.join("\n    ");
     const edgeDefinitions = this.edges.join("\n    ");
 
@@ -41,8 +47,8 @@ class MermaidDiagramBuilder {
   private reset(): void {
     this.nodeCounter = 0;
     this.nodeMap.clear();
-    this.edges = [];
-    this.nodes = [];
+    this.nodes = ['start@{ shape: sm-circ, label: "Small start" }'];
+    this.edges = ["start-->node0"];
   }
 
   private getNodeId(node: ExpressionNode): string {

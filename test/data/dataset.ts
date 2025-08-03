@@ -34,6 +34,7 @@ export const valid_syntaxes = [
   "variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25);",
   "variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled';",
   "variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 );",
+  "variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 || variable.unrolling_time >= 5 );",
   "variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0;",
   "variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking';",
   "variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling';",
