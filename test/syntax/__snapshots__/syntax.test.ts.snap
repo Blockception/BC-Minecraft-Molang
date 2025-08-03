@@ -3,6 +3,7 @@
 exports[`molang - syntax should be able to parse and match the syntax tree generated 0. variable.agent.anim_state == 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -10,16 +11,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "==",
     "position": 26,
     "right": {
       "position": 29,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -27,6 +28,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 1. variable.agent.anim_state > 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -34,16 +36,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": ">",
     "position": 26,
     "right": {
       "position": 28,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -51,6 +53,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 2. variable.agent.anim_state < 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -58,16 +61,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "<",
     "position": 26,
     "right": {
       "position": 28,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -75,6 +78,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 3. variable.agent.anim_state != 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -82,16 +86,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "!=",
     "position": 26,
     "right": {
       "position": 29,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -99,6 +103,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 4. variable.agent.anim_state >= 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -106,16 +111,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": ">=",
     "position": 26,
     "right": {
       "position": 29,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -123,6 +128,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 5. variable.agent.anim_state <= 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -130,16 +136,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "<=",
     "position": 26,
     "right": {
       "position": 29,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -147,18 +153,20 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 6. !variable.swaying && query.all_animations_finished 1`] = `
 [
   {
+    "_processed": true,
     "left": {
+      "_processed": true,
       "operand": {
         "names": [
           "swaying",
         ],
         "position": 1,
         "scope": "variable",
-        "type": 12,
+        "type": "Variable",
       },
       "operator": "!",
       "position": 0,
-      "type": 11,
+      "type": "UnaryOperation",
     },
     "operator": "&&",
     "position": 18,
@@ -169,9 +177,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "query",
       "position": 21,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -179,6 +187,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 7. v.agent.anim_state == 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -186,16 +195,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "v",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "==",
     "position": 19,
     "right": {
       "position": 22,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -203,6 +212,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 8. v.agent.anim_state > 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -210,16 +220,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "v",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": ">",
     "position": 19,
     "right": {
       "position": 21,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -227,6 +237,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 9. v.agent.anim_state < 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -234,16 +245,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "v",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "<",
     "position": 19,
     "right": {
       "position": 21,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -251,6 +262,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 10. v.agent.anim_state != 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -258,16 +270,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "v",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "!=",
     "position": 19,
     "right": {
       "position": 22,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -275,6 +287,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 11. v.agent.anim_state >= 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -282,16 +295,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "v",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": ">=",
     "position": 19,
     "right": {
       "position": 22,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -299,6 +312,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 12. v.agent.anim_state <= 2 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "agent",
@@ -306,16 +320,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "v",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "<=",
     "position": 19,
     "right": {
       "position": 22,
-      "type": 5,
+      "type": "Literal",
       "value": "2",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -323,18 +337,20 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 13. !v.swaying && q.all_animations_finished 1`] = `
 [
   {
+    "_processed": true,
     "left": {
+      "_processed": true,
       "operand": {
         "names": [
           "swaying",
         ],
         "position": 1,
         "scope": "v",
-        "type": 12,
+        "type": "Variable",
       },
       "operator": "!",
       "position": 0,
-      "type": 11,
+      "type": "UnaryOperation",
     },
     "operator": "&&",
     "position": 11,
@@ -345,9 +361,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "q",
       "position": 14,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -355,10 +371,12 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 14. 1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0) 1`] = `
 [
   {
+    "_processed": true,
     "left": {
+      "_processed": true,
       "left": {
         "position": 0,
-        "type": 5,
+        "type": "Literal",
         "value": "1.5",
       },
       "operator": "-",
@@ -367,24 +385,26 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         "arguments": [
           {
             "position": 15,
-            "type": 5,
+            "type": "Literal",
             "value": "1.5",
           },
           {
+            "_processed": true,
             "left": {
+              "_processed": true,
               "left": {
                 "position": 20,
-                "type": 5,
+                "type": "Literal",
                 "value": "1.0",
               },
               "operator": "-",
               "position": 24,
               "right": {
                 "position": 26,
-                "type": 5,
+                "type": "Literal",
                 "value": "015.0",
               },
-              "type": 2,
+              "type": "BinaryOperation",
             },
             "operator": "*",
             "position": 32,
@@ -395,9 +415,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "query",
               "position": 34,
-              "type": 4,
+              "type": "FunctionCall",
             },
-            "type": 2,
+            "type": "BinaryOperation",
           },
         ],
         "names": [
@@ -405,9 +425,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "math",
         "position": 6,
-        "type": 4,
+        "type": "FunctionCall",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
     "operator": "*",
     "position": 61,
@@ -415,7 +435,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       "arguments": [
         {
           "position": 85,
-          "type": 5,
+          "type": "Literal",
           "value": "0",
         },
       ],
@@ -424,9 +444,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "query",
       "position": 63,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -438,13 +458,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       {
         "arguments": [
           {
+            "_processed": true,
             "left": {
               "arguments": [
                 {
                   "arguments": [
                     {
                       "position": 51,
-                      "type": 5,
+                      "type": "Literal",
                       "value": "0",
                     },
                   ],
@@ -453,11 +474,11 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   ],
                   "namespace": "query",
                   "position": 30,
-                  "type": 4,
+                  "type": "FunctionCall",
                 },
                 {
                   "position": 55,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "2.0",
                 },
               ],
@@ -466,7 +487,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "math",
               "position": 21,
-              "type": 4,
+              "type": "FunctionCall",
             },
             "operator": "+",
             "position": 60,
@@ -476,7 +497,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   "arguments": [
                     {
                       "position": 92,
-                      "type": 5,
+                      "type": "Literal",
                       "value": "2",
                     },
                   ],
@@ -485,11 +506,11 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   ],
                   "namespace": "query",
                   "position": 71,
-                  "type": 4,
+                  "type": "FunctionCall",
                 },
                 {
                   "position": 96,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "2.0",
                 },
               ],
@@ -498,9 +519,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "math",
               "position": 62,
-              "type": 4,
+              "type": "FunctionCall",
             },
-            "type": 2,
+            "type": "BinaryOperation",
           },
         ],
         "names": [
@@ -508,16 +529,16 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "math",
         "position": 11,
-        "type": 4,
+        "type": "FunctionCall",
       },
       {
         "position": 103,
-        "type": 5,
+        "type": "Literal",
         "value": "0.0",
       },
       {
         "position": 108,
-        "type": 5,
+        "type": "Literal",
         "value": "0.1",
       },
     ],
@@ -526,7 +547,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     ],
     "namespace": "math",
     "position": 0,
-    "type": 4,
+    "type": "FunctionCall",
   },
 ]
 `;
@@ -534,37 +555,40 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 16. -175 * math.sin(variable.attack_time * 180) 1`] = `
 [
   {
+    "_processed": true,
     "left": {
+      "_processed": true,
       "operand": {
         "position": 1,
-        "type": 5,
+        "type": "Literal",
         "value": "175",
       },
       "operator": "-",
       "position": 0,
-      "type": 11,
+      "type": "UnaryOperation",
     },
     "operator": "*",
     "position": 5,
     "right": {
       "arguments": [
         {
+          "_processed": true,
           "left": {
             "names": [
               "attack_time",
             ],
             "position": 16,
             "scope": "variable",
-            "type": 12,
+            "type": "Variable",
           },
           "operator": "*",
           "position": 37,
           "right": {
             "position": 39,
-            "type": 5,
+            "type": "Literal",
             "value": "180",
           },
-          "type": 2,
+          "type": "BinaryOperation",
         },
       ],
       "names": [
@@ -572,9 +596,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 7,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -582,25 +606,27 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 17. math.sin(variable.attack_time * 180) * -175 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "arguments": [
         {
+          "_processed": true,
           "left": {
             "names": [
               "attack_time",
             ],
             "position": 9,
             "scope": "variable",
-            "type": 12,
+            "type": "Variable",
           },
           "operator": "*",
           "position": 30,
           "right": {
             "position": 32,
-            "type": 5,
+            "type": "Literal",
             "value": "180",
           },
-          "type": 2,
+          "type": "BinaryOperation",
         },
       ],
       "names": [
@@ -608,21 +634,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 0,
-      "type": 4,
+      "type": "FunctionCall",
     },
     "operator": "*",
     "position": 37,
     "right": {
+      "_processed": true,
       "operand": {
         "position": 40,
-        "type": 5,
+        "type": "Literal",
         "value": "175",
       },
       "operator": "-",
       "position": 39,
-      "type": 11,
+      "type": "UnaryOperation",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -630,25 +657,29 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 18. -5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0 1`] = `
 [
   {
+    "_processed": true,
     "left": {
+      "_processed": true,
       "operand": {
         "position": 1,
-        "type": 5,
+        "type": "Literal",
         "value": "5.0",
       },
       "operator": "-",
       "position": 0,
-      "type": 11,
+      "type": "UnaryOperation",
     },
     "operator": "*",
     "position": 5,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
+            "_processed": true,
             "left": {
               "position": 16,
-              "type": 5,
+              "type": "Literal",
               "value": "297.9380535",
             },
             "operator": "*",
@@ -660,9 +691,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "query",
               "position": 30,
-              "type": 4,
+              "type": "FunctionCall",
             },
-            "type": 2,
+            "type": "BinaryOperation",
           },
         ],
         "names": [
@@ -670,18 +701,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "math",
         "position": 7,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "-",
       "position": 47,
       "right": {
         "position": 49,
-        "type": 5,
+        "type": "Literal",
         "value": "5.0",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 2,
+    "type": "BinaryOperation",
   },
 ]
 `;
@@ -692,13 +723,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "position": 0,
     "statements": [
       {
+        "_processed": true,
         "condition": {
           "names": [
             "is_enchanted",
           ],
           "position": 0,
           "scope": "variable",
-          "type": 12,
+          "type": "Variable",
         },
         "falseExpression": {
           "names": [
@@ -715,9 +747,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "material",
           "position": 24,
-          "type": 8,
+          "type": "ResourceReference",
         },
-        "type": 3,
+        "type": "Conditional",
       },
       {
         "names": [
@@ -728,7 +760,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         "type": 8,
       },
     ],
-    "type": 9,
+    "type": "StatementSequence",
   },
 ]
 `;
@@ -739,13 +771,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
     "position": 0,
     "statements": [
       {
+        "_processed": true,
         "condition": {
           "names": [
             "has_trim",
           ],
           "position": 0,
           "scope": "variable",
-          "type": 12,
+          "type": "Variable",
         },
         "falseExpression": {
           "names": [
@@ -762,9 +795,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "position": 20,
           "scope": "variable",
-          "type": 12,
+          "type": "Variable",
         },
-        "type": 3,
+        "type": "Conditional",
       },
       {
         "names": [
@@ -775,7 +808,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         "type": 8,
       },
     ],
-    "type": 9,
+    "type": "StatementSequence",
   },
 ]
 `;
@@ -783,17 +816,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 21. !variable.has_trim 1`] = `
 [
   {
+    "_processed": true,
     "operand": {
       "names": [
         "has_trim",
       ],
       "position": 1,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "operator": "!",
     "position": 0,
-    "type": 11,
+    "type": "UnaryOperation",
   },
 ]
 `;
@@ -807,15 +841,17 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "position": 0,
       "scope": "array",
-      "type": 12,
+      "type": "Variable",
     },
     "index": {
+      "_processed": true,
       "left": {
+        "_processed": true,
         "left": {
           "arguments": [
             {
               "position": 27,
-              "type": 10,
+              "type": "StringLiteral",
               "value": "minecraft:has_nectar",
             },
           ],
@@ -824,7 +860,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 12,
-          "type": 4,
+          "type": "FunctionCall",
         },
         "operator": "+",
         "position": 51,
@@ -835,21 +871,21 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 53,
-          "type": 4,
+          "type": "FunctionCall",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
       "operator": "*",
       "position": 68,
       "right": {
         "position": 70,
-        "type": 5,
+        "type": "Literal",
         "value": "2",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
     "position": 0,
-    "type": 0,
+    "type": "ArrayAccess",
   },
 ]
 `;
@@ -857,16 +893,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 23. variable.x_head_rotation = query.target_x_rotation * 32.5; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "x_head_rotation",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 25,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [],
         "names": [
@@ -874,18 +912,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 27,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "*",
       "position": 51,
       "right": {
         "position": 53,
-        "type": 5,
+        "type": "Literal",
         "value": "32.5",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -893,13 +931,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 24. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "x_head_rotation",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 25,
     "right": {
@@ -911,21 +950,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 38,
-          "type": 4,
+          "type": "FunctionCall",
         },
         {
+          "_processed": true,
           "operand": {
             "position": 64,
-            "type": 5,
+            "type": "Literal",
             "value": "32.5",
           },
           "operator": "-",
           "position": 63,
-          "type": 11,
+          "type": "UnaryOperation",
         },
         {
           "position": 70,
-          "type": 5,
+          "type": "Literal",
           "value": "32.5",
         },
       ],
@@ -934,9 +974,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 27,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -944,13 +984,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 25. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "y_head_rotation",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 25,
     "right": {
@@ -962,21 +1003,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 38,
-          "type": 4,
+          "type": "FunctionCall",
         },
         {
+          "_processed": true,
           "operand": {
             "position": 64,
-            "type": 5,
+            "type": "Literal",
             "value": "22.5",
           },
           "operator": "-",
           "position": 63,
-          "type": 11,
+          "type": "UnaryOperation",
         },
         {
           "position": 70,
-          "type": 5,
+          "type": "Literal",
           "value": "25",
         },
       ],
@@ -985,9 +1027,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 27,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -995,21 +1037,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 26. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "is_rolled_up",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 22,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
             "position": 39,
-            "type": 10,
+            "type": "StringLiteral",
             "value": "minecraft:armadillo_state",
           },
         ],
@@ -1018,18 +1062,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 24,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "!=",
       "position": 68,
       "right": {
         "position": 71,
-        "type": 10,
+        "type": "StringLiteral",
         "value": "unrolled",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1037,21 +1081,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 28. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "is_peeking",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 20,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
             "position": 37,
-            "type": 10,
+            "type": "StringLiteral",
             "value": "minecraft:armadillo_state",
           },
         ],
@@ -1060,18 +1106,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 22,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "==",
       "position": 66,
       "right": {
         "position": 69,
-        "type": 10,
+        "type": "StringLiteral",
         "value": "rolled_up_peeking",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1079,21 +1125,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 29. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "is_unrolling",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 22,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
             "position": 39,
-            "type": 10,
+            "type": "StringLiteral",
             "value": "minecraft:armadillo_state",
           },
         ],
@@ -1102,18 +1150,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 24,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "==",
       "position": 68,
       "right": {
         "position": 71,
-        "type": 10,
+        "type": "StringLiteral",
         "value": "rolled_up_unrolling",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1121,16 +1169,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 32. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "walking",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 17,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [],
         "names": [
@@ -1138,36 +1188,38 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 19,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": ">",
       "position": 45,
       "right": {
+        "_processed": true,
         "left": {
           "position": 47,
-          "type": 5,
+          "type": "Literal",
           "value": "0.01",
         },
         "operator": "&&",
         "position": 52,
         "right": {
+          "_processed": true,
           "operand": {
             "names": [
               "is_rolled_up",
             ],
             "position": 56,
             "scope": "variable",
-            "type": 12,
+            "type": "Variable",
           },
           "operator": "!",
           "position": 55,
-          "type": 11,
+          "type": "UnaryOperation",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1175,17 +1227,20 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 33. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "walk_anim_time_update",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 31,
     "right": {
+      "_processed": true,
       "left": {
+        "_processed": true,
         "left": {
           "arguments": [],
           "names": [
@@ -1193,7 +1248,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 33,
-          "type": 4,
+          "type": "FunctionCall",
         },
         "operator": "+",
         "position": 49,
@@ -1201,19 +1256,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           "arguments": [
             {
               "position": 60,
-              "type": 5,
+              "type": "Literal",
               "value": "3.0",
             },
             {
               "arguments": [
                 {
                   "position": 75,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "2.0",
                 },
                 {
                   "position": 80,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "5.0",
                 },
                 {
@@ -1223,7 +1278,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   ],
                   "namespace": "query",
                   "position": 85,
-                  "type": 4,
+                  "type": "FunctionCall",
                 },
               ],
               "names": [
@@ -1231,7 +1286,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "math",
               "position": 65,
-              "type": 4,
+              "type": "FunctionCall",
             },
           ],
           "names": [
@@ -1239,9 +1294,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "math",
           "position": 51,
-          "type": 4,
+          "type": "FunctionCall",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
       "operator": "*",
       "position": 113,
@@ -1252,11 +1307,11 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 115,
-        "type": 4,
+        "type": "FunctionCall",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1264,17 +1319,20 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 34. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "walk_anim_time_update",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 31,
     "right": {
+      "_processed": true,
       "left": {
+        "_processed": true,
         "left": {
           "arguments": [],
           "names": [
@@ -1282,7 +1340,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 33,
-          "type": 4,
+          "type": "FunctionCall",
         },
         "operator": "+",
         "position": 49,
@@ -1290,19 +1348,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           "arguments": [
             {
               "position": 60,
-              "type": 5,
+              "type": "Literal",
               "value": "3.0",
             },
             {
               "arguments": [
                 {
                   "position": 75,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "2.0",
                 },
                 {
                   "position": 80,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "5.0",
                 },
                 {
@@ -1312,7 +1370,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   ],
                   "namespace": "query",
                   "position": 85,
-                  "type": 4,
+                  "type": "FunctionCall",
                 },
               ],
               "names": [
@@ -1320,7 +1378,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "math",
               "position": 65,
-              "type": 4,
+              "type": "FunctionCall",
             },
           ],
           "names": [
@@ -1328,9 +1386,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "math",
           "position": 51,
-          "type": 4,
+          "type": "FunctionCall",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
       "operator": "*",
       "position": 113,
@@ -1341,20 +1399,21 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "query",
         "position": 115,
-        "type": 4,
+        "type": "FunctionCall",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
   {
+    "_processed": true,
     "left": {
       "names": [
         "y_head_rotation",
       ],
       "position": 132,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 157,
     "right": {
@@ -1366,21 +1425,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 170,
-          "type": 4,
+          "type": "FunctionCall",
         },
         {
+          "_processed": true,
           "operand": {
             "position": 196,
-            "type": 5,
+            "type": "Literal",
             "value": "22.5",
           },
           "operator": "-",
           "position": 195,
-          "type": 11,
+          "type": "UnaryOperation",
         },
         {
           "position": 202,
-          "type": 5,
+          "type": "Literal",
           "value": "25",
         },
       ],
@@ -1389,9 +1449,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 159,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1399,13 +1459,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 35. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "x_head_rotation",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 25,
     "right": {
@@ -1417,21 +1478,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 38,
-          "type": 4,
+          "type": "FunctionCall",
         },
         {
+          "_processed": true,
           "operand": {
             "position": 64,
-            "type": 5,
+            "type": "Literal",
             "value": "32.5",
           },
           "operator": "-",
           "position": 63,
-          "type": 11,
+          "type": "UnaryOperation",
         },
         {
           "position": 70,
-          "type": 5,
+          "type": "Literal",
           "value": "32.5",
         },
       ],
@@ -1440,9 +1502,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 27,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1450,13 +1512,14 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 36. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "y_head_rotation",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 25,
     "right": {
@@ -1468,21 +1531,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "query",
           "position": 38,
-          "type": 4,
+          "type": "FunctionCall",
         },
         {
+          "_processed": true,
           "operand": {
             "position": 64,
-            "type": 5,
+            "type": "Literal",
             "value": "22.5",
           },
           "operator": "-",
           "position": 63,
-          "type": 11,
+          "type": "UnaryOperation",
         },
         {
           "position": 70,
-          "type": 5,
+          "type": "Literal",
           "value": "25",
         },
       ],
@@ -1491,9 +1555,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 27,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1501,21 +1565,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 37. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "is_rolled_up",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 22,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
             "position": 35,
-            "type": 10,
+            "type": "StringLiteral",
             "value": "minecraft:armadillo_state",
           },
         ],
@@ -1524,18 +1590,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "q",
         "position": 24,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "!=",
       "position": 64,
       "right": {
         "position": 67,
-        "type": 10,
+        "type": "StringLiteral",
         "value": "unrolled",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1543,21 +1609,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 39. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "is_peeking",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 20,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
             "position": 33,
-            "type": 10,
+            "type": "StringLiteral",
             "value": "minecraft:armadillo_state",
           },
         ],
@@ -1566,18 +1634,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "q",
         "position": 22,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "==",
       "position": 62,
       "right": {
         "position": 65,
-        "type": 10,
+        "type": "StringLiteral",
         "value": "rolled_up_peeking",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1585,21 +1653,23 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 40. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "is_unrolling",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 22,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [
           {
             "position": 35,
-            "type": 10,
+            "type": "StringLiteral",
             "value": "minecraft:armadillo_state",
           },
         ],
@@ -1608,18 +1678,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "q",
         "position": 24,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": "==",
       "position": 64,
       "right": {
         "position": 67,
-        "type": 10,
+        "type": "StringLiteral",
         "value": "rolled_up_unrolling",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1627,16 +1697,18 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 43. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "walking",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 17,
     "right": {
+      "_processed": true,
       "left": {
         "arguments": [],
         "names": [
@@ -1644,36 +1716,38 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "q",
         "position": 19,
-        "type": 4,
+        "type": "FunctionCall",
       },
       "operator": ">",
       "position": 41,
       "right": {
+        "_processed": true,
         "left": {
           "position": 43,
-          "type": 5,
+          "type": "Literal",
           "value": "0.01",
         },
         "operator": "&&",
         "position": 48,
         "right": {
+          "_processed": true,
           "operand": {
             "names": [
               "is_rolled_up",
             ],
             "position": 52,
             "scope": "variable",
-            "type": 12,
+            "type": "Variable",
           },
           "operator": "!",
           "position": 51,
-          "type": 11,
+          "type": "UnaryOperation",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1681,17 +1755,20 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 44. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time; 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "walk_anim_time_update",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 31,
     "right": {
+      "_processed": true,
       "left": {
+        "_processed": true,
         "left": {
           "arguments": [],
           "names": [
@@ -1699,7 +1776,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "q",
           "position": 33,
-          "type": 4,
+          "type": "FunctionCall",
         },
         "operator": "+",
         "position": 45,
@@ -1707,19 +1784,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           "arguments": [
             {
               "position": 56,
-              "type": 5,
+              "type": "Literal",
               "value": "3.0",
             },
             {
               "arguments": [
                 {
                   "position": 71,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "2.0",
                 },
                 {
                   "position": 76,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "5.0",
                 },
                 {
@@ -1729,7 +1806,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   ],
                   "namespace": "q",
                   "position": 81,
-                  "type": 4,
+                  "type": "FunctionCall",
                 },
               ],
               "names": [
@@ -1737,7 +1814,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "math",
               "position": 61,
-              "type": 4,
+              "type": "FunctionCall",
             },
           ],
           "names": [
@@ -1745,9 +1822,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "math",
           "position": 47,
-          "type": 4,
+          "type": "FunctionCall",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
       "operator": "*",
       "position": 105,
@@ -1758,11 +1835,11 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "q",
         "position": 107,
-        "type": 4,
+        "type": "FunctionCall",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
 ]
 `;
@@ -1770,17 +1847,20 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 exports[`molang - syntax should be able to parse and match the syntax tree generated 45. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 1`] = `
 [
   {
+    "_processed": true,
     "left": {
       "names": [
         "walk_anim_time_update",
       ],
       "position": 0,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 31,
     "right": {
+      "_processed": true,
       "left": {
+        "_processed": true,
         "left": {
           "arguments": [],
           "names": [
@@ -1788,7 +1868,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "q",
           "position": 33,
-          "type": 4,
+          "type": "FunctionCall",
         },
         "operator": "+",
         "position": 45,
@@ -1796,19 +1876,19 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           "arguments": [
             {
               "position": 56,
-              "type": 5,
+              "type": "Literal",
               "value": "3.0",
             },
             {
               "arguments": [
                 {
                   "position": 71,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "2.0",
                 },
                 {
                   "position": 76,
-                  "type": 5,
+                  "type": "Literal",
                   "value": "5.0",
                 },
                 {
@@ -1818,7 +1898,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
                   ],
                   "namespace": "q",
                   "position": 81,
-                  "type": 4,
+                  "type": "FunctionCall",
                 },
               ],
               "names": [
@@ -1826,7 +1906,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
               ],
               "namespace": "math",
               "position": 61,
-              "type": 4,
+              "type": "FunctionCall",
             },
           ],
           "names": [
@@ -1834,9 +1914,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "math",
           "position": 47,
-          "type": 4,
+          "type": "FunctionCall",
         },
-        "type": 2,
+        "type": "BinaryOperation",
       },
       "operator": "*",
       "position": 105,
@@ -1847,20 +1927,21 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         ],
         "namespace": "q",
         "position": 107,
-        "type": 4,
+        "type": "FunctionCall",
       },
-      "type": 2,
+      "type": "BinaryOperation",
     },
-    "type": 1,
+    "type": "Assignment",
   },
   {
+    "_processed": true,
     "left": {
       "names": [
         "y_head_rotation",
       ],
       "position": 120,
       "scope": "variable",
-      "type": 12,
+      "type": "Variable",
     },
     "position": 145,
     "right": {
@@ -1872,21 +1953,22 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
           ],
           "namespace": "q",
           "position": 158,
-          "type": 4,
+          "type": "FunctionCall",
         },
         {
+          "_processed": true,
           "operand": {
             "position": 180,
-            "type": 5,
+            "type": "Literal",
             "value": "22.5",
           },
           "operator": "-",
           "position": 179,
-          "type": 11,
+          "type": "UnaryOperation",
         },
         {
           "position": 186,
-          "type": 5,
+          "type": "Literal",
           "value": "25",
         },
       ],
@@ -1895,9 +1977,113 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
       ],
       "namespace": "math",
       "position": 147,
-      "type": 4,
+      "type": "FunctionCall",
     },
-    "type": 1,
+    "type": "Assignment",
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 46. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+[
+  {
+    "_processed": true,
+    "left": {
+      "names": [
+        "state",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": "Variable",
+    },
+    "position": 15,
+    "right": {
+      "position": 39,
+      "statements": [
+        {
+          "_processed": true,
+          "condition": {
+            "names": [
+              "is_rolled_up",
+            ],
+            "position": 17,
+            "scope": "variable",
+            "type": "Variable",
+          },
+          "falseExpression": {
+            "position": 81,
+            "type": 5,
+            "value": "2",
+          },
+          "position": 39,
+          "trueExpression": {
+            "position": 65,
+            "statements": [
+              {
+                "_processed": true,
+                "left": {
+                  "names": [
+                    "rolled_up_time",
+                  ],
+                  "position": 41,
+                  "scope": "variable",
+                  "type": "Variable",
+                },
+                "operator": ">=",
+                "position": 65,
+                "right": {
+                  "position": 68,
+                  "type": "Literal",
+                  "value": "0.2083",
+                },
+                "type": "BinaryOperation",
+              },
+              {
+                "condition": {
+                  "type": undefined,
+                },
+                "falseExpression": {
+                  "type": undefined,
+                },
+                "position": 75,
+                "trueExpression": {
+                  "type": undefined,
+                },
+                "type": "Conditional",
+              },
+              {
+                "position": 77,
+                "type": "Literal",
+                "value": "1",
+              },
+            ],
+            "type": "StatementSequence",
+          },
+          "type": "Conditional",
+        },
+        {
+          "position": 81,
+          "type": 5,
+          "value": "2",
+        },
+        {
+          "position": 83,
+          "token": {
+            "position": 83,
+            "type": 6,
+            "value": ":",
+          },
+          "type": "Marker",
+        },
+        {
+          "position": 85,
+          "type": "Literal",
+          "value": "3",
+        },
+      ],
+      "type": "StatementSequence",
+    },
+    "type": "Assignment",
   },
 ]
 `;
