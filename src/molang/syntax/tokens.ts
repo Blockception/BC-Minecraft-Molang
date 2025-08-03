@@ -233,5 +233,29 @@ export function tokenize(input: string): Token[] {
 
   // Always add an EOF token at the end
   tokens.push({ type: TokenType.EOF, value: " ", position: pos });
+
+  // Check for unary operators
+  tokens.forEach(checkUnaryOperators);
+
   return tokens;
+}
+
+function checkUnaryOperators(item: Token, index: number, items: Token[]) {
+  if (item.type !== TokenType.Operator && item.value !== "-") return;
+
+  if (index === 0) {
+    item.type = TokenType.UnaryOperator;
+    return;
+  }
+  const previous = items[index - 1];
+  switch (previous.type) {
+    case TokenType.Comma:
+    case TokenType.Operator:
+    case TokenType.OpenBrace:
+    case TokenType.OpenBracket:
+    case TokenType.OpenParen:
+      item.type = TokenType.UnaryOperator;
+      break;
+    default:
+  }
 }

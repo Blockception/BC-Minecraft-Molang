@@ -19,6 +19,7 @@ export const valid_syntaxes = [
   "1.5 - math.pow(1.5, 1.0 - 015.0 * query.modified_move_speed) * query.camera_rotation(0)",
   "math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1)",
   "-175 * math.sin(variable.attack_time * 180)",
+  "math.sin(variable.attack_time * 180) * -175",
   "-5.0 * Math.cos(297.9380535 * query.anim_time) - 5.0",
 
   // Render controller
@@ -28,6 +29,7 @@ export const valid_syntaxes = [
   "array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2]",
 
   // Entities
+  "variable.x_head_rotation = query.target_x_rotation * 32.5;",
   "variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5);",
   "variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25);",
   "variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled';",
