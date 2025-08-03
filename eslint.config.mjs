@@ -13,6 +13,7 @@ export default tseslint.config(
       "lib/**/*",
       "node_modules/",
       "node_modules/*",
+      "node_modules/**",
     ],
     extends: [eslint.configs.recommended, ...tseslint.configs.recommended],
     plugins: {

@@ -1,4 +1,4 @@
-import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
+import { Types } from "bc-minecraft-bedrock-types";
 import {
   ArrayAccessNode,
   AssignmentNode,
@@ -22,7 +22,7 @@ import { MolangSyntaxError } from "./errors";
 import { processOperators } from "./operators";
 
 /** Main function to parse Molang code into a syntax tree */
-export function parseMolang(line: OffsetWord): ExpressionNode[] {
+export function parseMolang(line: Types.OffsetWord): ExpressionNode[] {
   const tokens = tokenize(line.text);
   const statements = splitTokens(tokens, (item) => item.type === TokenType.Semicolon).filter((t) => t.length > 0);
 
