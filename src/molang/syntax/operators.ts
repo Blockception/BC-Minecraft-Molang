@@ -1,11 +1,11 @@
 import { assert } from "console";
 import { SyntaxBuilder } from "./builder";
 import { MolangSyntaxError } from "./errors";
-import { ExpressionNode, MarkerNode, NodeType, StatementSequenceNode } from "./nodes";
+import { ExpressionNode, NodeType, StatementSequenceNode } from "./nodes";
 import { TokenType } from "./tokens";
 
 export function processOperators(builder: SyntaxBuilder) {
-  processNullishCoalescing(builder); // ??
+  if (builder.hasOperator("??")) processNullishCoalescing(builder); // ??
 
   // Process unary operators (highest precedence)
   processUnaryOperators(builder); // ? or -u
@@ -24,7 +24,7 @@ export function processOperators(builder: SyntaxBuilder) {
   ifOperator(builder, "/");
   ifOperator(builder, "%");
 
-  processTernaryOperators(builder); // <cond> ? <true> : <false>
+  if (builder.hasOperator("?")) processTernaryOperators(builder); // <cond> ? <true> : <false>
 
   // Process assignments last (right-to-left associativity)
   processAssignments(builder); // =
@@ -46,7 +46,7 @@ namespace Processed {
 }
 
 function ifOperator(builder: SyntaxBuilder, operator: string) {
-  if (builder.operators[operator] === true) processBinaryOperators(builder, operator);
+  if (builder.hasOperator(operator)) processBinaryOperators(builder, operator);
 }
 
 function processNullishCoalescing(builder: SyntaxBuilder) {
@@ -117,7 +117,7 @@ function processBinaryOperators(builder: SyntaxBuilder, operator: string) {
 function processTernaryOperators(builder: SyntaxBuilder) {
   const statements = builder.result.statements;
 
-  for (let i = 0; i < statements.length; i++) {
+  for (let i = statements.length - 1; i >= 0; i--) {
     const current = statements[i];
     if (current.type !== NodeType.Conditional) continue;
     // Has this node already been processed?
@@ -129,7 +129,9 @@ function processTernaryOperators(builder: SyntaxBuilder) {
       throw new MolangSyntaxError("Ternary operator missing condition", current.position, "?");
     }
 
-    const condition = statements[i - 1];
+    const startIndex = i - 1;
+    let endIndex = startIndex;
+    const condition = statements[startIndex];
 
     // Find the colon marker and expressions
     let colonIndex = -1;
@@ -139,8 +141,9 @@ function processTernaryOperators(builder: SyntaxBuilder) {
     // Look for the pattern: condition ? trueExpr : falseExpr
     for (let j = i + 1; j < statements.length; j++) {
       const stmt = statements[j];
-      if (stmt.type === NodeType.Marker && (stmt as MarkerNode).token.type === TokenType.Colon) {
+      if (stmt.type === NodeType.Marker && stmt.token.type === TokenType.Colon) {
         colonIndex = j;
+        endIndex = Math.max(endIndex, j);
         break;
       }
     }
@@ -152,26 +155,16 @@ function processTernaryOperators(builder: SyntaxBuilder) {
     // Extract true and false expressions
     if (i + 1 < colonIndex) {
       // If there are statements between ? and :, they form the true expression
-      if (colonIndex - i - 1 === 1) {
-        trueExpr = statements[i + 1];
-      } else {
-        // Multiple statements - create a sequence
-        trueExpr = {
-          type: NodeType.StatementSequence,
-          statements: statements.slice(i + 1, colonIndex),
-          position: statements[i + 1].position,
-        } as StatementSequenceNode;
-      }
+      trueExpr = wrapIf(statements.slice(i + 1, colonIndex));
     }
-
     if (colonIndex + 1 < statements.length) {
       falseExpr = statements[colonIndex + 1];
+      endIndex = Math.max(endIndex, colonIndex + 1);
     }
 
     if (!trueExpr) {
       throw new MolangSyntaxError("Ternary operator missing true expression", current.position, "?");
     }
-
     if (!falseExpr) {
       throw new MolangSyntaxError("Ternary operator missing false expression", current.position, "?");
     }
@@ -182,11 +175,8 @@ function processTernaryOperators(builder: SyntaxBuilder) {
     current.falseExpression = falseExpr;
 
     // Remove all the processed elements and replace with the complete ternary
-    const elementsToRemove = colonIndex - i + 2; // condition + ? + trueExpr + : + falseExpr
-    builder.result.statements.splice(i - 1, elementsToRemove, current);
-
-    // Adjust index
-    i -= 1;
+    const elementsToRemove = endIndex - startIndex; // condition + ? + trueExpr + : + falseExpr
+    builder.result.statements.splice(startIndex, elementsToRemove + 1, current);
   }
 }
 

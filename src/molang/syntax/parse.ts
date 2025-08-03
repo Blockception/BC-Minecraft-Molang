@@ -59,8 +59,8 @@ function parseTokens(tokens: Token[]) {
 
     // Check for parenthese, brackets and braces
     if (
-      (Token.oneOfType(t, TokenType.NamespacedIdentifier),
-      Token.oneOfType(tokens[i + 1], TokenType.OpenBrace, TokenType.OpenBracket, TokenType.OpenParen))
+      Token.oneOfType(t, TokenType.NamespacedIdentifier) &&
+      Token.oneOfType(tokens[i + 1], TokenType.OpenBrace, TokenType.OpenBracket, TokenType.OpenParen)
     ) {
       const code = getMatchingTokenSlice(tokens, i + 1);
       const inner = trimBraces(code);

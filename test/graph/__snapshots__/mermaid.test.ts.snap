@@ -243,32 +243,24 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 18.
 
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 19. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
 "flowchart LR
-    node0[";@0"]
-    node1{"?:@22"}
-    node2[["variable.is_enchanted@0"]]
-    node3[/"material.enchanted@24"/]
-    node4[/"material.default@45"/]
-    node4[/"material.default@45"/]
-    node1 -->|condition| node2
-    node1 -->|true| node3
-    node1 -->|false| node4
-    node0 -->|stmt0| node1
-    node0 -->|stmt1| node4"
+    node0{"?:@22"}
+    node1[["variable.is_enchanted@0"]]
+    node2[/"material.enchanted@24"/]
+    node3[/"material.default@45"/]
+    node0 -->|condition| node1
+    node0 -->|true| node2
+    node0 -->|false| node3"
 `;
 
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 20. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
 "flowchart LR
-    node0[";@0"]
-    node1{"?:@18"}
-    node2[["variable.has_trim@0"]]
-    node3[["variable.trim_path@20"]]
-    node4[/"texture.default@41"/]
-    node4[/"texture.default@41"/]
-    node1 -->|condition| node2
-    node1 -->|true| node3
-    node1 -->|false| node4
-    node0 -->|stmt0| node1
-    node0 -->|stmt1| node4"
+    node0{"?:@18"}
+    node1[["variable.has_trim@0"]]
+    node2[["variable.trim_path@20"]]
+    node3[/"texture.default@41"/]
+    node0 -->|condition| node1
+    node0 -->|true| node2
+    node0 -->|false| node3"
 `;
 
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 21. !variable.has_trim 1`] = `
@@ -359,6 +351,29 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 26.
     node0 -->|value| node2"
 `;
 
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 27. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+"flowchart LR
+    node0{"=@24"}
+    node1[["variable.rolled_up_time@0"]]
+    node2{"?:@48"}
+    node3[["variable.is_rolled_up@26"]]
+    node4{"\\+@84"}
+    node5{"??@76"}
+    node6[["variable.rolled_up_time@52"]]
+    node7["0.0@79"]
+    node8{{"query.delta_time()@86"}}
+    node9["0.0@106"]
+    node0 -->|target| node1
+    node2 -->|condition| node3
+    node5 -->|left| node6
+    node5 -->|right| node7
+    node4 -->|left| node5
+    node4 -->|right| node8
+    node2 -->|true| node4
+    node2 -->|false| node9
+    node0 -->|value| node2"
+`;
+
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 28. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 "flowchart LR
     node0{"=@20"}
@@ -386,6 +401,58 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 29.
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 30. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+"flowchart LR
+    node0{"=@24"}
+    node1[["variable.unrolling_time@0"]]
+    node2{"?:@48"}
+    node3[["variable.is_unrolling@26"]]
+    node4{"\\+@84"}
+    node5{"??@76"}
+    node6[["variable.unrolling_time@52"]]
+    node7["0.0@79"]
+    node8{{"query.delta_time()@86"}}
+    node9["0.0@106"]
+    node0 -->|target| node1
+    node2 -->|condition| node3
+    node5 -->|left| node6
+    node5 -->|right| node7
+    node4 -->|left| node5
+    node4 -->|right| node8
+    node2 -->|true| node4
+    node2 -->|false| node9
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 31. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+"flowchart LR
+    node0{"=@29"}
+    node1[["variable.use_rolled_up_model@0"]]
+    node2{"\\>=@55"}
+    node3[["variable.rolled_up_time@31"]]
+    node4{"\\&&@65"}
+    node5["0.2083@58"]
+    node6{"\\<=@127"}
+    node7{"\\==@93"}
+    node8[["variable.unrolling_time@69"]]
+    node9{"\\||@100"}
+    node10["0.0@96"]
+    node11[["variable.unrolling_time@103"]]
+    node12["1.25@130"]
+    node0 -->|target| node1
+    node2 -->|left| node3
+    node4 -->|left| node5
+    node7 -->|left| node8
+    node9 -->|left| node10
+    node9 -->|right| node11
+    node7 -->|right| node9
+    node6 -->|left| node7
+    node6 -->|right| node12
+    node4 -->|right| node6
+    node2 -->|right| node4
     node0 -->|value| node2"
 `;
 
@@ -528,6 +595,29 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 37.
     node0 -->|value| node2"
 `;
 
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 38. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+"flowchart LR
+    node0{"=@24"}
+    node1[["variable.rolled_up_time@0"]]
+    node2{"?:@48"}
+    node3[["variable.is_rolled_up@26"]]
+    node4{"\\+@84"}
+    node5{"??@76"}
+    node6[["variable.rolled_up_time@52"]]
+    node7["0.0@79"]
+    node8{{"q.delta_time()@86"}}
+    node9["0.0@102"]
+    node0 -->|target| node1
+    node2 -->|condition| node3
+    node5 -->|left| node6
+    node5 -->|right| node7
+    node4 -->|left| node5
+    node4 -->|right| node8
+    node2 -->|true| node4
+    node2 -->|false| node9
+    node0 -->|value| node2"
+`;
+
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 39. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 "flowchart LR
     node0{"=@20"}
@@ -555,6 +645,58 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 40.
     node3 -->|arg0| node4
     node2 -->|left| node3
     node2 -->|right| node5
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 41. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+"flowchart LR
+    node0{"=@24"}
+    node1[["variable.unrolling_time@0"]]
+    node2{"?:@48"}
+    node3[["variable.is_unrolling@26"]]
+    node4{"\\+@84"}
+    node5{"??@76"}
+    node6[["variable.unrolling_time@52"]]
+    node7["0.0@79"]
+    node8{{"q.delta_time()@86"}}
+    node9["0.0@102"]
+    node0 -->|target| node1
+    node2 -->|condition| node3
+    node5 -->|left| node6
+    node5 -->|right| node7
+    node4 -->|left| node5
+    node4 -->|right| node8
+    node2 -->|true| node4
+    node2 -->|false| node9
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 42. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+"flowchart LR
+    node0{"=@29"}
+    node1[["variable.use_rolled_up_model@0"]]
+    node2{"\\>=@55"}
+    node3[["variable.rolled_up_time@31"]]
+    node4{"\\&&@65"}
+    node5["0.2083@58"]
+    node6{"\\<=@127"}
+    node7{"\\==@93"}
+    node8[["variable.unrolling_time@69"]]
+    node9{"\\||@100"}
+    node10["0.0@96"]
+    node11[["variable.unrolling_time@103"]]
+    node12["1.25@130"]
+    node0 -->|target| node1
+    node2 -->|left| node3
+    node4 -->|left| node5
+    node7 -->|left| node8
+    node9 -->|left| node10
+    node9 -->|right| node11
+    node7 -->|right| node9
+    node6 -->|left| node7
+    node6 -->|right| node12
+    node4 -->|right| node6
+    node2 -->|right| node4
     node0 -->|value| node2"
 `;
 
@@ -652,18 +794,45 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 46.
 "flowchart LR
     node0{"=@15"}
     node1[["variable.state@0"]]
-    node2[";@39"]
-    node3{"?:@39"}
-    node4[["variable.is_rolled_up@17"]]
-    node5["1@41"]
-    node6["0@45"]
-    node6["0@45"]
+    node2{"?:@39"}
+    node3[["variable.is_rolled_up@17"]]
+    node4["1@41"]
+    node5["0@45"]
     node0 -->|target| node1
-    node3 -->|condition| node4
-    node3 -->|true| node5
-    node3 -->|false| node6
-    node2 -->|stmt0| node3
-    node2 -->|stmt1| node6
+    node2 -->|condition| node3
+    node2 -->|true| node4
+    node2 -->|false| node5
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 47. variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo; 1`] = `
+"flowchart LR
+    node0{"=@15"}
+    node1[["variable.state@0"]]
+    node2{"?:@39"}
+    node3[["variable.is_rolled_up@17"]]
+    node4{"\\*@43"}
+    node5["2@41"]
+    node6{"\\+@48"}
+    node7["5@46"]
+    node8[["variable.state@50"]]
+    node9{"\\*@70"}
+    node10["3@68"]
+    node11{"\\+@74"}
+    node12["1@72"]
+    node13[["variable.foo@76"]]
+    node0 -->|target| node1
+    node2 -->|condition| node3
+    node4 -->|left| node5
+    node6 -->|left| node7
+    node6 -->|right| node8
+    node4 -->|right| node6
+    node2 -->|true| node4
+    node9 -->|left| node10
+    node11 -->|left| node12
+    node11 -->|right| node13
+    node9 -->|right| node11
+    node2 -->|false| node9
     node0 -->|value| node2"
 `;
 
@@ -671,37 +840,23 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 48.
 "flowchart LR
     node0{"=@15"}
     node1[["variable.state@0"]]
-    node2[";@39"]
-    node3{"?:@39"}
-    node4[["variable.is_rolled_up@17"]]
-    node5[";@65"]
-    node6{"\\>=@65"}
-    node7[["variable.rolled_up_time@41"]]
-    node8["0.2083@68"]
-    node9{"?:@75"}
-    node10["Unknown@undefined"]
-    node11["Unknown@undefined"]
-    node12["Unknown@undefined"]
-    node13["1@77"]
-    node14["2@81"]
-    node14["2@81"]
-    node15>"6@83"]
-    node16["3@85"]
+    node2{"?:@39"}
+    node3[["variable.is_rolled_up@17"]]
+    node4{"?:@75"}
+    node5{"\\>=@65"}
+    node6[["variable.rolled_up_time@41"]]
+    node7["0.2083@68"]
+    node8["1@77"]
+    node9["2@81"]
+    node10["3@85"]
     node0 -->|target| node1
-    node3 -->|condition| node4
-    node6 -->|left| node7
-    node6 -->|right| node8
-    node5 -->|stmt0| node6
-    node9 -->|condition| node10
-    node9 -->|true| node11
-    node9 -->|false| node12
-    node5 -->|stmt1| node9
-    node5 -->|stmt2| node13
-    node3 -->|true| node5
-    node3 -->|false| node14
-    node2 -->|stmt0| node3
-    node2 -->|stmt1| node14
-    node2 -->|stmt2| node15
-    node2 -->|stmt3| node16
+    node2 -->|condition| node3
+    node5 -->|left| node6
+    node5 -->|right| node7
+    node4 -->|condition| node5
+    node4 -->|true| node8
+    node4 -->|false| node9
+    node2 -->|true| node4
+    node2 -->|false| node10
     node0 -->|value| node2"
 `;

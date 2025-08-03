@@ -35,7 +35,14 @@ export class SyntaxBuilder {
       case NodeType.NullishCoalescing:
         this.operators["??"] = true;
         return;
+      case NodeType.Conditional:
+        this.operators["?"] = true;
+        return;
     }
+  }
+
+  hasOperator(op: string): boolean {
+    return this.operators[op] === true;
   }
 
   remove<T extends ExpressionNode>(node: T) {

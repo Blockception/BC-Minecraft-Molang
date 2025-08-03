@@ -46,7 +46,7 @@ function cleanupNodes(node: ExpressionNode) {
 function validateNode(node: ExpressionNode): void {
   expect(node).toBeDefined();
   expect(node).toHaveProperty("type")
-  expect(node).toHaveProperty("postition")
+  expect(node).toHaveProperty("position")
 
   switch (node.type) {
     case NodeType.StatementSequence:
