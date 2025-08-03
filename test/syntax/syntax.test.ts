@@ -9,6 +9,8 @@ describe("molang - syntax", () => {
       const n = parseMolang(OffsetWord.create(s, 0));
       n.forEach(cleanupNodes);
       expect(n).toMatchSnapshot();
+
+      n.forEach(validateNode);
     });
   });
 });
@@ -36,10 +38,46 @@ function cleanupNodes(node: ExpressionNode) {
         .filter((item) => item !== undefined)
         .forEach(cleanupNodes);
       break;
-    case NodeType.Literal:
-      break;
   }
 
   // Convert type to string for each identificatio
   (node as any).type = NodeType[node.type];
+}
+function validateNode(node: ExpressionNode): void {
+  expect(node).toBeDefined();
+  expect(node).toHaveProperty("type")
+  expect(node).toHaveProperty("postition")
+
+  switch (node.type) {
+    case NodeType.StatementSequence:
+      node.statements.forEach(validateNode);
+      throw new Error(`found a statement object: ${JSON.stringify(node)}`);
+      break;
+    case NodeType.ArrayAccess:
+      [node.array, node.index].forEach(validateNode);
+      break;
+    case NodeType.Assignment:
+    case NodeType.BinaryOperation:
+      [node.left, node.right].forEach(validateNode);
+      break;
+    case NodeType.FunctionCall:
+      node.arguments.forEach(validateNode);
+      break;
+    case NodeType.UnaryOperation:
+      validateNode(node.operand);
+      break;
+    case NodeType.Conditional:
+      [node.condition, node.falseExpression, node.trueExpression]
+        .filter((item) => item !== undefined)
+        .forEach(validateNode);
+      break;
+    case NodeType.Marker:
+      throw new Error(`found a marker object: ${JSON.stringify(node)}`);
+    case NodeType.Literal:
+    case NodeType.NullishCoalescing:
+    case NodeType.ResourceReference:
+    case NodeType.StringLiteral:
+    case NodeType.Variable:
+      break;
+  }
 }

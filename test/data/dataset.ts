@@ -53,5 +53,9 @@ export const valid_syntaxes = [
   "variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up;",
   "variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;",
   "variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25);",
+  
+  // conditional tests
+  "variable.state = variable.is_rolled_up ? 1 : 0;",
+  "variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo;",
   "variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3;",
 ];

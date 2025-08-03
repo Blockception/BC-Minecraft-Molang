@@ -648,7 +648,26 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 45.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 46. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 46. variable.state = variable.is_rolled_up ? 1 : 0; 1`] = `
+"flowchart LR
+    node0{"=@15"}
+    node1[["variable.state@0"]]
+    node2[";@39"]
+    node3{"?:@39"}
+    node4[["variable.is_rolled_up@17"]]
+    node5["1@41"]
+    node6["0@45"]
+    node6["0@45"]
+    node0 -->|target| node1
+    node3 -->|condition| node4
+    node3 -->|true| node5
+    node3 -->|false| node6
+    node2 -->|stmt0| node3
+    node2 -->|stmt1| node6
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 48. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
 "flowchart LR
     node0{"=@15"}
     node1[["variable.state@0"]]

@@ -744,7 +744,45 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 46. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 46. variable.state = variable.is_rolled_up ? 1 : 0; 1`] = `
+[
+  "variable.state NamespacedIdentifier",
+  "= Assignment",
+  "variable.is_rolled_up NamespacedIdentifier",
+  "? QuestionMark",
+  "1 Number",
+  ": Colon",
+  "0 Number",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 47. variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo; 1`] = `
+[
+  "variable.state NamespacedIdentifier",
+  "= Assignment",
+  "variable.is_rolled_up NamespacedIdentifier",
+  "? QuestionMark",
+  "2 Number",
+  "* Operator",
+  "( OpenParen",
+  "5 Number",
+  "+ Operator",
+  "variable.state NamespacedIdentifier",
+  ") CloseParen",
+  ": Colon",
+  "3 Number",
+  "* Operator",
+  "1 Number",
+  "+ Operator",
+  "variable.foo NamespacedIdentifier",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 48. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
 [
   "variable.state NamespacedIdentifier",
   "= Assignment",

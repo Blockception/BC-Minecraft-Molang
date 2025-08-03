@@ -1984,7 +1984,59 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 46. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 46. variable.state = variable.is_rolled_up ? 1 : 0; 1`] = `
+[
+  {
+    "_processed": true,
+    "left": {
+      "names": [
+        "state",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": "Variable",
+    },
+    "position": 15,
+    "right": {
+      "position": 39,
+      "statements": [
+        {
+          "_processed": true,
+          "condition": {
+            "names": [
+              "is_rolled_up",
+            ],
+            "position": 17,
+            "scope": "variable",
+            "type": "Variable",
+          },
+          "falseExpression": {
+            "position": 45,
+            "type": 5,
+            "value": "0",
+          },
+          "position": 39,
+          "trueExpression": {
+            "position": 41,
+            "type": "Literal",
+            "value": "1",
+          },
+          "type": "Conditional",
+        },
+        {
+          "position": 45,
+          "type": 5,
+          "value": "0",
+        },
+      ],
+      "type": "StatementSequence",
+    },
+    "type": "Assignment",
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 48. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
 [
   {
     "_processed": true,
