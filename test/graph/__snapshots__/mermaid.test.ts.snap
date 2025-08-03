@@ -351,7 +351,28 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 26.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 27. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 27. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+"flowchart LR
+    node0{"=@22"}
+    node1[["variable.is_rolled_up@0"]]
+    node2{"\\||@56"}
+    node3{"\\==@49"}
+    node4[["variable.unrolling_time@25"]]
+    node5["0.0@52"]
+    node6{"\\<=@83"}
+    node7[["variable.unrolling_time@59"]]
+    node8["1.25@86"]
+    node0 -->|target| node1
+    node3 -->|left| node4
+    node3 -->|right| node5
+    node2 -->|left| node3
+    node6 -->|left| node7
+    node6 -->|right| node8
+    node2 -->|right| node6
+    node0 -->|value| node2"
+`;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 28. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 "flowchart LR
     node0{"=@24"}
     node1[["variable.rolled_up_time@0"]]
@@ -374,7 +395,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 27.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 28. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 29. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 "flowchart LR
     node0{"=@20"}
     node1[["variable.is_peeking@0"]]
@@ -389,7 +410,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 28.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 29. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 30. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 "flowchart LR
     node0{"=@22"}
     node1[["variable.is_unrolling@0"]]
@@ -404,7 +425,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 29.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 30. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 31. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 "flowchart LR
     node0{"=@24"}
     node1[["variable.unrolling_time@0"]]
@@ -427,55 +448,55 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 30.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 31. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 32. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 "flowchart LR
     node0{"=@29"}
     node1[["variable.use_rolled_up_model@0"]]
-    node2{"\\>=@55"}
-    node3[["variable.rolled_up_time@31"]]
-    node4{"\\&&@65"}
+    node2{"\\&&@65"}
+    node3{"\\>=@55"}
+    node4[["variable.rolled_up_time@31"]]
     node5["0.2083@58"]
-    node6{"\\<=@127"}
+    node6{"\\||@100"}
     node7{"\\==@93"}
     node8[["variable.unrolling_time@69"]]
-    node9{"\\||@100"}
-    node10["0.0@96"]
+    node9["0.0@96"]
+    node10{"\\<=@127"}
     node11[["variable.unrolling_time@103"]]
     node12["1.25@130"]
     node0 -->|target| node1
+    node3 -->|left| node4
+    node3 -->|right| node5
     node2 -->|left| node3
-    node4 -->|left| node5
     node7 -->|left| node8
-    node9 -->|left| node10
-    node9 -->|right| node11
     node7 -->|right| node9
     node6 -->|left| node7
-    node6 -->|right| node12
-    node4 -->|right| node6
-    node2 -->|right| node4
+    node10 -->|left| node11
+    node10 -->|right| node12
+    node6 -->|right| node10
+    node2 -->|right| node6
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 32. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 33. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 "flowchart LR
     node0{"=@17"}
     node1[["variable.walking@0"]]
-    node2{"\\>@45"}
-    node3{{"query.modified_move_speed()@19"}}
-    node4{"\\&&@52"}
+    node2{"\\&&@52"}
+    node3{"\\>@45"}
+    node4{{"query.modified_move_speed()@19"}}
     node5["0.01@47"]
     node6{"!@55"}
     node7[["variable.is_rolled_up@56"]]
     node0 -->|target| node1
+    node3 -->|left| node4
+    node3 -->|right| node5
     node2 -->|left| node3
-    node4 -->|left| node5
     node6 -->|operand| node7
-    node4 -->|right| node6
-    node2 -->|right| node4
+    node2 -->|right| node6
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 33. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 34. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
 "flowchart LR
     node0{"=@31"}
     node1[["variable.walk_anim_time_update@0"]]
@@ -502,7 +523,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 33.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 34. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 35. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 "flowchart LR
     node0{"=@31"}
     node1[["variable.walk_anim_time_update@0"]]
@@ -529,7 +550,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 34.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 34. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 35. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 2`] = `
 "flowchart LR
     node0{"=@157"}
     node1[["variable.y_head_rotation@132"]]
@@ -546,7 +567,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 34.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 35. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 36. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
 "flowchart LR
     node0{"=@25"}
     node1[["variable.x_head_rotation@0"]]
@@ -563,7 +584,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 35.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 36. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 37. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 "flowchart LR
     node0{"=@25"}
     node1[["variable.y_head_rotation@0"]]
@@ -580,7 +601,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 36.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 37. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 38. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 "flowchart LR
     node0{"=@22"}
     node1[["variable.is_rolled_up@0"]]
@@ -595,7 +616,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 37.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 38. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 39. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 "flowchart LR
     node0{"=@24"}
     node1[["variable.rolled_up_time@0"]]
@@ -618,7 +639,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 38.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 39. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 40. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 "flowchart LR
     node0{"=@20"}
     node1[["variable.is_peeking@0"]]
@@ -633,7 +654,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 39.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 40. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 41. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 "flowchart LR
     node0{"=@22"}
     node1[["variable.is_unrolling@0"]]
@@ -648,7 +669,7 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 40.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 41. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 42. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 "flowchart LR
     node0{"=@24"}
     node1[["variable.unrolling_time@0"]]
@@ -671,51 +692,22 @@ exports[`molang - mermaid - graphs should be able to generate stage diagrams 41.
     node0 -->|value| node2"
 `;
 
-exports[`molang - mermaid - graphs should be able to generate stage diagrams 42. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
-"flowchart LR
-    node0{"=@29"}
-    node1[["variable.use_rolled_up_model@0"]]
-    node2{"\\>=@55"}
-    node3[["variable.rolled_up_time@31"]]
-    node4{"\\&&@65"}
-    node5["0.2083@58"]
-    node6{"\\<=@127"}
-    node7{"\\==@93"}
-    node8[["variable.unrolling_time@69"]]
-    node9{"\\||@100"}
-    node10["0.0@96"]
-    node11[["variable.unrolling_time@103"]]
-    node12["1.25@130"]
-    node0 -->|target| node1
-    node2 -->|left| node3
-    node4 -->|left| node5
-    node7 -->|left| node8
-    node9 -->|left| node10
-    node9 -->|right| node11
-    node7 -->|right| node9
-    node6 -->|left| node7
-    node6 -->|right| node12
-    node4 -->|right| node6
-    node2 -->|right| node4
-    node0 -->|value| node2"
-`;
-
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 43. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 "flowchart LR
     node0{"=@17"}
     node1[["variable.walking@0"]]
-    node2{"\\>@41"}
-    node3{{"q.modified_move_speed()@19"}}
-    node4{"\\&&@48"}
+    node2{"\\&&@48"}
+    node3{"\\>@41"}
+    node4{{"q.modified_move_speed()@19"}}
     node5["0.01@43"]
     node6{"!@51"}
     node7[["variable.is_rolled_up@52"]]
     node0 -->|target| node1
+    node3 -->|left| node4
+    node3 -->|right| node5
     node2 -->|left| node3
-    node4 -->|left| node5
     node6 -->|operand| node7
-    node4 -->|right| node6
-    node2 -->|right| node4
+    node2 -->|right| node6
     node0 -->|value| node2"
 `;
 

@@ -343,7 +343,25 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 27. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 27. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+[
+  "variable.is_rolled_up NamespacedIdentifier",
+  "= Assignment",
+  "( OpenParen",
+  "variable.unrolling_time NamespacedIdentifier",
+  "== Operator",
+  "0.0 Number",
+  "|| Operator",
+  "variable.unrolling_time NamespacedIdentifier",
+  "<= Operator",
+  "1.25 Number",
+  ") CloseParen",
+  "; Semicolon",
+  "  EOF",
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 28. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 [
   "variable.rolled_up_time NamespacedIdentifier",
   "= Assignment",
@@ -365,7 +383,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 28. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 29. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 [
   "variable.is_peeking NamespacedIdentifier",
   "= Assignment",
@@ -380,7 +398,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 29. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 30. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 [
   "variable.is_unrolling NamespacedIdentifier",
   "= Assignment",
@@ -395,7 +413,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 30. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 31. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 [
   "variable.unrolling_time NamespacedIdentifier",
   "= Assignment",
@@ -417,7 +435,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 31. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 32. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 [
   "variable.use_rolled_up_model NamespacedIdentifier",
   "= Assignment",
@@ -439,7 +457,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 32. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 33. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 [
   "variable.walking NamespacedIdentifier",
   "= Assignment",
@@ -454,7 +472,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 33. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 34. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
 [
   "variable.walk_anim_time_update NamespacedIdentifier",
   "= Assignment",
@@ -480,7 +498,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 34. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 35. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   "variable.walk_anim_time_update NamespacedIdentifier",
   "= Assignment",
@@ -518,7 +536,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 35. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 36. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
 [
   "variable.x_head_rotation NamespacedIdentifier",
   "= Assignment",
@@ -536,7 +554,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 36. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 37. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 [
   "variable.y_head_rotation NamespacedIdentifier",
   "= Assignment",
@@ -554,7 +572,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 37. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 38. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 [
   "variable.is_rolled_up NamespacedIdentifier",
   "= Assignment",
@@ -569,7 +587,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 38. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 39. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 [
   "variable.rolled_up_time NamespacedIdentifier",
   "= Assignment",
@@ -591,7 +609,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 39. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 40. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 [
   "variable.is_peeking NamespacedIdentifier",
   "= Assignment",
@@ -606,7 +624,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 40. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 41. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 [
   "variable.is_unrolling NamespacedIdentifier",
   "= Assignment",
@@ -621,7 +639,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
-exports[`molang - syntax should be able to parse and match the syntax tree generated 41. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+exports[`molang - syntax should be able to parse and match the syntax tree generated 42. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 [
   "variable.unrolling_time NamespacedIdentifier",
   "= Assignment",
@@ -638,28 +656,6 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   ") CloseParen",
   ": Colon",
   "0.0 Number",
-  "; Semicolon",
-  "  EOF",
-]
-`;
-
-exports[`molang - syntax should be able to parse and match the syntax tree generated 42. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
-[
-  "variable.use_rolled_up_model NamespacedIdentifier",
-  "= Assignment",
-  "variable.rolled_up_time NamespacedIdentifier",
-  ">= Operator",
-  "0.2083 Number",
-  "&& Operator",
-  "( OpenParen",
-  "variable.unrolling_time NamespacedIdentifier",
-  "== Operator",
-  "0.0 Number",
-  "|| Operator",
-  "variable.unrolling_time NamespacedIdentifier",
-  "<= Operator",
-  "1.25 Number",
-  ") CloseParen",
   "; Semicolon",
   "  EOF",
 ]

@@ -156,9 +156,11 @@ function convertToken(token: Token) {
             names: parts.slice(1) as [string],
           });
         case "temp":
-        case "v":
+        case "t":
         case "variable":
+        case "v":
         case "context":
+        case "c":
         case "array":
           return VariableNode.create({
             names: parts.slice(1) as [string],

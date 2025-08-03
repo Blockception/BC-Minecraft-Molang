@@ -1,10 +1,10 @@
 import { Token } from "./tokens";
 
 /** Variable scope types in Molang */
-export type VariableScope = "temp" | "variable" | "context" | "array";
+export type VariableScope = "temp" | "t" | "variable" | "v" | "context" | "c" | "array";
 
 /** Function namespace types in Molang */
-export type FunctionNamespace = "math" | "query";
+export type FunctionNamespace = "math" | "query" | "q";
 
 /** Types of syntax nodes */
 export enum NodeType {
@@ -88,7 +88,7 @@ export namespace StringLiteralNode {
 /** Represents a variable reference (temp, variable, context) */
 export interface VariableNode extends SyntaxNode {
   type: NodeType.Variable;
-  scope: "temp" | "variable" | "v" | "context" | "array";
+  scope: VariableScope;
   names: [string] | [string, string];
 }
 
@@ -137,7 +137,7 @@ export namespace ArrayAccessNode {
 /** Represents a function call (math, query) */
 export interface FunctionCallNode extends SyntaxNode {
   type: NodeType.FunctionCall;
-  namespace: "math" | "query" | "q";
+  namespace: FunctionNamespace;
   names: [string] | [string, string];
   arguments: ExpressionNode[];
 }

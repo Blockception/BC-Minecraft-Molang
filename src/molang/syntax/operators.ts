@@ -10,14 +10,16 @@ export function processOperators(builder: SyntaxBuilder) {
   // Process unary operators (highest precedence)
   processUnaryOperators(builder); // ? or -u
 
-  ifOperator(builder, "||");
-  ifOperator(builder, "&&");
   ifOperator(builder, "==");
   ifOperator(builder, "!=");
   ifOperator(builder, "<");
   ifOperator(builder, "<=");
   ifOperator(builder, ">");
   ifOperator(builder, ">=");
+
+  ifOperator(builder, "||");
+  ifOperator(builder, "&&");
+
   ifOperator(builder, "+");
   ifOperator(builder, "-");
   ifOperator(builder, "*");
