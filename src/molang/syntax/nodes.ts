@@ -4,7 +4,9 @@ import { Token } from "./tokens";
 export type VariableScope = "temp" | "t" | "variable" | "v" | "context" | "c" | "array";
 
 /** Function namespace types in Molang */
-export type FunctionNamespace = "math" | "query" | "q";
+export type FunctionScope = "math" | "query" | "q";
+
+export type ResourceScope = "texture" | "material" | "geometry";
 
 /** Types of syntax nodes */
 export enum NodeType {
@@ -85,18 +87,6 @@ export namespace StringLiteralNode {
   export const is = isfn<StringLiteralNode>(NodeType.StringLiteral);
 }
 
-/** Represents a variable reference (temp, variable, context) */
-export interface VariableNode extends SyntaxNode {
-  type: NodeType.Variable;
-  scope: VariableScope;
-  names: [string] | [string, string];
-}
-
-export namespace VariableNode {
-  export const create = createfn<VariableNode>(NodeType.Variable);
-  export const is = isfn<VariableNode>(NodeType.Variable);
-}
-
 /** Represents a conditional (ternary) expression */
 export interface ConditionalExpressionNode extends SyntaxNode {
   type: NodeType.Conditional;
@@ -137,7 +127,7 @@ export namespace ArrayAccessNode {
 /** Represents a function call (math, query) */
 export interface FunctionCallNode extends SyntaxNode {
   type: NodeType.FunctionCall;
-  namespace: FunctionNamespace;
+  scope: FunctionScope;
   names: [string] | [string, string];
   arguments: ExpressionNode[];
 }
@@ -146,10 +136,22 @@ export namespace FunctionCallNode {
   export const is = isfn<FunctionCallNode>(NodeType.FunctionCall);
 }
 
+/** Represents a variable reference (temp, variable, context) */
+export interface VariableNode extends SyntaxNode {
+  type: NodeType.Variable;
+  scope: VariableScope;
+  names: [string] | [string, string];
+}
+
+export namespace VariableNode {
+  export const create = createfn<VariableNode>(NodeType.Variable);
+  export const is = isfn<VariableNode>(NodeType.Variable);
+}
+
 /** Represents a resource reference (texture, material, geometry) */
 export interface ResourceReferenceNode extends SyntaxNode {
   type: NodeType.ResourceReference;
-  namespace: "texture" | "material" | "geometry";
+  scope: ResourceScope;
   names: [string] | [string, string];
 }
 
@@ -176,7 +178,7 @@ export interface ConditionalNode extends SyntaxNode {
   type: NodeType.Conditional;
   condition: ExpressionNode;
   trueExpression: ExpressionNode;
-  falseExpression?: ExpressionNode; // Optional for binary conditional
+  falseExpression: ExpressionNode;
 }
 
 export namespace ConditionalNode {
@@ -222,3 +224,33 @@ export type ExpressionNode =
   | StringLiteralNode
   | UnaryOperationNode
   | VariableNode;
+
+export namespace ExpressionNode {
+  export function getChildern(node: ExpressionNode): ExpressionNode[] {
+    if (node === undefined) return [];
+
+    switch (node.type) {
+      case NodeType.ArrayAccess:
+        return [node.array, node.index];
+      case NodeType.Assignment:
+      case NodeType.BinaryOperation:
+      case NodeType.NullishCoalescing:
+        return [node.left, node.right];
+      case NodeType.Conditional:
+        return [node.condition, node.trueExpression, node.falseExpression];
+      case NodeType.FunctionCall:
+        return [...node.arguments];
+      case NodeType.Literal:
+      case NodeType.Marker:
+      case NodeType.ResourceReference:
+      case NodeType.StringLiteral:
+      case NodeType.Variable:
+      default:
+        return [];
+      case NodeType.StatementSequence:
+        return [...node.statements];
+      case NodeType.UnaryOperation:
+        return [node.operand];
+    }
+  }
+}

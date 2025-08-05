@@ -1,12 +1,12 @@
-import { MolangType, Traverse } from "../../src/molang";
+import { MolangType, traverse } from "../../src/molang";
 import { VanillaPlayer } from '../vanilla-player';
 
 describe("Traverse", () => {
   it("rp", () => {
-    const obj = VanillaPlayer.DataOBject;
+    const obj = VanillaPlayer.DataObject;
     let count = 0;
 
-    Traverse(obj, () => {
+    traverse(obj, () => {
       count++;
     });
 
@@ -29,7 +29,7 @@ describe("Traverse", () => {
     let events = 0;
     let molang = 0;
 
-    Traverse(obj, (value, type,) => {
+    traverse(obj, (value, type,) => {
       switch (type) {
         case MolangType.command:
           commands++;

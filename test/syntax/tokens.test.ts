@@ -1,5 +1,5 @@
 import { tokenize, TokenType } from "../../src/molang/syntax/tokens";
-import { valid_syntaxes } from "../data/dataset";
+import { valid_syntaxes } from "../data/dataset-valid";
 
 describe("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {

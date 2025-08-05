@@ -1,4 +1,4 @@
-import { DefinedUsing } from '../src/main';
+import { DefinedUsing } from "../src/main";
 
 export namespace VanillaPlayer {
   export const Goes: string[] = ["cape", "humanoid.custom"];
@@ -133,17 +133,5 @@ export namespace VanillaPlayer {
     }
   }`;
 
-  export const DataOBject = JSON.parse(Data);
+  export const DataObject = JSON.parse(Data);
 }
-
-describe("data test", () => {
-  it("object", () => {
-    const obj = VanillaPlayer.DataOBject;
-
-    expect(obj).toBeDefined();
-
-    expect(obj.format_version).toBeDefined();
-    expect(obj["minecraft:client_entity"].description).toBeDefined();
-    expect(obj["minecraft:client_entity"].description.identifier).toBeDefined();
-  });
-});

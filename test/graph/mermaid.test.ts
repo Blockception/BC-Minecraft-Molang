@@ -1,6 +1,6 @@
 import { Types } from "bc-minecraft-bedrock-types";
 import { parseMolang } from "../../src/molang/syntax/parse";
-import { valid_syntaxes } from "../data/dataset";
+import { valid_syntaxes } from "../data/dataset-valid";
 import { generateMermaidDiagram } from "../../src/graph/mermaid";
 
 describe("molang - mermaid - graphs", () => {
