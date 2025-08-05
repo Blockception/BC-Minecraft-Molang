@@ -1,4 +1,5 @@
-import { getEvent, IsMolangType, isValidMolang, MolangType } from "../../src/molang";
+import { getEvent, isMolang, isMolangType, MolangType } from "../../src/molang";
+import { looks_like_molang } from "../data/dataset-lookslike";
 import { valid_syntaxes } from "../data/dataset-valid";
 
 describe("Functions", () => {
@@ -16,22 +17,22 @@ describe("Functions", () => {
     ];
 
     test.each(shouldbe)("should be valid: %#. %s", (item) => {
-      expect(IsMolangType(item)).not.toEqual(MolangType.unknown);
+      expect(isMolangType(item)).not.toEqual(MolangType.unknown);
     });
 
     const invalid = ["minecraft:player"];
 
     test.each(invalid)("should not valid: %#. %s", (item) => {
-      expect(IsMolangType(item)).toEqual(MolangType.unknown);
+      expect(isMolangType(item)).toEqual(MolangType.unknown);
     });
   });
 
-  describe("isValidMolang", () => {
+  describe("isMolang", () => {
     test.each(valid_syntaxes)("should be valid: %#. %s", (item) => {
-      expect(isValidMolang(item)).toBeTruthy();
+      expect(isMolang(item)).toBeTruthy();
     });
-    test.each(looks_like_molang)("should be valid: %#. %s", (item) => {
-      expect(isValidMolang(item)).toBeFalsy();
+    test.each(looks_like_molang)("should not be valid: %#. %s", (item) => {
+      expect(isMolang(item)).toBeFalsy();
     });
   });
 

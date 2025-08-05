@@ -21,12 +21,16 @@ const molangRegexp =
  * @param data The string to check
  * @returns The type of molang
  */
-export function IsMolangType(data: string): MolangType {
+export function isMolangType(data: string): MolangType {
   if (commandRegex.test(data)) return MolangType.command;
   if (eventRegex.test(data)) return MolangType.event;
   if (molangRegexp.test(data)) return MolangType.molang;
 
   return MolangType.unknown;
+}
+
+export function isMolang(data: string) {
+  return molangRegexp.test(data);
 }
 
 /**

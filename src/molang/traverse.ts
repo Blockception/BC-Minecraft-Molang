@@ -1,4 +1,4 @@
-import { IsMolangType, MolangType } from "./functions";
+import { isMolangType, MolangType } from "./functions";
 
 /**
  * Traverses the object and returns all the molang strings
@@ -41,7 +41,7 @@ function StringCheck(
   callbackfn: (molang: string, type: MolangType, path: string) => void,
   path: string = ""
 ): void {
-  const type = IsMolangType(data);
+  const type = isMolangType(data);
 
   if (type !== MolangType.unknown) callbackfn(data, type, path);
 }

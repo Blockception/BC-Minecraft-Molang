@@ -2075,6 +2075,107 @@ MolangSet {
 }
 `;
 
+exports[`MolangSet - harvest 28. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
+MolangSet {
+  "assigned": Set {},
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2]" => [
+        {
+          "array": {
+            "names": [
+              "skins",
+            ],
+            "position": 0,
+            "scope": "array",
+            "type": 12,
+          },
+          "index": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 27,
+                  "type": 10,
+                  "value": "minecraft:has_nectar",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 12,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "+",
+            "position": 51,
+            "right": {
+              "_processed": true,
+              "left": {
+                "arguments": [],
+                "names": [
+                  "is_angry",
+                ],
+                "position": 53,
+                "scope": "query",
+                "type": 4,
+              },
+              "operator": "*",
+              "position": 68,
+              "right": {
+                "position": 70,
+                "type": 5,
+                "value": "2",
+              },
+              "type": 2,
+            },
+            "type": 2,
+          },
+          "position": 0,
+          "type": 0,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 27,
+          "type": 10,
+          "value": "minecraft:has_nectar",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 12,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "is_angry",
+      ],
+      "position": 53,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {
+    {
+      "names": [
+        "skins",
+      ],
+      "position": 0,
+      "scope": "array",
+      "type": 12,
+    },
+  },
+}
+`;
+
 exports[`MolangSet - harvest 29. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
 MolangSet {
   "assigned": Set {},
@@ -2208,6 +2309,84 @@ MolangSet {
       "type": 8,
     },
   },
+}
+`;
+
+exports[`MolangSet - harvest 31. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_peeking",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking';" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_peeking",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 20,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 37,
+                  "type": 10,
+                  "value": "minecraft:armadillo_state",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 22,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "==",
+            "position": 66,
+            "right": {
+              "position": 69,
+              "type": 10,
+              "value": "rolled_up_peeking",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 37,
+          "type": 10,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 22,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {},
 }
 `;
 
@@ -2435,6 +2614,162 @@ MolangSet {
       "type": 12,
     },
   },
+}
+`;
+
+exports[`MolangSet - harvest 34. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_rolled_up",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled';" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_rolled_up",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 22,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 39,
+                  "type": 10,
+                  "value": "minecraft:armadillo_state",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 24,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "!=",
+            "position": 68,
+            "right": {
+              "position": 71,
+              "type": 10,
+              "value": "unrolled",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 39,
+          "type": 10,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 24,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {},
+}
+`;
+
+exports[`MolangSet - harvest 35. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_unrolling",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling';" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_unrolling",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 22,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 39,
+                  "type": 10,
+                  "value": "minecraft:armadillo_state",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 24,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "==",
+            "position": 68,
+            "right": {
+              "position": 71,
+              "type": 10,
+              "value": "rolled_up_unrolling",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 39,
+          "type": 10,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 24,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {},
 }
 `;
 
@@ -3943,6 +4278,240 @@ MolangSet {
 }
 `;
 
+exports[`MolangSet - harvest 47. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_peeking",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking';" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_peeking",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 20,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 33,
+                  "type": 10,
+                  "value": "minecraft:armadillo_state",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 22,
+              "scope": "q",
+              "type": 4,
+            },
+            "operator": "==",
+            "position": 62,
+            "right": {
+              "position": 65,
+              "type": 10,
+              "value": "rolled_up_peeking",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 33,
+          "type": 10,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 22,
+      "scope": "q",
+      "type": 4,
+    },
+  },
+  "using": Set {},
+}
+`;
+
+exports[`MolangSet - harvest 48. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_rolled_up",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled';" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_rolled_up",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 22,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 35,
+                  "type": 10,
+                  "value": "minecraft:armadillo_state",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 24,
+              "scope": "q",
+              "type": 4,
+            },
+            "operator": "!=",
+            "position": 64,
+            "right": {
+              "position": 67,
+              "type": 10,
+              "value": "unrolled",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 35,
+          "type": 10,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 24,
+      "scope": "q",
+      "type": 4,
+    },
+  },
+  "using": Set {},
+}
+`;
+
+exports[`MolangSet - harvest 49. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_unrolling",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling';" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_unrolling",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 22,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "position": 35,
+                  "type": 10,
+                  "value": "minecraft:armadillo_state",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 24,
+              "scope": "q",
+              "type": 4,
+            },
+            "operator": "==",
+            "position": 64,
+            "right": {
+              "position": 67,
+              "type": 10,
+              "value": "rolled_up_unrolling",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 35,
+          "type": 10,
+          "value": "minecraft:armadillo_state",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 24,
+      "scope": "q",
+      "type": 4,
+    },
+  },
+  "using": Set {},
+}
+`;
+
 exports[`MolangSet - harvest 50. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 MolangSet {
   "assigned": Set {
@@ -5088,6 +5657,1648 @@ MolangSet {
         "rolled_up_time",
       ],
       "position": 41,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+}
+`;
+
+exports[`MolangSet - harvest vanilla-player 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_holding_right",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "is_blinking",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "last_blink_time",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "hand_bob",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "helmet_layer_visible",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "leg_layer_visible",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "boot_layer_visible",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "chest_layer_visible",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "helmet_layer_visible",
+      ],
+      "position": 0,
+      "scope": "temp",
+      "type": 12,
+    },
+    {
+      "names": [
+        "leg_layer_visible",
+      ],
+      "position": 0,
+      "scope": "temp",
+      "type": 12,
+    },
+    {
+      "names": [
+        "boot_layer_visible",
+      ],
+      "position": 0,
+      "scope": "temp",
+      "type": 12,
+    },
+    {
+      "names": [
+        "chest_layer_visible",
+      ],
+      "position": 0,
+      "scope": "temp",
+      "type": 12,
+    },
+    {
+      "names": [
+        "attack_body_rot_y",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "tcos0",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "first_person_rotation_factor",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "hand_bob",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "map_angle",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "item_use_normalized",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "geometry.humanoid.custom" => [
+        {
+          "names": [
+            "humanoid",
+            "custom",
+          ],
+          "position": 0,
+          "scope": "geometry",
+          "type": 8,
+        },
+      ],
+      "geometry.cape" => [
+        {
+          "names": [
+            "cape",
+          ],
+          "position": 0,
+          "scope": "geometry",
+          "type": 8,
+        },
+      ],
+      "variable.is_holding_right = 0.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_holding_right",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 26,
+          "right": {
+            "position": 28,
+            "type": 5,
+            "value": "0.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.is_blinking = 0.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_blinking",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 21,
+          "right": {
+            "position": 23,
+            "type": 5,
+            "value": "0.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.last_blink_time = 0.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "last_blink_time",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 25,
+          "right": {
+            "position": 27,
+            "type": 5,
+            "value": "0.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.hand_bob = 0.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "hand_bob",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 18,
+          "right": {
+            "position": 20,
+            "type": 5,
+            "value": "0.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.helmet_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "helmet_layer_visible",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 30,
+          "right": {
+            "position": 32,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.leg_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "leg_layer_visible",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 27,
+          "right": {
+            "position": 29,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.boot_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "boot_layer_visible",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 28,
+          "right": {
+            "position": 30,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.chest_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "chest_layer_visible",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 29,
+          "right": {
+            "position": 31,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "temp.helmet_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "helmet_layer_visible",
+            ],
+            "position": 0,
+            "scope": "temp",
+            "type": 12,
+          },
+          "position": 26,
+          "right": {
+            "position": 28,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "temp.leg_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "leg_layer_visible",
+            ],
+            "position": 0,
+            "scope": "temp",
+            "type": 12,
+          },
+          "position": 23,
+          "right": {
+            "position": 25,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "temp.boot_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "boot_layer_visible",
+            ],
+            "position": 0,
+            "scope": "temp",
+            "type": 12,
+          },
+          "position": 24,
+          "right": {
+            "position": 26,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "temp.chest_layer_visible = 1.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "chest_layer_visible",
+            ],
+            "position": 0,
+            "scope": "temp",
+            "type": 12,
+          },
+          "position": 25,
+          "right": {
+            "position": 27,
+            "type": 5,
+            "value": "1.0",
+          },
+          "type": 1,
+        },
+      ],
+      "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "attack_body_rot_y",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 27,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [
+                {
+                  "_processed": true,
+                  "left": {
+                    "position": 38,
+                    "type": 5,
+                    "value": "360",
+                  },
+                  "operator": "*",
+                  "position": 41,
+                  "right": {
+                    "arguments": [
+                      {
+                        "names": [
+                          "attack_time",
+                        ],
+                        "position": 52,
+                        "scope": "variable",
+                        "type": 12,
+                      },
+                    ],
+                    "names": [
+                      "sqrt",
+                    ],
+                    "position": 42,
+                    "scope": "math",
+                    "type": 4,
+                  },
+                  "type": 2,
+                },
+              ],
+              "names": [
+                "sin",
+              ],
+              "position": 29,
+              "scope": "math",
+              "type": 4,
+            },
+            "operator": "*",
+            "position": 75,
+            "right": {
+              "position": 77,
+              "type": 5,
+              "value": "5.0",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+      "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value + temp.foo + context.world_x) * 57.3;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "tcos0",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 15,
+          "right": {
+            "_processed": true,
+            "left": {
+              "_processed": true,
+              "left": {
+                "_processed": true,
+                "left": {
+                  "_processed": true,
+                  "left": {
+                    "_processed": true,
+                    "left": {
+                      "arguments": [
+                        {
+                          "_processed": true,
+                          "left": {
+                            "arguments": [],
+                            "names": [
+                              "modified_distance_moved",
+                            ],
+                            "position": 27,
+                            "scope": "query",
+                            "type": 4,
+                          },
+                          "operator": "*",
+                          "position": 57,
+                          "right": {
+                            "position": 59,
+                            "type": 5,
+                            "value": "38.17",
+                          },
+                          "type": 2,
+                        },
+                      ],
+                      "names": [
+                        "cos",
+                      ],
+                      "position": 18,
+                      "scope": "math",
+                      "type": 4,
+                    },
+                    "operator": "*",
+                    "position": 66,
+                    "right": {
+                      "arguments": [],
+                      "names": [
+                        "modified_move_speed",
+                      ],
+                      "position": 68,
+                      "scope": "query",
+                      "type": 4,
+                    },
+                    "type": 2,
+                  },
+                  "operator": "/",
+                  "position": 94,
+                  "right": {
+                    "names": [
+                      "gliding_speed_value",
+                    ],
+                    "position": 96,
+                    "scope": "variable",
+                    "type": 12,
+                  },
+                  "type": 2,
+                },
+                "operator": "+",
+                "position": 125,
+                "right": {
+                  "names": [
+                    "foo",
+                  ],
+                  "position": 127,
+                  "scope": "temp",
+                  "type": 12,
+                },
+                "type": 2,
+              },
+              "operator": "+",
+              "position": 136,
+              "right": {
+                "names": [
+                  "world_x",
+                ],
+                "position": 138,
+                "scope": "context",
+                "type": 12,
+              },
+              "type": 2,
+            },
+            "operator": "*",
+            "position": 155,
+            "right": {
+              "position": 157,
+              "type": 5,
+              "value": "57.3",
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+      "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "first_person_rotation_factor",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 38,
+          "right": {
+            "arguments": [
+              {
+                "_processed": true,
+                "left": {
+                  "_processed": true,
+                  "left": {
+                    "position": 50,
+                    "type": 5,
+                    "value": "1",
+                  },
+                  "operator": "-",
+                  "position": 52,
+                  "right": {
+                    "names": [
+                      "attack_time",
+                    ],
+                    "position": 54,
+                    "scope": "variable",
+                    "type": 12,
+                  },
+                  "type": 2,
+                },
+                "operator": "*",
+                "position": 76,
+                "right": {
+                  "position": 78,
+                  "type": 5,
+                  "value": "180.0",
+                },
+                "type": 2,
+              },
+            ],
+            "names": [
+              "sin",
+            ],
+            "position": 40,
+            "scope": "math",
+            "type": 4,
+          },
+          "type": 1,
+        },
+      ],
+      "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "hand_bob",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 18,
+          "right": {
+            "_processed": true,
+            "condition": {
+              "_processed": true,
+              "left": {
+                "arguments": [],
+                "names": [
+                  "life_time",
+                ],
+                "position": 20,
+                "scope": "query",
+                "type": 4,
+              },
+              "operator": "<",
+              "position": 36,
+              "right": {
+                "position": 38,
+                "type": 5,
+                "value": "0.01",
+              },
+              "type": 2,
+            },
+            "falseExpression": {
+              "_processed": true,
+              "left": {
+                "names": [
+                  "hand_bob",
+                ],
+                "position": 51,
+                "scope": "variable",
+                "type": 12,
+              },
+              "operator": "+",
+              "position": 69,
+              "right": {
+                "_processed": true,
+                "left": {
+                  "_processed": true,
+                  "left": {
+                    "_processed": true,
+                    "condition": {
+                      "_processed": true,
+                      "left": {
+                        "arguments": [],
+                        "names": [
+                          "is_on_ground",
+                        ],
+                        "position": 73,
+                        "scope": "query",
+                        "type": 4,
+                      },
+                      "operator": "&&",
+                      "position": 92,
+                      "right": {
+                        "arguments": [],
+                        "names": [
+                          "is_alive",
+                        ],
+                        "position": 95,
+                        "scope": "query",
+                        "type": 4,
+                      },
+                      "type": 2,
+                    },
+                    "falseExpression": {
+                      "position": 227,
+                      "type": 5,
+                      "value": "0.0",
+                    },
+                    "position": 110,
+                    "trueExpression": {
+                      "arguments": [
+                        {
+                          "arguments": [
+                            {
+                              "_processed": true,
+                              "left": {
+                                "arguments": [
+                                  {
+                                    "arguments": [
+                                      {
+                                        "position": 163,
+                                        "type": 5,
+                                        "value": "0",
+                                      },
+                                    ],
+                                    "names": [
+                                      "position_delta",
+                                    ],
+                                    "position": 142,
+                                    "scope": "query",
+                                    "type": 4,
+                                  },
+                                  {
+                                    "position": 167,
+                                    "type": 5,
+                                    "value": "2.0",
+                                  },
+                                ],
+                                "names": [
+                                  "pow",
+                                ],
+                                "position": 133,
+                                "scope": "math",
+                                "type": 4,
+                              },
+                              "operator": "+",
+                              "position": 172,
+                              "right": {
+                                "arguments": [
+                                  {
+                                    "arguments": [
+                                      {
+                                        "position": 204,
+                                        "type": 5,
+                                        "value": "2",
+                                      },
+                                    ],
+                                    "names": [
+                                      "position_delta",
+                                    ],
+                                    "position": 183,
+                                    "scope": "query",
+                                    "type": 4,
+                                  },
+                                  {
+                                    "position": 208,
+                                    "type": 5,
+                                    "value": "2.0",
+                                  },
+                                ],
+                                "names": [
+                                  "pow",
+                                ],
+                                "position": 174,
+                                "scope": "math",
+                                "type": 4,
+                              },
+                              "type": 2,
+                            },
+                          ],
+                          "names": [
+                            "sqrt",
+                          ],
+                          "position": 123,
+                          "scope": "math",
+                          "type": 4,
+                        },
+                        {
+                          "position": 215,
+                          "type": 5,
+                          "value": "0.0",
+                        },
+                        {
+                          "position": 220,
+                          "type": 5,
+                          "value": "0.1",
+                        },
+                      ],
+                      "names": [
+                        "clamp",
+                      ],
+                      "position": 112,
+                      "scope": "math",
+                      "type": 4,
+                    },
+                    "type": 3,
+                  },
+                  "operator": "-",
+                  "position": 232,
+                  "right": {
+                    "names": [
+                      "hand_bob",
+                    ],
+                    "position": 234,
+                    "scope": "variable",
+                    "type": 12,
+                  },
+                  "type": 2,
+                },
+                "operator": "*",
+                "position": 253,
+                "right": {
+                  "position": 255,
+                  "type": 5,
+                  "value": "0.02",
+                },
+                "type": 2,
+              },
+              "type": 2,
+            },
+            "position": 43,
+            "trueExpression": {
+              "position": 45,
+              "type": 5,
+              "value": "0.0",
+            },
+            "type": 3,
+          },
+          "type": 1,
+        },
+      ],
+      "variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "map_angle",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 19,
+          "right": {
+            "arguments": [
+              {
+                "_processed": true,
+                "left": {
+                  "position": 32,
+                  "type": 5,
+                  "value": "1",
+                },
+                "operator": "-",
+                "position": 34,
+                "right": {
+                  "_processed": true,
+                  "left": {
+                    "names": [
+                      "player_x_rotation",
+                    ],
+                    "position": 36,
+                    "scope": "variable",
+                    "type": 12,
+                  },
+                  "operator": "/",
+                  "position": 63,
+                  "right": {
+                    "position": 65,
+                    "type": 5,
+                    "value": "45.1",
+                  },
+                  "type": 2,
+                },
+                "type": 2,
+              },
+              {
+                "position": 71,
+                "type": 5,
+                "value": "0.0",
+              },
+              {
+                "position": 76,
+                "type": 5,
+                "value": "1.0",
+              },
+            ],
+            "names": [
+              "clamp",
+            ],
+            "position": 21,
+            "scope": "math",
+            "type": 4,
+          },
+          "type": 1,
+        },
+      ],
+      "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "item_use_normalized",
+            ],
+            "position": 0,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 29,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [],
+              "names": [
+                "main_hand_item_use_duration",
+              ],
+              "position": 31,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "/",
+            "position": 65,
+            "right": {
+              "arguments": [],
+              "names": [
+                "main_hand_item_max_duration",
+              ],
+              "position": 67,
+              "scope": "query",
+              "type": 4,
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+      ],
+      "variable.is_first_person" => [
+        {
+          "names": [
+            "is_first_person",
+          ],
+          "position": 0,
+          "scope": "variable",
+          "type": 12,
+        },
+      ],
+      "!variable.is_first_person && !variable.map_face_icon" => [
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "operand": {
+              "names": [
+                "is_first_person",
+              ],
+              "position": 1,
+              "scope": "variable",
+              "type": 12,
+            },
+            "operator": "!",
+            "position": 0,
+            "type": 11,
+          },
+          "operator": "&&",
+          "position": 26,
+          "right": {
+            "_processed": true,
+            "operand": {
+              "names": [
+                "map_face_icon",
+              ],
+              "position": 30,
+              "scope": "variable",
+              "type": 12,
+            },
+            "operator": "!",
+            "position": 29,
+            "type": 11,
+          },
+          "type": 2,
+        },
+      ],
+      "variable.map_face_icon" => [
+        {
+          "names": [
+            "map_face_icon",
+          ],
+          "position": 0,
+          "scope": "variable",
+          "type": 12,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "position": 38,
+            "type": 5,
+            "value": "360",
+          },
+          "operator": "*",
+          "position": 41,
+          "right": {
+            "arguments": [
+              {
+                "names": [
+                  "attack_time",
+                ],
+                "position": 52,
+                "scope": "variable",
+                "type": 12,
+              },
+            ],
+            "names": [
+              "sqrt",
+            ],
+            "position": 42,
+            "scope": "math",
+            "type": 4,
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "sin",
+      ],
+      "position": 29,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "names": [
+            "attack_time",
+          ],
+          "position": 52,
+          "scope": "variable",
+          "type": 12,
+        },
+      ],
+      "names": [
+        "sqrt",
+      ],
+      "position": 42,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "arguments": [],
+            "names": [
+              "modified_distance_moved",
+            ],
+            "position": 27,
+            "scope": "query",
+            "type": 4,
+          },
+          "operator": "*",
+          "position": 57,
+          "right": {
+            "position": 59,
+            "type": 5,
+            "value": "38.17",
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "cos",
+      ],
+      "position": 18,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "modified_move_speed",
+      ],
+      "position": 68,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "modified_distance_moved",
+      ],
+      "position": 27,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "left": {
+              "position": 50,
+              "type": 5,
+              "value": "1",
+            },
+            "operator": "-",
+            "position": 52,
+            "right": {
+              "names": [
+                "attack_time",
+              ],
+              "position": 54,
+              "scope": "variable",
+              "type": 12,
+            },
+            "type": 2,
+          },
+          "operator": "*",
+          "position": 76,
+          "right": {
+            "position": 78,
+            "type": 5,
+            "value": "180.0",
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "sin",
+      ],
+      "position": 40,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "life_time",
+      ],
+      "position": 20,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "arguments": [
+            {
+              "_processed": true,
+              "left": {
+                "arguments": [
+                  {
+                    "arguments": [
+                      {
+                        "position": 163,
+                        "type": 5,
+                        "value": "0",
+                      },
+                    ],
+                    "names": [
+                      "position_delta",
+                    ],
+                    "position": 142,
+                    "scope": "query",
+                    "type": 4,
+                  },
+                  {
+                    "position": 167,
+                    "type": 5,
+                    "value": "2.0",
+                  },
+                ],
+                "names": [
+                  "pow",
+                ],
+                "position": 133,
+                "scope": "math",
+                "type": 4,
+              },
+              "operator": "+",
+              "position": 172,
+              "right": {
+                "arguments": [
+                  {
+                    "arguments": [
+                      {
+                        "position": 204,
+                        "type": 5,
+                        "value": "2",
+                      },
+                    ],
+                    "names": [
+                      "position_delta",
+                    ],
+                    "position": 183,
+                    "scope": "query",
+                    "type": 4,
+                  },
+                  {
+                    "position": 208,
+                    "type": 5,
+                    "value": "2.0",
+                  },
+                ],
+                "names": [
+                  "pow",
+                ],
+                "position": 174,
+                "scope": "math",
+                "type": 4,
+              },
+              "type": 2,
+            },
+          ],
+          "names": [
+            "sqrt",
+          ],
+          "position": 123,
+          "scope": "math",
+          "type": 4,
+        },
+        {
+          "position": 215,
+          "type": 5,
+          "value": "0.0",
+        },
+        {
+          "position": 220,
+          "type": 5,
+          "value": "0.1",
+        },
+      ],
+      "names": [
+        "clamp",
+      ],
+      "position": 112,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "is_on_ground",
+      ],
+      "position": 73,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "is_alive",
+      ],
+      "position": 95,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "arguments": [
+              {
+                "arguments": [
+                  {
+                    "position": 163,
+                    "type": 5,
+                    "value": "0",
+                  },
+                ],
+                "names": [
+                  "position_delta",
+                ],
+                "position": 142,
+                "scope": "query",
+                "type": 4,
+              },
+              {
+                "position": 167,
+                "type": 5,
+                "value": "2.0",
+              },
+            ],
+            "names": [
+              "pow",
+            ],
+            "position": 133,
+            "scope": "math",
+            "type": 4,
+          },
+          "operator": "+",
+          "position": 172,
+          "right": {
+            "arguments": [
+              {
+                "arguments": [
+                  {
+                    "position": 204,
+                    "type": 5,
+                    "value": "2",
+                  },
+                ],
+                "names": [
+                  "position_delta",
+                ],
+                "position": 183,
+                "scope": "query",
+                "type": 4,
+              },
+              {
+                "position": 208,
+                "type": 5,
+                "value": "2.0",
+              },
+            ],
+            "names": [
+              "pow",
+            ],
+            "position": 174,
+            "scope": "math",
+            "type": 4,
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "sqrt",
+      ],
+      "position": 123,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "arguments": [
+            {
+              "position": 163,
+              "type": 5,
+              "value": "0",
+            },
+          ],
+          "names": [
+            "position_delta",
+          ],
+          "position": 142,
+          "scope": "query",
+          "type": 4,
+        },
+        {
+          "position": 167,
+          "type": 5,
+          "value": "2.0",
+        },
+      ],
+      "names": [
+        "pow",
+      ],
+      "position": 133,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "arguments": [
+            {
+              "position": 204,
+              "type": 5,
+              "value": "2",
+            },
+          ],
+          "names": [
+            "position_delta",
+          ],
+          "position": 183,
+          "scope": "query",
+          "type": 4,
+        },
+        {
+          "position": 208,
+          "type": 5,
+          "value": "2.0",
+        },
+      ],
+      "names": [
+        "pow",
+      ],
+      "position": 174,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "position": 163,
+          "type": 5,
+          "value": "0",
+        },
+      ],
+      "names": [
+        "position_delta",
+      ],
+      "position": 142,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "position": 204,
+          "type": 5,
+          "value": "2",
+        },
+      ],
+      "names": [
+        "position_delta",
+      ],
+      "position": 183,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "position": 32,
+            "type": 5,
+            "value": "1",
+          },
+          "operator": "-",
+          "position": 34,
+          "right": {
+            "_processed": true,
+            "left": {
+              "names": [
+                "player_x_rotation",
+              ],
+              "position": 36,
+              "scope": "variable",
+              "type": 12,
+            },
+            "operator": "/",
+            "position": 63,
+            "right": {
+              "position": 65,
+              "type": 5,
+              "value": "45.1",
+            },
+            "type": 2,
+          },
+          "type": 2,
+        },
+        {
+          "position": 71,
+          "type": 5,
+          "value": "0.0",
+        },
+        {
+          "position": 76,
+          "type": 5,
+          "value": "1.0",
+        },
+      ],
+      "names": [
+        "clamp",
+      ],
+      "position": 21,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "main_hand_item_use_duration",
+      ],
+      "position": 31,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "main_hand_item_max_duration",
+      ],
+      "position": 67,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {
+    {
+      "names": [
+        "humanoid",
+        "custom",
+      ],
+      "position": 0,
+      "scope": "geometry",
+      "type": 8,
+    },
+    {
+      "names": [
+        "cape",
+      ],
+      "position": 0,
+      "scope": "geometry",
+      "type": 8,
+    },
+    {
+      "names": [
+        "attack_time",
+      ],
+      "position": 52,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "world_x",
+      ],
+      "position": 138,
+      "scope": "context",
+      "type": 12,
+    },
+    {
+      "names": [
+        "foo",
+      ],
+      "position": 127,
+      "scope": "temp",
+      "type": 12,
+    },
+    {
+      "names": [
+        "gliding_speed_value",
+      ],
+      "position": 96,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "attack_time",
+      ],
+      "position": 54,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "hand_bob",
+      ],
+      "position": 51,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "hand_bob",
+      ],
+      "position": 234,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "player_x_rotation",
+      ],
+      "position": 36,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "is_first_person",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "is_first_person",
+      ],
+      "position": 1,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "map_face_icon",
+      ],
+      "position": 30,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "map_face_icon",
+      ],
+      "position": 0,
       "scope": "variable",
       "type": 12,
     },
