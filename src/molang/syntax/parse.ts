@@ -143,7 +143,7 @@ function convertToken(token: Token) {
         case "query":
           return FunctionCallNode.create({
             names: parts.slice(1) as [string],
-            namespace: parts[0],
+            scope: parts[0],
             arguments: [],
             position: token.position,
           });
@@ -152,7 +152,7 @@ function convertToken(token: Token) {
         case "geometry":
           return ResourceReferenceNode.create({
             position: token.position,
-            namespace: parts[0],
+            scope: parts[0],
             names: parts.slice(1) as [string],
           });
         case "temp":

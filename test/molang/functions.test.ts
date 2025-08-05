@@ -1,4 +1,6 @@
-import { getEvent, IsMolangType, MolangType } from '../../src/molang';
+import { getEvent, isMolang, isMolangType, MolangType } from "../../src/molang";
+import { looks_like_molang } from "../data/dataset-lookslike";
+import { valid_syntaxes } from "../data/dataset-valid";
 
 describe("Functions", () => {
   describe("IsMolangType", () => {
@@ -14,11 +16,24 @@ describe("Functions", () => {
       "query.variant == 1",
     ];
 
-    shouldbe.forEach((item) =>
-      it(`Should return type: ${item}`, () => {
-        expect(IsMolangType(item)).not.toEqual(MolangType.unknown);
-      })
-    );
+    test.each(shouldbe)("should be valid: %#. %s", (item) => {
+      expect(isMolangType(item)).not.toEqual(MolangType.unknown);
+    });
+
+    const invalid = ["minecraft:player"];
+
+    test.each(invalid)("should not valid: %#. %s", (item) => {
+      expect(isMolangType(item)).toEqual(MolangType.unknown);
+    });
+  });
+
+  describe("isMolang", () => {
+    test.each(valid_syntaxes)("should be valid: %#. %s", (item) => {
+      expect(isMolang(item)).toBeTruthy();
+    });
+    test.each(looks_like_molang)("should not be valid: %#. %s", (item) => {
+      expect(isMolang(item)).toBeFalsy();
+    });
   });
 
   it("getEvent", () => {

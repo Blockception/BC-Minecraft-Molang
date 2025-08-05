@@ -106,11 +106,11 @@ flowchart ${this.options.direction}`;
 
       case NodeType.FunctionCall:
         const funcName = node.names.join(".");
-        return createNodeInfo(`{{"${node.namespace}.${funcName}()${position}"}}`, `${node.namespace}.${funcName}()`);
+        return createNodeInfo(`{{"${node.scope}.${funcName}()${position}"}}`, `${node.scope}.${funcName}()`);
 
       case NodeType.ResourceReference:
         const resName = node.names.join(".");
-        return createNodeInfo(`[/"${node.namespace}.${resName}${position}"/]`, `${node.namespace}.${resName}`);
+        return createNodeInfo(`[/"${node.scope}.${resName}${position}"/]`, `${node.scope}.${resName}`);
 
       default:
         return {
