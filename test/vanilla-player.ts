@@ -1,31 +1,4 @@
-import { DefinedUsing } from "../src/main";
-
 export namespace VanillaPlayer {
-  export const Goes: string[] = ["cape", "humanoid.custom"];
-  export const Variables: DefinedUsing<string> = {
-    defined: [
-      "is_holding_right",
-      "is_blinking",
-      "last_blink_time",
-      "hand_bob",
-      "helmet_layer_visible",
-      "leg_layer_visible",
-      "boot_layer_visible",
-      "chest_layer_visible",
-      "attack_body_rot_y",
-      "tcos0",
-      "first_person_rotation_factor",
-      "hand_bob",
-      "map_angle",
-      "item_use_normalized",
-    ],
-    using: ["attack_time", "gliding_speed_value", "hand_bob", "player_x_rotation"],
-  };
-  export const Temps: DefinedUsing<string> = {
-    defined: ["helmet_layer_visible", "leg_layer_visible", "boot_layer_visible", "chest_layer_visible"],
-    using: ["foo"],
-  };
-
   export const Data = `{
     "format_version": "1.10.0",
     "minecraft:client_entity": {
