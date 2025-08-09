@@ -56,11 +56,11 @@ export class MolangSet {
     }
   }
 
-  harvest(object: Record<string, any> | string, originalText: string) {
+  harvest(object: Record<string, any> | string, originalText: string): this {
     if (typeof object === "string") {
       if (isMolang(object)) {
         this.add(OffsetWord.create(object, originalText.indexOf(object)));
-        return;
+        return this;
       }
     }
 
@@ -77,5 +77,11 @@ export class MolangSet {
         }
       }
     }
+
+    return this;
+  }
+
+  static harvest(object: Record<string, any> | string, originalText: string): MolangSet {
+    return new MolangSet().harvest(object, originalText);
   }
 }
