@@ -50,10 +50,11 @@ export function isValidMolang(molang: string): boolean {
   let instr = false;
   let level = 0;
 
-  for (let I = 0; I < molang.length; I++) {
-    switch (molang[I]) {
+  for (let i = 0; i < molang.length; i++) {
+    switch (molang[i]) {
       case "'":
         instr = !instr;
+        break;
 
       case "[":
       case "{":

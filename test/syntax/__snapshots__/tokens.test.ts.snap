@@ -931,3 +931,25 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "  EOF",
 ]
 `;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 58. v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar') 1`] = `
+[
+  "v.temp_outfit NamespacedIdentifier",
+  "!= Operator",
+  "q.property NamespacedIdentifier",
+  "( OpenParen",
+  "foo:bar StringLiteral",
+  ") CloseParen",
+  "+ Operator",
+  "q.property NamespacedIdentifier",
+  "( OpenParen",
+  "foo:bar StringLiteral",
+  ") CloseParen",
+  "+ Operator",
+  "q.property NamespacedIdentifier",
+  "( OpenParen",
+  "foo:bar StringLiteral",
+  ") CloseParen",
+  "  EOF",
+]
+`;

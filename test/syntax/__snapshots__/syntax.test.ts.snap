@@ -2999,3 +2999,79 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
 ]
 `;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 58. v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar') 1`] = `
+[
+  {
+    "_processed": true,
+    "left": {
+      "_processed": true,
+      "left": {
+        "_processed": true,
+        "left": {
+          "names": [
+            "temp_outfit",
+          ],
+          "position": 0,
+          "scope": "v",
+          "type": "Variable",
+        },
+        "operator": "!=",
+        "position": 13,
+        "right": {
+          "arguments": [
+            {
+              "position": 26,
+              "type": "StringLiteral",
+              "value": "foo:bar",
+            },
+          ],
+          "names": [
+            "property",
+          ],
+          "position": 15,
+          "scope": "q",
+          "type": "FunctionCall",
+        },
+        "type": "BinaryOperation",
+      },
+      "operator": "+",
+      "position": 36,
+      "right": {
+        "arguments": [
+          {
+            "position": 48,
+            "type": "StringLiteral",
+            "value": "foo:bar",
+          },
+        ],
+        "names": [
+          "property",
+        ],
+        "position": 37,
+        "scope": "q",
+        "type": "FunctionCall",
+      },
+      "type": "BinaryOperation",
+    },
+    "operator": "+",
+    "position": 58,
+    "right": {
+      "arguments": [
+        {
+          "position": 70,
+          "type": "StringLiteral",
+          "value": "foo:bar",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 59,
+      "scope": "q",
+      "type": "FunctionCall",
+    },
+    "type": "BinaryOperation",
+  },
+]
+`;

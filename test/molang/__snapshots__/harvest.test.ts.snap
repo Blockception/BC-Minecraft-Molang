@@ -5664,6 +5664,146 @@ MolangSet {
 }
 `;
 
+exports[`MolangSet - harvest 58. v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar') 1`] = `
+MolangSet {
+  "assigned": Set {},
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar')" => [
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "left": {
+              "_processed": true,
+              "left": {
+                "names": [
+                  "temp_outfit",
+                ],
+                "position": 0,
+                "scope": "v",
+                "type": 12,
+              },
+              "operator": "!=",
+              "position": 13,
+              "right": {
+                "arguments": [
+                  {
+                    "position": 26,
+                    "type": 10,
+                    "value": "foo:bar",
+                  },
+                ],
+                "names": [
+                  "property",
+                ],
+                "position": 15,
+                "scope": "q",
+                "type": 4,
+              },
+              "type": 2,
+            },
+            "operator": "+",
+            "position": 36,
+            "right": {
+              "arguments": [
+                {
+                  "position": 48,
+                  "type": 10,
+                  "value": "foo:bar",
+                },
+              ],
+              "names": [
+                "property",
+              ],
+              "position": 37,
+              "scope": "q",
+              "type": 4,
+            },
+            "type": 2,
+          },
+          "operator": "+",
+          "position": 58,
+          "right": {
+            "arguments": [
+              {
+                "position": 70,
+                "type": 10,
+                "value": "foo:bar",
+              },
+            ],
+            "names": [
+              "property",
+            ],
+            "position": 59,
+            "scope": "q",
+            "type": 4,
+          },
+          "type": 2,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "position": 70,
+          "type": 10,
+          "value": "foo:bar",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 59,
+      "scope": "q",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "position": 48,
+          "type": 10,
+          "value": "foo:bar",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 37,
+      "scope": "q",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "position": 26,
+          "type": 10,
+          "value": "foo:bar",
+        },
+      ],
+      "names": [
+        "property",
+      ],
+      "position": 15,
+      "scope": "q",
+      "type": 4,
+    },
+  },
+  "using": Set {
+    {
+      "names": [
+        "temp_outfit",
+      ],
+      "position": 0,
+      "scope": "v",
+      "type": 12,
+    },
+  },
+}
+`;
+
 exports[`MolangSet - harvest vanilla-player 1`] = `
 MolangSet {
   "assigned": Set {

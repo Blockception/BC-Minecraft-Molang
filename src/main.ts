@@ -1,2 +1,3 @@
 export * from "./data";
-export * as Molang from "./molang";
+export * from "./graph";
+export * from "./molang";

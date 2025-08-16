@@ -6,12 +6,12 @@ describe("MolangSet - harvest", () => {
   test.each(valid_syntaxes)("%#. %s", (synt) => {
     const data = toMolangSet(synt);
     expect(data).toMatchSnapshot();
-  });
+  }, 1000);
 
   test("vanilla-player", () => {
     const data = toMolangSetFrom(VanillaPlayer.DataObject, VanillaPlayer.Data);
     expect(data).toMatchSnapshot();
-  });
+  }, 1000);
 });
 
 function toMolangSet(molangs: string) {

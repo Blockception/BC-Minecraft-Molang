@@ -66,4 +66,7 @@ export const valid_syntaxes = [
   "variable.state = variable.is_rolled_up ? 1 : 0;",
   "variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo;",
   "variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3;",
+
+  // Test
+  "v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar')",
 ];

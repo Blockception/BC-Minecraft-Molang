@@ -1433,3 +1433,32 @@ flowchart TD
     node2 -->|false| node10
     node0 -->|value| node2"
 `;
+
+exports[`molang - mermaid - graphs should be able to generate stage diagrams 58. v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar') 1`] = `
+"---
+config:
+    theme: redux
+---
+flowchart TD
+    start@{ shape: sm-circ, label: "Small start" }
+    node0{"\\+@58"}
+    node1{"\\+@36"}
+    node2{"\\!=@13"}
+    node3[["v.temp_outfit@0"]]
+    node4{{"q.property()@15"}}
+    node5["'foo:bar'@26"]
+    node6{{"q.property()@37"}}
+    node7["'foo:bar'@48"]
+    node8{{"q.property()@59"}}
+    node9["'foo:bar'@70"]
+    start-->node0
+    node2 -->|left| node3
+    node4 -->|arg0| node5
+    node2 -->|right| node4
+    node1 -->|left| node2
+    node6 -->|arg0| node7
+    node1 -->|right| node6
+    node0 -->|left| node1
+    node8 -->|arg0| node9
+    node0 -->|right| node8"
+`;

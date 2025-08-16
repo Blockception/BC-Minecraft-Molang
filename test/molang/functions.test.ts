@@ -1,4 +1,4 @@
-import { getEvent, isMolang, isMolangType, MolangType } from "../../src/molang";
+import { getEvent, isMolang, isMolangType, isValidMolang, MolangType } from "../../src/molang";
 import { looks_like_molang } from "../data/dataset-lookslike";
 import { valid_syntaxes } from "../data/dataset-valid";
 
@@ -40,5 +40,11 @@ describe("Functions", () => {
     const data = getEvent("@s to:anger");
 
     expect(data).toEqual("to:anger");
+  });
+
+  describe("isValidMolang", () => {
+    test.each(valid_syntaxes)("isValidMolang should be valid: %#. %s", (item) => {
+      expect(isValidMolang(item)).toBeTruthy();
+    });
   });
 });
