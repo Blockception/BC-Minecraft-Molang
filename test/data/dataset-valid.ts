@@ -3,7 +3,8 @@ export const valid_syntaxes = [
   "!v.swaying && q.all_animations_finished",
   "!variable.swaying && query.all_animations_finished",
   "temp.foo1 = 0; temp.foo2 = 0; t.foo3 = 0;",
-  "temp.foo1 = 0; temp.foo2 = 0; t.foo3 = 0;", "temp.foo3 = 0;",
+  "temp.foo1 = 0; temp.foo2 = 0; t.foo3 = 0;",
+  "temp.foo3 = 0;",
   "v.agent.anim_state != 2",
   "v.agent.anim_state < 2",
   "v.agent.anim_state <= 2",
@@ -21,6 +22,9 @@ export const valid_syntaxes = [
   "variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;",
   "variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;",
   "variable.foo3 = 0;",
+  "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 )",
+  // Returns statement:
+  "variable.is_blinking = 0; variable.return_from_blink = query.life_time + math.random(0, 0.2); return query.life_time > (variable.last_blink_time + math.random(3, 40));",
 
   // Animation calculations
   "-175 * math.sin(variable.attack_time * 180)",

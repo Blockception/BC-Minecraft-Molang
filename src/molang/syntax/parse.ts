@@ -24,6 +24,7 @@ import { processOperators } from "./operators";
 /** Main function to parse Molang code into a syntax tree */
 export function parseMolang(line: Types.OffsetWord): ExpressionNode[] {
   const tokens = tokenize(line.text);
+  tokens.forEach((t) => (t.position += line.offset));
   const statements = splitTokens(tokens, (item) => item.type === TokenType.Semicolon).filter((t) => t.length > 0);
 
   // Parse each statement
@@ -167,6 +168,12 @@ function convertToken(token: Token) {
             position: token.position,
             scope: parts[0],
           });
+        case "return":
+          return UnaryOperationNode.create({
+            operator: token.value,
+            position: token.position,
+            operand: {} as ExpressionNode,
+          })
       }
       break;
 
@@ -243,7 +250,7 @@ function costlyConvertToken(tokens: Token[], startIndex: number): { node: Expres
 
   throw MolangSyntaxError.fromToken(
     current,
-    `don't know how to process this token: ${current.value} ${TokenType[current.type]}`
+    `don't know how to process this token: ['${current.value}' ${TokenType[current.type]}]`
   );
 }
 

@@ -30,7 +30,7 @@ export function isMolangType(data: string): MolangType {
 }
 
 export function isMolang(data: string) {
-  return molangRegexp.test(data);
+  return molangRegexp.test(data) && data !== "this";
 }
 
 /**

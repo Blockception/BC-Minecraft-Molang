@@ -84,6 +84,11 @@ export function tokenize(input: string): Token[] {
         pos++;
       }
 
+      if (input[pos] === "f") {
+        value += input[pos];
+        pos++;
+      }
+
       tokens.push({ type: TokenType.Number, value, position: start });
       continue;
     }

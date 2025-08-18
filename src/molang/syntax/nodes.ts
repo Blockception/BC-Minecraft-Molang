@@ -1,3 +1,4 @@
+import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
 import { Token } from "./tokens";
 
 /** Variable scope types in Molang */
@@ -252,5 +253,71 @@ export namespace ExpressionNode {
       case NodeType.UnaryOperation:
         return [node.operand];
     }
+  }
+
+  export function getIdentifier(
+    node: Pick<ResourceReferenceNode | VariableNode | FunctionCallNode, "scope" | "names">,
+    prefixed: boolean = true
+  ): string {
+    if (prefixed) {
+      return `${node.scope}.${node.names.join(".")}`;
+    }
+
+    return node.names.join(".");
+  }
+
+  export function getOffsetWord(node: ExpressionNode): OffsetWord {
+    switch (node.type) {
+      case NodeType.ResourceReference:
+      case NodeType.Variable:
+      case NodeType.FunctionCall:
+        return OffsetWord.create(getIdentifier(node), node.position);
+    }
+
+    return OffsetWord.create("", node.position);
+  }
+
+  export function getLastEndPosition(node: ExpressionNode): number {
+    function max(a: ExpressionNode, b: ExpressionNode): ExpressionNode {
+      return a.position > b.position ? a : b;
+    }
+
+    while (node !== undefined) {
+      switch (node.type) {
+        // End of trees
+        case NodeType.ResourceReference:
+        case NodeType.Variable:
+          return node.position + getIdentifier(node).length;
+        case NodeType.Literal:
+        case NodeType.StringLiteral:
+          return node.position + node.value.length;
+        case NodeType.Marker:
+          return node.token.position + node.token.value.length;
+        case NodeType.ArrayAccess:
+          node = node.index;
+          break;
+        case NodeType.UnaryOperation:
+          node = node.operand;
+          break;
+        case NodeType.NullishCoalescing:
+        case NodeType.BinaryOperation:
+        case NodeType.Assignment:
+          node = max(node.right, node.left);
+          break;
+        case NodeType.FunctionCall:
+          const args = node.arguments;
+          args.forEach((arg) => (node = max(node, arg)));
+          break;
+        case NodeType.StatementSequence:
+          const stats = node.statements;
+          stats.forEach((arg) => (node = max(node, arg)));
+          break;
+        case NodeType.Conditional:
+          node = max(node.condition, max(node.falseExpression, node.trueExpression));
+          break;
+      }
+    }
+
+    return (node as ExpressionNode | undefined)?.position ?? 0;
   }
 }
