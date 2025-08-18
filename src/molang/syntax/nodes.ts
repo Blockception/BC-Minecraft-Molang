@@ -266,17 +266,6 @@ export namespace ExpressionNode {
     return node.names.join(".");
   }
 
-  export function getOffsetWord(node: ExpressionNode): OffsetWord {
-    switch (node.type) {
-      case NodeType.ResourceReference:
-      case NodeType.Variable:
-      case NodeType.FunctionCall:
-        return OffsetWord.create(getIdentifier(node), node.position);
-    }
-
-    return OffsetWord.create("", node.position);
-  }
-
   export function getLastEndPosition(node: ExpressionNode): number {
     function max(a: ExpressionNode, b: ExpressionNode): ExpressionNode {
       return a.position > b.position ? a : b;
