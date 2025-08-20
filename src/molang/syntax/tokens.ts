@@ -233,6 +233,10 @@ export function tokenize(input: string): Token[] {
 }
 
 function checkUnaryOperators(item: Token, index: number, items: Token[]) {
+  if (item.type === TokenType.Identifier && item.value === "return") {
+    item.type = TokenType.UnaryOperator;
+    return;
+  }
   if (item.type !== TokenType.Operator && item.value !== "-") return;
 
   if (index === 0) {

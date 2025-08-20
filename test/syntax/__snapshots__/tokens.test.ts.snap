@@ -274,7 +274,7 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   "0.2 Number",
   ") CloseParen",
   "; Semicolon",
-  "return Identifier",
+  "return UnaryOperator",
   "query.life_time NamespacedIdentifier",
   "> Operator",
   "( OpenParen",

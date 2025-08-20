@@ -698,6 +698,181 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
 ]
 `;
 
+exports[`molang - syntax should be able to parse and match the syntax tree generated 22. ( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 ) 1`] = `
+[
+  {
+    "_processed": true,
+    "left": {
+      "_processed": true,
+      "left": {
+        "names": [
+          "use_item_interval_progress",
+        ],
+        "position": 2,
+        "scope": "variable",
+        "type": "Variable",
+      },
+      "operator": ">",
+      "position": 38,
+      "right": {
+        "position": 40,
+        "type": "Literal",
+        "value": "0.0",
+      },
+      "type": "BinaryOperation",
+    },
+    "operator": "||",
+    "position": 46,
+    "right": {
+      "_processed": true,
+      "left": {
+        "names": [
+          "use_item_startup_progress",
+        ],
+        "position": 51,
+        "scope": "variable",
+        "type": "Variable",
+      },
+      "operator": ">",
+      "position": 86,
+      "right": {
+        "position": 88,
+        "type": "Literal",
+        "value": "0.0",
+      },
+      "type": "BinaryOperation",
+    },
+    "type": "BinaryOperation",
+  },
+]
+`;
+
+exports[`molang - syntax should be able to parse and match the syntax tree generated 23. variable.is_blinking = 0; variable.return_from_blink = query.life_time + math.random(0, 0.2); return query.life_time > (variable.last_blink_time + math.random(3, 40)); 1`] = `
+[
+  {
+    "_processed": true,
+    "left": {
+      "names": [
+        "is_blinking",
+      ],
+      "position": 0,
+      "scope": "variable",
+      "type": "Variable",
+    },
+    "position": 21,
+    "right": {
+      "position": 23,
+      "type": "Literal",
+      "value": "0",
+    },
+    "type": "Assignment",
+  },
+  {
+    "_processed": true,
+    "left": {
+      "names": [
+        "return_from_blink",
+      ],
+      "position": 26,
+      "scope": "variable",
+      "type": "Variable",
+    },
+    "position": 53,
+    "right": {
+      "_processed": true,
+      "left": {
+        "arguments": [],
+        "names": [
+          "life_time",
+        ],
+        "position": 55,
+        "scope": "query",
+        "type": "FunctionCall",
+      },
+      "operator": "+",
+      "position": 71,
+      "right": {
+        "arguments": [
+          {
+            "position": 85,
+            "type": "Literal",
+            "value": "0",
+          },
+          {
+            "position": 88,
+            "type": "Literal",
+            "value": "0.2",
+          },
+        ],
+        "names": [
+          "random",
+        ],
+        "position": 73,
+        "scope": "math",
+        "type": "FunctionCall",
+      },
+      "type": "BinaryOperation",
+    },
+    "type": "Assignment",
+  },
+  {
+    "_processed": true,
+    "left": {
+      "_processed": true,
+      "operand": {
+        "arguments": [],
+        "names": [
+          "life_time",
+        ],
+        "position": 101,
+        "scope": "query",
+        "type": "FunctionCall",
+      },
+      "operator": "return",
+      "position": 94,
+      "type": "UnaryOperation",
+    },
+    "operator": ">",
+    "position": 117,
+    "right": {
+      "_processed": true,
+      "left": {
+        "names": [
+          "last_blink_time",
+        ],
+        "position": 120,
+        "scope": "variable",
+        "type": "Variable",
+      },
+      "operator": "+",
+      "position": 145,
+      "right": {
+        "arguments": [
+          {
+            "position": 159,
+            "type": "Literal",
+            "value": "3",
+          },
+          {
+            "position": 162,
+            "type": "Literal",
+            "value": "40",
+          },
+        ],
+        "names": [
+          "random",
+        ],
+        "position": 147,
+        "scope": "math",
+        "type": "FunctionCall",
+      },
+      "type": "BinaryOperation",
+    },
+    "type": "BinaryOperation",
+  },
+]
+`;
+
 exports[`molang - syntax should be able to parse and match the syntax tree generated 24. -175 * math.sin(variable.attack_time * 180) 1`] = `
 [
   {

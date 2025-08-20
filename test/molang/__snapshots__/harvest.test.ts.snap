@@ -1192,6 +1192,301 @@ MolangSet {
 }
 `;
 
+exports[`MolangSet - harvest 22. ( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 ) 1`] = `
+MolangSet {
+  "assigned": Set {},
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 )" => [
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "left": {
+              "names": [
+                "use_item_interval_progress",
+              ],
+              "position": 49,
+              "scope": "variable",
+              "type": 12,
+            },
+            "operator": ">",
+            "position": 85,
+            "right": {
+              "position": 87,
+              "type": 5,
+              "value": "0.0",
+            },
+            "type": 2,
+          },
+          "operator": "||",
+          "position": 93,
+          "right": {
+            "_processed": true,
+            "left": {
+              "names": [
+                "use_item_startup_progress",
+              ],
+              "position": 98,
+              "scope": "variable",
+              "type": 12,
+            },
+            "operator": ">",
+            "position": 133,
+            "right": {
+              "position": 135,
+              "type": 5,
+              "value": "0.0",
+            },
+            "type": 2,
+          },
+          "type": 2,
+        },
+      ],
+    },
+  },
+  "functions": Set {},
+  "using": Set {
+    {
+      "names": [
+        "use_item_interval_progress",
+      ],
+      "position": 49,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "use_item_startup_progress",
+      ],
+      "position": 98,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+}
+`;
+
+exports[`MolangSet - harvest 23. variable.is_blinking = 0; variable.return_from_blink = query.life_time + math.random(0, 0.2); return query.life_time > (variable.last_blink_time + math.random(3, 40)); 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "is_blinking",
+      ],
+      "position": 47,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "return_from_blink",
+      ],
+      "position": 73,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.is_blinking = 0; variable.return_from_blink = query.life_time + math.random(0, 0.2); return query.life_time > (variable.last_blink_time + math.random(3, 40));" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "is_blinking",
+            ],
+            "position": 47,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 68,
+          "right": {
+            "position": 70,
+            "type": 5,
+            "value": "0",
+          },
+          "type": 1,
+        },
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "return_from_blink",
+            ],
+            "position": 73,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 100,
+          "right": {
+            "_processed": true,
+            "left": {
+              "arguments": [],
+              "names": [
+                "life_time",
+              ],
+              "position": 102,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "+",
+            "position": 118,
+            "right": {
+              "arguments": [
+                {
+                  "position": 132,
+                  "type": 5,
+                  "value": "0",
+                },
+                {
+                  "position": 135,
+                  "type": 5,
+                  "value": "0.2",
+                },
+              ],
+              "names": [
+                "random",
+              ],
+              "position": 120,
+              "scope": "math",
+              "type": 4,
+            },
+            "type": 2,
+          },
+          "type": 1,
+        },
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "operand": {
+              "arguments": [],
+              "names": [
+                "life_time",
+              ],
+              "position": 148,
+              "scope": "query",
+              "type": 4,
+            },
+            "operator": "return",
+            "position": 141,
+            "type": 11,
+          },
+          "operator": ">",
+          "position": 164,
+          "right": {
+            "_processed": true,
+            "left": {
+              "names": [
+                "last_blink_time",
+              ],
+              "position": 167,
+              "scope": "variable",
+              "type": 12,
+            },
+            "operator": "+",
+            "position": 192,
+            "right": {
+              "arguments": [
+                {
+                  "position": 206,
+                  "type": 5,
+                  "value": "3",
+                },
+                {
+                  "position": 209,
+                  "type": 5,
+                  "value": "40",
+                },
+              ],
+              "names": [
+                "random",
+              ],
+              "position": 194,
+              "scope": "math",
+              "type": 4,
+            },
+            "type": 2,
+          },
+          "type": 2,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [],
+      "names": [
+        "life_time",
+      ],
+      "position": 102,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "position": 132,
+          "type": 5,
+          "value": "0",
+        },
+        {
+          "position": 135,
+          "type": 5,
+          "value": "0.2",
+        },
+      ],
+      "names": [
+        "random",
+      ],
+      "position": 120,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "life_time",
+      ],
+      "position": 148,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "position": 206,
+          "type": 5,
+          "value": "3",
+        },
+        {
+          "position": 209,
+          "type": 5,
+          "value": "40",
+        },
+      ],
+      "names": [
+        "random",
+      ],
+      "position": 194,
+      "scope": "math",
+      "type": 4,
+    },
+  },
+  "using": Set {
+    {
+      "names": [
+        "last_blink_time",
+      ],
+      "position": 167,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+}
+`;
+
 exports[`MolangSet - harvest 24. -175 * math.sin(variable.attack_time * 180) 1`] = `
 MolangSet {
   "assigned": Set {},

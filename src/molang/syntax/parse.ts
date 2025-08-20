@@ -40,7 +40,9 @@ export function parseMolang(line: Types.OffsetWord): ExpressionNode[] {
  * @returns
  */
 function parseTokens(tokens: Token[]) {
-  tokens = trimBraces(tokens);
+  console.log("parseTokens", tokens);
+
+  // tokens = trimBraces(tokens);
   tokens = trimEnding(tokens);
   if (tokens.length === 1) return convertToken(tokens[0]) ?? costlyConvertToken(tokens, 0).node;
 
@@ -55,6 +57,7 @@ function parseTokens(tokens: Token[]) {
       const cdata = costlyConvertToken(tokens, i);
       i = cdata.startIndex - 1;
       n = cdata.node;
+      console.log("moving index", i, tokens);
     }
     builder.add(n);
 
@@ -242,11 +245,14 @@ function costlyConvertToken(tokens: Token[], startIndex: number): { node: Expres
     case TokenType.OpenBracket:
     case TokenType.OpenParen:
       const code = getMatchingTokenSlice(tokens, startIndex);
+      console.log("found slice", code);
       return {
-        node: parseTokens(code),
+        node: parseTokens(trimBraces(code)),
         startIndex: startIndex + code.length,
       };
   }
+
+  console.log("error tokens", tokens);
 
   throw MolangSyntaxError.fromToken(
     current,

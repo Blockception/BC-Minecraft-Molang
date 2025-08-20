@@ -2,8 +2,8 @@ import { Types } from "bc-minecraft-bedrock-types";
 import { parseMolang } from "../../src/molang/syntax/parse";
 import { valid_syntaxes } from "../data/dataset-valid";
 import { ExpressionNode, NodeType } from "../../src/molang/syntax/nodes";
-import { invalid_syntaxes } from '../data/dataset-invalid';
-import { MolangSyntaxError } from '../../src/molang';
+import { invalid_syntaxes } from "../data/dataset-invalid";
+import { MolangSyntaxError } from "../../src/molang";
 
 describe("molang - syntax", () => {
   describe("should be able to parse and match the syntax tree generated", () => {
@@ -20,7 +20,7 @@ describe("molang - syntax", () => {
     test.each(invalid_syntaxes)("%#. %s", (s) => {
       expect(() => parseMolang(Types.OffsetWord.create(s, 0))).toThrow(MolangSyntaxError);
     });
-  })
+  });
 });
 
 function cleanupNodes(node: ExpressionNode) {
@@ -54,8 +54,8 @@ function cleanupNodes(node: ExpressionNode) {
 
 function validateNode(node: ExpressionNode): void {
   expect(node).toBeDefined();
-  expect(node).toHaveProperty("type")
-  expect(node).toHaveProperty("position")
+  expect(node).toHaveProperty("type");
+  expect(node).toHaveProperty("position");
 
   switch (node.type) {
     case NodeType.StatementSequence:
