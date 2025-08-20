@@ -1,4 +1,3 @@
-import { OffsetWord } from "bc-minecraft-bedrock-types/lib/types";
 import { Token } from "./tokens";
 
 /** Variable scope types in Molang */
