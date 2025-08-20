@@ -817,9 +817,9 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
   },
   {
     "_processed": true,
-    "left": {
+    "operand": {
       "_processed": true,
-      "operand": {
+      "left": {
         "arguments": [],
         "names": [
           "life_time",
@@ -828,47 +828,47 @@ exports[`molang - syntax should be able to parse and match the syntax tree gener
         "scope": "query",
         "type": "FunctionCall",
       },
-      "operator": "return",
-      "position": 94,
-      "type": "UnaryOperation",
-    },
-    "operator": ">",
-    "position": 117,
-    "right": {
-      "_processed": true,
-      "left": {
-        "names": [
-          "last_blink_time",
-        ],
-        "position": 120,
-        "scope": "variable",
-        "type": "Variable",
-      },
-      "operator": "+",
-      "position": 145,
+      "operator": ">",
+      "position": 117,
       "right": {
-        "arguments": [
-          {
-            "position": 159,
-            "type": "Literal",
-            "value": "3",
-          },
-          {
-            "position": 162,
-            "type": "Literal",
-            "value": "40",
-          },
-        ],
-        "names": [
-          "random",
-        ],
-        "position": 147,
-        "scope": "math",
-        "type": "FunctionCall",
+        "_processed": true,
+        "left": {
+          "names": [
+            "last_blink_time",
+          ],
+          "position": 120,
+          "scope": "variable",
+          "type": "Variable",
+        },
+        "operator": "+",
+        "position": 145,
+        "right": {
+          "arguments": [
+            {
+              "position": 159,
+              "type": "Literal",
+              "value": "3",
+            },
+            {
+              "position": 162,
+              "type": "Literal",
+              "value": "40",
+            },
+          ],
+          "names": [
+            "random",
+          ],
+          "position": 147,
+          "scope": "math",
+          "type": "FunctionCall",
+        },
+        "type": "BinaryOperation",
       },
       "type": "BinaryOperation",
     },
-    "type": "BinaryOperation",
+    "operator": "return",
+    "position": 94,
+    "type": "UnaryOperation",
   },
 ]
 `;

@@ -19,7 +19,7 @@ import { Token, TokenType, tokenize } from "./tokens";
 import { getMatchingTokenSlice } from "./util";
 import { SyntaxBuilder } from "./builder";
 import { MolangSyntaxError } from "./errors";
-import { processOperators } from "./operators";
+import { Processed, processOperators } from "./operators";
 
 /** Main function to parse Molang code into a syntax tree */
 export function parseMolang(line: Types.OffsetWord): ExpressionNode[] {
@@ -40,8 +40,6 @@ export function parseMolang(line: Types.OffsetWord): ExpressionNode[] {
  * @returns
  */
 function parseTokens(tokens: Token[]) {
-  console.log("parseTokens", tokens);
-
   // tokens = trimBraces(tokens);
   tokens = trimEnding(tokens);
   if (tokens.length === 1) return convertToken(tokens[0]) ?? costlyConvertToken(tokens, 0).node;
@@ -57,7 +55,6 @@ function parseTokens(tokens: Token[]) {
       const cdata = costlyConvertToken(tokens, i);
       i = cdata.startIndex - 1;
       n = cdata.node;
-      console.log("moving index", i, tokens);
     }
     builder.add(n);
 
@@ -176,7 +173,7 @@ function convertToken(token: Token) {
             operator: token.value,
             position: token.position,
             operand: {} as ExpressionNode,
-          })
+          });
       }
       break;
 
@@ -198,6 +195,9 @@ function convertToken(token: Token) {
         right: {} as ExpressionNode,
       });
     case TokenType.UnaryOperator:
+      // Skip the return operator, and have that done via costly
+      if (token.value === "return") break;
+
       return UnaryOperationNode.create({
         operator: token.value,
         position: token.position,
@@ -245,14 +245,28 @@ function costlyConvertToken(tokens: Token[], startIndex: number): { node: Expres
     case TokenType.OpenBracket:
     case TokenType.OpenParen:
       const code = getMatchingTokenSlice(tokens, startIndex);
-      console.log("found slice", code);
       return {
         node: parseTokens(trimBraces(code)),
         startIndex: startIndex + code.length,
       };
-  }
+    case TokenType.UnaryOperator:
+      // Everything that comes after return is part of its expression statement
+      if (current.value === "return") {
+        const code = tokens.slice(startIndex + 1);
+        const node = UnaryOperationNode.create({
+          operator: current.value,
+          position: current.position,
+          operand: parseTokens(trimBraces(code)),
+        });
+        // We already processed the return statement
+        Processed.withValue(node, true);
 
-  console.log("error tokens", tokens);
+        return {
+          node: node,
+          startIndex: startIndex + 1 + code.length,
+        };
+      }
+  }
 
   throw MolangSyntaxError.fromToken(
     current,

@@ -1358,9 +1358,9 @@ MolangSet {
         },
         {
           "_processed": true,
-          "left": {
+          "operand": {
             "_processed": true,
-            "operand": {
+            "left": {
               "arguments": [],
               "names": [
                 "life_time",
@@ -1369,47 +1369,47 @@ MolangSet {
               "scope": "query",
               "type": 4,
             },
-            "operator": "return",
-            "position": 141,
-            "type": 11,
-          },
-          "operator": ">",
-          "position": 164,
-          "right": {
-            "_processed": true,
-            "left": {
-              "names": [
-                "last_blink_time",
-              ],
-              "position": 167,
-              "scope": "variable",
-              "type": 12,
-            },
-            "operator": "+",
-            "position": 192,
+            "operator": ">",
+            "position": 164,
             "right": {
-              "arguments": [
-                {
-                  "position": 206,
-                  "type": 5,
-                  "value": "3",
-                },
-                {
-                  "position": 209,
-                  "type": 5,
-                  "value": "40",
-                },
-              ],
-              "names": [
-                "random",
-              ],
-              "position": 194,
-              "scope": "math",
-              "type": 4,
+              "_processed": true,
+              "left": {
+                "names": [
+                  "last_blink_time",
+                ],
+                "position": 167,
+                "scope": "variable",
+                "type": 12,
+              },
+              "operator": "+",
+              "position": 192,
+              "right": {
+                "arguments": [
+                  {
+                    "position": 206,
+                    "type": 5,
+                    "value": "3",
+                  },
+                  {
+                    "position": 209,
+                    "type": 5,
+                    "value": "40",
+                  },
+                ],
+                "names": [
+                  "random",
+                ],
+                "position": 194,
+                "scope": "math",
+                "type": 4,
+              },
+              "type": 2,
             },
             "type": 2,
           },
-          "type": 2,
+          "operator": "return",
+          "position": 141,
+          "type": 11,
         },
       ],
     },

@@ -522,8 +522,8 @@ config:
 ---
 flowchart TD
     start@{ shape: sm-circ, label: "Small start" }
-    node0{"\\>@117"}
-    node1{"return@94"}
+    node0{"return@94"}
+    node1{"\\>@117"}
     node2{{"query.life_time()@101"}}
     node3{"\\+@145"}
     node4[["variable.last_blink_time@120"]]
@@ -531,13 +531,13 @@ flowchart TD
     node6["3@159"]
     node7["40@162"]
     start-->node0
-    node1 -->|operand| node2
-    node0 -->|left| node1
+    node1 -->|left| node2
     node3 -->|left| node4
     node5 -->|arg0| node6
     node5 -->|arg1| node7
     node3 -->|right| node5
-    node0 -->|right| node3"
+    node1 -->|right| node3
+    node0 -->|operand| node1"
 `;
 
 exports[`molang - mermaid - graphs should be able to generate stage diagrams 24. -175 * math.sin(variable.attack_time * 180) 1`] = `

@@ -8,7 +8,7 @@ export function processOperators(builder: SyntaxBuilder) {
   if (builder.hasOperator("??")) processNullishCoalescing(builder); // ??
 
   // Process unary operators (highest precedence)
-  processUnaryOperators(builder); // ? or -u
+  processUnaryOperators(builder); // ?, !, return or -u
 
   ifOperator(builder, "==");
   ifOperator(builder, "!=");
@@ -32,11 +32,11 @@ export function processOperators(builder: SyntaxBuilder) {
   processAssignments(builder); // =
 }
 
-interface Processed {
+export interface Processed {
   _processed: boolean;
 }
 
-namespace Processed {
+export namespace Processed {
   export function withValue<T extends object>(obj: T, value: boolean) {
     (obj as T & Processed)._processed = value;
   }
@@ -241,7 +241,7 @@ function wrapIf(nodes: ExpressionNode[]): ExpressionNode {
 }
 
 /**
- * ? and -u
+ * ?, !, return and -u
  */
 function processUnaryOperators(builder: SyntaxBuilder) {
   const statements = builder.result.statements;
