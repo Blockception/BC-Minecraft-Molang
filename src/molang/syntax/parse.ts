@@ -39,7 +39,7 @@ export function parseMolang(line: Types.OffsetWord): ExpressionNode[] {
  * @param tokens
  * @returns
  */
-function parseTokens(tokens: Token[]) {
+function parseTokens(tokens: Token[]): ExpressionNode {
   // tokens = trimBraces(tokens);
   tokens = trimEnding(tokens);
   if (tokens.length === 1) return convertToken(tokens[0]) ?? costlyConvertToken(tokens, 0).node;
@@ -139,6 +139,13 @@ function convertToken(token: Token) {
       const parts = token.value.split(".");
 
       switch (parts[0]) {
+        case "this":
+          return VariableNode.create({
+            scope: "this",
+            names: [],
+            position: token.position,
+          });
+
         case "q":
         case "math":
         case "query":

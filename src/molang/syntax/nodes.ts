@@ -1,7 +1,7 @@
 import { Token } from "./tokens";
 
 /** Variable scope types in Molang */
-export type VariableScope = "temp" | "t" | "variable" | "v" | "context" | "c" | "array";
+export type VariableScope = "this" | "temp" | "t" | "variable" | "v" | "context" | "c" | "array";
 
 /** Function namespace types in Molang */
 export type FunctionScope = "math" | "query" | "q";
@@ -140,7 +140,7 @@ export namespace FunctionCallNode {
 export interface VariableNode extends SyntaxNode {
   type: NodeType.Variable;
   scope: VariableScope;
-  names: [string] | [string, string];
+  names: [] | [string] | [string, string];
 }
 
 export namespace VariableNode {
