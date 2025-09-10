@@ -237,7 +237,8 @@ function checkUnaryOperators(item: Token, index: number, items: Token[]) {
     item.type = TokenType.UnaryOperator;
     return;
   }
-  if (item.type !== TokenType.Operator && item.value !== "-") return;
+  if (item.type !== TokenType.Operator) return;
+  if (item.value !== "-" && item.value !== "+") return;
 
   if (index === 0) {
     item.type = TokenType.UnaryOperator;
@@ -245,11 +246,29 @@ function checkUnaryOperators(item: Token, index: number, items: Token[]) {
   }
   const previous = items[index - 1];
   switch (previous.type) {
+    case TokenType.CloseBrace:
+    case TokenType.CloseBracket:
+    case TokenType.CloseParen:
+    case TokenType.Identifier:
+    case TokenType.NamespacedIdentifier:
+    case TokenType.Number:
+    case TokenType.StringLiteral:
+      break;
+    case TokenType.ArrayAccess:
+    case TokenType.Arrow:
+    case TokenType.Assignment:
+    case TokenType.Colon:
     case TokenType.Comma:
-    case TokenType.Operator:
+    case TokenType.Dot:
+    case TokenType.EOF:
+    case TokenType.NullishCoalescing:
     case TokenType.OpenBrace:
     case TokenType.OpenBracket:
     case TokenType.OpenParen:
+    case TokenType.Operator:
+    case TokenType.QuestionMark:
+    case TokenType.Semicolon:
+    case TokenType.UnaryOperator:
       item.type = TokenType.UnaryOperator;
       break;
     default:

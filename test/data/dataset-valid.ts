@@ -23,6 +23,7 @@ export const valid_syntaxes = [
   "variable.foo1 = 0; variable.foo2 = 0; v.foo3 = 0;",
   "variable.foo3 = 0;",
   "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 )",
+  "variable.eat_anim = math.clamp(variable.eat_anim + (query.is_grazing ? ((1.0 - variable.eat_anim) * 0.4 + 0.05) : -variable.eat_anim * 0.4 - 0.05) * query.delta_time * 20.0, 0.0, 1.0);",
   // Returns statement:
   "variable.is_blinking = 0; variable.return_from_blink = query.life_time + math.random(0, 0.2); return query.life_time > (variable.last_blink_time + math.random(3, 40));",
 
