@@ -2,4 +2,4 @@ tests:
 	npm run test
 
 snapshots:
-	npx jest --update-snapshots
+	npx jest --update-snapshot

@@ -2333,7 +2333,428 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 29. !variable.has_trim 1`] = `
+exports[`MolangSet - harvest 29. -90.0 - ((math.sin(variable.attack_time * 180.0) * 57.3) * 1.2 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3) * 0.4) - (math.sin(query.life_time * 76.776372) * 2.865) - this 1`] = `
+MolangSet {
+  "assigned": Set {},
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "-90.0 - ((math.sin(variable.attack_time * 180.0) * 57.3) * 1.2 - (math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3) * 0.4) - (math.sin(query.life_time * 76.776372) * 2.865) - this" => [
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "left": {
+              "_processed": true,
+              "left": {
+                "_processed": true,
+                "operand": {
+                  "position": 48,
+                  "type": 5,
+                  "value": "90.0",
+                },
+                "operator": "-",
+                "position": 47,
+                "type": 11,
+              },
+              "operator": "-",
+              "position": 53,
+              "right": {
+                "_processed": true,
+                "left": {
+                  "_processed": true,
+                  "left": {
+                    "_processed": true,
+                    "left": {
+                      "arguments": [
+                        {
+                          "_processed": true,
+                          "left": {
+                            "names": [
+                              "attack_time",
+                            ],
+                            "position": 66,
+                            "scope": "variable",
+                            "type": 12,
+                          },
+                          "operator": "*",
+                          "position": 87,
+                          "right": {
+                            "position": 89,
+                            "type": 5,
+                            "value": "180.0",
+                          },
+                          "type": 2,
+                        },
+                      ],
+                      "names": [
+                        "sin",
+                      ],
+                      "position": 57,
+                      "scope": "math",
+                      "type": 4,
+                    },
+                    "operator": "*",
+                    "position": 96,
+                    "right": {
+                      "position": 98,
+                      "type": 5,
+                      "value": "57.3",
+                    },
+                    "type": 2,
+                  },
+                  "operator": "*",
+                  "position": 104,
+                  "right": {
+                    "position": 106,
+                    "type": 5,
+                    "value": "1.2",
+                  },
+                  "type": 2,
+                },
+                "operator": "-",
+                "position": 110,
+                "right": {
+                  "_processed": true,
+                  "left": {
+                    "_processed": true,
+                    "left": {
+                      "arguments": [
+                        {
+                          "_processed": true,
+                          "left": {
+                            "_processed": true,
+                            "left": {
+                              "position": 123,
+                              "type": 5,
+                              "value": "1.0",
+                            },
+                            "operator": "-",
+                            "position": 127,
+                            "right": {
+                              "_processed": true,
+                              "left": {
+                                "_processed": true,
+                                "left": {
+                                  "position": 130,
+                                  "type": 5,
+                                  "value": "1.0",
+                                },
+                                "operator": "-",
+                                "position": 134,
+                                "right": {
+                                  "names": [
+                                    "attack_time",
+                                  ],
+                                  "position": 136,
+                                  "scope": "variable",
+                                  "type": 12,
+                                },
+                                "type": 2,
+                              },
+                              "operator": "*",
+                              "position": 158,
+                              "right": {
+                                "_processed": true,
+                                "left": {
+                                  "position": 161,
+                                  "type": 5,
+                                  "value": "1.0",
+                                },
+                                "operator": "-",
+                                "position": 165,
+                                "right": {
+                                  "names": [
+                                    "attack_time",
+                                  ],
+                                  "position": 167,
+                                  "scope": "variable",
+                                  "type": 12,
+                                },
+                                "type": 2,
+                              },
+                              "type": 2,
+                            },
+                            "type": 2,
+                          },
+                          "operator": "*",
+                          "position": 190,
+                          "right": {
+                            "position": 192,
+                            "type": 5,
+                            "value": "180.0",
+                          },
+                          "type": 2,
+                        },
+                      ],
+                      "names": [
+                        "sin",
+                      ],
+                      "position": 113,
+                      "scope": "math",
+                      "type": 4,
+                    },
+                    "operator": "*",
+                    "position": 199,
+                    "right": {
+                      "position": 201,
+                      "type": 5,
+                      "value": "57.3",
+                    },
+                    "type": 2,
+                  },
+                  "operator": "*",
+                  "position": 207,
+                  "right": {
+                    "position": 209,
+                    "type": 5,
+                    "value": "0.4",
+                  },
+                  "type": 2,
+                },
+                "type": 2,
+              },
+              "type": 2,
+            },
+            "operator": "-",
+            "position": 214,
+            "right": {
+              "_processed": true,
+              "left": {
+                "arguments": [
+                  {
+                    "_processed": true,
+                    "left": {
+                      "arguments": [],
+                      "names": [
+                        "life_time",
+                      ],
+                      "position": 226,
+                      "scope": "query",
+                      "type": 4,
+                    },
+                    "operator": "*",
+                    "position": 242,
+                    "right": {
+                      "position": 244,
+                      "type": 5,
+                      "value": "76.776372",
+                    },
+                    "type": 2,
+                  },
+                ],
+                "names": [
+                  "sin",
+                ],
+                "position": 217,
+                "scope": "math",
+                "type": 4,
+              },
+              "operator": "*",
+              "position": 255,
+              "right": {
+                "position": 257,
+                "type": 5,
+                "value": "2.865",
+              },
+              "type": 2,
+            },
+            "type": 2,
+          },
+          "operator": "-",
+          "position": 264,
+          "right": {
+            "names": [],
+            "position": 266,
+            "scope": "this",
+            "type": 12,
+          },
+          "type": 2,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "arguments": [],
+            "names": [
+              "life_time",
+            ],
+            "position": 226,
+            "scope": "query",
+            "type": 4,
+          },
+          "operator": "*",
+          "position": 242,
+          "right": {
+            "position": 244,
+            "type": 5,
+            "value": "76.776372",
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "sin",
+      ],
+      "position": 217,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "life_time",
+      ],
+      "position": 226,
+      "scope": "query",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "attack_time",
+            ],
+            "position": 66,
+            "scope": "variable",
+            "type": 12,
+          },
+          "operator": "*",
+          "position": 87,
+          "right": {
+            "position": 89,
+            "type": 5,
+            "value": "180.0",
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "sin",
+      ],
+      "position": 57,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [
+        {
+          "_processed": true,
+          "left": {
+            "_processed": true,
+            "left": {
+              "position": 123,
+              "type": 5,
+              "value": "1.0",
+            },
+            "operator": "-",
+            "position": 127,
+            "right": {
+              "_processed": true,
+              "left": {
+                "_processed": true,
+                "left": {
+                  "position": 130,
+                  "type": 5,
+                  "value": "1.0",
+                },
+                "operator": "-",
+                "position": 134,
+                "right": {
+                  "names": [
+                    "attack_time",
+                  ],
+                  "position": 136,
+                  "scope": "variable",
+                  "type": 12,
+                },
+                "type": 2,
+              },
+              "operator": "*",
+              "position": 158,
+              "right": {
+                "_processed": true,
+                "left": {
+                  "position": 161,
+                  "type": 5,
+                  "value": "1.0",
+                },
+                "operator": "-",
+                "position": 165,
+                "right": {
+                  "names": [
+                    "attack_time",
+                  ],
+                  "position": 167,
+                  "scope": "variable",
+                  "type": 12,
+                },
+                "type": 2,
+              },
+              "type": 2,
+            },
+            "type": 2,
+          },
+          "operator": "*",
+          "position": 190,
+          "right": {
+            "position": 192,
+            "type": 5,
+            "value": "180.0",
+          },
+          "type": 2,
+        },
+      ],
+      "names": [
+        "sin",
+      ],
+      "position": 113,
+      "scope": "math",
+      "type": 4,
+    },
+  },
+  "using": Set {
+    {
+      "names": [],
+      "position": 266,
+      "scope": "this",
+      "type": 12,
+    },
+    {
+      "names": [
+        "attack_time",
+      ],
+      "position": 66,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "attack_time",
+      ],
+      "position": 136,
+      "scope": "variable",
+      "type": 12,
+    },
+    {
+      "names": [
+        "attack_time",
+      ],
+      "position": 167,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+}
+`;
+
+exports[`MolangSet - harvest 30. !variable.has_trim 1`] = `
 MolangSet {
   "assigned": Set {},
   "cache": MolangSyntaxCache {
@@ -2370,7 +2791,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 30. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
+exports[`MolangSet - harvest 31. array.skins[query.property('minecraft:has_nectar') + query.is_angry * 2] 1`] = `
 MolangSet {
   "assigned": Set {},
   "cache": MolangSyntaxCache {
@@ -2471,7 +2892,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 31. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
+exports[`MolangSet - harvest 32. variable.has_trim ? variable.trim_path : Texture.default 1`] = `
 MolangSet {
   "assigned": Set {},
   "cache": MolangSyntaxCache {
@@ -2539,7 +2960,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 32. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
+exports[`MolangSet - harvest 33. variable.is_enchanted ? Material.enchanted : Material.default 1`] = `
 MolangSet {
   "assigned": Set {},
   "cache": MolangSyntaxCache {
@@ -2607,7 +3028,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 33. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`MolangSet - harvest 34. variable.is_peeking = query.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -2685,7 +3106,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 34. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+exports[`MolangSet - harvest 35. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -2782,7 +3203,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 35. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 || variable.unrolling_time >= 5 ); 1`] = `
+exports[`MolangSet - harvest 36. variable.is_rolled_up = (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 || variable.unrolling_time >= 5 ); 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -2912,7 +3333,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 36. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+exports[`MolangSet - harvest 37. variable.is_rolled_up = query.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -2990,7 +3411,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 37. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`MolangSet - harvest 38. variable.is_unrolling = query.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -3068,7 +3489,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 38. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`MolangSet - harvest 39. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -3182,7 +3603,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 39. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
+exports[`MolangSet - harvest 40. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + query.delta_time) : 0.0; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -3296,7 +3717,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 40. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
+exports[`MolangSet - harvest 41. variable.use_rolled_up_model = variable.rolled_up_time >= 0.2083 && (variable.unrolling_time == 0.0 || variable.unrolling_time <= 1.25 ); 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -3426,7 +3847,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 41. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
+exports[`MolangSet - harvest 42. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -3637,7 +4058,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 42. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+exports[`MolangSet - harvest 43. variable.walk_anim_time_update = query.anim_time + math.min(3.0, math.lerp(2.0, 5.0, query.modified_move_speed)) * query.delta_time;variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -3948,7 +4369,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 43. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+exports[`MolangSet - harvest 44. variable.walking = query.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -4040,122 +4461,6 @@ MolangSet {
       "type": 12,
     },
   },
-}
-`;
-
-exports[`MolangSet - harvest 44. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
-MolangSet {
-  "assigned": Set {
-    {
-      "names": [
-        "x_head_rotation",
-      ],
-      "position": 47,
-      "scope": "variable",
-      "type": 12,
-    },
-  },
-  "cache": MolangSyntaxCache {
-    "_data": Map {
-      "variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5);" => [
-        {
-          "_processed": true,
-          "left": {
-            "names": [
-              "x_head_rotation",
-            ],
-            "position": 47,
-            "scope": "variable",
-            "type": 12,
-          },
-          "position": 72,
-          "right": {
-            "arguments": [
-              {
-                "arguments": [],
-                "names": [
-                  "target_x_rotation",
-                ],
-                "position": 85,
-                "scope": "query",
-                "type": 4,
-              },
-              {
-                "_processed": true,
-                "operand": {
-                  "position": 111,
-                  "type": 5,
-                  "value": "32.5",
-                },
-                "operator": "-",
-                "position": 110,
-                "type": 11,
-              },
-              {
-                "position": 117,
-                "type": 5,
-                "value": "32.5",
-              },
-            ],
-            "names": [
-              "clamp",
-            ],
-            "position": 74,
-            "scope": "math",
-            "type": 4,
-          },
-          "type": 1,
-        },
-      ],
-    },
-  },
-  "functions": Set {
-    {
-      "arguments": [
-        {
-          "arguments": [],
-          "names": [
-            "target_x_rotation",
-          ],
-          "position": 85,
-          "scope": "query",
-          "type": 4,
-        },
-        {
-          "_processed": true,
-          "operand": {
-            "position": 111,
-            "type": 5,
-            "value": "32.5",
-          },
-          "operator": "-",
-          "position": 110,
-          "type": 11,
-        },
-        {
-          "position": 117,
-          "type": 5,
-          "value": "32.5",
-        },
-      ],
-      "names": [
-        "clamp",
-      ],
-      "position": 74,
-      "scope": "math",
-      "type": 4,
-    },
-    {
-      "arguments": [],
-      "names": [
-        "target_x_rotation",
-      ],
-      "position": 85,
-      "scope": "query",
-      "type": 4,
-    },
-  },
-  "using": Set {},
 }
 `;
 
@@ -4275,7 +4580,123 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 46. variable.x_head_rotation = query.target_x_rotation * 32.5; 1`] = `
+exports[`MolangSet - harvest 46. variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5); 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "x_head_rotation",
+      ],
+      "position": 47,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.x_head_rotation = math.clamp(query.target_x_rotation, -32.5, 32.5);" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "x_head_rotation",
+            ],
+            "position": 47,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 72,
+          "right": {
+            "arguments": [
+              {
+                "arguments": [],
+                "names": [
+                  "target_x_rotation",
+                ],
+                "position": 85,
+                "scope": "query",
+                "type": 4,
+              },
+              {
+                "_processed": true,
+                "operand": {
+                  "position": 111,
+                  "type": 5,
+                  "value": "32.5",
+                },
+                "operator": "-",
+                "position": 110,
+                "type": 11,
+              },
+              {
+                "position": 117,
+                "type": 5,
+                "value": "32.5",
+              },
+            ],
+            "names": [
+              "clamp",
+            ],
+            "position": 74,
+            "scope": "math",
+            "type": 4,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "arguments": [],
+          "names": [
+            "target_x_rotation",
+          ],
+          "position": 85,
+          "scope": "query",
+          "type": 4,
+        },
+        {
+          "_processed": true,
+          "operand": {
+            "position": 111,
+            "type": 5,
+            "value": "32.5",
+          },
+          "operator": "-",
+          "position": 110,
+          "type": 11,
+        },
+        {
+          "position": 117,
+          "type": 5,
+          "value": "32.5",
+        },
+      ],
+      "names": [
+        "clamp",
+      ],
+      "position": 74,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "target_x_rotation",
+      ],
+      "position": 85,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {},
+}
+`;
+
+exports[`MolangSet - harvest 47. variable.x_head_rotation = query.target_x_rotation * 32.5; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -4333,122 +4754,6 @@ MolangSet {
         "target_x_rotation",
       ],
       "position": 74,
-      "scope": "query",
-      "type": 4,
-    },
-  },
-  "using": Set {},
-}
-`;
-
-exports[`MolangSet - harvest 47. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
-MolangSet {
-  "assigned": Set {
-    {
-      "names": [
-        "y_head_rotation",
-      ],
-      "position": 47,
-      "scope": "variable",
-      "type": 12,
-    },
-  },
-  "cache": MolangSyntaxCache {
-    "_data": Map {
-      "variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25);" => [
-        {
-          "_processed": true,
-          "left": {
-            "names": [
-              "y_head_rotation",
-            ],
-            "position": 47,
-            "scope": "variable",
-            "type": 12,
-          },
-          "position": 72,
-          "right": {
-            "arguments": [
-              {
-                "arguments": [],
-                "names": [
-                  "target_y_rotation",
-                ],
-                "position": 85,
-                "scope": "query",
-                "type": 4,
-              },
-              {
-                "_processed": true,
-                "operand": {
-                  "position": 111,
-                  "type": 5,
-                  "value": "22.5",
-                },
-                "operator": "-",
-                "position": 110,
-                "type": 11,
-              },
-              {
-                "position": 117,
-                "type": 5,
-                "value": "25",
-              },
-            ],
-            "names": [
-              "clamp",
-            ],
-            "position": 74,
-            "scope": "math",
-            "type": 4,
-          },
-          "type": 1,
-        },
-      ],
-    },
-  },
-  "functions": Set {
-    {
-      "arguments": [
-        {
-          "arguments": [],
-          "names": [
-            "target_y_rotation",
-          ],
-          "position": 85,
-          "scope": "query",
-          "type": 4,
-        },
-        {
-          "_processed": true,
-          "operand": {
-            "position": 111,
-            "type": 5,
-            "value": "22.5",
-          },
-          "operator": "-",
-          "position": 110,
-          "type": 11,
-        },
-        {
-          "position": 117,
-          "type": 5,
-          "value": "25",
-        },
-      ],
-      "names": [
-        "clamp",
-      ],
-      "position": 74,
-      "scope": "math",
-      "type": 4,
-    },
-    {
-      "arguments": [],
-      "names": [
-        "target_y_rotation",
-      ],
-      "position": 85,
       "scope": "query",
       "type": 4,
     },
@@ -4573,7 +4878,123 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 49. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
+exports[`MolangSet - harvest 49. variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25); 1`] = `
+MolangSet {
+  "assigned": Set {
+    {
+      "names": [
+        "y_head_rotation",
+      ],
+      "position": 47,
+      "scope": "variable",
+      "type": 12,
+    },
+  },
+  "cache": MolangSyntaxCache {
+    "_data": Map {
+      "variable.y_head_rotation = math.clamp(query.target_y_rotation, -22.5, 25);" => [
+        {
+          "_processed": true,
+          "left": {
+            "names": [
+              "y_head_rotation",
+            ],
+            "position": 47,
+            "scope": "variable",
+            "type": 12,
+          },
+          "position": 72,
+          "right": {
+            "arguments": [
+              {
+                "arguments": [],
+                "names": [
+                  "target_y_rotation",
+                ],
+                "position": 85,
+                "scope": "query",
+                "type": 4,
+              },
+              {
+                "_processed": true,
+                "operand": {
+                  "position": 111,
+                  "type": 5,
+                  "value": "22.5",
+                },
+                "operator": "-",
+                "position": 110,
+                "type": 11,
+              },
+              {
+                "position": 117,
+                "type": 5,
+                "value": "25",
+              },
+            ],
+            "names": [
+              "clamp",
+            ],
+            "position": 74,
+            "scope": "math",
+            "type": 4,
+          },
+          "type": 1,
+        },
+      ],
+    },
+  },
+  "functions": Set {
+    {
+      "arguments": [
+        {
+          "arguments": [],
+          "names": [
+            "target_y_rotation",
+          ],
+          "position": 85,
+          "scope": "query",
+          "type": 4,
+        },
+        {
+          "_processed": true,
+          "operand": {
+            "position": 111,
+            "type": 5,
+            "value": "22.5",
+          },
+          "operator": "-",
+          "position": 110,
+          "type": 11,
+        },
+        {
+          "position": 117,
+          "type": 5,
+          "value": "25",
+        },
+      ],
+      "names": [
+        "clamp",
+      ],
+      "position": 74,
+      "scope": "math",
+      "type": 4,
+    },
+    {
+      "arguments": [],
+      "names": [
+        "target_y_rotation",
+      ],
+      "position": 85,
+      "scope": "query",
+      "type": 4,
+    },
+  },
+  "using": Set {},
+}
+`;
+
+exports[`MolangSet - harvest 50. variable.is_peeking = q.property('minecraft:armadillo_state') == 'rolled_up_peeking'; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -4651,7 +5072,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 50. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
+exports[`MolangSet - harvest 51. variable.is_rolled_up = q.property('minecraft:armadillo_state') != 'unrolled'; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -4729,7 +5150,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 51. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
+exports[`MolangSet - harvest 52. variable.is_unrolling = q.property('minecraft:armadillo_state') == 'rolled_up_unrolling'; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -4807,7 +5228,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 52. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+exports[`MolangSet - harvest 53. variable.rolled_up_time = variable.is_rolled_up ? ((variable.rolled_up_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -4921,7 +5342,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 53. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
+exports[`MolangSet - harvest 54. variable.unrolling_time = variable.is_unrolling ? ((variable.unrolling_time ?? 0.0) + q.delta_time) : 0.0; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5035,7 +5456,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 54. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time; 1`] = `
+exports[`MolangSet - harvest 55. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5246,7 +5667,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 55. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 1`] = `
+exports[`MolangSet - harvest 56. variable.walk_anim_time_update = q.anim_time + math.min(3.0, math.lerp(2.0, 5.0, q.modified_move_speed)) * q.delta_time;variable.y_head_rotation = math.clamp(q.target_y_rotation, -22.5, 25); 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5557,7 +5978,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 56. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
+exports[`MolangSet - harvest 57. variable.walking = q.modified_move_speed > 0.01 && !variable.is_rolled_up; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5652,7 +6073,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 57. variable.state = variable.is_rolled_up ? 1 : 0; 1`] = `
+exports[`MolangSet - harvest 58. variable.state = variable.is_rolled_up ? 1 : 0; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5720,7 +6141,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 58. variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo; 1`] = `
+exports[`MolangSet - harvest 59. variable.state = variable.is_rolled_up ? 2 * (5 + variable.state) : 3 * 1 + variable.foo; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5854,7 +6275,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 59. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
+exports[`MolangSet - harvest 60. variable.state = variable.is_rolled_up ? variable.rolled_up_time >= 0.2083 ? 1 : 2 : 3; 1`] = `
 MolangSet {
   "assigned": Set {
     {
@@ -5959,7 +6380,7 @@ MolangSet {
 }
 `;
 
-exports[`MolangSet - harvest 60. v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar') 1`] = `
+exports[`MolangSet - harvest 61. v.temp_outfit!=q.property('foo:bar')+q.property('foo:bar')+q.property('foo:bar') 1`] = `
 MolangSet {
   "assigned": Set {},
   "cache": MolangSyntaxCache {
