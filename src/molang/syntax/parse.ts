@@ -135,6 +135,17 @@ function trimEnding(tokens: Token[]): Token[] {
  */
 function convertToken(token: Token) {
   switch (token.type) {
+    case TokenType.Identifier:
+      switch (token.value) {
+        case "this":
+          return VariableNode.create({
+            scope: "this",
+            names: [],
+            position: token.position,
+          });
+      }
+      break;
+
     case TokenType.NamespacedIdentifier:
       const parts = token.value.split(".");
 
