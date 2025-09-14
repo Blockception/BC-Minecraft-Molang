@@ -799,8 +799,8 @@ export namespace General {
       documentation: "Returns 1.0 if the entity has chests attached to it, else it returns 0.0.",
     },
     {
-      id: "is_cooldown_type",
-      documentation: "Returns 1.0 if the specified held or worn item has the specified cooldown type name, otherwise returns 0.0. First argument is the cooldown name to check for, second argument is the equipment slot name, and if required third argument is the numerical slot id. For second and third arguments, uses the same name and id that the replaceitem command takes when querying entities."
+      id: "is_cooldown_category",
+      documentation: "Returns 1.0 if the specified held or worn item has the specified cooldown category, otherwise returns 0.0. First argument is the cooldown name to check for, second argument is the equipment slot name, and if required third argument is the numerical slot id. For second and third arguments, uses the same name and id that the replaceitem command takes when querying entities."
     },
     {
       id: "is_crawling",
@@ -1560,6 +1560,11 @@ export namespace General {
       documentation:
         "DEPRECATED (Use query.is_name_any instead if possible so names can be changed later without breaking content.)",
       deprecated: "query.is_name_any",
+    },
+    {
+      id: "is_cooldown_type",
+      documentation: "DEPRECATED",
+      deprecated: "query.is_cooldown_category"
     },
     {
       id: "overlay_alpha",
